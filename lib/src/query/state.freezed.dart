@@ -9,51 +9,50 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$GraphQLStateTearOff {
-  const _$GraphQLStateTearOff();
+class _$QueryStateTearOff {
+  const _$QueryStateTearOff();
 
 // ignore: unused_element
-  GraphQLStateInitial<T> initial<T>() {
-    return GraphQLStateInitial<T>();
+  QueryStateInitial<T> initial<T>() {
+    return QueryStateInitial<T>();
   }
 
 // ignore: unused_element
-  GraphQLStateLoading<T> loading<T>({@required QueryResult result}) {
-    return GraphQLStateLoading<T>(
+  QueryStateLoading<T> loading<T>({@required QueryResult result}) {
+    return QueryStateLoading<T>(
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLStateError<T> error<T>(
+  QueryStateError<T> error<T>(
       {@required OperationException error, @required QueryResult result}) {
-    return GraphQLStateError<T>(
+    return QueryStateError<T>(
       error: error,
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLStateLoaded<T> loaded<T>(
+  QueryStateLoaded<T> loaded<T>(
       {@required T data, @required QueryResult result}) {
-    return GraphQLStateLoaded<T>(
+    return QueryStateLoaded<T>(
       data: data,
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLStateRefetch<T> refetch<T>({T data, QueryResult result}) {
-    return GraphQLStateRefetch<T>(
+  QueryStateRefetch<T> refetch<T>({T data, QueryResult result}) {
+    return QueryStateRefetch<T>(
       data: data,
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLStateFetchMore<T> fetchMore<T>(
-      {@required T data, QueryResult result}) {
-    return GraphQLStateFetchMore<T>(
+  QueryStateFetchMore<T> fetchMore<T>({@required T data, QueryResult result}) {
+    return QueryStateFetchMore<T>(
       data: data,
       result: result,
     );
@@ -61,9 +60,9 @@ class _$GraphQLStateTearOff {
 }
 
 // ignore: unused_element
-const $GraphQLState = _$GraphQLStateTearOff();
+const $QueryState = _$QueryStateTearOff();
 
-mixin _$GraphQLState<T> {
+mixin _$QueryState<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
@@ -85,68 +84,68 @@ mixin _$GraphQLState<T> {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   });
 }
 
-abstract class $GraphQLStateCopyWith<T, $Res> {
-  factory $GraphQLStateCopyWith(
+abstract class $QueryStateCopyWith<T, $Res> {
+  factory $QueryStateCopyWith(
           QueryState<T> value, $Res Function(QueryState<T>) then) =
-      _$GraphQLStateCopyWithImpl<T, $Res>;
+      _$QueryStateCopyWithImpl<T, $Res>;
 }
 
-class _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateCopyWith<T, $Res> {
-  _$GraphQLStateCopyWithImpl(this._value, this._then);
+class _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateCopyWith<T, $Res> {
+  _$QueryStateCopyWithImpl(this._value, this._then);
 
   final QueryState<T> _value;
   // ignore: unused_field
   final $Res Function(QueryState<T>) _then;
 }
 
-abstract class $GraphQLStateInitialCopyWith<T, $Res> {
-  factory $GraphQLStateInitialCopyWith(GraphQLStateInitial<T> value,
-          $Res Function(GraphQLStateInitial<T>) then) =
-      _$GraphQLStateInitialCopyWithImpl<T, $Res>;
+abstract class $QueryStateInitialCopyWith<T, $Res> {
+  factory $QueryStateInitialCopyWith(QueryStateInitial<T> value,
+          $Res Function(QueryStateInitial<T>) then) =
+      _$QueryStateInitialCopyWithImpl<T, $Res>;
 }
 
-class _$GraphQLStateInitialCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateInitialCopyWith<T, $Res> {
-  _$GraphQLStateInitialCopyWithImpl(GraphQLStateInitial<T> _value,
-      $Res Function(GraphQLStateInitial<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateInitial<T>));
+class _$QueryStateInitialCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateInitialCopyWith<T, $Res> {
+  _$QueryStateInitialCopyWithImpl(
+      QueryStateInitial<T> _value, $Res Function(QueryStateInitial<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateInitial<T>));
 
   @override
-  GraphQLStateInitial<T> get _value => super._value as GraphQLStateInitial<T>;
+  QueryStateInitial<T> get _value => super._value as QueryStateInitial<T>;
 }
 
-class _$GraphQLStateInitial<T> implements GraphQLStateInitial<T> {
-  const _$GraphQLStateInitial();
+class _$QueryStateInitial<T> implements QueryStateInitial<T> {
+  const _$QueryStateInitial();
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.initial()';
+    return 'QueryState<$T>.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GraphQLStateInitial<T>);
+    return identical(this, other) || (other is QueryStateInitial<T>);
   }
 
   @override
@@ -192,12 +191,12 @@ class _$GraphQLStateInitial<T> implements GraphQLStateInitial<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -211,12 +210,12 @@ class _$GraphQLStateInitial<T> implements GraphQLStateInitial<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -227,52 +226,52 @@ class _$GraphQLStateInitial<T> implements GraphQLStateInitial<T> {
   }
 }
 
-abstract class GraphQLStateInitial<T> implements QueryState<T> {
-  const factory GraphQLStateInitial() = _$GraphQLStateInitial<T>;
+abstract class QueryStateInitial<T> implements QueryState<T> {
+  const factory QueryStateInitial() = _$QueryStateInitial<T>;
 }
 
-abstract class $GraphQLStateLoadingCopyWith<T, $Res> {
-  factory $GraphQLStateLoadingCopyWith(GraphQLStateLoading<T> value,
-          $Res Function(GraphQLStateLoading<T>) then) =
-      _$GraphQLStateLoadingCopyWithImpl<T, $Res>;
+abstract class $QueryStateLoadingCopyWith<T, $Res> {
+  factory $QueryStateLoadingCopyWith(QueryStateLoading<T> value,
+          $Res Function(QueryStateLoading<T>) then) =
+      _$QueryStateLoadingCopyWithImpl<T, $Res>;
   $Res call({QueryResult result});
 }
 
-class _$GraphQLStateLoadingCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateLoadingCopyWith<T, $Res> {
-  _$GraphQLStateLoadingCopyWithImpl(GraphQLStateLoading<T> _value,
-      $Res Function(GraphQLStateLoading<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateLoading<T>));
+class _$QueryStateLoadingCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateLoadingCopyWith<T, $Res> {
+  _$QueryStateLoadingCopyWithImpl(
+      QueryStateLoading<T> _value, $Res Function(QueryStateLoading<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateLoading<T>));
 
   @override
-  GraphQLStateLoading<T> get _value => super._value as GraphQLStateLoading<T>;
+  QueryStateLoading<T> get _value => super._value as QueryStateLoading<T>;
 
   @override
   $Res call({
     Object result = freezed,
   }) {
-    return _then(GraphQLStateLoading<T>(
+    return _then(QueryStateLoading<T>(
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLStateLoading<T> implements GraphQLStateLoading<T> {
-  const _$GraphQLStateLoading({@required this.result}) : assert(result != null);
+class _$QueryStateLoading<T> implements QueryStateLoading<T> {
+  const _$QueryStateLoading({@required this.result}) : assert(result != null);
 
   @override
   final QueryResult result;
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.loading(result: $result)';
+    return 'QueryState<$T>.loading(result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLStateLoading<T> &&
+        (other is QueryStateLoading<T> &&
             (identical(other.result, result) ||
                 const DeepCollectionEquality().equals(other.result, result)));
   }
@@ -282,8 +281,8 @@ class _$GraphQLStateLoading<T> implements GraphQLStateLoading<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLStateLoadingCopyWith<T, GraphQLStateLoading<T>> get copyWith =>
-      _$GraphQLStateLoadingCopyWithImpl<T, GraphQLStateLoading<T>>(
+  $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith =>
+      _$QueryStateLoadingCopyWithImpl<T, QueryStateLoading<T>>(
           this, _$identity);
 
   @override
@@ -326,12 +325,12 @@ class _$GraphQLStateLoading<T> implements GraphQLStateLoading<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -345,12 +344,12 @@ class _$GraphQLStateLoading<T> implements GraphQLStateLoading<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -361,45 +360,45 @@ class _$GraphQLStateLoading<T> implements GraphQLStateLoading<T> {
   }
 }
 
-abstract class GraphQLStateLoading<T> implements QueryState<T> {
-  const factory GraphQLStateLoading({@required QueryResult result}) =
-      _$GraphQLStateLoading<T>;
+abstract class QueryStateLoading<T> implements QueryState<T> {
+  const factory QueryStateLoading({@required QueryResult result}) =
+      _$QueryStateLoading<T>;
 
   QueryResult get result;
-  $GraphQLStateLoadingCopyWith<T, GraphQLStateLoading<T>> get copyWith;
+  $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith;
 }
 
-abstract class $GraphQLStateErrorCopyWith<T, $Res> {
-  factory $GraphQLStateErrorCopyWith(GraphQLStateError<T> value,
-          $Res Function(GraphQLStateError<T>) then) =
-      _$GraphQLStateErrorCopyWithImpl<T, $Res>;
+abstract class $QueryStateErrorCopyWith<T, $Res> {
+  factory $QueryStateErrorCopyWith(
+          QueryStateError<T> value, $Res Function(QueryStateError<T>) then) =
+      _$QueryStateErrorCopyWithImpl<T, $Res>;
   $Res call({OperationException error, QueryResult result});
 }
 
-class _$GraphQLStateErrorCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateErrorCopyWith<T, $Res> {
-  _$GraphQLStateErrorCopyWithImpl(
-      GraphQLStateError<T> _value, $Res Function(GraphQLStateError<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateError<T>));
+class _$QueryStateErrorCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateErrorCopyWith<T, $Res> {
+  _$QueryStateErrorCopyWithImpl(
+      QueryStateError<T> _value, $Res Function(QueryStateError<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateError<T>));
 
   @override
-  GraphQLStateError<T> get _value => super._value as GraphQLStateError<T>;
+  QueryStateError<T> get _value => super._value as QueryStateError<T>;
 
   @override
   $Res call({
     Object error = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLStateError<T>(
+    return _then(QueryStateError<T>(
       error: error == freezed ? _value.error : error as OperationException,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLStateError<T> implements GraphQLStateError<T> {
-  const _$GraphQLStateError({@required this.error, @required this.result})
+class _$QueryStateError<T> implements QueryStateError<T> {
+  const _$QueryStateError({@required this.error, @required this.result})
       : assert(error != null),
         assert(result != null);
 
@@ -410,13 +409,13 @@ class _$GraphQLStateError<T> implements GraphQLStateError<T> {
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.error(error: $error, result: $result)';
+    return 'QueryState<$T>.error(error: $error, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLStateError<T> &&
+        (other is QueryStateError<T> &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.result, result) ||
@@ -430,9 +429,8 @@ class _$GraphQLStateError<T> implements GraphQLStateError<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLStateErrorCopyWith<T, GraphQLStateError<T>> get copyWith =>
-      _$GraphQLStateErrorCopyWithImpl<T, GraphQLStateError<T>>(
-          this, _$identity);
+  $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith =>
+      _$QueryStateErrorCopyWithImpl<T, QueryStateError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -474,12 +472,12 @@ class _$GraphQLStateError<T> implements GraphQLStateError<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -493,12 +491,12 @@ class _$GraphQLStateError<T> implements GraphQLStateError<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -509,47 +507,47 @@ class _$GraphQLStateError<T> implements GraphQLStateError<T> {
   }
 }
 
-abstract class GraphQLStateError<T> implements QueryState<T> {
-  const factory GraphQLStateError(
+abstract class QueryStateError<T> implements QueryState<T> {
+  const factory QueryStateError(
       {@required OperationException error,
-      @required QueryResult result}) = _$GraphQLStateError<T>;
+      @required QueryResult result}) = _$QueryStateError<T>;
 
   OperationException get error;
   QueryResult get result;
-  $GraphQLStateErrorCopyWith<T, GraphQLStateError<T>> get copyWith;
+  $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith;
 }
 
-abstract class $GraphQLStateLoadedCopyWith<T, $Res> {
-  factory $GraphQLStateLoadedCopyWith(GraphQLStateLoaded<T> value,
-          $Res Function(GraphQLStateLoaded<T>) then) =
-      _$GraphQLStateLoadedCopyWithImpl<T, $Res>;
+abstract class $QueryStateLoadedCopyWith<T, $Res> {
+  factory $QueryStateLoadedCopyWith(
+          QueryStateLoaded<T> value, $Res Function(QueryStateLoaded<T>) then) =
+      _$QueryStateLoadedCopyWithImpl<T, $Res>;
   $Res call({T data, QueryResult result});
 }
 
-class _$GraphQLStateLoadedCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateLoadedCopyWith<T, $Res> {
-  _$GraphQLStateLoadedCopyWithImpl(
-      GraphQLStateLoaded<T> _value, $Res Function(GraphQLStateLoaded<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateLoaded<T>));
+class _$QueryStateLoadedCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateLoadedCopyWith<T, $Res> {
+  _$QueryStateLoadedCopyWithImpl(
+      QueryStateLoaded<T> _value, $Res Function(QueryStateLoaded<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateLoaded<T>));
 
   @override
-  GraphQLStateLoaded<T> get _value => super._value as GraphQLStateLoaded<T>;
+  QueryStateLoaded<T> get _value => super._value as QueryStateLoaded<T>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLStateLoaded<T>(
+    return _then(QueryStateLoaded<T>(
       data: data == freezed ? _value.data : data as T,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
-  const _$GraphQLStateLoaded({@required this.data, @required this.result})
+class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
+  const _$QueryStateLoaded({@required this.data, @required this.result})
       : assert(data != null),
         assert(result != null);
 
@@ -560,13 +558,13 @@ class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.loaded(data: $data, result: $result)';
+    return 'QueryState<$T>.loaded(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLStateLoaded<T> &&
+        (other is QueryStateLoaded<T> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -580,9 +578,8 @@ class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLStateLoadedCopyWith<T, GraphQLStateLoaded<T>> get copyWith =>
-      _$GraphQLStateLoadedCopyWithImpl<T, GraphQLStateLoaded<T>>(
-          this, _$identity);
+  $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith =>
+      _$QueryStateLoadedCopyWithImpl<T, QueryStateLoaded<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -624,12 +621,12 @@ class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -643,12 +640,12 @@ class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -659,47 +656,46 @@ class _$GraphQLStateLoaded<T> implements GraphQLStateLoaded<T> {
   }
 }
 
-abstract class GraphQLStateLoaded<T> implements QueryState<T> {
-  const factory GraphQLStateLoaded(
-      {@required T data,
-      @required QueryResult result}) = _$GraphQLStateLoaded<T>;
+abstract class QueryStateLoaded<T> implements QueryState<T> {
+  const factory QueryStateLoaded(
+      {@required T data, @required QueryResult result}) = _$QueryStateLoaded<T>;
 
   T get data;
   QueryResult get result;
-  $GraphQLStateLoadedCopyWith<T, GraphQLStateLoaded<T>> get copyWith;
+  $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith;
 }
 
-abstract class $GraphQLStateRefetchCopyWith<T, $Res> {
-  factory $GraphQLStateRefetchCopyWith(GraphQLStateRefetch<T> value,
-          $Res Function(GraphQLStateRefetch<T>) then) =
-      _$GraphQLStateRefetchCopyWithImpl<T, $Res>;
+abstract class $QueryStateRefetchCopyWith<T, $Res> {
+  factory $QueryStateRefetchCopyWith(QueryStateRefetch<T> value,
+          $Res Function(QueryStateRefetch<T>) then) =
+      _$QueryStateRefetchCopyWithImpl<T, $Res>;
   $Res call({T data, QueryResult result});
 }
 
-class _$GraphQLStateRefetchCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateRefetchCopyWith<T, $Res> {
-  _$GraphQLStateRefetchCopyWithImpl(GraphQLStateRefetch<T> _value,
-      $Res Function(GraphQLStateRefetch<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateRefetch<T>));
+class _$QueryStateRefetchCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateRefetchCopyWith<T, $Res> {
+  _$QueryStateRefetchCopyWithImpl(
+      QueryStateRefetch<T> _value, $Res Function(QueryStateRefetch<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateRefetch<T>));
 
   @override
-  GraphQLStateRefetch<T> get _value => super._value as GraphQLStateRefetch<T>;
+  QueryStateRefetch<T> get _value => super._value as QueryStateRefetch<T>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLStateRefetch<T>(
+    return _then(QueryStateRefetch<T>(
       data: data == freezed ? _value.data : data as T,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
-  const _$GraphQLStateRefetch({this.data, this.result});
+class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
+  const _$QueryStateRefetch({this.data, this.result});
 
   @override
   final T data;
@@ -708,13 +704,13 @@ class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.refetch(data: $data, result: $result)';
+    return 'QueryState<$T>.refetch(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLStateRefetch<T> &&
+        (other is QueryStateRefetch<T> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -728,8 +724,8 @@ class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLStateRefetchCopyWith<T, GraphQLStateRefetch<T>> get copyWith =>
-      _$GraphQLStateRefetchCopyWithImpl<T, GraphQLStateRefetch<T>>(
+  $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith =>
+      _$QueryStateRefetchCopyWithImpl<T, QueryStateRefetch<T>>(
           this, _$identity);
 
   @override
@@ -772,12 +768,12 @@ class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -791,12 +787,12 @@ class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -807,47 +803,46 @@ class _$GraphQLStateRefetch<T> implements GraphQLStateRefetch<T> {
   }
 }
 
-abstract class GraphQLStateRefetch<T> implements QueryState<T> {
-  const factory GraphQLStateRefetch({T data, QueryResult result}) =
-      _$GraphQLStateRefetch<T>;
+abstract class QueryStateRefetch<T> implements QueryState<T> {
+  const factory QueryStateRefetch({T data, QueryResult result}) =
+      _$QueryStateRefetch<T>;
 
   T get data;
   QueryResult get result;
-  $GraphQLStateRefetchCopyWith<T, GraphQLStateRefetch<T>> get copyWith;
+  $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith;
 }
 
-abstract class $GraphQLStateFetchMoreCopyWith<T, $Res> {
-  factory $GraphQLStateFetchMoreCopyWith(GraphQLStateFetchMore<T> value,
-          $Res Function(GraphQLStateFetchMore<T>) then) =
-      _$GraphQLStateFetchMoreCopyWithImpl<T, $Res>;
+abstract class $QueryStateFetchMoreCopyWith<T, $Res> {
+  factory $QueryStateFetchMoreCopyWith(QueryStateFetchMore<T> value,
+          $Res Function(QueryStateFetchMore<T>) then) =
+      _$QueryStateFetchMoreCopyWithImpl<T, $Res>;
   $Res call({T data, QueryResult result});
 }
 
-class _$GraphQLStateFetchMoreCopyWithImpl<T, $Res>
-    extends _$GraphQLStateCopyWithImpl<T, $Res>
-    implements $GraphQLStateFetchMoreCopyWith<T, $Res> {
-  _$GraphQLStateFetchMoreCopyWithImpl(GraphQLStateFetchMore<T> _value,
-      $Res Function(GraphQLStateFetchMore<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLStateFetchMore<T>));
+class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
+    extends _$QueryStateCopyWithImpl<T, $Res>
+    implements $QueryStateFetchMoreCopyWith<T, $Res> {
+  _$QueryStateFetchMoreCopyWithImpl(QueryStateFetchMore<T> _value,
+      $Res Function(QueryStateFetchMore<T>) _then)
+      : super(_value, (v) => _then(v as QueryStateFetchMore<T>));
 
   @override
-  GraphQLStateFetchMore<T> get _value =>
-      super._value as GraphQLStateFetchMore<T>;
+  QueryStateFetchMore<T> get _value => super._value as QueryStateFetchMore<T>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLStateFetchMore<T>(
+    return _then(QueryStateFetchMore<T>(
       data: data == freezed ? _value.data : data as T,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
-  const _$GraphQLStateFetchMore({@required this.data, this.result})
+class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
+  const _$QueryStateFetchMore({@required this.data, this.result})
       : assert(data != null);
 
   @override
@@ -857,13 +852,13 @@ class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
 
   @override
   String toString() {
-    return 'GraphQLState<$T>.fetchMore(data: $data, result: $result)';
+    return 'QueryState<$T>.fetchMore(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLStateFetchMore<T> &&
+        (other is QueryStateFetchMore<T> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -877,8 +872,8 @@ class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLStateFetchMoreCopyWith<T, GraphQLStateFetchMore<T>> get copyWith =>
-      _$GraphQLStateFetchMoreCopyWithImpl<T, GraphQLStateFetchMore<T>>(
+  $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith =>
+      _$QueryStateFetchMoreCopyWithImpl<T, QueryStateFetchMore<T>>(
           this, _$identity);
 
   @override
@@ -921,12 +916,12 @@ class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(GraphQLStateInitial<T> value),
-    @required Result loading(GraphQLStateLoading<T> value),
-    @required Result error(GraphQLStateError<T> value),
-    @required Result loaded(GraphQLStateLoaded<T> value),
-    @required Result refetch(GraphQLStateRefetch<T> value),
-    @required Result fetchMore(GraphQLStateFetchMore<T> value),
+    @required Result initial(QueryStateInitial<T> value),
+    @required Result loading(QueryStateLoading<T> value),
+    @required Result error(QueryStateError<T> value),
+    @required Result loaded(QueryStateLoaded<T> value),
+    @required Result refetch(QueryStateRefetch<T> value),
+    @required Result fetchMore(QueryStateFetchMore<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -940,12 +935,12 @@ class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(GraphQLStateInitial<T> value),
-    Result loading(GraphQLStateLoading<T> value),
-    Result error(GraphQLStateError<T> value),
-    Result loaded(GraphQLStateLoaded<T> value),
-    Result refetch(GraphQLStateRefetch<T> value),
-    Result fetchMore(GraphQLStateFetchMore<T> value),
+    Result initial(QueryStateInitial<T> value),
+    Result loading(QueryStateLoading<T> value),
+    Result error(QueryStateError<T> value),
+    Result loaded(QueryStateLoaded<T> value),
+    Result refetch(QueryStateRefetch<T> value),
+    Result fetchMore(QueryStateFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -956,11 +951,11 @@ class _$GraphQLStateFetchMore<T> implements GraphQLStateFetchMore<T> {
   }
 }
 
-abstract class GraphQLStateFetchMore<T> implements QueryState<T> {
-  const factory GraphQLStateFetchMore({@required T data, QueryResult result}) =
-      _$GraphQLStateFetchMore<T>;
+abstract class QueryStateFetchMore<T> implements QueryState<T> {
+  const factory QueryStateFetchMore({@required T data, QueryResult result}) =
+      _$QueryStateFetchMore<T>;
 
   T get data;
   QueryResult get result;
-  $GraphQLStateFetchMoreCopyWith<T, GraphQLStateFetchMore<T>> get copyWith;
+  $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith;
 }

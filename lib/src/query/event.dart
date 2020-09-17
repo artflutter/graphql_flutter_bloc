@@ -5,26 +5,26 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 part 'event.freezed.dart';
 
 @freezed
-abstract class QueryEvent<T> with _$GraphQLEvent<T> {
+abstract class QueryEvent<T> with _$QueryEvent<T> {
   const factory QueryEvent.error({
     @required OperationException error,
     @required QueryResult result,
-  }) = GraphQLEventError<T>;
+  }) = QueryEventError<T>;
 
-  const factory QueryEvent.run() = GraphQLEventRun<T>;
+  const factory QueryEvent.run() = QueryEventRun<T>;
 
   const factory QueryEvent.loading({
     @required QueryResult result,
-  }) = GraphQLEventLoading<T>;
+  }) = QueryEventLoading<T>;
 
   const factory QueryEvent.loaded({
     @required T data,
     @required QueryResult result,
-  }) = GraphQLEventLoaded<T>;
+  }) = QueryEventLoaded<T>;
 
-  const factory QueryEvent.refetch() = GraphQLEventRefetch<T>;
+  const factory QueryEvent.refetch() = QueryEventRefetch<T>;
 
   const factory QueryEvent.fetchMore({
     @required FetchMoreOptions options,
-  }) = GraphQLEventFetchMore<T>;
+  }) = QueryEventFetchMore<T>;
 }

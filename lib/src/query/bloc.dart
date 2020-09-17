@@ -18,7 +18,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
     result = client.watchQuery(options);
 
     result.stream.listen((QueryResult result) {
-      if (state is GraphQLStateRefetch &&
+      if (state is QueryStateRefetch &&
           result.source == QueryResultSource.Cache) {
         return;
       }
@@ -56,24 +56,24 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   bool shouldFetchMore(int i, int threshold) => false;
 
-  bool get isFetchingMore => state is GraphQLStateFetchMore;
+  bool get isFetchingMore => state is QueryStateFetchMore;
 
-  bool get isLoading => state is GraphQLStateLoading;
+  bool get isLoading => state is QueryStateLoading;
 
-  bool get isLoaded => state is GraphQLStateLoaded;
+  bool get isLoaded => state is QueryStateLoaded;
 
-  bool get isRefetching => state is GraphQLStateRefetch;
+  bool get isRefetching => state is QueryStateRefetch;
 
   T parseData(Map<String, dynamic> data);
 
-  bool get hasData => (state is GraphQLStateLoaded<T> ||
-      state is GraphQLStateFetchMore<T> ||
-      state is GraphQLStateRefetch<T>);
+  bool get hasData => (state is QueryStateLoaded<T> ||
+      state is QueryStateFetchMore<T> ||
+      state is QueryStateRefetch<T>);
 
-  bool get hasError => state is GraphQLStateError<T>;
+  bool get hasError => state is QueryStateError<T>;
 
   String get getError => hasError
-      ? parseOperationException((state as GraphQLStateError<T>).error)
+      ? parseOperationException((state as QueryStateError<T>).error)
       : null;
 
   Future<void> _runQuery() async {
@@ -88,31 +88,31 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   @override
   Stream<QueryState<T>> mapEventToState(QueryEvent<T> event) async* {
-    if (event is GraphQLEventRun<T>) {
+    if (event is QueryEventRun<T>) {
       _runQuery();
     }
 
-    if (event is GraphQLEventLoading<T>) {
+    if (event is QueryEventLoading<T>) {
       yield QueryState.loading(result: event.result);
     }
 
-    if (event is GraphQLEventLoaded<T>) {
+    if (event is QueryEventLoaded<T>) {
       yield QueryState<T>.loaded(data: event.data, result: event.result);
     }
 
-    if (event is GraphQLEventError<T>) {
+    if (event is QueryEventError<T>) {
       yield QueryState<T>.error(error: event.error, result: event.result);
     }
 
-    if (event is GraphQLEventRefetch<T> &&
-        (state is GraphQLStateLoaded<T> || state is GraphQLStateError<T>)) {
+    if (event is QueryEventRefetch<T> &&
+        (state is QueryStateLoaded<T> || state is QueryStateError<T>)) {
       yield QueryState<T>.refetch(
           data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
           result: null);
       _refetch();
     }
 
-    if (event is GraphQLEventFetchMore<T> && state is GraphQLStateLoaded<T>) {
+    if (event is QueryEventFetchMore<T> && state is QueryStateLoaded<T>) {
       yield QueryState<T>.fetchMore(
           data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
           result: null);

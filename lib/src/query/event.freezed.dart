@@ -9,56 +9,56 @@ part of 'event.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$GraphQLEventTearOff {
-  const _$GraphQLEventTearOff();
+class _$QueryEventTearOff {
+  const _$QueryEventTearOff();
 
 // ignore: unused_element
-  GraphQLEventError<T> error<T>(
+  QueryEventError<T> error<T>(
       {@required OperationException error, @required QueryResult result}) {
-    return GraphQLEventError<T>(
+    return QueryEventError<T>(
       error: error,
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLEventRun<T> run<T>() {
-    return GraphQLEventRun<T>();
+  QueryEventRun<T> run<T>() {
+    return QueryEventRun<T>();
   }
 
 // ignore: unused_element
-  GraphQLEventLoading<T> loading<T>({@required QueryResult result}) {
-    return GraphQLEventLoading<T>(
+  QueryEventLoading<T> loading<T>({@required QueryResult result}) {
+    return QueryEventLoading<T>(
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLEventLoaded<T> loaded<T>(
+  QueryEventLoaded<T> loaded<T>(
       {@required T data, @required QueryResult result}) {
-    return GraphQLEventLoaded<T>(
+    return QueryEventLoaded<T>(
       data: data,
       result: result,
     );
   }
 
 // ignore: unused_element
-  GraphQLEventRefetch<T> refetch<T>() {
-    return GraphQLEventRefetch<T>();
+  QueryEventRefetch<T> refetch<T>() {
+    return QueryEventRefetch<T>();
   }
 
 // ignore: unused_element
-  GraphQLEventFetchMore<T> fetchMore<T>({@required FetchMoreOptions options}) {
-    return GraphQLEventFetchMore<T>(
+  QueryEventFetchMore<T> fetchMore<T>({@required FetchMoreOptions options}) {
+    return QueryEventFetchMore<T>(
       options: options,
     );
   }
 }
 
 // ignore: unused_element
-const $GraphQLEvent = _$GraphQLEventTearOff();
+const $QueryEvent = _$QueryEventTearOff();
 
-mixin _$GraphQLEvent<T> {
+mixin _$QueryEvent<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
@@ -80,71 +80,71 @@ mixin _$GraphQLEvent<T> {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   });
 }
 
-abstract class $GraphQLEventCopyWith<T, $Res> {
-  factory $GraphQLEventCopyWith(
+abstract class $QueryEventCopyWith<T, $Res> {
+  factory $QueryEventCopyWith(
           QueryEvent<T> value, $Res Function(QueryEvent<T>) then) =
-      _$GraphQLEventCopyWithImpl<T, $Res>;
+      _$QueryEventCopyWithImpl<T, $Res>;
 }
 
-class _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventCopyWith<T, $Res> {
-  _$GraphQLEventCopyWithImpl(this._value, this._then);
+class _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventCopyWith<T, $Res> {
+  _$QueryEventCopyWithImpl(this._value, this._then);
 
   final QueryEvent<T> _value;
   // ignore: unused_field
   final $Res Function(QueryEvent<T>) _then;
 }
 
-abstract class $GraphQLEventErrorCopyWith<T, $Res> {
-  factory $GraphQLEventErrorCopyWith(GraphQLEventError<T> value,
-          $Res Function(GraphQLEventError<T>) then) =
-      _$GraphQLEventErrorCopyWithImpl<T, $Res>;
+abstract class $QueryEventErrorCopyWith<T, $Res> {
+  factory $QueryEventErrorCopyWith(
+          QueryEventError<T> value, $Res Function(QueryEventError<T>) then) =
+      _$QueryEventErrorCopyWithImpl<T, $Res>;
   $Res call({OperationException error, QueryResult result});
 }
 
-class _$GraphQLEventErrorCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventErrorCopyWith<T, $Res> {
-  _$GraphQLEventErrorCopyWithImpl(
-      GraphQLEventError<T> _value, $Res Function(GraphQLEventError<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventError<T>));
+class _$QueryEventErrorCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventErrorCopyWith<T, $Res> {
+  _$QueryEventErrorCopyWithImpl(
+      QueryEventError<T> _value, $Res Function(QueryEventError<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventError<T>));
 
   @override
-  GraphQLEventError<T> get _value => super._value as GraphQLEventError<T>;
+  QueryEventError<T> get _value => super._value as QueryEventError<T>;
 
   @override
   $Res call({
     Object error = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLEventError<T>(
+    return _then(QueryEventError<T>(
       error: error == freezed ? _value.error : error as OperationException,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLEventError<T> implements GraphQLEventError<T> {
-  const _$GraphQLEventError({@required this.error, @required this.result})
+class _$QueryEventError<T> implements QueryEventError<T> {
+  const _$QueryEventError({@required this.error, @required this.result})
       : assert(error != null),
         assert(result != null);
 
@@ -155,13 +155,13 @@ class _$GraphQLEventError<T> implements GraphQLEventError<T> {
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.error(error: $error, result: $result)';
+    return 'QueryEvent<$T>.error(error: $error, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLEventError<T> &&
+        (other is QueryEventError<T> &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.result, result) ||
@@ -175,9 +175,8 @@ class _$GraphQLEventError<T> implements GraphQLEventError<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLEventErrorCopyWith<T, GraphQLEventError<T>> get copyWith =>
-      _$GraphQLEventErrorCopyWithImpl<T, GraphQLEventError<T>>(
-          this, _$identity);
+  $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith =>
+      _$QueryEventErrorCopyWithImpl<T, QueryEventError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -219,12 +218,12 @@ class _$GraphQLEventError<T> implements GraphQLEventError<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -238,12 +237,12 @@ class _$GraphQLEventError<T> implements GraphQLEventError<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -254,44 +253,44 @@ class _$GraphQLEventError<T> implements GraphQLEventError<T> {
   }
 }
 
-abstract class GraphQLEventError<T> implements QueryEvent<T> {
-  const factory GraphQLEventError(
+abstract class QueryEventError<T> implements QueryEvent<T> {
+  const factory QueryEventError(
       {@required OperationException error,
-      @required QueryResult result}) = _$GraphQLEventError<T>;
+      @required QueryResult result}) = _$QueryEventError<T>;
 
   OperationException get error;
   QueryResult get result;
-  $GraphQLEventErrorCopyWith<T, GraphQLEventError<T>> get copyWith;
+  $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith;
 }
 
-abstract class $GraphQLEventRunCopyWith<T, $Res> {
-  factory $GraphQLEventRunCopyWith(
-          GraphQLEventRun<T> value, $Res Function(GraphQLEventRun<T>) then) =
-      _$GraphQLEventRunCopyWithImpl<T, $Res>;
+abstract class $QueryEventRunCopyWith<T, $Res> {
+  factory $QueryEventRunCopyWith(
+          QueryEventRun<T> value, $Res Function(QueryEventRun<T>) then) =
+      _$QueryEventRunCopyWithImpl<T, $Res>;
 }
 
-class _$GraphQLEventRunCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventRunCopyWith<T, $Res> {
-  _$GraphQLEventRunCopyWithImpl(
-      GraphQLEventRun<T> _value, $Res Function(GraphQLEventRun<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventRun<T>));
+class _$QueryEventRunCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventRunCopyWith<T, $Res> {
+  _$QueryEventRunCopyWithImpl(
+      QueryEventRun<T> _value, $Res Function(QueryEventRun<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventRun<T>));
 
   @override
-  GraphQLEventRun<T> get _value => super._value as GraphQLEventRun<T>;
+  QueryEventRun<T> get _value => super._value as QueryEventRun<T>;
 }
 
-class _$GraphQLEventRun<T> implements GraphQLEventRun<T> {
-  const _$GraphQLEventRun();
+class _$QueryEventRun<T> implements QueryEventRun<T> {
+  const _$QueryEventRun();
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.run()';
+    return 'QueryEvent<$T>.run()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GraphQLEventRun<T>);
+    return identical(this, other) || (other is QueryEventRun<T>);
   }
 
   @override
@@ -337,12 +336,12 @@ class _$GraphQLEventRun<T> implements GraphQLEventRun<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -356,12 +355,12 @@ class _$GraphQLEventRun<T> implements GraphQLEventRun<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -372,52 +371,52 @@ class _$GraphQLEventRun<T> implements GraphQLEventRun<T> {
   }
 }
 
-abstract class GraphQLEventRun<T> implements QueryEvent<T> {
-  const factory GraphQLEventRun() = _$GraphQLEventRun<T>;
+abstract class QueryEventRun<T> implements QueryEvent<T> {
+  const factory QueryEventRun() = _$QueryEventRun<T>;
 }
 
-abstract class $GraphQLEventLoadingCopyWith<T, $Res> {
-  factory $GraphQLEventLoadingCopyWith(GraphQLEventLoading<T> value,
-          $Res Function(GraphQLEventLoading<T>) then) =
-      _$GraphQLEventLoadingCopyWithImpl<T, $Res>;
+abstract class $QueryEventLoadingCopyWith<T, $Res> {
+  factory $QueryEventLoadingCopyWith(QueryEventLoading<T> value,
+          $Res Function(QueryEventLoading<T>) then) =
+      _$QueryEventLoadingCopyWithImpl<T, $Res>;
   $Res call({QueryResult result});
 }
 
-class _$GraphQLEventLoadingCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventLoadingCopyWith<T, $Res> {
-  _$GraphQLEventLoadingCopyWithImpl(GraphQLEventLoading<T> _value,
-      $Res Function(GraphQLEventLoading<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventLoading<T>));
+class _$QueryEventLoadingCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventLoadingCopyWith<T, $Res> {
+  _$QueryEventLoadingCopyWithImpl(
+      QueryEventLoading<T> _value, $Res Function(QueryEventLoading<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventLoading<T>));
 
   @override
-  GraphQLEventLoading<T> get _value => super._value as GraphQLEventLoading<T>;
+  QueryEventLoading<T> get _value => super._value as QueryEventLoading<T>;
 
   @override
   $Res call({
     Object result = freezed,
   }) {
-    return _then(GraphQLEventLoading<T>(
+    return _then(QueryEventLoading<T>(
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLEventLoading<T> implements GraphQLEventLoading<T> {
-  const _$GraphQLEventLoading({@required this.result}) : assert(result != null);
+class _$QueryEventLoading<T> implements QueryEventLoading<T> {
+  const _$QueryEventLoading({@required this.result}) : assert(result != null);
 
   @override
   final QueryResult result;
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.loading(result: $result)';
+    return 'QueryEvent<$T>.loading(result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLEventLoading<T> &&
+        (other is QueryEventLoading<T> &&
             (identical(other.result, result) ||
                 const DeepCollectionEquality().equals(other.result, result)));
   }
@@ -427,8 +426,8 @@ class _$GraphQLEventLoading<T> implements GraphQLEventLoading<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLEventLoadingCopyWith<T, GraphQLEventLoading<T>> get copyWith =>
-      _$GraphQLEventLoadingCopyWithImpl<T, GraphQLEventLoading<T>>(
+  $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith =>
+      _$QueryEventLoadingCopyWithImpl<T, QueryEventLoading<T>>(
           this, _$identity);
 
   @override
@@ -471,12 +470,12 @@ class _$GraphQLEventLoading<T> implements GraphQLEventLoading<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -490,12 +489,12 @@ class _$GraphQLEventLoading<T> implements GraphQLEventLoading<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -506,45 +505,45 @@ class _$GraphQLEventLoading<T> implements GraphQLEventLoading<T> {
   }
 }
 
-abstract class GraphQLEventLoading<T> implements QueryEvent<T> {
-  const factory GraphQLEventLoading({@required QueryResult result}) =
-      _$GraphQLEventLoading<T>;
+abstract class QueryEventLoading<T> implements QueryEvent<T> {
+  const factory QueryEventLoading({@required QueryResult result}) =
+      _$QueryEventLoading<T>;
 
   QueryResult get result;
-  $GraphQLEventLoadingCopyWith<T, GraphQLEventLoading<T>> get copyWith;
+  $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith;
 }
 
-abstract class $GraphQLEventLoadedCopyWith<T, $Res> {
-  factory $GraphQLEventLoadedCopyWith(GraphQLEventLoaded<T> value,
-          $Res Function(GraphQLEventLoaded<T>) then) =
-      _$GraphQLEventLoadedCopyWithImpl<T, $Res>;
+abstract class $QueryEventLoadedCopyWith<T, $Res> {
+  factory $QueryEventLoadedCopyWith(
+          QueryEventLoaded<T> value, $Res Function(QueryEventLoaded<T>) then) =
+      _$QueryEventLoadedCopyWithImpl<T, $Res>;
   $Res call({T data, QueryResult result});
 }
 
-class _$GraphQLEventLoadedCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventLoadedCopyWith<T, $Res> {
-  _$GraphQLEventLoadedCopyWithImpl(
-      GraphQLEventLoaded<T> _value, $Res Function(GraphQLEventLoaded<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventLoaded<T>));
+class _$QueryEventLoadedCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventLoadedCopyWith<T, $Res> {
+  _$QueryEventLoadedCopyWithImpl(
+      QueryEventLoaded<T> _value, $Res Function(QueryEventLoaded<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventLoaded<T>));
 
   @override
-  GraphQLEventLoaded<T> get _value => super._value as GraphQLEventLoaded<T>;
+  QueryEventLoaded<T> get _value => super._value as QueryEventLoaded<T>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(GraphQLEventLoaded<T>(
+    return _then(QueryEventLoaded<T>(
       data: data == freezed ? _value.data : data as T,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
-  const _$GraphQLEventLoaded({@required this.data, @required this.result})
+class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
+  const _$QueryEventLoaded({@required this.data, @required this.result})
       : assert(data != null),
         assert(result != null);
 
@@ -555,13 +554,13 @@ class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.loaded(data: $data, result: $result)';
+    return 'QueryEvent<$T>.loaded(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLEventLoaded<T> &&
+        (other is QueryEventLoaded<T> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -575,9 +574,8 @@ class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $GraphQLEventLoadedCopyWith<T, GraphQLEventLoaded<T>> get copyWith =>
-      _$GraphQLEventLoadedCopyWithImpl<T, GraphQLEventLoaded<T>>(
-          this, _$identity);
+  $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith =>
+      _$QueryEventLoadedCopyWithImpl<T, QueryEventLoaded<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -619,12 +617,12 @@ class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -638,12 +636,12 @@ class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -654,44 +652,43 @@ class _$GraphQLEventLoaded<T> implements GraphQLEventLoaded<T> {
   }
 }
 
-abstract class GraphQLEventLoaded<T> implements QueryEvent<T> {
-  const factory GraphQLEventLoaded(
-      {@required T data,
-      @required QueryResult result}) = _$GraphQLEventLoaded<T>;
+abstract class QueryEventLoaded<T> implements QueryEvent<T> {
+  const factory QueryEventLoaded(
+      {@required T data, @required QueryResult result}) = _$QueryEventLoaded<T>;
 
   T get data;
   QueryResult get result;
-  $GraphQLEventLoadedCopyWith<T, GraphQLEventLoaded<T>> get copyWith;
+  $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith;
 }
 
-abstract class $GraphQLEventRefetchCopyWith<T, $Res> {
-  factory $GraphQLEventRefetchCopyWith(GraphQLEventRefetch<T> value,
-          $Res Function(GraphQLEventRefetch<T>) then) =
-      _$GraphQLEventRefetchCopyWithImpl<T, $Res>;
+abstract class $QueryEventRefetchCopyWith<T, $Res> {
+  factory $QueryEventRefetchCopyWith(QueryEventRefetch<T> value,
+          $Res Function(QueryEventRefetch<T>) then) =
+      _$QueryEventRefetchCopyWithImpl<T, $Res>;
 }
 
-class _$GraphQLEventRefetchCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventRefetchCopyWith<T, $Res> {
-  _$GraphQLEventRefetchCopyWithImpl(GraphQLEventRefetch<T> _value,
-      $Res Function(GraphQLEventRefetch<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventRefetch<T>));
+class _$QueryEventRefetchCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventRefetchCopyWith<T, $Res> {
+  _$QueryEventRefetchCopyWithImpl(
+      QueryEventRefetch<T> _value, $Res Function(QueryEventRefetch<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventRefetch<T>));
 
   @override
-  GraphQLEventRefetch<T> get _value => super._value as GraphQLEventRefetch<T>;
+  QueryEventRefetch<T> get _value => super._value as QueryEventRefetch<T>;
 }
 
-class _$GraphQLEventRefetch<T> implements GraphQLEventRefetch<T> {
-  const _$GraphQLEventRefetch();
+class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
+  const _$QueryEventRefetch();
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.refetch()';
+    return 'QueryEvent<$T>.refetch()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GraphQLEventRefetch<T>);
+    return identical(this, other) || (other is QueryEventRefetch<T>);
   }
 
   @override
@@ -737,12 +734,12 @@ class _$GraphQLEventRefetch<T> implements GraphQLEventRefetch<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -756,12 +753,12 @@ class _$GraphQLEventRefetch<T> implements GraphQLEventRefetch<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -772,41 +769,40 @@ class _$GraphQLEventRefetch<T> implements GraphQLEventRefetch<T> {
   }
 }
 
-abstract class GraphQLEventRefetch<T> implements QueryEvent<T> {
-  const factory GraphQLEventRefetch() = _$GraphQLEventRefetch<T>;
+abstract class QueryEventRefetch<T> implements QueryEvent<T> {
+  const factory QueryEventRefetch() = _$QueryEventRefetch<T>;
 }
 
-abstract class $GraphQLEventFetchMoreCopyWith<T, $Res> {
-  factory $GraphQLEventFetchMoreCopyWith(GraphQLEventFetchMore<T> value,
-          $Res Function(GraphQLEventFetchMore<T>) then) =
-      _$GraphQLEventFetchMoreCopyWithImpl<T, $Res>;
+abstract class $QueryEventFetchMoreCopyWith<T, $Res> {
+  factory $QueryEventFetchMoreCopyWith(QueryEventFetchMore<T> value,
+          $Res Function(QueryEventFetchMore<T>) then) =
+      _$QueryEventFetchMoreCopyWithImpl<T, $Res>;
   $Res call({FetchMoreOptions options});
 }
 
-class _$GraphQLEventFetchMoreCopyWithImpl<T, $Res>
-    extends _$GraphQLEventCopyWithImpl<T, $Res>
-    implements $GraphQLEventFetchMoreCopyWith<T, $Res> {
-  _$GraphQLEventFetchMoreCopyWithImpl(GraphQLEventFetchMore<T> _value,
-      $Res Function(GraphQLEventFetchMore<T>) _then)
-      : super(_value, (v) => _then(v as GraphQLEventFetchMore<T>));
+class _$QueryEventFetchMoreCopyWithImpl<T, $Res>
+    extends _$QueryEventCopyWithImpl<T, $Res>
+    implements $QueryEventFetchMoreCopyWith<T, $Res> {
+  _$QueryEventFetchMoreCopyWithImpl(QueryEventFetchMore<T> _value,
+      $Res Function(QueryEventFetchMore<T>) _then)
+      : super(_value, (v) => _then(v as QueryEventFetchMore<T>));
 
   @override
-  GraphQLEventFetchMore<T> get _value =>
-      super._value as GraphQLEventFetchMore<T>;
+  QueryEventFetchMore<T> get _value => super._value as QueryEventFetchMore<T>;
 
   @override
   $Res call({
     Object options = freezed,
   }) {
-    return _then(GraphQLEventFetchMore<T>(
+    return _then(QueryEventFetchMore<T>(
       options:
           options == freezed ? _value.options : options as FetchMoreOptions,
     ));
   }
 }
 
-class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
-  const _$GraphQLEventFetchMore({@required this.options})
+class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
+  const _$QueryEventFetchMore({@required this.options})
       : assert(options != null);
 
   @override
@@ -814,13 +810,13 @@ class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
 
   @override
   String toString() {
-    return 'GraphQLEvent<$T>.fetchMore(options: $options)';
+    return 'QueryEvent<$T>.fetchMore(options: $options)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GraphQLEventFetchMore<T> &&
+        (other is QueryEventFetchMore<T> &&
             (identical(other.options, options) ||
                 const DeepCollectionEquality().equals(other.options, options)));
   }
@@ -830,8 +826,8 @@ class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(options);
 
   @override
-  $GraphQLEventFetchMoreCopyWith<T, GraphQLEventFetchMore<T>> get copyWith =>
-      _$GraphQLEventFetchMoreCopyWithImpl<T, GraphQLEventFetchMore<T>>(
+  $QueryEventFetchMoreCopyWith<T, QueryEventFetchMore<T>> get copyWith =>
+      _$QueryEventFetchMoreCopyWithImpl<T, QueryEventFetchMore<T>>(
           this, _$identity);
 
   @override
@@ -874,12 +870,12 @@ class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(GraphQLEventError<T> value),
-    @required Result run(GraphQLEventRun<T> value),
-    @required Result loading(GraphQLEventLoading<T> value),
-    @required Result loaded(GraphQLEventLoaded<T> value),
-    @required Result refetch(GraphQLEventRefetch<T> value),
-    @required Result fetchMore(GraphQLEventFetchMore<T> value),
+    @required Result error(QueryEventError<T> value),
+    @required Result run(QueryEventRun<T> value),
+    @required Result loading(QueryEventLoading<T> value),
+    @required Result loaded(QueryEventLoaded<T> value),
+    @required Result refetch(QueryEventRefetch<T> value),
+    @required Result fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -893,12 +889,12 @@ class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(GraphQLEventError<T> value),
-    Result run(GraphQLEventRun<T> value),
-    Result loading(GraphQLEventLoading<T> value),
-    Result loaded(GraphQLEventLoaded<T> value),
-    Result refetch(GraphQLEventRefetch<T> value),
-    Result fetchMore(GraphQLEventFetchMore<T> value),
+    Result error(QueryEventError<T> value),
+    Result run(QueryEventRun<T> value),
+    Result loading(QueryEventLoading<T> value),
+    Result loaded(QueryEventLoaded<T> value),
+    Result refetch(QueryEventRefetch<T> value),
+    Result fetchMore(QueryEventFetchMore<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -909,10 +905,10 @@ class _$GraphQLEventFetchMore<T> implements GraphQLEventFetchMore<T> {
   }
 }
 
-abstract class GraphQLEventFetchMore<T> implements QueryEvent<T> {
-  const factory GraphQLEventFetchMore({@required FetchMoreOptions options}) =
-      _$GraphQLEventFetchMore<T>;
+abstract class QueryEventFetchMore<T> implements QueryEvent<T> {
+  const factory QueryEventFetchMore({@required FetchMoreOptions options}) =
+      _$QueryEventFetchMore<T>;
 
   FetchMoreOptions get options;
-  $GraphQLEventFetchMoreCopyWith<T, GraphQLEventFetchMore<T>> get copyWith;
+  $QueryEventFetchMoreCopyWith<T, QueryEventFetchMore<T>> get copyWith;
 }

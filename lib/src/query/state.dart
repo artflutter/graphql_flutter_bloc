@@ -5,30 +5,30 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 part 'state.freezed.dart';
 
 @freezed
-abstract class QueryState<T> with _$GraphQLState<T> {
-  const factory QueryState.initial() = GraphQLStateInitial;
+abstract class QueryState<T> with _$QueryState<T> {
+  const factory QueryState.initial() = QueryStateInitial;
 
   const factory QueryState.loading({
     @required QueryResult result,
-  }) = GraphQLStateLoading<T>;
+  }) = QueryStateLoading<T>;
 
   const factory QueryState.error({
     @required OperationException error,
     @required QueryResult result,
-  }) = GraphQLStateError<T>;
+  }) = QueryStateError<T>;
 
   const factory QueryState.loaded({
     @required T data,
     @required QueryResult result,
-  }) = GraphQLStateLoaded<T>;
+  }) = QueryStateLoaded<T>;
 
   const factory QueryState.refetch({
     T data,
     QueryResult result,
-  }) = GraphQLStateRefetch<T>;
+  }) = QueryStateRefetch<T>;
 
   const factory QueryState.fetchMore({
     @required T data,
     QueryResult result,
-  }) = GraphQLStateFetchMore<T>;
+  }) = QueryStateFetchMore<T>;
 }
