@@ -1,0 +1,8 @@
+mutation AddCompany($input: CompanyInput!) {
+    addCompany(input: $input) {
+        id
+        name
+        industry
+        __typename
+    }
+}

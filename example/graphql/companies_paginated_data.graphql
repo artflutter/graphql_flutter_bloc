@@ -1,0 +1,8 @@
+query CompaniesPaginatedData($pagination: PaginationInput!) {
+    allCompaniesPaginated(pagination: $pagination) {
+        id
+        name
+        industry
+        __typename
+    }
+}

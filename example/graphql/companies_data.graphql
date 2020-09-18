@@ -1,0 +1,8 @@
+query CompaniesData {
+    allCompanies {
+        id
+        name
+        industry
+        __typename
+    }
+}

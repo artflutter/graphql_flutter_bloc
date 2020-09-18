@@ -1,0 +1,15 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - graphql/**
+      - schema.graphql
+    builders:
+      artemis:
+        options:
+          fragments_glob: graphql/fragments/common.graphql
+          schema_mapping:
+            - schema: schema.graphql
+              queries_glob: graphql/*.graphql
+              output: lib/models/graphql/graphql_api.dart
+              naming_scheme: pathedWithFields
