@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.3-beta.2
+- include podfile
+
 ## 0.0.3-beta.1
 - example and readme
 
