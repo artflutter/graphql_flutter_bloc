@@ -1,6 +1,6 @@
 # graphql_flutter_bloc
 
-A new Flutter package.
+BLOC wrapper over `graphql_flutter` streams with improved state handling.
 
 ## Getting Started
 
