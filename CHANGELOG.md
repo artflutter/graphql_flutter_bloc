@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.5-beta.1
+- query update + search example
+
 ## 0.0.4-beta.1
 - mutations + examples update
 

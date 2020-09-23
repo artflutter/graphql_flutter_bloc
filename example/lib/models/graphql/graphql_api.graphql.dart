@@ -153,6 +153,44 @@ class CompanyInput with EquatableMixin {
 }
 
 @JsonSerializable(explicitToJson: true)
+class SearchCompany$Query$SearchCompany with EquatableMixin {
+  SearchCompany$Query$SearchCompany();
+
+  factory SearchCompany$Query$SearchCompany.fromJson(
+          Map<String, dynamic> json) =>
+      _$SearchCompany$Query$SearchCompanyFromJson(json);
+
+  String id;
+
+  String name;
+
+  String industry;
+
+  @override
+  @JsonKey(name: '__typename')
+  String $$typename;
+
+  @override
+  List<Object> get props => [id, name, industry, $$typename];
+  Map<String, dynamic> toJson() =>
+      _$SearchCompany$Query$SearchCompanyToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class SearchCompany$Query with EquatableMixin {
+  SearchCompany$Query();
+
+  factory SearchCompany$Query.fromJson(Map<String, dynamic> json) =>
+      _$SearchCompany$QueryFromJson(json);
+
+  List<SearchCompany$Query$SearchCompany> searchCompany;
+
+  @override
+  List<Object> get props => [searchCompany];
+  Map<String, dynamic> toJson() => _$SearchCompany$QueryToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
 class CompaniesPaginatedDataArguments extends JsonSerializable
     with EquatableMixin {
   CompaniesPaginatedDataArguments({@required this.pagination});
@@ -380,4 +418,90 @@ class AddCompanyMutation
   @override
   AddCompany$Mutation parse(Map<String, dynamic> json) =>
       AddCompany$Mutation.fromJson(json);
+}
+
+@JsonSerializable(explicitToJson: true)
+class SearchCompanyArguments extends JsonSerializable with EquatableMixin {
+  SearchCompanyArguments({@required this.name});
+
+  @override
+  factory SearchCompanyArguments.fromJson(Map<String, dynamic> json) =>
+      _$SearchCompanyArgumentsFromJson(json);
+
+  final String name;
+
+  @override
+  List<Object> get props => [name];
+  @override
+  Map<String, dynamic> toJson() => _$SearchCompanyArgumentsToJson(this);
+}
+
+class SearchCompanyQuery
+    extends GraphQLQuery<SearchCompany$Query, SearchCompanyArguments> {
+  SearchCompanyQuery({this.variables});
+
+  @override
+  final DocumentNode document = DocumentNode(definitions: [
+    OperationDefinitionNode(
+        type: OperationType.query,
+        name: NameNode(value: 'SearchCompany'),
+        variableDefinitions: [
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'name')),
+              type: NamedTypeNode(
+                  name: NameNode(value: 'String'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: [])
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+              name: NameNode(value: 'searchCompany'),
+              alias: null,
+              arguments: [
+                ArgumentNode(
+                    name: NameNode(value: 'name'),
+                    value: VariableNode(name: NameNode(value: 'name')))
+              ],
+              directives: [],
+              selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'id'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null),
+                FieldNode(
+                    name: NameNode(value: 'name'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null),
+                FieldNode(
+                    name: NameNode(value: 'industry'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null),
+                FieldNode(
+                    name: NameNode(value: '__typename'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null)
+              ]))
+        ]))
+  ]);
+
+  @override
+  final String operationName = 'SearchCompany';
+
+  @override
+  final SearchCompanyArguments variables;
+
+  @override
+  List<Object> get props => [document, operationName, variables];
+  @override
+  SearchCompany$Query parse(Map<String, dynamic> json) =>
+      SearchCompany$Query.fromJson(json);
 }

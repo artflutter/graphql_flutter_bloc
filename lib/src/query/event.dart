@@ -11,7 +11,10 @@ abstract class QueryEvent<T> with _$QueryEvent<T> {
     @required QueryResult result,
   }) = QueryEventError<T>;
 
-  const factory QueryEvent.run() = QueryEventRun<T>;
+  const factory QueryEvent.run({
+    Map<String, dynamic> variables,
+    Object optimisticResult,
+  }) = QueryEventRun<T>;
 
   const factory QueryEvent.loading({
     @required QueryResult result,

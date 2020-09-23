@@ -135,6 +135,41 @@ Map<String, dynamic> _$CompanyInputToJson(CompanyInput instance) =>
       'name': instance.name,
     };
 
+SearchCompany$Query$SearchCompany _$SearchCompany$Query$SearchCompanyFromJson(
+    Map<String, dynamic> json) {
+  return SearchCompany$Query$SearchCompany()
+    ..id = json['id'] as String
+    ..name = json['name'] as String
+    ..industry = json['industry'] as String
+    ..$$typename = json['__typename'] as String;
+}
+
+Map<String, dynamic> _$SearchCompany$Query$SearchCompanyToJson(
+        SearchCompany$Query$SearchCompany instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'industry': instance.industry,
+      '__typename': instance.$$typename,
+    };
+
+SearchCompany$Query _$SearchCompany$QueryFromJson(Map<String, dynamic> json) {
+  return SearchCompany$Query()
+    ..searchCompany = (json['searchCompany'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchCompany$Query$SearchCompany.fromJson(
+                e as Map<String, dynamic>))
+        ?.toList();
+}
+
+Map<String, dynamic> _$SearchCompany$QueryToJson(
+        SearchCompany$Query instance) =>
+    <String, dynamic>{
+      'searchCompany':
+          instance.searchCompany?.map((e) => e?.toJson())?.toList(),
+    };
+
 CompaniesPaginatedDataArguments _$CompaniesPaginatedDataArgumentsFromJson(
     Map<String, dynamic> json) {
   return CompaniesPaginatedDataArguments(
@@ -162,4 +197,17 @@ Map<String, dynamic> _$AddCompanyArgumentsToJson(
         AddCompanyArguments instance) =>
     <String, dynamic>{
       'input': instance.input?.toJson(),
+    };
+
+SearchCompanyArguments _$SearchCompanyArgumentsFromJson(
+    Map<String, dynamic> json) {
+  return SearchCompanyArguments(
+    name: json['name'] as String,
+  );
+}
+
+Map<String, dynamic> _$SearchCompanyArgumentsToJson(
+        SearchCompanyArguments instance) =>
+    <String, dynamic>{
+      'name': instance.name,
     };

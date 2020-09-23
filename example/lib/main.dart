@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:example/mutation.dart';
+import 'package:example/search_query.dart';
 import 'package:flutter/material.dart';
 import 'package:example/bloc.dart';
 import 'package:example/graphql_provider.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
           'simple': (_) => Simple(),
           'bloc': (_) => Bloc(),
           'mutation': (_) => Mutation(),
+          'search': (_) => SearchQuery(),
         },
         home: Home(),
       ),
@@ -63,6 +65,11 @@ class Home extends StatelessWidget {
             title: Text('Mutation BLOC example'),
             subtitle: Text('simple form + submit to call mutation'),
             onTap: () => Navigator.of(context).pushNamed('mutation'),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Search query'),
+            onTap: () => Navigator.of(context).pushNamed('search'),
           ),
           Divider(),
         ],

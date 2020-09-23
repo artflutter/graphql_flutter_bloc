@@ -47,8 +47,13 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
     result.close();
   }
 
-  void run() {
-    add(QueryEvent<T>.run());
+  void run({Map<String, dynamic> variables, Object optimisticResult}) {
+    add(
+      QueryEvent<T>.run(
+        variables: variables,
+        optimisticResult: optimisticResult,
+      ),
+    );
   }
 
   void refetch() {
@@ -77,10 +82,6 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
       ? parseOperationException((state as QueryStateError<T>).error)
       : null;
 
-  Future<void> _runQuery() async {
-    result.fetchResults();
-  }
-
   void _fetchMore(FetchMoreOptions options) {
     result.fetchMore(options);
   }
@@ -90,7 +91,15 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   @override
   Stream<QueryState<T>> mapEventToState(QueryEvent<T> event) async* {
     if (event is QueryEventRun<T>) {
-      _runQuery();
+      if (event.variables != null) {
+        result.variables = event.variables;
+      }
+
+      if (event.optimisticResult != null) {
+        result.options.optimisticResult = event.optimisticResult;
+      }
+
+      result.fetchResults();
     }
 
     if (event is QueryEventLoading<T>) {

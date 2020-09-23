@@ -1,0 +1,8 @@
+query SearchCompany($name: String!) {
+    searchCompany(name: $name) {
+        id
+        name
+        industry
+        __typename
+    }
+}

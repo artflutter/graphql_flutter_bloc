@@ -22,8 +22,12 @@ class _$QueryEventTearOff {
   }
 
 // ignore: unused_element
-  QueryEventRun<T> run<T>() {
-    return QueryEventRun<T>();
+  QueryEventRun<T> run<T>(
+      {Map<String, dynamic> variables, Object optimisticResult}) {
+    return QueryEventRun<T>(
+      variables: variables,
+      optimisticResult: optimisticResult,
+    );
   }
 
 // ignore: unused_element
@@ -62,7 +66,8 @@ mixin _$QueryEvent<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -71,7 +76,7 @@ mixin _$QueryEvent<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -182,7 +187,8 @@ class _$QueryEventError<T> implements QueryEventError<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -201,7 +207,7 @@ class _$QueryEventError<T> implements QueryEventError<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -267,6 +273,7 @@ abstract class $QueryEventRunCopyWith<T, $Res> {
   factory $QueryEventRunCopyWith(
           QueryEventRun<T> value, $Res Function(QueryEventRun<T>) then) =
       _$QueryEventRunCopyWithImpl<T, $Res>;
+  $Res call({Map<String, dynamic> variables, Object optimisticResult});
 }
 
 class _$QueryEventRunCopyWithImpl<T, $Res>
@@ -278,29 +285,64 @@ class _$QueryEventRunCopyWithImpl<T, $Res>
 
   @override
   QueryEventRun<T> get _value => super._value as QueryEventRun<T>;
+
+  @override
+  $Res call({
+    Object variables = freezed,
+    Object optimisticResult = freezed,
+  }) {
+    return _then(QueryEventRun<T>(
+      variables: variables == freezed
+          ? _value.variables
+          : variables as Map<String, dynamic>,
+      optimisticResult: optimisticResult == freezed
+          ? _value.optimisticResult
+          : optimisticResult,
+    ));
+  }
 }
 
 class _$QueryEventRun<T> implements QueryEventRun<T> {
-  const _$QueryEventRun();
+  const _$QueryEventRun({this.variables, this.optimisticResult});
+
+  @override
+  final Map<String, dynamic> variables;
+  @override
+  final Object optimisticResult;
 
   @override
   String toString() {
-    return 'QueryEvent<$T>.run()';
+    return 'QueryEvent<$T>.run(variables: $variables, optimisticResult: $optimisticResult)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is QueryEventRun<T>);
+    return identical(this, other) ||
+        (other is QueryEventRun<T> &&
+            (identical(other.variables, variables) ||
+                const DeepCollectionEquality()
+                    .equals(other.variables, variables)) &&
+            (identical(other.optimisticResult, optimisticResult) ||
+                const DeepCollectionEquality()
+                    .equals(other.optimisticResult, optimisticResult)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(variables) ^
+      const DeepCollectionEquality().hash(optimisticResult);
+
+  @override
+  $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith =>
+      _$QueryEventRunCopyWithImpl<T, QueryEventRun<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -312,14 +354,14 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
     assert(loaded != null);
     assert(refetch != null);
     assert(fetchMore != null);
-    return run();
+    return run(variables, optimisticResult);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -328,7 +370,7 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
   }) {
     assert(orElse != null);
     if (run != null) {
-      return run();
+      return run(variables, optimisticResult);
     }
     return orElse();
   }
@@ -372,7 +414,13 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 }
 
 abstract class QueryEventRun<T> implements QueryEvent<T> {
-  const factory QueryEventRun() = _$QueryEventRun<T>;
+  const factory QueryEventRun(
+      {Map<String, dynamic> variables,
+      Object optimisticResult}) = _$QueryEventRun<T>;
+
+  Map<String, dynamic> get variables;
+  Object get optimisticResult;
+  $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith;
 }
 
 abstract class $QueryEventLoadingCopyWith<T, $Res> {
@@ -434,7 +482,8 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -453,7 +502,7 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -581,7 +630,8 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -600,7 +650,7 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -698,7 +748,8 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -717,7 +768,7 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),
@@ -834,7 +885,8 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
-    @required Result run(),
+    @required
+        Result run(Map<String, dynamic> variables, Object optimisticResult),
     @required Result loading(QueryResult result),
     @required Result loaded(T data, QueryResult result),
     @required Result refetch(),
@@ -853,7 +905,7 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
-    Result run(),
+    Result run(Map<String, dynamic> variables, Object optimisticResult),
     Result loading(QueryResult result),
     Result loaded(T data, QueryResult result),
     Result refetch(),

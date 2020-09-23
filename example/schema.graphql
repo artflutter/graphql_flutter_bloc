@@ -22,7 +22,7 @@ type Employee {
 }
 
 type Mutation {
-    addCompany(input: CompanyInput): Company
+    addCompany(input: CompanyInput!): Company
 }
 
 type Query {
@@ -30,6 +30,7 @@ type Query {
     allCompaniesPaginated(pagination: PaginationInput!): [Company!]
     company(id: ID): Company
     employee(id: ID): Employee
+    searchCompany(name: String!): [Company!]!
 }
 
 enum fake__Locale {
