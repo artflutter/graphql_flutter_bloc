@@ -49,16 +49,19 @@ class Home extends StatelessWidget {
         children: [
           ListTile(
             title: Text('Simple example'),
+            subtitle: Text('native query example'),
             onTap: () => Navigator.of(context).pushNamed('simple'),
           ),
           Divider(),
           ListTile(
             title: Text('BLOC example'),
+            subtitle: Text('query, fetchMore, refetch'),
             onTap: () => Navigator.of(context).pushNamed('bloc'),
           ),
           Divider(),
           ListTile(
             title: Text('Mutation BLOC example'),
+            subtitle: Text('simple form + submit to call mutation'),
             onTap: () => Navigator.of(context).pushNamed('mutation'),
           ),
           Divider(),

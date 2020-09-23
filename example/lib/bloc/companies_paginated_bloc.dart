@@ -4,6 +4,8 @@ import 'package:meta/meta.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
+  static int defaultLimit = 5;
+
   CompaniesPaginatedBloc(
       {@required GraphQLClient client, WatchQueryOptions options})
       : super(
@@ -20,6 +22,18 @@ class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
   @override
   CompaniesPaginatedData$Query parseData(Map<String, dynamic> data) {
     return CompaniesPaginatedData$Query.fromJson(data);
+  }
+
+  @override
+  bool shouldFetchMore(int i, int threshold) {
+    return state.maybeWhen(
+        loaded: (data, result) {
+          return data.allCompaniesPaginated.length %
+                      CompaniesPaginatedBloc.defaultLimit ==
+                  0 &&
+              i == data.allCompaniesPaginated.length - threshold;
+        },
+        orElse: () => false);
   }
 
   void fetchMore({@required int limit, @required int offset}) {

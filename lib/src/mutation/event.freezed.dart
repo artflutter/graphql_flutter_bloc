@@ -13,34 +13,27 @@ class _$MutationEventTearOff {
   const _$MutationEventTearOff();
 
 // ignore: unused_element
-  MutationEventError<T> error<T>(
+  MutationEventError<TData> error<TData>(
       {@required OperationException error, @required QueryResult result}) {
-    return MutationEventError<T>(
+    return MutationEventError<TData>(
       error: error,
       result: result,
     );
   }
 
 // ignore: unused_element
-  MutationEventRun<T> run<T>(Map<String, dynamic> variables,
+  MutationEventRun<TData> run<TData>(Map<String, dynamic> variables,
       {Object optimisticResult}) {
-    return MutationEventRun<T>(
+    return MutationEventRun<TData>(
       variables,
       optimisticResult: optimisticResult,
     );
   }
 
 // ignore: unused_element
-  MutationEventLoading<T> loading<T>({@required QueryResult result}) {
-    return MutationEventLoading<T>(
-      result: result,
-    );
-  }
-
-// ignore: unused_element
-  MutationEventCompleted<T> completed<T>(
-      {@required T data, @required QueryResult result}) {
-    return MutationEventCompleted<T>(
+  MutationEventCompleted<TData> completed<TData>(
+      {@required TData data, @required QueryResult result}) {
+    return MutationEventCompleted<TData>(
       data: data,
       result: result,
     );
@@ -50,85 +43,82 @@ class _$MutationEventTearOff {
 // ignore: unused_element
 const $MutationEvent = _$MutationEventTearOff();
 
-mixin _$MutationEvent<T> {
+mixin _$MutationEvent<TData> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result error(OperationException error, QueryResult result),
     @required
         Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
     Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(MutationEventError<T> value),
-    @required Result run(MutationEventRun<T> value),
-    @required Result loading(MutationEventLoading<T> value),
-    @required Result completed(MutationEventCompleted<T> value),
+    @required Result error(MutationEventError<TData> value),
+    @required Result run(MutationEventRun<TData> value),
+    @required Result completed(MutationEventCompleted<TData> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<T> value),
-    Result run(MutationEventRun<T> value),
-    Result loading(MutationEventLoading<T> value),
-    Result completed(MutationEventCompleted<T> value),
+    Result error(MutationEventError<TData> value),
+    Result run(MutationEventRun<TData> value),
+    Result completed(MutationEventCompleted<TData> value),
     @required Result orElse(),
   });
 }
 
-abstract class $MutationEventCopyWith<T, $Res> {
-  factory $MutationEventCopyWith(
-          MutationEvent<T> value, $Res Function(MutationEvent<T>) then) =
-      _$MutationEventCopyWithImpl<T, $Res>;
+abstract class $MutationEventCopyWith<TData, $Res> {
+  factory $MutationEventCopyWith(MutationEvent<TData> value,
+          $Res Function(MutationEvent<TData>) then) =
+      _$MutationEventCopyWithImpl<TData, $Res>;
 }
 
-class _$MutationEventCopyWithImpl<T, $Res>
-    implements $MutationEventCopyWith<T, $Res> {
+class _$MutationEventCopyWithImpl<TData, $Res>
+    implements $MutationEventCopyWith<TData, $Res> {
   _$MutationEventCopyWithImpl(this._value, this._then);
 
-  final MutationEvent<T> _value;
+  final MutationEvent<TData> _value;
   // ignore: unused_field
-  final $Res Function(MutationEvent<T>) _then;
+  final $Res Function(MutationEvent<TData>) _then;
 }
 
-abstract class $MutationEventErrorCopyWith<T, $Res> {
-  factory $MutationEventErrorCopyWith(MutationEventError<T> value,
-          $Res Function(MutationEventError<T>) then) =
-      _$MutationEventErrorCopyWithImpl<T, $Res>;
+abstract class $MutationEventErrorCopyWith<TData, $Res> {
+  factory $MutationEventErrorCopyWith(MutationEventError<TData> value,
+          $Res Function(MutationEventError<TData>) then) =
+      _$MutationEventErrorCopyWithImpl<TData, $Res>;
   $Res call({OperationException error, QueryResult result});
 }
 
-class _$MutationEventErrorCopyWithImpl<T, $Res>
-    extends _$MutationEventCopyWithImpl<T, $Res>
-    implements $MutationEventErrorCopyWith<T, $Res> {
-  _$MutationEventErrorCopyWithImpl(
-      MutationEventError<T> _value, $Res Function(MutationEventError<T>) _then)
-      : super(_value, (v) => _then(v as MutationEventError<T>));
+class _$MutationEventErrorCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res>
+    implements $MutationEventErrorCopyWith<TData, $Res> {
+  _$MutationEventErrorCopyWithImpl(MutationEventError<TData> _value,
+      $Res Function(MutationEventError<TData>) _then)
+      : super(_value, (v) => _then(v as MutationEventError<TData>));
 
   @override
-  MutationEventError<T> get _value => super._value as MutationEventError<T>;
+  MutationEventError<TData> get _value =>
+      super._value as MutationEventError<TData>;
 
   @override
   $Res call({
     Object error = freezed,
     Object result = freezed,
   }) {
-    return _then(MutationEventError<T>(
+    return _then(MutationEventError<TData>(
       error: error == freezed ? _value.error : error as OperationException,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$MutationEventError<T> implements MutationEventError<T> {
+class _$MutationEventError<TData> implements MutationEventError<TData> {
   const _$MutationEventError({@required this.error, @required this.result})
       : assert(error != null),
         assert(result != null);
@@ -140,13 +130,13 @@ class _$MutationEventError<T> implements MutationEventError<T> {
 
   @override
   String toString() {
-    return 'MutationEvent<$T>.error(error: $error, result: $result)';
+    return 'MutationEvent<$TData>.error(error: $error, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventError<T> &&
+        (other is MutationEventError<TData> &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.result, result) ||
@@ -160,8 +150,8 @@ class _$MutationEventError<T> implements MutationEventError<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $MutationEventErrorCopyWith<T, MutationEventError<T>> get copyWith =>
-      _$MutationEventErrorCopyWithImpl<T, MutationEventError<T>>(
+  $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith =>
+      _$MutationEventErrorCopyWithImpl<TData, MutationEventError<TData>>(
           this, _$identity);
 
   @override
@@ -170,12 +160,10 @@ class _$MutationEventError<T> implements MutationEventError<T> {
     @required Result error(OperationException error, QueryResult result),
     @required
         Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return error(this.error, result);
   }
@@ -185,8 +173,7 @@ class _$MutationEventError<T> implements MutationEventError<T> {
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
     Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -199,14 +186,12 @@ class _$MutationEventError<T> implements MutationEventError<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(MutationEventError<T> value),
-    @required Result run(MutationEventRun<T> value),
-    @required Result loading(MutationEventLoading<T> value),
-    @required Result completed(MutationEventCompleted<T> value),
+    @required Result error(MutationEventError<TData> value),
+    @required Result run(MutationEventRun<TData> value),
+    @required Result completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return error(this);
   }
@@ -214,10 +199,9 @@ class _$MutationEventError<T> implements MutationEventError<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<T> value),
-    Result run(MutationEventRun<T> value),
-    Result loading(MutationEventLoading<T> value),
-    Result completed(MutationEventCompleted<T> value),
+    Result error(MutationEventError<TData> value),
+    Result run(MutationEventRun<TData> value),
+    Result completed(MutationEventCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -228,39 +212,39 @@ class _$MutationEventError<T> implements MutationEventError<T> {
   }
 }
 
-abstract class MutationEventError<T> implements MutationEvent<T> {
+abstract class MutationEventError<TData> implements MutationEvent<TData> {
   const factory MutationEventError(
       {@required OperationException error,
-      @required QueryResult result}) = _$MutationEventError<T>;
+      @required QueryResult result}) = _$MutationEventError<TData>;
 
   OperationException get error;
   QueryResult get result;
-  $MutationEventErrorCopyWith<T, MutationEventError<T>> get copyWith;
+  $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith;
 }
 
-abstract class $MutationEventRunCopyWith<T, $Res> {
-  factory $MutationEventRunCopyWith(
-          MutationEventRun<T> value, $Res Function(MutationEventRun<T>) then) =
-      _$MutationEventRunCopyWithImpl<T, $Res>;
+abstract class $MutationEventRunCopyWith<TData, $Res> {
+  factory $MutationEventRunCopyWith(MutationEventRun<TData> value,
+          $Res Function(MutationEventRun<TData>) then) =
+      _$MutationEventRunCopyWithImpl<TData, $Res>;
   $Res call({Map<String, dynamic> variables, Object optimisticResult});
 }
 
-class _$MutationEventRunCopyWithImpl<T, $Res>
-    extends _$MutationEventCopyWithImpl<T, $Res>
-    implements $MutationEventRunCopyWith<T, $Res> {
-  _$MutationEventRunCopyWithImpl(
-      MutationEventRun<T> _value, $Res Function(MutationEventRun<T>) _then)
-      : super(_value, (v) => _then(v as MutationEventRun<T>));
+class _$MutationEventRunCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res>
+    implements $MutationEventRunCopyWith<TData, $Res> {
+  _$MutationEventRunCopyWithImpl(MutationEventRun<TData> _value,
+      $Res Function(MutationEventRun<TData>) _then)
+      : super(_value, (v) => _then(v as MutationEventRun<TData>));
 
   @override
-  MutationEventRun<T> get _value => super._value as MutationEventRun<T>;
+  MutationEventRun<TData> get _value => super._value as MutationEventRun<TData>;
 
   @override
   $Res call({
     Object variables = freezed,
     Object optimisticResult = freezed,
   }) {
-    return _then(MutationEventRun<T>(
+    return _then(MutationEventRun<TData>(
       variables == freezed
           ? _value.variables
           : variables as Map<String, dynamic>,
@@ -271,7 +255,7 @@ class _$MutationEventRunCopyWithImpl<T, $Res>
   }
 }
 
-class _$MutationEventRun<T> implements MutationEventRun<T> {
+class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   const _$MutationEventRun(this.variables, {this.optimisticResult})
       : assert(variables != null);
 
@@ -282,13 +266,13 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
 
   @override
   String toString() {
-    return 'MutationEvent<$T>.run(variables: $variables, optimisticResult: $optimisticResult)';
+    return 'MutationEvent<$TData>.run(variables: $variables, optimisticResult: $optimisticResult)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventRun<T> &&
+        (other is MutationEventRun<TData> &&
             (identical(other.variables, variables) ||
                 const DeepCollectionEquality()
                     .equals(other.variables, variables)) &&
@@ -304,8 +288,9 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
       const DeepCollectionEquality().hash(optimisticResult);
 
   @override
-  $MutationEventRunCopyWith<T, MutationEventRun<T>> get copyWith =>
-      _$MutationEventRunCopyWithImpl<T, MutationEventRun<T>>(this, _$identity);
+  $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith =>
+      _$MutationEventRunCopyWithImpl<TData, MutationEventRun<TData>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -313,12 +298,10 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
     @required Result error(OperationException error, QueryResult result),
     @required
         Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return run(variables, optimisticResult);
   }
@@ -328,8 +311,7 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
     Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -342,14 +324,12 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(MutationEventError<T> value),
-    @required Result run(MutationEventRun<T> value),
-    @required Result loading(MutationEventLoading<T> value),
-    @required Result completed(MutationEventCompleted<T> value),
+    @required Result error(MutationEventError<TData> value),
+    @required Result run(MutationEventRun<TData> value),
+    @required Result completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return run(this);
   }
@@ -357,10 +337,9 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<T> value),
-    Result run(MutationEventRun<T> value),
-    Result loading(MutationEventLoading<T> value),
-    Result completed(MutationEventCompleted<T> value),
+    Result error(MutationEventError<TData> value),
+    Result run(MutationEventRun<TData> value),
+    Result completed(MutationEventCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -371,192 +350,64 @@ class _$MutationEventRun<T> implements MutationEventRun<T> {
   }
 }
 
-abstract class MutationEventRun<T> implements MutationEvent<T> {
+abstract class MutationEventRun<TData> implements MutationEvent<TData> {
   const factory MutationEventRun(Map<String, dynamic> variables,
-      {Object optimisticResult}) = _$MutationEventRun<T>;
+      {Object optimisticResult}) = _$MutationEventRun<TData>;
 
   Map<String, dynamic> get variables;
   Object get optimisticResult;
-  $MutationEventRunCopyWith<T, MutationEventRun<T>> get copyWith;
+  $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith;
 }
 
-abstract class $MutationEventLoadingCopyWith<T, $Res> {
-  factory $MutationEventLoadingCopyWith(MutationEventLoading<T> value,
-          $Res Function(MutationEventLoading<T>) then) =
-      _$MutationEventLoadingCopyWithImpl<T, $Res>;
-  $Res call({QueryResult result});
+abstract class $MutationEventCompletedCopyWith<TData, $Res> {
+  factory $MutationEventCompletedCopyWith(MutationEventCompleted<TData> value,
+          $Res Function(MutationEventCompleted<TData>) then) =
+      _$MutationEventCompletedCopyWithImpl<TData, $Res>;
+  $Res call({TData data, QueryResult result});
 }
 
-class _$MutationEventLoadingCopyWithImpl<T, $Res>
-    extends _$MutationEventCopyWithImpl<T, $Res>
-    implements $MutationEventLoadingCopyWith<T, $Res> {
-  _$MutationEventLoadingCopyWithImpl(MutationEventLoading<T> _value,
-      $Res Function(MutationEventLoading<T>) _then)
-      : super(_value, (v) => _then(v as MutationEventLoading<T>));
+class _$MutationEventCompletedCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res>
+    implements $MutationEventCompletedCopyWith<TData, $Res> {
+  _$MutationEventCompletedCopyWithImpl(MutationEventCompleted<TData> _value,
+      $Res Function(MutationEventCompleted<TData>) _then)
+      : super(_value, (v) => _then(v as MutationEventCompleted<TData>));
 
   @override
-  MutationEventLoading<T> get _value => super._value as MutationEventLoading<T>;
-
-  @override
-  $Res call({
-    Object result = freezed,
-  }) {
-    return _then(MutationEventLoading<T>(
-      result: result == freezed ? _value.result : result as QueryResult,
-    ));
-  }
-}
-
-class _$MutationEventLoading<T> implements MutationEventLoading<T> {
-  const _$MutationEventLoading({@required this.result})
-      : assert(result != null);
-
-  @override
-  final QueryResult result;
-
-  @override
-  String toString() {
-    return 'MutationEvent<$T>.loading(result: $result)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MutationEventLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
-
-  @override
-  $MutationEventLoadingCopyWith<T, MutationEventLoading<T>> get copyWith =>
-      _$MutationEventLoadingCopyWithImpl<T, MutationEventLoading<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
-    @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result completed(T data, QueryResult result),
-  }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(completed != null);
-    return loading(result);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result completed(T data, QueryResult result),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loading != null) {
-      return loading(result);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(MutationEventError<T> value),
-    @required Result run(MutationEventRun<T> value),
-    @required Result loading(MutationEventLoading<T> value),
-    @required Result completed(MutationEventCompleted<T> value),
-  }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(completed != null);
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<T> value),
-    Result run(MutationEventRun<T> value),
-    Result loading(MutationEventLoading<T> value),
-    Result completed(MutationEventCompleted<T> value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MutationEventLoading<T> implements MutationEvent<T> {
-  const factory MutationEventLoading({@required QueryResult result}) =
-      _$MutationEventLoading<T>;
-
-  QueryResult get result;
-  $MutationEventLoadingCopyWith<T, MutationEventLoading<T>> get copyWith;
-}
-
-abstract class $MutationEventCompletedCopyWith<T, $Res> {
-  factory $MutationEventCompletedCopyWith(MutationEventCompleted<T> value,
-          $Res Function(MutationEventCompleted<T>) then) =
-      _$MutationEventCompletedCopyWithImpl<T, $Res>;
-  $Res call({T data, QueryResult result});
-}
-
-class _$MutationEventCompletedCopyWithImpl<T, $Res>
-    extends _$MutationEventCopyWithImpl<T, $Res>
-    implements $MutationEventCompletedCopyWith<T, $Res> {
-  _$MutationEventCompletedCopyWithImpl(MutationEventCompleted<T> _value,
-      $Res Function(MutationEventCompleted<T>) _then)
-      : super(_value, (v) => _then(v as MutationEventCompleted<T>));
-
-  @override
-  MutationEventCompleted<T> get _value =>
-      super._value as MutationEventCompleted<T>;
+  MutationEventCompleted<TData> get _value =>
+      super._value as MutationEventCompleted<TData>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(MutationEventCompleted<T>(
-      data: data == freezed ? _value.data : data as T,
+    return _then(MutationEventCompleted<TData>(
+      data: data == freezed ? _value.data : data as TData,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
+class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   const _$MutationEventCompleted({@required this.data, @required this.result})
       : assert(data != null),
         assert(result != null);
 
   @override
-  final T data;
+  final TData data;
   @override
   final QueryResult result;
 
   @override
   String toString() {
-    return 'MutationEvent<$T>.completed(data: $data, result: $result)';
+    return 'MutationEvent<$TData>.completed(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventCompleted<T> &&
+        (other is MutationEventCompleted<TData> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -570,9 +421,9 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $MutationEventCompletedCopyWith<T, MutationEventCompleted<T>> get copyWith =>
-      _$MutationEventCompletedCopyWithImpl<T, MutationEventCompleted<T>>(
-          this, _$identity);
+  $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
+      get copyWith => _$MutationEventCompletedCopyWithImpl<TData,
+          MutationEventCompleted<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -580,12 +431,10 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
     @required Result error(OperationException error, QueryResult result),
     @required
         Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return completed(data, result);
   }
@@ -595,8 +444,7 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
   Result maybeWhen<Result extends Object>({
     Result error(OperationException error, QueryResult result),
     Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -609,14 +457,12 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result error(MutationEventError<T> value),
-    @required Result run(MutationEventRun<T> value),
-    @required Result loading(MutationEventLoading<T> value),
-    @required Result completed(MutationEventCompleted<T> value),
+    @required Result error(MutationEventError<TData> value),
+    @required Result run(MutationEventRun<TData> value),
+    @required Result completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
-    assert(loading != null);
     assert(completed != null);
     return completed(this);
   }
@@ -624,10 +470,9 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<T> value),
-    Result run(MutationEventRun<T> value),
-    Result loading(MutationEventLoading<T> value),
-    Result completed(MutationEventCompleted<T> value),
+    Result error(MutationEventError<TData> value),
+    Result run(MutationEventRun<TData> value),
+    Result completed(MutationEventCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -638,12 +483,13 @@ class _$MutationEventCompleted<T> implements MutationEventCompleted<T> {
   }
 }
 
-abstract class MutationEventCompleted<T> implements MutationEvent<T> {
+abstract class MutationEventCompleted<TData> implements MutationEvent<TData> {
   const factory MutationEventCompleted(
-      {@required T data,
-      @required QueryResult result}) = _$MutationEventCompleted<T>;
+      {@required TData data,
+      @required QueryResult result}) = _$MutationEventCompleted<TData>;
 
-  T get data;
+  TData get data;
   QueryResult get result;
-  $MutationEventCompletedCopyWith<T, MutationEventCompleted<T>> get copyWith;
+  $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
+      get copyWith;
 }

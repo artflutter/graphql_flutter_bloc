@@ -13,30 +13,28 @@ class _$MutationStateTearOff {
   const _$MutationStateTearOff();
 
 // ignore: unused_element
-  MutationStateInitial<T> initial<T>() {
-    return MutationStateInitial<T>();
+  MutationStateInitial<TData> initial<TData>() {
+    return MutationStateInitial<TData>();
   }
 
 // ignore: unused_element
-  MutationStateLoading<T> loading<T>({@required QueryResult result}) {
-    return MutationStateLoading<T>(
-      result: result,
-    );
+  MutationStateLoading<TData> loading<TData>() {
+    return MutationStateLoading<TData>();
   }
 
 // ignore: unused_element
-  MutationStateError<T> error<T>(
+  MutationStateError<TData> error<TData>(
       {@required OperationException error, @required QueryResult result}) {
-    return MutationStateError<T>(
+    return MutationStateError<TData>(
       error: error,
       result: result,
     );
   }
 
 // ignore: unused_element
-  MutationStateCompleted<T> completed<T>(
-      {@required T data, @required QueryResult result}) {
-    return MutationStateCompleted<T>(
+  MutationStateCompleted<TData> completed<TData>(
+      {@required TData data, @required QueryResult result}) {
+    return MutationStateCompleted<TData>(
       data: data,
       result: result,
     );
@@ -46,82 +44,83 @@ class _$MutationStateTearOff {
 // ignore: unused_element
 const $MutationState = _$MutationStateTearOff();
 
-mixin _$MutationState<T> {
+mixin _$MutationState<TData> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(QueryResult result),
+    @required Result loading(),
     @required Result error(OperationException error, QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(QueryResult result),
+    Result loading(),
     Result error(OperationException error, QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<T> value),
-    @required Result loading(MutationStateLoading<T> value),
-    @required Result error(MutationStateError<T> value),
-    @required Result completed(MutationStateCompleted<T> value),
+    @required Result initial(MutationStateInitial<TData> value),
+    @required Result loading(MutationStateLoading<TData> value),
+    @required Result error(MutationStateError<TData> value),
+    @required Result completed(MutationStateCompleted<TData> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<T> value),
-    Result loading(MutationStateLoading<T> value),
-    Result error(MutationStateError<T> value),
-    Result completed(MutationStateCompleted<T> value),
+    Result initial(MutationStateInitial<TData> value),
+    Result loading(MutationStateLoading<TData> value),
+    Result error(MutationStateError<TData> value),
+    Result completed(MutationStateCompleted<TData> value),
     @required Result orElse(),
   });
 }
 
-abstract class $MutationStateCopyWith<T, $Res> {
-  factory $MutationStateCopyWith(
-          MutationState<T> value, $Res Function(MutationState<T>) then) =
-      _$MutationStateCopyWithImpl<T, $Res>;
+abstract class $MutationStateCopyWith<TData, $Res> {
+  factory $MutationStateCopyWith(MutationState<TData> value,
+          $Res Function(MutationState<TData>) then) =
+      _$MutationStateCopyWithImpl<TData, $Res>;
 }
 
-class _$MutationStateCopyWithImpl<T, $Res>
-    implements $MutationStateCopyWith<T, $Res> {
+class _$MutationStateCopyWithImpl<TData, $Res>
+    implements $MutationStateCopyWith<TData, $Res> {
   _$MutationStateCopyWithImpl(this._value, this._then);
 
-  final MutationState<T> _value;
+  final MutationState<TData> _value;
   // ignore: unused_field
-  final $Res Function(MutationState<T>) _then;
+  final $Res Function(MutationState<TData>) _then;
 }
 
-abstract class $MutationStateInitialCopyWith<T, $Res> {
-  factory $MutationStateInitialCopyWith(MutationStateInitial<T> value,
-          $Res Function(MutationStateInitial<T>) then) =
-      _$MutationStateInitialCopyWithImpl<T, $Res>;
+abstract class $MutationStateInitialCopyWith<TData, $Res> {
+  factory $MutationStateInitialCopyWith(MutationStateInitial<TData> value,
+          $Res Function(MutationStateInitial<TData>) then) =
+      _$MutationStateInitialCopyWithImpl<TData, $Res>;
 }
 
-class _$MutationStateInitialCopyWithImpl<T, $Res>
-    extends _$MutationStateCopyWithImpl<T, $Res>
-    implements $MutationStateInitialCopyWith<T, $Res> {
-  _$MutationStateInitialCopyWithImpl(MutationStateInitial<T> _value,
-      $Res Function(MutationStateInitial<T>) _then)
-      : super(_value, (v) => _then(v as MutationStateInitial<T>));
+class _$MutationStateInitialCopyWithImpl<TData, $Res>
+    extends _$MutationStateCopyWithImpl<TData, $Res>
+    implements $MutationStateInitialCopyWith<TData, $Res> {
+  _$MutationStateInitialCopyWithImpl(MutationStateInitial<TData> _value,
+      $Res Function(MutationStateInitial<TData>) _then)
+      : super(_value, (v) => _then(v as MutationStateInitial<TData>));
 
   @override
-  MutationStateInitial<T> get _value => super._value as MutationStateInitial<T>;
+  MutationStateInitial<TData> get _value =>
+      super._value as MutationStateInitial<TData>;
 }
 
-class _$MutationStateInitial<T> implements MutationStateInitial<T> {
+class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
   const _$MutationStateInitial();
 
   @override
   String toString() {
-    return 'MutationState<$T>.initial()';
+    return 'MutationState<$TData>.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is MutationStateInitial<T>);
+    return identical(this, other) || (other is MutationStateInitial<TData>);
   }
 
   @override
@@ -131,9 +130,9 @@ class _$MutationStateInitial<T> implements MutationStateInitial<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(QueryResult result),
+    @required Result loading(),
     @required Result error(OperationException error, QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -146,9 +145,9 @@ class _$MutationStateInitial<T> implements MutationStateInitial<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(QueryResult result),
+    Result loading(),
     Result error(OperationException error, QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -161,10 +160,10 @@ class _$MutationStateInitial<T> implements MutationStateInitial<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<T> value),
-    @required Result loading(MutationStateLoading<T> value),
-    @required Result error(MutationStateError<T> value),
-    @required Result completed(MutationStateCompleted<T> value),
+    @required Result initial(MutationStateInitial<TData> value),
+    @required Result loading(MutationStateLoading<TData> value),
+    @required Result error(MutationStateError<TData> value),
+    @required Result completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -176,10 +175,10 @@ class _$MutationStateInitial<T> implements MutationStateInitial<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<T> value),
-    Result loading(MutationStateLoading<T> value),
-    Result error(MutationStateError<T> value),
-    Result completed(MutationStateCompleted<T> value),
+    Result initial(MutationStateInitial<TData> value),
+    Result loading(MutationStateLoading<TData> value),
+    Result error(MutationStateError<TData> value),
+    Result completed(MutationStateCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -190,93 +189,71 @@ class _$MutationStateInitial<T> implements MutationStateInitial<T> {
   }
 }
 
-abstract class MutationStateInitial<T> implements MutationState<T> {
-  const factory MutationStateInitial() = _$MutationStateInitial<T>;
+abstract class MutationStateInitial<TData> implements MutationState<TData> {
+  const factory MutationStateInitial() = _$MutationStateInitial<TData>;
 }
 
-abstract class $MutationStateLoadingCopyWith<T, $Res> {
-  factory $MutationStateLoadingCopyWith(MutationStateLoading<T> value,
-          $Res Function(MutationStateLoading<T>) then) =
-      _$MutationStateLoadingCopyWithImpl<T, $Res>;
-  $Res call({QueryResult result});
+abstract class $MutationStateLoadingCopyWith<TData, $Res> {
+  factory $MutationStateLoadingCopyWith(MutationStateLoading<TData> value,
+          $Res Function(MutationStateLoading<TData>) then) =
+      _$MutationStateLoadingCopyWithImpl<TData, $Res>;
 }
 
-class _$MutationStateLoadingCopyWithImpl<T, $Res>
-    extends _$MutationStateCopyWithImpl<T, $Res>
-    implements $MutationStateLoadingCopyWith<T, $Res> {
-  _$MutationStateLoadingCopyWithImpl(MutationStateLoading<T> _value,
-      $Res Function(MutationStateLoading<T>) _then)
-      : super(_value, (v) => _then(v as MutationStateLoading<T>));
+class _$MutationStateLoadingCopyWithImpl<TData, $Res>
+    extends _$MutationStateCopyWithImpl<TData, $Res>
+    implements $MutationStateLoadingCopyWith<TData, $Res> {
+  _$MutationStateLoadingCopyWithImpl(MutationStateLoading<TData> _value,
+      $Res Function(MutationStateLoading<TData>) _then)
+      : super(_value, (v) => _then(v as MutationStateLoading<TData>));
 
   @override
-  MutationStateLoading<T> get _value => super._value as MutationStateLoading<T>;
-
-  @override
-  $Res call({
-    Object result = freezed,
-  }) {
-    return _then(MutationStateLoading<T>(
-      result: result == freezed ? _value.result : result as QueryResult,
-    ));
-  }
+  MutationStateLoading<TData> get _value =>
+      super._value as MutationStateLoading<TData>;
 }
 
-class _$MutationStateLoading<T> implements MutationStateLoading<T> {
-  const _$MutationStateLoading({@required this.result})
-      : assert(result != null);
-
-  @override
-  final QueryResult result;
+class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
+  const _$MutationStateLoading();
 
   @override
   String toString() {
-    return 'MutationState<$T>.loading(result: $result)';
+    return 'MutationState<$TData>.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MutationStateLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+    return identical(this, other) || (other is MutationStateLoading<TData>);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
-
-  @override
-  $MutationStateLoadingCopyWith<T, MutationStateLoading<T>> get copyWith =>
-      _$MutationStateLoadingCopyWithImpl<T, MutationStateLoading<T>>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(QueryResult result),
+    @required Result loading(),
     @required Result error(OperationException error, QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
     assert(completed != null);
-    return loading(result);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(QueryResult result),
+    Result loading(),
     Result error(OperationException error, QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
-      return loading(result);
+      return loading();
     }
     return orElse();
   }
@@ -284,10 +261,10 @@ class _$MutationStateLoading<T> implements MutationStateLoading<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<T> value),
-    @required Result loading(MutationStateLoading<T> value),
-    @required Result error(MutationStateError<T> value),
-    @required Result completed(MutationStateCompleted<T> value),
+    @required Result initial(MutationStateInitial<TData> value),
+    @required Result loading(MutationStateLoading<TData> value),
+    @required Result error(MutationStateError<TData> value),
+    @required Result completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -299,10 +276,10 @@ class _$MutationStateLoading<T> implements MutationStateLoading<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<T> value),
-    Result loading(MutationStateLoading<T> value),
-    Result error(MutationStateError<T> value),
-    Result completed(MutationStateCompleted<T> value),
+    Result initial(MutationStateInitial<TData> value),
+    Result loading(MutationStateLoading<TData> value),
+    Result error(MutationStateError<TData> value),
+    Result completed(MutationStateCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -313,44 +290,41 @@ class _$MutationStateLoading<T> implements MutationStateLoading<T> {
   }
 }
 
-abstract class MutationStateLoading<T> implements MutationState<T> {
-  const factory MutationStateLoading({@required QueryResult result}) =
-      _$MutationStateLoading<T>;
-
-  QueryResult get result;
-  $MutationStateLoadingCopyWith<T, MutationStateLoading<T>> get copyWith;
+abstract class MutationStateLoading<TData> implements MutationState<TData> {
+  const factory MutationStateLoading() = _$MutationStateLoading<TData>;
 }
 
-abstract class $MutationStateErrorCopyWith<T, $Res> {
-  factory $MutationStateErrorCopyWith(MutationStateError<T> value,
-          $Res Function(MutationStateError<T>) then) =
-      _$MutationStateErrorCopyWithImpl<T, $Res>;
+abstract class $MutationStateErrorCopyWith<TData, $Res> {
+  factory $MutationStateErrorCopyWith(MutationStateError<TData> value,
+          $Res Function(MutationStateError<TData>) then) =
+      _$MutationStateErrorCopyWithImpl<TData, $Res>;
   $Res call({OperationException error, QueryResult result});
 }
 
-class _$MutationStateErrorCopyWithImpl<T, $Res>
-    extends _$MutationStateCopyWithImpl<T, $Res>
-    implements $MutationStateErrorCopyWith<T, $Res> {
-  _$MutationStateErrorCopyWithImpl(
-      MutationStateError<T> _value, $Res Function(MutationStateError<T>) _then)
-      : super(_value, (v) => _then(v as MutationStateError<T>));
+class _$MutationStateErrorCopyWithImpl<TData, $Res>
+    extends _$MutationStateCopyWithImpl<TData, $Res>
+    implements $MutationStateErrorCopyWith<TData, $Res> {
+  _$MutationStateErrorCopyWithImpl(MutationStateError<TData> _value,
+      $Res Function(MutationStateError<TData>) _then)
+      : super(_value, (v) => _then(v as MutationStateError<TData>));
 
   @override
-  MutationStateError<T> get _value => super._value as MutationStateError<T>;
+  MutationStateError<TData> get _value =>
+      super._value as MutationStateError<TData>;
 
   @override
   $Res call({
     Object error = freezed,
     Object result = freezed,
   }) {
-    return _then(MutationStateError<T>(
+    return _then(MutationStateError<TData>(
       error: error == freezed ? _value.error : error as OperationException,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$MutationStateError<T> implements MutationStateError<T> {
+class _$MutationStateError<TData> implements MutationStateError<TData> {
   const _$MutationStateError({@required this.error, @required this.result})
       : assert(error != null),
         assert(result != null);
@@ -362,13 +336,13 @@ class _$MutationStateError<T> implements MutationStateError<T> {
 
   @override
   String toString() {
-    return 'MutationState<$T>.error(error: $error, result: $result)';
+    return 'MutationState<$TData>.error(error: $error, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationStateError<T> &&
+        (other is MutationStateError<TData> &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.result, result) ||
@@ -382,17 +356,17 @@ class _$MutationStateError<T> implements MutationStateError<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $MutationStateErrorCopyWith<T, MutationStateError<T>> get copyWith =>
-      _$MutationStateErrorCopyWithImpl<T, MutationStateError<T>>(
+  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
+      _$MutationStateErrorCopyWithImpl<TData, MutationStateError<TData>>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(QueryResult result),
+    @required Result loading(),
     @required Result error(OperationException error, QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -405,9 +379,9 @@ class _$MutationStateError<T> implements MutationStateError<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(QueryResult result),
+    Result loading(),
     Result error(OperationException error, QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -420,10 +394,10 @@ class _$MutationStateError<T> implements MutationStateError<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<T> value),
-    @required Result loading(MutationStateLoading<T> value),
-    @required Result error(MutationStateError<T> value),
-    @required Result completed(MutationStateCompleted<T> value),
+    @required Result initial(MutationStateInitial<TData> value),
+    @required Result loading(MutationStateLoading<TData> value),
+    @required Result error(MutationStateError<TData> value),
+    @required Result completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -435,10 +409,10 @@ class _$MutationStateError<T> implements MutationStateError<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<T> value),
-    Result loading(MutationStateLoading<T> value),
-    Result error(MutationStateError<T> value),
-    Result completed(MutationStateCompleted<T> value),
+    Result initial(MutationStateInitial<TData> value),
+    Result loading(MutationStateLoading<TData> value),
+    Result error(MutationStateError<TData> value),
+    Result completed(MutationStateCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -449,65 +423,65 @@ class _$MutationStateError<T> implements MutationStateError<T> {
   }
 }
 
-abstract class MutationStateError<T> implements MutationState<T> {
+abstract class MutationStateError<TData> implements MutationState<TData> {
   const factory MutationStateError(
       {@required OperationException error,
-      @required QueryResult result}) = _$MutationStateError<T>;
+      @required QueryResult result}) = _$MutationStateError<TData>;
 
   OperationException get error;
   QueryResult get result;
-  $MutationStateErrorCopyWith<T, MutationStateError<T>> get copyWith;
+  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith;
 }
 
-abstract class $MutationStateCompletedCopyWith<T, $Res> {
-  factory $MutationStateCompletedCopyWith(MutationStateCompleted<T> value,
-          $Res Function(MutationStateCompleted<T>) then) =
-      _$MutationStateCompletedCopyWithImpl<T, $Res>;
-  $Res call({T data, QueryResult result});
+abstract class $MutationStateCompletedCopyWith<TData, $Res> {
+  factory $MutationStateCompletedCopyWith(MutationStateCompleted<TData> value,
+          $Res Function(MutationStateCompleted<TData>) then) =
+      _$MutationStateCompletedCopyWithImpl<TData, $Res>;
+  $Res call({TData data, QueryResult result});
 }
 
-class _$MutationStateCompletedCopyWithImpl<T, $Res>
-    extends _$MutationStateCopyWithImpl<T, $Res>
-    implements $MutationStateCompletedCopyWith<T, $Res> {
-  _$MutationStateCompletedCopyWithImpl(MutationStateCompleted<T> _value,
-      $Res Function(MutationStateCompleted<T>) _then)
-      : super(_value, (v) => _then(v as MutationStateCompleted<T>));
+class _$MutationStateCompletedCopyWithImpl<TData, $Res>
+    extends _$MutationStateCopyWithImpl<TData, $Res>
+    implements $MutationStateCompletedCopyWith<TData, $Res> {
+  _$MutationStateCompletedCopyWithImpl(MutationStateCompleted<TData> _value,
+      $Res Function(MutationStateCompleted<TData>) _then)
+      : super(_value, (v) => _then(v as MutationStateCompleted<TData>));
 
   @override
-  MutationStateCompleted<T> get _value =>
-      super._value as MutationStateCompleted<T>;
+  MutationStateCompleted<TData> get _value =>
+      super._value as MutationStateCompleted<TData>;
 
   @override
   $Res call({
     Object data = freezed,
     Object result = freezed,
   }) {
-    return _then(MutationStateCompleted<T>(
-      data: data == freezed ? _value.data : data as T,
+    return _then(MutationStateCompleted<TData>(
+      data: data == freezed ? _value.data : data as TData,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
 }
 
-class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
+class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   const _$MutationStateCompleted({@required this.data, @required this.result})
       : assert(data != null),
         assert(result != null);
 
   @override
-  final T data;
+  final TData data;
   @override
   final QueryResult result;
 
   @override
   String toString() {
-    return 'MutationState<$T>.completed(data: $data, result: $result)';
+    return 'MutationState<$TData>.completed(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationStateCompleted<T> &&
+        (other is MutationStateCompleted<TData> &&
             (identical(other.data, data) ||
                 const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.result, result) ||
@@ -521,17 +495,17 @@ class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
       const DeepCollectionEquality().hash(result);
 
   @override
-  $MutationStateCompletedCopyWith<T, MutationStateCompleted<T>> get copyWith =>
-      _$MutationStateCompletedCopyWithImpl<T, MutationStateCompleted<T>>(
-          this, _$identity);
+  $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
+      get copyWith => _$MutationStateCompletedCopyWithImpl<TData,
+          MutationStateCompleted<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(QueryResult result),
+    @required Result loading(),
     @required Result error(OperationException error, QueryResult result),
-    @required Result completed(T data, QueryResult result),
+    @required Result completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -544,9 +518,9 @@ class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(QueryResult result),
+    Result loading(),
     Result error(OperationException error, QueryResult result),
-    Result completed(T data, QueryResult result),
+    Result completed(TData data, QueryResult result),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -559,10 +533,10 @@ class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<T> value),
-    @required Result loading(MutationStateLoading<T> value),
-    @required Result error(MutationStateError<T> value),
-    @required Result completed(MutationStateCompleted<T> value),
+    @required Result initial(MutationStateInitial<TData> value),
+    @required Result loading(MutationStateLoading<TData> value),
+    @required Result error(MutationStateError<TData> value),
+    @required Result completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -574,10 +548,10 @@ class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<T> value),
-    Result loading(MutationStateLoading<T> value),
-    Result error(MutationStateError<T> value),
-    Result completed(MutationStateCompleted<T> value),
+    Result initial(MutationStateInitial<TData> value),
+    Result loading(MutationStateLoading<TData> value),
+    Result error(MutationStateError<TData> value),
+    Result completed(MutationStateCompleted<TData> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -588,12 +562,13 @@ class _$MutationStateCompleted<T> implements MutationStateCompleted<T> {
   }
 }
 
-abstract class MutationStateCompleted<T> implements MutationState<T> {
+abstract class MutationStateCompleted<TData> implements MutationState<TData> {
   const factory MutationStateCompleted(
-      {@required T data,
-      @required QueryResult result}) = _$MutationStateCompleted<T>;
+      {@required TData data,
+      @required QueryResult result}) = _$MutationStateCompleted<TData>;
 
-  T get data;
+  TData get data;
   QueryResult get result;
-  $MutationStateCompletedCopyWith<T, MutationStateCompleted<T>> get copyWith;
+  $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
+      get copyWith;
 }

@@ -19,7 +19,8 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
     result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&
-          result.source == QueryResultSource.Cache) {
+          result.source == QueryResultSource.Cache &&
+          options.fetchPolicy == FetchPolicy.cacheAndNetwork) {
         return;
       }
 

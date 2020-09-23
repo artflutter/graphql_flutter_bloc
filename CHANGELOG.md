@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.4-beta.1
+- mutations + examples update
+
 ## 0.0.3-beta.3
 - readme
 

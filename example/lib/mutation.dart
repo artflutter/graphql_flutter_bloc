@@ -65,24 +65,37 @@ class _MutationState extends State<Mutation> {
                   return null;
                 },
               ),
-              BlocBuilder<AddCompanyBloc, MutationState<AddCompany$Mutation>>(
+              BlocListener<AddCompanyBloc, MutationState<AddCompany$Mutation>>(
                 cubit: bloc,
-                builder: (context, state) {
-                  return state.when(
-                    initial: () => _submitButton(false),
-                    loading: (result) => _submitButton(true),
-                    error: (error, result) => Text(
-                      error.clientException.toString(),
-                    ),
-                    completed: (data, result) {
-                      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                        Scaffold.of(context).showSnackBar(
-                            SnackBar(content: Text('Save complete')));
-                      });
-                      return _submitButton(false);
+                listener: (context, state) {
+                  state.maybeWhen(
+                    error: (error, _) {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(error.clientException.toString()),
+                        ),
+                      );
                     },
+                    completed: (_, __) {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text('Save complete')),
+                      );
+                    },
+                    orElse: () => {},
                   );
                 },
+                child: BlocBuilder<AddCompanyBloc,
+                    MutationState<AddCompany$Mutation>>(
+                  cubit: bloc,
+                  builder: (context, state) {
+                    return state.when(
+                      initial: () => _submitButton(false),
+                      loading: () => _submitButton(true),
+                      error: (_, __) => _submitButton(false),
+                      completed: (data, result) => _submitButton(false),
+                    );
+                  },
+                ),
               ),
             ],
           ),

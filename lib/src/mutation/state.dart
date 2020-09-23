@@ -5,20 +5,18 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 part 'state.freezed.dart';
 
 @freezed
-abstract class MutationState<T> with _$MutationState<T> {
+abstract class MutationState<TData> with _$MutationState<TData> {
   const factory MutationState.initial() = MutationStateInitial;
 
-  const factory MutationState.loading({
-    @required QueryResult result,
-  }) = MutationStateLoading<T>;
+  const factory MutationState.loading() = MutationStateLoading<TData>;
 
   const factory MutationState.error({
     @required OperationException error,
     @required QueryResult result,
-  }) = MutationStateError<T>;
+  }) = MutationStateError<TData>;
 
   const factory MutationState.completed({
-    @required T data,
+    @required TData data,
     @required QueryResult result,
-  }) = MutationStateCompleted<T>;
+  }) = MutationStateCompleted<TData>;
 }
