@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.2-beta.1
+- dependencies cleanup
+
 ## 0.3.1-beta.1
 - bloc mutation with optimistic results
 
