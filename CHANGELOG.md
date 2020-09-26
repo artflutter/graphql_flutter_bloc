@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.1-beta.1
+- bloc mutation with optimistic results
+
 ## 0.4.0-beta.1
 - `graphql_flutter` 4.0.0-alpha support
 
