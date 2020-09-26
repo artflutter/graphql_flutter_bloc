@@ -77,20 +77,43 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                     error: (error, _) {
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(error.linkException.toString()),
+                          content: Text(
+                            error.linkException.toString(),
+                          ),
+                          duration: Duration(milliseconds: 400),
+                          backgroundColor: Colors.red,
                         ),
                       );
                     },
                     completed: (_, result) {
                       if (result.isOptimistic) {
                         Scaffold.of(context).showSnackBar(
-                          SnackBar(content: Text('Optimistically saved')),
+                          SnackBar(
+                            content: Text(
+                              'Optimistically saved',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 400),
+                            backgroundColor: Colors.yellow,
+                          ),
                         );
                       }
 
                       if (result.isConcrete) {
                         Scaffold.of(context).showSnackBar(
-                          SnackBar(content: Text('Save complete')),
+                          SnackBar(
+                            content: Text(
+                              'Save complete',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 400),
+                            backgroundColor: Colors.green,
+                          ),
                         );
                       }
                     },
