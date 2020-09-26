@@ -16,7 +16,7 @@ class _SimpleState extends State<Simple> {
       ),
       body: Query(
         options: QueryOptions(
-          documentNode: CompaniesDataQuery().document,
+          document: CompaniesDataQuery().document,
         ),
         builder: (
           QueryResult result, {
@@ -27,7 +27,7 @@ class _SimpleState extends State<Simple> {
             return Text(result.exception.toString());
           }
 
-          if (result.loading) {
+          if (result.isLoading) {
             return const Center(
               child: CircularProgressIndicator(),
             );

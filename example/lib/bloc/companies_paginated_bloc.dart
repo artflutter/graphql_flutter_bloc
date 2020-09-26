@@ -12,7 +12,7 @@ class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
           client: client,
           options: options ??
               WatchQueryOptions(
-                documentNode: CompaniesPaginatedDataQuery().document,
+                document: CompaniesPaginatedDataQuery().document,
                 variables: CompaniesPaginatedDataArguments(
                   pagination: PaginationInput(limit: 25, offset: 0),
                 ).toJson(),

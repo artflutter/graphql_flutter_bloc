@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
 import 'package:meta/meta.dart';
-import 'package:graphql/internal.dart';
 import 'package:graphql_flutter/graphql_flutter.dart' hide QueryState;
 
 import 'event.dart';
@@ -19,19 +18,19 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
     result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&
-          result.source == QueryResultSource.Cache &&
+          result.source == QueryResultSource.cache &&
           options.fetchPolicy == FetchPolicy.cacheAndNetwork) {
         return;
       }
 
-      if (result.loading && result.data == null) {
+      if (result.isLoading && result.data == null) {
         add(QueryEvent.loading(result: result));
       }
 
-      if (!result.loading && result.data != null) {
+      if (!result.isLoading && result.data != null) {
         add(
           QueryEvent<T>.loaded(
-            data: parseData(result.data as Map<String, dynamic>),
+            data: parseData(result.data),
             result: result,
           ),
         );

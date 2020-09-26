@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
 import 'package:meta/meta.dart';
-import 'package:graphql/internal.dart';
 import 'package:graphql_flutter/graphql_flutter.dart' hide MutationState;
 
 import 'event.dart';
@@ -23,9 +22,9 @@ abstract class MutationBloc<TData>
       //   add(MutationEvent.loading(result: result));
       // }
 
-      if (!result.loading && !result.optimistic && !result.hasException) {
+      if (!result.isLoading && !result.isOptimistic && !result.hasException) {
         add(MutationEvent<TData>.completed(
-            data: parseData(result.data as Map<String, dynamic>),
+            data: parseData(result.data),
             result: result));
       }
 

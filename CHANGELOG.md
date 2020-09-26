@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.0-beta.1
+- `graphql_flutter` 4.0.0-alpha support
+
 ## 0.3.0-beta.1
 - packages and version bump.
 - use this version fo `graphql_flutter` 3.1.* versions

@@ -10,7 +10,7 @@ class AddCompanyBloc extends MutationBloc<AddCompany$Mutation> {
           options: options ??
               WatchQueryOptions(
                 fetchPolicy: FetchPolicy.noCache,
-                documentNode: AddCompanyMutation().document,
+                document: AddCompanyMutation().document,
               ),
         );
 

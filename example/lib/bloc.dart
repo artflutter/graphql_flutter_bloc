@@ -133,8 +133,8 @@ class _BlocState extends State<Bloc> {
 }
 
 String parseOperationException(OperationException error) {
-  if (error.clientException != null) {
-    final exception = error.clientException;
+  if (error.linkException != null) {
+    final exception = error.linkException;
 
     if (exception is NetworkException) {
       return 'Failed to connect to ${exception.uri}';

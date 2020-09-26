@@ -6,8 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:example/bloc.dart';
 import 'package:example/graphql_provider.dart';
 import 'package:example/simple.dart';
+import 'package:graphql_flutter/graphql_flutter.dart' hide Mutation;
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  await initHiveForFlutter();
+  runApp(MyApp());
+}
 
 String get host {
   if (Platform.isAndroid) {

@@ -8,7 +8,7 @@ class SearchCompanyBloc extends QueryBloc<SearchCompany$Query> {
       : super(
           client: client,
           options: options ??
-              WatchQueryOptions(documentNode: SearchCompanyQuery().document),
+              WatchQueryOptions(document: SearchCompanyQuery().document),
         );
 
   @override

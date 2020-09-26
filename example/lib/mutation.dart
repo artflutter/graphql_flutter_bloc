@@ -71,7 +71,7 @@ class _MutationState extends State<Mutation> {
                     error: (error, _) {
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(error.clientException.toString()),
+                          content: Text(error.linkException.toString()),
                         ),
                       );
                     },
