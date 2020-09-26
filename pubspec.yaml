@@ -1,6 +1,6 @@
 name: graphql_flutter_bloc
 description: BLOC wrapper over `graphql_flutter` streams with improved state handling.
-version: 0.3.1-beta.1
+version: 0.3.2-beta.1
 homepage: https://github.com/artflutter/graphql_flutter_bloc
 
 environment:
@@ -13,14 +13,14 @@ dependencies:
   freezed_annotation: ^0.12.0
   flutter_bloc: ^6.0.5
   meta: ^1.1.8
-  graphql: ^3.1.0-beta.7
-  graphql_flutter: ^3.1.0-beta.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: 1.10.1
   freezed: ^0.12.1
+  graphql: ^3.1.0-beta.7
+  graphql_flutter: ^3.1.0-beta.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
