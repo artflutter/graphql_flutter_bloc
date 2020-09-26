@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.0-beta.1
+- packages and version bump.
+- use this version fo `graphql_flutter` 3.1.* versions
+
 ## 0.0.5-beta.1
 - query update + search example
 

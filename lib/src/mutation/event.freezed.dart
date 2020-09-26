@@ -9,6 +9,7 @@ part of 'event.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$MutationEventTearOff {
   const _$MutationEventTearOff();
 
@@ -40,9 +41,11 @@ class _$MutationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $MutationEvent = _$MutationEventTearOff();
 
+/// @nodoc
 mixin _$MutationEvent<TData> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -73,12 +76,14 @@ mixin _$MutationEvent<TData> {
   });
 }
 
+/// @nodoc
 abstract class $MutationEventCopyWith<TData, $Res> {
   factory $MutationEventCopyWith(MutationEvent<TData> value,
           $Res Function(MutationEvent<TData>) then) =
       _$MutationEventCopyWithImpl<TData, $Res>;
 }
 
+/// @nodoc
 class _$MutationEventCopyWithImpl<TData, $Res>
     implements $MutationEventCopyWith<TData, $Res> {
   _$MutationEventCopyWithImpl(this._value, this._then);
@@ -88,6 +93,7 @@ class _$MutationEventCopyWithImpl<TData, $Res>
   final $Res Function(MutationEvent<TData>) _then;
 }
 
+/// @nodoc
 abstract class $MutationEventErrorCopyWith<TData, $Res> {
   factory $MutationEventErrorCopyWith(MutationEventError<TData> value,
           $Res Function(MutationEventError<TData>) then) =
@@ -95,6 +101,7 @@ abstract class $MutationEventErrorCopyWith<TData, $Res> {
   $Res call({OperationException error, QueryResult result});
 }
 
+/// @nodoc
 class _$MutationEventErrorCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
     implements $MutationEventErrorCopyWith<TData, $Res> {
@@ -118,6 +125,7 @@ class _$MutationEventErrorCopyWithImpl<TData, $Res>
   }
 }
 
+/// @nodoc
 class _$MutationEventError<TData> implements MutationEventError<TData> {
   const _$MutationEventError({@required this.error, @required this.result})
       : assert(error != null),
@@ -222,6 +230,7 @@ abstract class MutationEventError<TData> implements MutationEvent<TData> {
   $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith;
 }
 
+/// @nodoc
 abstract class $MutationEventRunCopyWith<TData, $Res> {
   factory $MutationEventRunCopyWith(MutationEventRun<TData> value,
           $Res Function(MutationEventRun<TData>) then) =
@@ -229,6 +238,7 @@ abstract class $MutationEventRunCopyWith<TData, $Res> {
   $Res call({Map<String, dynamic> variables, Object optimisticResult});
 }
 
+/// @nodoc
 class _$MutationEventRunCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
     implements $MutationEventRunCopyWith<TData, $Res> {
@@ -255,6 +265,7 @@ class _$MutationEventRunCopyWithImpl<TData, $Res>
   }
 }
 
+/// @nodoc
 class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   const _$MutationEventRun(this.variables, {this.optimisticResult})
       : assert(variables != null);
@@ -359,6 +370,7 @@ abstract class MutationEventRun<TData> implements MutationEvent<TData> {
   $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith;
 }
 
+/// @nodoc
 abstract class $MutationEventCompletedCopyWith<TData, $Res> {
   factory $MutationEventCompletedCopyWith(MutationEventCompleted<TData> value,
           $Res Function(MutationEventCompleted<TData>) then) =
@@ -366,6 +378,7 @@ abstract class $MutationEventCompletedCopyWith<TData, $Res> {
   $Res call({TData data, QueryResult result});
 }
 
+/// @nodoc
 class _$MutationEventCompletedCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
     implements $MutationEventCompletedCopyWith<TData, $Res> {
@@ -389,6 +402,7 @@ class _$MutationEventCompletedCopyWithImpl<TData, $Res>
   }
 }
 
+/// @nodoc
 class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   const _$MutationEventCompleted({@required this.data, @required this.result})
       : assert(data != null),

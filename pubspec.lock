@@ -253,14 +253,14 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.6"
+    version: "0.12.1"
   freezed_annotation:
     dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0+1"
+    version: "0.12.0"
   glob:
     dependency: transitive
     description:

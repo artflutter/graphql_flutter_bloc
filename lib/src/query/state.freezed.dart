@@ -9,6 +9,7 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$QueryStateTearOff {
   const _$QueryStateTearOff();
 
@@ -59,9 +60,11 @@ class _$QueryStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $QueryState = _$QueryStateTearOff();
 
+/// @nodoc
 mixin _$QueryState<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -103,12 +106,14 @@ mixin _$QueryState<T> {
   });
 }
 
+/// @nodoc
 abstract class $QueryStateCopyWith<T, $Res> {
   factory $QueryStateCopyWith(
           QueryState<T> value, $Res Function(QueryState<T>) then) =
       _$QueryStateCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateCopyWith<T, $Res> {
   _$QueryStateCopyWithImpl(this._value, this._then);
@@ -118,12 +123,14 @@ class _$QueryStateCopyWithImpl<T, $Res>
   final $Res Function(QueryState<T>) _then;
 }
 
+/// @nodoc
 abstract class $QueryStateInitialCopyWith<T, $Res> {
   factory $QueryStateInitialCopyWith(QueryStateInitial<T> value,
           $Res Function(QueryStateInitial<T>) then) =
       _$QueryStateInitialCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$QueryStateInitialCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateInitialCopyWith<T, $Res> {
@@ -135,6 +142,7 @@ class _$QueryStateInitialCopyWithImpl<T, $Res>
   QueryStateInitial<T> get _value => super._value as QueryStateInitial<T>;
 }
 
+/// @nodoc
 class _$QueryStateInitial<T> implements QueryStateInitial<T> {
   const _$QueryStateInitial();
 
@@ -230,6 +238,7 @@ abstract class QueryStateInitial<T> implements QueryState<T> {
   const factory QueryStateInitial() = _$QueryStateInitial<T>;
 }
 
+/// @nodoc
 abstract class $QueryStateLoadingCopyWith<T, $Res> {
   factory $QueryStateLoadingCopyWith(QueryStateLoading<T> value,
           $Res Function(QueryStateLoading<T>) then) =
@@ -237,6 +246,7 @@ abstract class $QueryStateLoadingCopyWith<T, $Res> {
   $Res call({QueryResult result});
 }
 
+/// @nodoc
 class _$QueryStateLoadingCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateLoadingCopyWith<T, $Res> {
@@ -257,6 +267,7 @@ class _$QueryStateLoadingCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryStateLoading<T> implements QueryStateLoading<T> {
   const _$QueryStateLoading({@required this.result}) : assert(result != null);
 
@@ -368,6 +379,7 @@ abstract class QueryStateLoading<T> implements QueryState<T> {
   $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryStateErrorCopyWith<T, $Res> {
   factory $QueryStateErrorCopyWith(
           QueryStateError<T> value, $Res Function(QueryStateError<T>) then) =
@@ -375,6 +387,7 @@ abstract class $QueryStateErrorCopyWith<T, $Res> {
   $Res call({OperationException error, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryStateErrorCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateErrorCopyWith<T, $Res> {
@@ -397,6 +410,7 @@ class _$QueryStateErrorCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryStateError<T> implements QueryStateError<T> {
   const _$QueryStateError({@required this.error, @required this.result})
       : assert(error != null),
@@ -517,6 +531,7 @@ abstract class QueryStateError<T> implements QueryState<T> {
   $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryStateLoadedCopyWith<T, $Res> {
   factory $QueryStateLoadedCopyWith(
           QueryStateLoaded<T> value, $Res Function(QueryStateLoaded<T>) then) =
@@ -524,6 +539,7 @@ abstract class $QueryStateLoadedCopyWith<T, $Res> {
   $Res call({T data, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryStateLoadedCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateLoadedCopyWith<T, $Res> {
@@ -546,6 +562,7 @@ class _$QueryStateLoadedCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
   const _$QueryStateLoaded({@required this.data, @required this.result})
       : assert(data != null),
@@ -665,6 +682,7 @@ abstract class QueryStateLoaded<T> implements QueryState<T> {
   $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryStateRefetchCopyWith<T, $Res> {
   factory $QueryStateRefetchCopyWith(QueryStateRefetch<T> value,
           $Res Function(QueryStateRefetch<T>) then) =
@@ -672,6 +690,7 @@ abstract class $QueryStateRefetchCopyWith<T, $Res> {
   $Res call({T data, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryStateRefetchCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateRefetchCopyWith<T, $Res> {
@@ -694,6 +713,7 @@ class _$QueryStateRefetchCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
   const _$QueryStateRefetch({this.data, this.result});
 
@@ -812,6 +832,7 @@ abstract class QueryStateRefetch<T> implements QueryState<T> {
   $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryStateFetchMoreCopyWith<T, $Res> {
   factory $QueryStateFetchMoreCopyWith(QueryStateFetchMore<T> value,
           $Res Function(QueryStateFetchMore<T>) then) =
@@ -819,6 +840,7 @@ abstract class $QueryStateFetchMoreCopyWith<T, $Res> {
   $Res call({T data, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
     extends _$QueryStateCopyWithImpl<T, $Res>
     implements $QueryStateFetchMoreCopyWith<T, $Res> {
@@ -841,6 +863,7 @@ class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
   const _$QueryStateFetchMore({@required this.data, this.result})
       : assert(data != null);

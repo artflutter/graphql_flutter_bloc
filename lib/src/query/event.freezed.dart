@@ -9,6 +9,7 @@ part of 'event.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$QueryEventTearOff {
   const _$QueryEventTearOff();
 
@@ -59,9 +60,11 @@ class _$QueryEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $QueryEvent = _$QueryEventTearOff();
 
+/// @nodoc
 mixin _$QueryEvent<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -104,12 +107,14 @@ mixin _$QueryEvent<T> {
   });
 }
 
+/// @nodoc
 abstract class $QueryEventCopyWith<T, $Res> {
   factory $QueryEventCopyWith(
           QueryEvent<T> value, $Res Function(QueryEvent<T>) then) =
       _$QueryEventCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventCopyWith<T, $Res> {
   _$QueryEventCopyWithImpl(this._value, this._then);
@@ -119,6 +124,7 @@ class _$QueryEventCopyWithImpl<T, $Res>
   final $Res Function(QueryEvent<T>) _then;
 }
 
+/// @nodoc
 abstract class $QueryEventErrorCopyWith<T, $Res> {
   factory $QueryEventErrorCopyWith(
           QueryEventError<T> value, $Res Function(QueryEventError<T>) then) =
@@ -126,6 +132,7 @@ abstract class $QueryEventErrorCopyWith<T, $Res> {
   $Res call({OperationException error, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryEventErrorCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventErrorCopyWith<T, $Res> {
@@ -148,6 +155,7 @@ class _$QueryEventErrorCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryEventError<T> implements QueryEventError<T> {
   const _$QueryEventError({@required this.error, @required this.result})
       : assert(error != null),
@@ -269,6 +277,7 @@ abstract class QueryEventError<T> implements QueryEvent<T> {
   $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryEventRunCopyWith<T, $Res> {
   factory $QueryEventRunCopyWith(
           QueryEventRun<T> value, $Res Function(QueryEventRun<T>) then) =
@@ -276,6 +285,7 @@ abstract class $QueryEventRunCopyWith<T, $Res> {
   $Res call({Map<String, dynamic> variables, Object optimisticResult});
 }
 
+/// @nodoc
 class _$QueryEventRunCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventRunCopyWith<T, $Res> {
@@ -302,6 +312,7 @@ class _$QueryEventRunCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryEventRun<T> implements QueryEventRun<T> {
   const _$QueryEventRun({this.variables, this.optimisticResult});
 
@@ -423,6 +434,7 @@ abstract class QueryEventRun<T> implements QueryEvent<T> {
   $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryEventLoadingCopyWith<T, $Res> {
   factory $QueryEventLoadingCopyWith(QueryEventLoading<T> value,
           $Res Function(QueryEventLoading<T>) then) =
@@ -430,6 +442,7 @@ abstract class $QueryEventLoadingCopyWith<T, $Res> {
   $Res call({QueryResult result});
 }
 
+/// @nodoc
 class _$QueryEventLoadingCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventLoadingCopyWith<T, $Res> {
@@ -450,6 +463,7 @@ class _$QueryEventLoadingCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   const _$QueryEventLoading({@required this.result}) : assert(result != null);
 
@@ -562,6 +576,7 @@ abstract class QueryEventLoading<T> implements QueryEvent<T> {
   $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryEventLoadedCopyWith<T, $Res> {
   factory $QueryEventLoadedCopyWith(
           QueryEventLoaded<T> value, $Res Function(QueryEventLoaded<T>) then) =
@@ -569,6 +584,7 @@ abstract class $QueryEventLoadedCopyWith<T, $Res> {
   $Res call({T data, QueryResult result});
 }
 
+/// @nodoc
 class _$QueryEventLoadedCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventLoadedCopyWith<T, $Res> {
@@ -591,6 +607,7 @@ class _$QueryEventLoadedCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
   const _$QueryEventLoaded({@required this.data, @required this.result})
       : assert(data != null),
@@ -711,12 +728,14 @@ abstract class QueryEventLoaded<T> implements QueryEvent<T> {
   $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $QueryEventRefetchCopyWith<T, $Res> {
   factory $QueryEventRefetchCopyWith(QueryEventRefetch<T> value,
           $Res Function(QueryEventRefetch<T>) then) =
       _$QueryEventRefetchCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$QueryEventRefetchCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventRefetchCopyWith<T, $Res> {
@@ -728,6 +747,7 @@ class _$QueryEventRefetchCopyWithImpl<T, $Res>
   QueryEventRefetch<T> get _value => super._value as QueryEventRefetch<T>;
 }
 
+/// @nodoc
 class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
   const _$QueryEventRefetch();
 
@@ -824,6 +844,7 @@ abstract class QueryEventRefetch<T> implements QueryEvent<T> {
   const factory QueryEventRefetch() = _$QueryEventRefetch<T>;
 }
 
+/// @nodoc
 abstract class $QueryEventFetchMoreCopyWith<T, $Res> {
   factory $QueryEventFetchMoreCopyWith(QueryEventFetchMore<T> value,
           $Res Function(QueryEventFetchMore<T>) then) =
@@ -831,6 +852,7 @@ abstract class $QueryEventFetchMoreCopyWith<T, $Res> {
   $Res call({FetchMoreOptions options});
 }
 
+/// @nodoc
 class _$QueryEventFetchMoreCopyWithImpl<T, $Res>
     extends _$QueryEventCopyWithImpl<T, $Res>
     implements $QueryEventFetchMoreCopyWith<T, $Res> {
@@ -852,6 +874,7 @@ class _$QueryEventFetchMoreCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   const _$QueryEventFetchMore({@required this.options})
       : assert(options != null);

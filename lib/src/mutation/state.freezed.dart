@@ -9,6 +9,7 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$MutationStateTearOff {
   const _$MutationStateTearOff();
 
@@ -41,9 +42,11 @@ class _$MutationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $MutationState = _$MutationStateTearOff();
 
+/// @nodoc
 mixin _$MutationState<TData> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -77,12 +80,14 @@ mixin _$MutationState<TData> {
   });
 }
 
+/// @nodoc
 abstract class $MutationStateCopyWith<TData, $Res> {
   factory $MutationStateCopyWith(MutationState<TData> value,
           $Res Function(MutationState<TData>) then) =
       _$MutationStateCopyWithImpl<TData, $Res>;
 }
 
+/// @nodoc
 class _$MutationStateCopyWithImpl<TData, $Res>
     implements $MutationStateCopyWith<TData, $Res> {
   _$MutationStateCopyWithImpl(this._value, this._then);
@@ -92,12 +97,14 @@ class _$MutationStateCopyWithImpl<TData, $Res>
   final $Res Function(MutationState<TData>) _then;
 }
 
+/// @nodoc
 abstract class $MutationStateInitialCopyWith<TData, $Res> {
   factory $MutationStateInitialCopyWith(MutationStateInitial<TData> value,
           $Res Function(MutationStateInitial<TData>) then) =
       _$MutationStateInitialCopyWithImpl<TData, $Res>;
 }
 
+/// @nodoc
 class _$MutationStateInitialCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
     implements $MutationStateInitialCopyWith<TData, $Res> {
@@ -110,6 +117,7 @@ class _$MutationStateInitialCopyWithImpl<TData, $Res>
       super._value as MutationStateInitial<TData>;
 }
 
+/// @nodoc
 class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
   const _$MutationStateInitial();
 
@@ -193,12 +201,14 @@ abstract class MutationStateInitial<TData> implements MutationState<TData> {
   const factory MutationStateInitial() = _$MutationStateInitial<TData>;
 }
 
+/// @nodoc
 abstract class $MutationStateLoadingCopyWith<TData, $Res> {
   factory $MutationStateLoadingCopyWith(MutationStateLoading<TData> value,
           $Res Function(MutationStateLoading<TData>) then) =
       _$MutationStateLoadingCopyWithImpl<TData, $Res>;
 }
 
+/// @nodoc
 class _$MutationStateLoadingCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
     implements $MutationStateLoadingCopyWith<TData, $Res> {
@@ -211,6 +221,7 @@ class _$MutationStateLoadingCopyWithImpl<TData, $Res>
       super._value as MutationStateLoading<TData>;
 }
 
+/// @nodoc
 class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
   const _$MutationStateLoading();
 
@@ -294,6 +305,7 @@ abstract class MutationStateLoading<TData> implements MutationState<TData> {
   const factory MutationStateLoading() = _$MutationStateLoading<TData>;
 }
 
+/// @nodoc
 abstract class $MutationStateErrorCopyWith<TData, $Res> {
   factory $MutationStateErrorCopyWith(MutationStateError<TData> value,
           $Res Function(MutationStateError<TData>) then) =
@@ -301,6 +313,7 @@ abstract class $MutationStateErrorCopyWith<TData, $Res> {
   $Res call({OperationException error, QueryResult result});
 }
 
+/// @nodoc
 class _$MutationStateErrorCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
     implements $MutationStateErrorCopyWith<TData, $Res> {
@@ -324,6 +337,7 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
   }
 }
 
+/// @nodoc
 class _$MutationStateError<TData> implements MutationStateError<TData> {
   const _$MutationStateError({@required this.error, @required this.result})
       : assert(error != null),
@@ -433,6 +447,7 @@ abstract class MutationStateError<TData> implements MutationState<TData> {
   $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith;
 }
 
+/// @nodoc
 abstract class $MutationStateCompletedCopyWith<TData, $Res> {
   factory $MutationStateCompletedCopyWith(MutationStateCompleted<TData> value,
           $Res Function(MutationStateCompleted<TData>) then) =
@@ -440,6 +455,7 @@ abstract class $MutationStateCompletedCopyWith<TData, $Res> {
   $Res call({TData data, QueryResult result});
 }
 
+/// @nodoc
 class _$MutationStateCompletedCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
     implements $MutationStateCompletedCopyWith<TData, $Res> {
@@ -463,6 +479,7 @@ class _$MutationStateCompletedCopyWithImpl<TData, $Res>
   }
 }
 
+/// @nodoc
 class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   const _$MutationStateCompleted({@required this.data, @required this.result})
       : assert(data != null),
