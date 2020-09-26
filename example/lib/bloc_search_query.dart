@@ -1,4 +1,3 @@
-import 'package:example/bloc.dart';
 import 'package:example/graphql_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,14 +7,14 @@ import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 import 'bloc/search_company_bloc.dart';
 import 'models/graphql/graphql_api.graphql.dart';
 
-class SearchQuery extends StatefulWidget {
-  SearchQuery({Key key}) : super(key: key);
+class BlocSearchQuery extends StatefulWidget {
+  BlocSearchQuery({Key key}) : super(key: key);
 
   @override
-  _SearchQueryState createState() => _SearchQueryState();
+  _BlocSearchQueryState createState() => _BlocSearchQueryState();
 }
 
-class _SearchQueryState extends State<SearchQuery> {
+class _BlocSearchQueryState extends State<BlocSearchQuery> {
   SearchCompanyBloc bloc;
 
   @override
@@ -68,7 +67,7 @@ class _SearchQueryState extends State<SearchQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search query'),
+        title: Text('BLOC Search Query'),
       ),
       body: Column(
         children: [

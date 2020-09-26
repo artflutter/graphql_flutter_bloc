@@ -3,14 +3,15 @@ import 'package:example/graphql_provider.dart';
 import 'package:example/models/graphql/graphql_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graphql_flutter/graphql_flutter.dart' hide MutationState;
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
-class Mutation extends StatefulWidget {
+class BlocMutationOptimistic extends StatefulWidget {
   @override
-  _MutationState createState() => _MutationState();
+  _BlocMutationOptimisticState createState() => _BlocMutationOptimisticState();
 }
 
-class _MutationState extends State<Mutation> {
+class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
   final _formKey = GlobalKey<FormState>();
   AddCompanyBloc bloc;
 
@@ -33,9 +34,15 @@ class _MutationState extends State<Mutation> {
           onPressed: () {
             if (_formKey.currentState.validate()) {
               _formKey.currentState.save();
-              bloc.run(AddCompanyArguments(
-                input: company,
-              ).toJson());
+              bloc.run(
+                  AddCompanyArguments(
+                    input: company..industry = null,
+                  ).toJson(),
+                  optimisticResult: {
+                    "id": 'someId',
+                    "name": company.name,
+                    "industry": null
+                  });
             }
           },
         ),
@@ -43,7 +50,7 @@ class _MutationState extends State<Mutation> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text('Mutation')),
+      appBar: AppBar(title: Text('BLOC Mutation Optimistic')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -75,10 +82,18 @@ class _MutationState extends State<Mutation> {
                         ),
                       );
                     },
-                    completed: (_, __) {
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text('Save complete')),
-                      );
+                    completed: (_, result) {
+                      if (result.optimistic) {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(content: Text('Optimistically saved')),
+                        );
+                      }
+
+                      if (result.source == QueryResultSource.Network) {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(content: Text('Save complete')),
+                        );
+                      }
                     },
                     orElse: () => {},
                   );
@@ -91,7 +106,10 @@ class _MutationState extends State<Mutation> {
                       initial: () => _submitButton(false),
                       loading: () => _submitButton(true),
                       error: (_, __) => _submitButton(false),
-                      completed: (data, result) => _submitButton(false),
+                      completed: (data, result) {
+                        print(result.source);
+                        return _submitButton(false);
+                      },
                     );
                   },
                 ),

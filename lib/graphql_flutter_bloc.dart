@@ -7,3 +7,5 @@ export 'package:graphql_flutter_bloc/src/query/state.dart';
 export 'package:graphql_flutter_bloc/src/mutation/bloc.dart';
 export 'package:graphql_flutter_bloc/src/mutation/event.dart';
 export 'package:graphql_flutter_bloc/src/mutation/state.dart';
+
+export 'package:graphql_flutter_bloc/src/helper.dart';

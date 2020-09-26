@@ -9,12 +9,12 @@ import 'package:example/graphql_provider.dart';
 import 'package:example/models/graphql/graphql_api.graphql.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
-class Bloc extends StatefulWidget {
+class BlocQuery extends StatefulWidget {
   @override
-  _BlocState createState() => _BlocState();
+  _BlocQueryState createState() => _BlocQueryState();
 }
 
-class _BlocState extends State<Bloc> {
+class _BlocQueryState extends State<BlocQuery> {
   Completer<void> _refreshCompleter;
   CompaniesPaginatedBloc bloc;
 
@@ -100,7 +100,7 @@ class _BlocState extends State<Bloc> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Extended BLOC example'),
+        title: Text('BLOC query'),
       ),
       body: RefreshIndicator(
         onRefresh: () async => _handleRefreshStart(bloc),
@@ -130,24 +130,4 @@ class _BlocState extends State<Bloc> {
       ),
     );
   }
-}
-
-String parseOperationException(OperationException error) {
-  if (error.clientException != null) {
-    final exception = error.clientException;
-
-    if (exception is NetworkException) {
-      return 'Failed to connect to ${exception.uri}';
-    } else {
-      return exception.toString();
-    }
-  }
-
-  if (error.graphqlErrors != null && error.graphqlErrors.isNotEmpty) {
-    final errors = error.graphqlErrors;
-
-    return errors.first.message;
-  }
-
-  return 'Unknown error';
 }

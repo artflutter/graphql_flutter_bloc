@@ -1,11 +1,12 @@
 import 'dart:io';
 
-import 'package:example/mutation.dart';
-import 'package:example/search_query.dart';
+import 'package:example/bloc_mutation.dart';
+import 'package:example/bloc_mutation_optimistic.dart';
+import 'package:example/bloc_query.dart';
+import 'package:example/bloc_search_query.dart';
 import 'package:flutter/material.dart';
-import 'package:example/bloc.dart';
 import 'package:example/graphql_provider.dart';
-import 'package:example/simple.dart';
+import 'package:example/simple_query.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,10 +30,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: {
-          'simple': (_) => Simple(),
-          'bloc': (_) => Bloc(),
-          'mutation': (_) => Mutation(),
-          'search': (_) => SearchQuery(),
+          'simple-query': (_) => SimpleQuery(),
+          'bloc-query': (_) => BlocQuery(),
+          'bloc-mutation': (_) => BlocMutation(),
+          'bloc-mutation-optimistic': (_) => BlocMutationOptimistic(),
+          'bloc-search-query': (_) => BlocSearchQuery(),
         },
         home: Home(),
       ),
@@ -50,26 +52,36 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: Text('Simple example'),
+            title: Text('Simple Query'),
             subtitle: Text('native query example'),
-            onTap: () => Navigator.of(context).pushNamed('simple'),
+            onTap: () => Navigator.of(context).pushNamed('simple-query'),
           ),
           Divider(),
           ListTile(
-            title: Text('BLOC example'),
+            title: Text('BLOC Query'),
             subtitle: Text('query, fetchMore, refetch'),
-            onTap: () => Navigator.of(context).pushNamed('bloc'),
+            onTap: () => Navigator.of(context).pushNamed('bloc-query'),
           ),
           Divider(),
           ListTile(
-            title: Text('Mutation BLOC example'),
+            title: Text('BLOC Mutation'),
             subtitle: Text('simple form + submit to call mutation'),
-            onTap: () => Navigator.of(context).pushNamed('mutation'),
+            onTap: () => Navigator.of(context).pushNamed(
+              'bloc-mutation',
+            ),
           ),
           Divider(),
           ListTile(
-            title: Text('Search query'),
-            onTap: () => Navigator.of(context).pushNamed('search'),
+            title: Text('BLOC Mutation Optimistic'),
+            subtitle: Text(
+                'simple form + submit to call mutation + optimistic results'),
+            onTap: () =>
+                Navigator.of(context).pushNamed('bloc-mutation-optimistic'),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('BLOC Search Query'),
+            onTap: () => Navigator.of(context).pushNamed('bloc-search-query'),
           ),
           Divider(),
         ],

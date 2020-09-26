@@ -23,7 +23,7 @@ abstract class MutationBloc<TData>
       //   add(MutationEvent.loading(result: result));
       // }
 
-      if (!result.loading && !result.optimistic && !result.hasException) {
+      if (!result.loading && !result.hasException) {
         add(MutationEvent<TData>.completed(
             data: parseData(result.data as Map<String, dynamic>),
             result: result));

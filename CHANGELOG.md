@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.1-beta.1
+- bloc mutation with optimistic results
+
 ## 0.3.0-beta.1
 - packages and version bump.
 - use this version fo `graphql_flutter` 3.1.* versions
