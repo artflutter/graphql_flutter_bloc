@@ -9,12 +9,12 @@ import 'package:example/graphql_provider.dart';
 import 'package:example/models/graphql/graphql_api.graphql.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
-class Bloc extends StatefulWidget {
+class BlocQuery extends StatefulWidget {
   @override
-  _BlocState createState() => _BlocState();
+  _BlocQueryState createState() => _BlocQueryState();
 }
 
-class _BlocState extends State<Bloc> {
+class _BlocQueryState extends State<BlocQuery> {
   Completer<void> _refreshCompleter;
   CompaniesPaginatedBloc bloc;
 

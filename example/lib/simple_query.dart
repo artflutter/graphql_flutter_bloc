@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:example/models/graphql/graphql_api.graphql.dart';
 
-class Simple extends StatefulWidget {
+class SimpleQuery extends StatefulWidget {
   @override
-  _SimpleState createState() => _SimpleState();
+  _SimpleQueryState createState() => _SimpleQueryState();
 }
 
-class _SimpleState extends State<Simple> {
+class _SimpleQueryState extends State<SimpleQuery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

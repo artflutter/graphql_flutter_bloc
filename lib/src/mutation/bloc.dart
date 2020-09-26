@@ -22,10 +22,11 @@ abstract class MutationBloc<TData>
       //   add(MutationEvent.loading(result: result));
       // }
 
-      if (!result.isLoading && !result.isOptimistic && !result.hasException) {
+      if (!result.isLoading && !result.hasException) {
         add(MutationEvent<TData>.completed(
-            data: parseData(result.data),
-            result: result));
+          data: parseData(result.data),
+          result: result,
+        ));
       }
 
       if (result.hasException) {

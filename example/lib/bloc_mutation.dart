@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
-class Mutation extends StatefulWidget {
+class BlocMutation extends StatefulWidget {
   @override
-  _MutationState createState() => _MutationState();
+  _BlocMutationState createState() => _BlocMutationState();
 }
 
-class _MutationState extends State<Mutation> {
+class _BlocMutationState extends State<BlocMutation> {
   final _formKey = GlobalKey<FormState>();
   AddCompanyBloc bloc;
 

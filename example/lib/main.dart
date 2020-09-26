@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:example/mutation.dart';
-import 'package:example/search_query.dart';
+import 'package:example/bloc_mutation.dart';
+import 'package:example/bloc_query.dart';
+import 'package:example/bloc_search_query.dart';
 import 'package:flutter/material.dart';
-import 'package:example/bloc.dart';
 import 'package:example/graphql_provider.dart';
-import 'package:example/simple.dart';
+import 'package:example/simple_query.dart';
 import 'package:graphql_flutter/graphql_flutter.dart' hide Mutation;
 
 Future<void> main() async {
@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: {
-          'simple': (_) => Simple(),
-          'bloc': (_) => Bloc(),
-          'mutation': (_) => Mutation(),
-          'search': (_) => SearchQuery(),
+          'simple-query': (_) => SimpleQuery(),
+          'bloc-query': (_) => BlocQuery(),
+          'bloc-mutation': (_) => BlocMutation(),
+          'bloc-search-query': (_) => BlocSearchQuery(),
         },
         home: Home(),
       ),
@@ -56,13 +56,13 @@ class Home extends StatelessWidget {
           ListTile(
             title: Text('Simple example'),
             subtitle: Text('native query example'),
-            onTap: () => Navigator.of(context).pushNamed('simple'),
+            onTap: () => Navigator.of(context).pushNamed('simple-query'),
           ),
           Divider(),
           ListTile(
             title: Text('BLOC example'),
             subtitle: Text('query, fetchMore, refetch'),
-            onTap: () => Navigator.of(context).pushNamed('bloc'),
+            onTap: () => Navigator.of(context).pushNamed('simple-query'),
           ),
           Divider(),
           ListTile(
