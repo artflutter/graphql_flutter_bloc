@@ -67,7 +67,7 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search query'),
+        title: Text('BLOC Search Query'),
       ),
       body: Column(
         children: [

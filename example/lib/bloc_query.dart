@@ -100,7 +100,7 @@ class _BlocQueryState extends State<BlocQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Extended BLOC example'),
+        title: Text('BLOC query'),
       ),
       body: RefreshIndicator(
         onRefresh: () async => _handleRefreshStart(bloc),
@@ -130,24 +130,4 @@ class _BlocQueryState extends State<BlocQuery> {
       ),
     );
   }
-}
-
-String parseOperationException(OperationException error) {
-  if (error.linkException != null) {
-    final exception = error.linkException;
-
-    if (exception is NetworkException) {
-      return 'Failed to connect to ${exception.uri}';
-    } else {
-      return exception.toString();
-    }
-  }
-
-  if (error.graphqlErrors != null && error.graphqlErrors.isNotEmpty) {
-    final errors = error.graphqlErrors;
-
-    return errors.first.message;
-  }
-
-  return 'Unknown error';
 }

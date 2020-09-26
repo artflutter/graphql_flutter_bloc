@@ -12,7 +12,7 @@ class _SimpleQueryState extends State<SimpleQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Simple example'),
+        title: Text('Simple Query'),
       ),
       body: Query(
         options: QueryOptions(
