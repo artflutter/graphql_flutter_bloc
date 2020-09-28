@@ -5,12 +5,8 @@ import 'package:example/bloc_mutation_optimistic.dart';
 import 'package:example/bloc_query.dart';
 import 'package:example/bloc_search_query.dart';
 import 'package:flutter/material.dart';
-import 'package:example/graphql_provider.dart';
-import 'package:example/simple_query.dart';
-import 'package:graphql_flutter/graphql_flutter.dart' hide Mutation;
 
 Future<void> main() async {
-  await initHiveForFlutter();
   runApp(MyApp());
 }
 
@@ -26,22 +22,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GraphqlProvider(
-      uri: 'http://$host:9002/graphql',
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        routes: {
-          'simple-query': (_) => SimpleQuery(),
-          'bloc-query': (_) => BlocQuery(),
-          'bloc-mutation': (_) => BlocMutation(),
-          'bloc-mutation-optimistic': (_) => BlocMutationOptimistic(),
-          'bloc-search-query': (_) => BlocSearchQuery(),
-        },
-        home: Home(),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      routes: {
+        'bloc-query': (_) => BlocQuery(),
+        'bloc-mutation': (_) => BlocMutation(),
+        'bloc-mutation-optimistic': (_) => BlocMutationOptimistic(),
+        'bloc-search-query': (_) => BlocSearchQuery(),
+      },
+      home: Home(),
     );
   }
 }
@@ -55,12 +47,6 @@ class Home extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListTile(
-            title: Text('Simple Query'),
-            subtitle: Text('native query example'),
-            onTap: () => Navigator.of(context).pushNamed('simple-query'),
-          ),
-          Divider(),
           ListTile(
             title: Text('BLOC Query'),
             subtitle: Text('query, fetchMore, refetch'),

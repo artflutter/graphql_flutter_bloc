@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
-import 'package:graphql_flutter/graphql_flutter.dart' hide QueryState;
 import 'package:example/bloc/companies_paginated_bloc.dart';
 import 'package:example/graphql_provider.dart';
 import 'package:example/models/graphql/graphql_api.graphql.dart';

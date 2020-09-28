@@ -1,5 +1,5 @@
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:graphql/client.dart';
 import 'package:example/main.dart';
 
 final client = getClient(
@@ -41,7 +41,7 @@ String uuidFromObject(Object object) {
   return null;
 }
 
-final cache = GraphQLCache(store: HiveStore());
+final cache = GraphQLCache(store: InMemoryStore());
 
 ValueNotifier<GraphQLClient> clientFor({
   @required String uri,
@@ -66,25 +66,4 @@ ValueNotifier<GraphQLClient> clientFor({
       link: link,
     ),
   );
-}
-
-/// Wraps the root application with the `graphql_flutter` client.
-/// We use the cache for all state management.
-class GraphqlProvider extends StatelessWidget {
-  GraphqlProvider({
-    @required this.child,
-    @required String uri,
-    String subscriptionUri,
-  });
-
-  final Widget child;
-//  final ValueNotifier<GraphQLClient> client;
-
-  @override
-  Widget build(BuildContext context) {
-    return GraphQLProvider(
-      client: ValueNotifier<GraphQLClient>(client),
-      child: child,
-    );
-  }
 }

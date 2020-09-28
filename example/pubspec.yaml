@@ -19,7 +19,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  graphql_flutter: 4.0.0-alpha.11
   path_provider: ^1.6.14
   flutter_bloc: ^6.0.5
   equatable: ^1.1.1
