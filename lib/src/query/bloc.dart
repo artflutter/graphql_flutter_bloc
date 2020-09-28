@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
 import 'package:meta/meta.dart';
 import 'package:graphql/internal.dart';
-import 'package:graphql_flutter/graphql_flutter.dart' hide QueryState;
 
 import 'event.dart';
 import 'state.dart';

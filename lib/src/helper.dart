@@ -1,4 +1,4 @@
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:graphql/client.dart';
 
 String parseOperationException(OperationException error) {
   if (error.clientException != null) {

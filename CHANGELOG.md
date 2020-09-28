@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.3-beta.1
+- removed `graphql_flutter` from deps
+
 ## 0.3.2-beta.1
 - dependencies cleanup
 

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:graphql/client.dart';
 import 'package:meta/meta.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 
 part 'event.freezed.dart';
 
