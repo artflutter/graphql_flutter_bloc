@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.5-beta.1
+- removed `pubspec.lock` from repo
+
 ## 0.3.4-beta.1
 - removed `graphql_flutter` from example deps
 
