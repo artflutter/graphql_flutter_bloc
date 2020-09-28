@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.2-beta.1
+- removed `graphql_flutter` from deps
+
 ## 0.4.1-beta.1
 - bloc mutation with optimistic results
 
