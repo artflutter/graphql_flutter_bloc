@@ -155,34 +155,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.13"
-  connectivity:
-    dependency: transitive
-    description:
-      name: connectivity
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.9+2"
-  connectivity_for_web:
-    dependency: transitive
-    description:
-      name: connectivity_for_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.1+2"
-  connectivity_macos:
-    dependency: transitive
-    description:
-      name: connectivity_macos
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.0+5"
-  connectivity_platform_interface:
-    dependency: transitive
-    description:
-      name: connectivity_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.6"
   convert:
     dependency: transitive
     description:
@@ -263,11 +235,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   freezed_annotation:
     dependency: transitive
     description:
@@ -325,16 +292,9 @@ packages:
     source: hosted
     version: "0.3.1-alpha+1599667008850"
   graphql:
-    dependency: transitive
-    description:
-      name: graphql
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.0"
-  graphql_flutter:
     dependency: "direct main"
     description:
-      name: graphql_flutter
+      name: graphql
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.0-beta.7"
@@ -344,7 +304,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.3.2-beta.1"
+    version: "0.3.3-beta.1"
   graphs:
     dependency: transitive
     description:

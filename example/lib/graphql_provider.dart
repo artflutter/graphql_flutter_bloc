@@ -1,4 +1,4 @@
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:graphql/client.dart';
 import 'package:flutter/material.dart';
 import 'package:example/main.dart';
 
@@ -68,25 +68,4 @@ ValueNotifier<GraphQLClient> clientFor({
       link: link,
     ),
   );
-}
-
-/// Wraps the root application with the `graphql_flutter` client.
-/// We use the cache for all state management.
-class GraphqlProvider extends StatelessWidget {
-  GraphqlProvider({
-    @required this.child,
-    @required String uri,
-    String subscriptionUri,
-  });
-
-  final Widget child;
-//  final ValueNotifier<GraphQLClient> client;
-
-  @override
-  Widget build(BuildContext context) {
-    return GraphQLProvider(
-      client: ValueNotifier<GraphQLClient>(client),
-      child: child,
-    );
-  }
 }

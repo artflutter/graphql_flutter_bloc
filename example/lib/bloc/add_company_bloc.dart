@@ -1,5 +1,5 @@
 import 'package:example/models/graphql/graphql_api.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 import 'package:meta/meta.dart';
 

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.4-beta.1
+- removed `graphql_flutter` from example deps
+
 ## 0.3.3-beta.1
 - removed `graphql_flutter` from deps
 
