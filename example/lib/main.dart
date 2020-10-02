@@ -4,9 +4,13 @@ import 'package:example/bloc_mutation.dart';
 import 'package:example/bloc_mutation_optimistic.dart';
 import 'package:example/bloc_query.dart';
 import 'package:example/bloc_search_query.dart';
+import 'package:example/hive_init.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initHiveForFlutter();
+
   runApp(MyApp());
 }
 

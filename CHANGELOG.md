@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.5-beta.1
+- use HiveStore in example
+
 ## 0.4.4-beta.1
 - removed `pubspec.lock` from repo
 

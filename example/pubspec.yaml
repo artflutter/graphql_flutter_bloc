@@ -24,6 +24,8 @@ dependencies:
   equatable: ^1.1.1
   json_serializable: ^3.4.1
   gql: 0.12.3
+  hive: ^1.4.4
+  graphql: ^4.0.0-alpha.11
   graphql_flutter_bloc:
     path: ../
 
