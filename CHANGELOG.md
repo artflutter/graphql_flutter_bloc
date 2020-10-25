@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.5-beta.2
+- deploy action script test
+
 ## 0.4.5-beta.1
 - use HiveStore in example
 
