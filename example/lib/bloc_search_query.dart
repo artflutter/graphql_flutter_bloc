@@ -5,7 +5,7 @@ import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 import 'bloc/search_company_bloc.dart';
-import 'models/graphql/graphql_api.graphql.dart';
+import 'models/graphql/q.graphql_api.graphql.dart';
 
 class BlocSearchQuery extends StatefulWidget {
   BlocSearchQuery({Key key}) : super(key: key);

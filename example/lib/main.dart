@@ -4,6 +4,7 @@ import 'package:example/bloc_mutation.dart';
 import 'package:example/bloc_mutation_optimistic.dart';
 import 'package:example/bloc_query.dart';
 import 'package:example/bloc_search_query.dart';
+import 'package:example/bloc_subscription.dart';
 import 'package:example/hive_init.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         'bloc-mutation': (_) => BlocMutation(),
         'bloc-mutation-optimistic': (_) => BlocMutationOptimistic(),
         'bloc-search-query': (_) => BlocSearchQuery(),
+        'bloc-subscription': (_) => BlocSubscription(),
       },
       home: Home(),
     );
@@ -76,6 +78,11 @@ class Home extends StatelessWidget {
           ListTile(
             title: Text('BLOC Search Query'),
             onTap: () => Navigator.of(context).pushNamed('bloc-search-query'),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('BLOC Subscription'),
+            onTap: () => Navigator.of(context).pushNamed('bloc-subscription'),
           ),
           Divider(),
         ],

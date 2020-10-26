@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
 import 'package:example/bloc/companies_paginated_bloc.dart';
 import 'package:example/graphql_provider.dart';
-import 'package:example/models/graphql/graphql_api.graphql.dart';
+import 'package:example/models/graphql/q.graphql_api.graphql.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 class BlocQuery extends StatefulWidget {

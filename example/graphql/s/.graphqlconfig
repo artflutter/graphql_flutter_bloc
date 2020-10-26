@@ -1,11 +1,11 @@
 {
   "name": "Schema",
-  "schemaPath": "schema.graphql",
+  "schemaPath": "s.schema.graphql",
   "include": "graphql/**/*.graphql",
   "extensions": {
     "endpoints": {
       "Default": {
-        "url": "http://localhost:9002/graphql",
+        "url": "http://localhost:3000/",
         "introspect": true
       }
     }

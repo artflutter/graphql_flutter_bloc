@@ -23,7 +23,8 @@ dependencies:
   flutter_bloc: ^6.0.6
 #  equatable: ^1.1.1
   json_serializable: ^3.5.0
-  gql: 0.12.3
+  gql: ^0.12.4-alpha
+  http: ^0.12.2
   hive: ^1.4.4+1
   graphql: ^4.0.0-beta.3
   graphql_flutter_bloc:
@@ -42,10 +43,10 @@ dev_dependencies:
 dependency_overrides:
   gql_http_link: ^0.3.1
   gql_link: ^0.3.1-alpha
-  gql: ^0.12.4-alpha
+
   rxdart: ^0.24.1
-  meta: ^1.2.3
-  analyzer: ^0.39.15
+#  meta: 1.2.2
+#  analyzer: ^0.39.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

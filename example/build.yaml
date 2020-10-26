@@ -2,14 +2,20 @@ targets:
   $default:
     sources:
       - lib/**
-      - graphql/**
-      - schema.graphql
+      - graphql/q/queries/**
+      - graphql/q/q.schema.graphql
+      - graphql/s/queries/**
+      - graphql/s/s.schema.graphql
     builders:
       artemis:
         options:
           fragments_glob: graphql/fragments/common.graphql
           schema_mapping:
-            - schema: schema.graphql
-              queries_glob: graphql/*.graphql
-              output: lib/models/graphql/graphql_api.dart
+            - schema: graphql/q/q.schema.graphql
+              queries_glob: graphql/q/queries/*.graphql
+              output: lib/models/graphql/q.graphql_api.dart
+              naming_scheme: pathedWithFields
+            - schema: graphql/s/s.schema.graphql
+              queries_glob: graphql/s/queries/*.graphql
+              output: lib/models/graphql/s.graphql_api.dart
               naming_scheme: pathedWithFields

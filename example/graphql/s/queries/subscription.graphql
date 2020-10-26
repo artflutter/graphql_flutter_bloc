@@ -1,0 +1,16 @@
+subscription SubscriptionData {
+    post{
+        mutation
+        data{
+            id,
+            title,
+            subtitle,
+            body,
+            published
+            author,
+            upvotes,
+            downvotes,
+            commentCount,
+        }
+    }
+}

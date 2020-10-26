@@ -3,7 +3,8 @@ import 'package:graphql/client.dart';
 import 'package:example/main.dart';
 
 final client = getClient(
-  uri: 'http://$host:9002/graphql',
+  uri: 'http://$host:3000',
+  subscriptionUri: 'ws://$host:3000/',
 );
 
 GraphQLClient getClient({
@@ -21,7 +22,8 @@ GraphQLClient getClient({
       ),
     );
 
-    link = link.concat(websocketLink);
+    // link = link.concat(websocketLink);
+    link = Link.split((request) => request.isSubscription, websocketLink, link);
   }
 
   return GraphQLClient(

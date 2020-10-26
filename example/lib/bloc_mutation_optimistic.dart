@@ -1,6 +1,6 @@
 import 'package:example/bloc/add_company_bloc.dart';
 import 'package:example/graphql_provider.dart';
-import 'package:example/models/graphql/graphql_api.dart';
+import 'package:example/models/graphql/q.graphql_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';

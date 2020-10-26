@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.4.6-beta.1
+- subscriptions bloc added
+
 ## 0.4.5-beta.1
 - use HiveStore in example
 

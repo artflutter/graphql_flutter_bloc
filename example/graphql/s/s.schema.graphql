@@ -1,0 +1,39 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+type Mutation {
+    createPost(author: String!, body: String!, commentCount: Int!, downvotes: Int!, id: ID!, published: Boolean!, subtitle: String!, title: String!, upvotes: Int!): Post!
+    deletePost(id: ID!): Post!
+    updatePost(author: String!, body: String!, commentCount: Int!, downvotes: Int!, id: ID!, published: Boolean!, subtitle: String!, title: String!, upvotes: Int!): Post!
+}
+
+type Post {
+    author: String!
+    body: String!
+    commentCount: Int!
+    downvotes: Int!
+    id: ID!
+    published: Boolean!
+    subtitle: String!
+    title: String!
+    upvotes: Int!
+}
+
+type PostSubscriptionPayload {
+    data: Post!
+    mutation: String!
+}
+
+type Query {
+    getPost(query: String): Post!
+    getPosts(query: String): [Post!]!
+}
+
+type Subscription {
+    post: PostSubscriptionPayload!
+}
