@@ -17,22 +17,6 @@ abstract class SubscriptionBloc<T>
   SubscriptionBloc({@required this.client})
       : super(SubscriptionState<T>.initial());
 
-  void _errorHandler(Object error) {
-    QueryResult queryResult = QueryResult(source: QueryResultSource.network);
-
-    queryResult.exception = coalesceErrors(
-      exception: queryResult.exception,
-      linkException: translateFailure(error),
-    );
-
-    add(SubscriptionEvent<T>.error(
-        error: coalesceErrors(
-          exception: null,
-          linkException: translateFailure(error),
-        ),
-        result: queryResult));
-  }
-
   void _listener(QueryResult result) {
     if (result.isLoading && result.data == null) {
       add(SubscriptionEvent.loading(result: result));
@@ -81,7 +65,7 @@ abstract class SubscriptionBloc<T>
       SubscriptionEvent<T> event) async* {
     if (event is SubscriptionEventRun<T>) {
       _streamSubscription?.cancel();
-      subscription = client.subscribe(event.options).handleError(_errorHandler);
+      subscription = client.subscribe(event.options);
 
       _streamSubscription = subscription.listen(_listener);
     }

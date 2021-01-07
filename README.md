@@ -4,8 +4,8 @@ BLOC wrapper over `graphql_flutter` streams with improved state handling.
 
 ## Installation
 
-- use v0.3.* for `graphql_flutter` v3
-- use v0.4.* for `graphql_flutter` v4
+- use v0.3.* for `graphql_flutter` v3 - this version is not supported anymore
+- use v > 0.4.* for `graphql_flutter` v4
 
 ## How to use
 

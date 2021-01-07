@@ -51,34 +51,34 @@ const $SubscriptionState = _$SubscriptionStateTearOff();
 /// @nodoc
 mixin _$SubscriptionState<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(QueryResult result),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result loaded(T data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(QueryResult result),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(QueryResult result),
-    Result error(OperationException error, QueryResult result),
-    Result loaded(T data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(QueryResult result),
+    TResult error(OperationException error, QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(SubscriptionStateInitial<T> value),
-    @required Result loading(SubscriptionStateLoading<T> value),
-    @required Result error(SubscriptionStateError<T> value),
-    @required Result loaded(SubscriptionStateLoaded<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(SubscriptionStateInitial<T> value),
+    @required TResult loading(SubscriptionStateLoading<T> value),
+    @required TResult error(SubscriptionStateError<T> value),
+    @required TResult loaded(SubscriptionStateLoaded<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(SubscriptionStateInitial<T> value),
-    Result loading(SubscriptionStateLoading<T> value),
-    Result error(SubscriptionStateError<T> value),
-    Result loaded(SubscriptionStateLoaded<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(SubscriptionStateInitial<T> value),
+    TResult loading(SubscriptionStateLoading<T> value),
+    TResult error(SubscriptionStateError<T> value),
+    TResult loaded(SubscriptionStateLoaded<T> value),
+    @required TResult orElse(),
   });
 }
 
@@ -138,11 +138,11 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(QueryResult result),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result loaded(T data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(QueryResult result),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -153,12 +153,12 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(QueryResult result),
-    Result error(OperationException error, QueryResult result),
-    Result loaded(T data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(QueryResult result),
+    TResult error(OperationException error, QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -169,11 +169,11 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(SubscriptionStateInitial<T> value),
-    @required Result loading(SubscriptionStateLoading<T> value),
-    @required Result error(SubscriptionStateError<T> value),
-    @required Result loaded(SubscriptionStateLoaded<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(SubscriptionStateInitial<T> value),
+    @required TResult loading(SubscriptionStateLoading<T> value),
+    @required TResult error(SubscriptionStateError<T> value),
+    @required TResult loaded(SubscriptionStateLoaded<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -184,12 +184,12 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(SubscriptionStateInitial<T> value),
-    Result loading(SubscriptionStateLoading<T> value),
-    Result error(SubscriptionStateError<T> value),
-    Result loaded(SubscriptionStateLoaded<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(SubscriptionStateInitial<T> value),
+    TResult loading(SubscriptionStateLoading<T> value),
+    TResult error(SubscriptionStateError<T> value),
+    TResult loaded(SubscriptionStateLoaded<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -265,11 +265,11 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(QueryResult result),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result loaded(T data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(QueryResult result),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -280,12 +280,12 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(QueryResult result),
-    Result error(OperationException error, QueryResult result),
-    Result loaded(T data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(QueryResult result),
+    TResult error(OperationException error, QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -296,11 +296,11 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(SubscriptionStateInitial<T> value),
-    @required Result loading(SubscriptionStateLoading<T> value),
-    @required Result error(SubscriptionStateError<T> value),
-    @required Result loaded(SubscriptionStateLoaded<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(SubscriptionStateInitial<T> value),
+    @required TResult loading(SubscriptionStateLoading<T> value),
+    @required TResult error(SubscriptionStateError<T> value),
+    @required TResult loaded(SubscriptionStateLoaded<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -311,12 +311,12 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(SubscriptionStateInitial<T> value),
-    Result loading(SubscriptionStateLoading<T> value),
-    Result error(SubscriptionStateError<T> value),
-    Result loaded(SubscriptionStateLoaded<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(SubscriptionStateInitial<T> value),
+    TResult loading(SubscriptionStateLoading<T> value),
+    TResult error(SubscriptionStateError<T> value),
+    TResult loaded(SubscriptionStateLoaded<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -406,11 +406,11 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(QueryResult result),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result loaded(T data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(QueryResult result),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -421,12 +421,12 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(QueryResult result),
-    Result error(OperationException error, QueryResult result),
-    Result loaded(T data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(QueryResult result),
+    TResult error(OperationException error, QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -437,11 +437,11 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(SubscriptionStateInitial<T> value),
-    @required Result loading(SubscriptionStateLoading<T> value),
-    @required Result error(SubscriptionStateError<T> value),
-    @required Result loaded(SubscriptionStateLoaded<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(SubscriptionStateInitial<T> value),
+    @required TResult loading(SubscriptionStateLoading<T> value),
+    @required TResult error(SubscriptionStateError<T> value),
+    @required TResult loaded(SubscriptionStateLoaded<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -452,12 +452,12 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(SubscriptionStateInitial<T> value),
-    Result loading(SubscriptionStateLoading<T> value),
-    Result error(SubscriptionStateError<T> value),
-    Result loaded(SubscriptionStateLoaded<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(SubscriptionStateInitial<T> value),
+    TResult loading(SubscriptionStateLoading<T> value),
+    TResult error(SubscriptionStateError<T> value),
+    TResult loaded(SubscriptionStateLoaded<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -549,11 +549,11 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(QueryResult result),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result loaded(T data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(QueryResult result),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -564,12 +564,12 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(QueryResult result),
-    Result error(OperationException error, QueryResult result),
-    Result loaded(T data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(QueryResult result),
+    TResult error(OperationException error, QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
@@ -580,11 +580,11 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(SubscriptionStateInitial<T> value),
-    @required Result loading(SubscriptionStateLoading<T> value),
-    @required Result error(SubscriptionStateError<T> value),
-    @required Result loaded(SubscriptionStateLoaded<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(SubscriptionStateInitial<T> value),
+    @required TResult loading(SubscriptionStateLoading<T> value),
+    @required TResult error(SubscriptionStateError<T> value),
+    @required TResult loaded(SubscriptionStateLoaded<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -595,12 +595,12 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(SubscriptionStateInitial<T> value),
-    Result loading(SubscriptionStateLoading<T> value),
-    Result error(SubscriptionStateError<T> value),
-    Result loaded(SubscriptionStateLoaded<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(SubscriptionStateInitial<T> value),
+    TResult loading(SubscriptionStateLoading<T> value),
+    TResult error(SubscriptionStateError<T> value),
+    TResult loaded(SubscriptionStateLoaded<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {

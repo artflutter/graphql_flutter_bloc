@@ -14,6 +14,8 @@ const String mutation = r'''
   }
 ''';
 
+const response = r'''{ "data": { "viewer": { "id": 123 } } }''';
+
 class TestMutationBloc extends MutationBloc<Map<String, dynamic>> {
   TestMutationBloc({@required GraphQLClient client, WatchQueryOptions options})
       : super(
@@ -64,7 +66,7 @@ void main() {
       when(
         mockHttpClient.send(any),
       ).thenAnswer((Invocation a) async {
-        return simpleResponse(body: r'''{ "data": {} }''');
+        return simpleResponse(body: response);
       });
 
       final states = [];

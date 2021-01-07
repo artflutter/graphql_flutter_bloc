@@ -49,34 +49,34 @@ const $MutationState = _$MutationStateTearOff();
 /// @nodoc
 mixin _$MutationState<TData> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result completed(TData data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult completed(TData data, QueryResult result),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(OperationException error, QueryResult result),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult error(OperationException error, QueryResult result),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<TData> value),
-    @required Result loading(MutationStateLoading<TData> value),
-    @required Result error(MutationStateError<TData> value),
-    @required Result completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(MutationStateInitial<TData> value),
+    @required TResult loading(MutationStateLoading<TData> value),
+    @required TResult error(MutationStateError<TData> value),
+    @required TResult completed(MutationStateCompleted<TData> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<TData> value),
-    Result loading(MutationStateLoading<TData> value),
-    Result error(MutationStateError<TData> value),
-    Result completed(MutationStateCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(MutationStateInitial<TData> value),
+    TResult loading(MutationStateLoading<TData> value),
+    TResult error(MutationStateError<TData> value),
+    TResult completed(MutationStateCompleted<TData> value),
+    @required TResult orElse(),
   });
 }
 
@@ -136,11 +136,11 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result completed(TData data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -151,12 +151,12 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(OperationException error, QueryResult result),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult error(OperationException error, QueryResult result),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -167,11 +167,11 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<TData> value),
-    @required Result loading(MutationStateLoading<TData> value),
-    @required Result error(MutationStateError<TData> value),
-    @required Result completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(MutationStateInitial<TData> value),
+    @required TResult loading(MutationStateLoading<TData> value),
+    @required TResult error(MutationStateError<TData> value),
+    @required TResult completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -182,12 +182,12 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<TData> value),
-    Result loading(MutationStateLoading<TData> value),
-    Result error(MutationStateError<TData> value),
-    Result completed(MutationStateCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(MutationStateInitial<TData> value),
+    TResult loading(MutationStateLoading<TData> value),
+    TResult error(MutationStateError<TData> value),
+    TResult completed(MutationStateCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -240,11 +240,11 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result completed(TData data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -255,12 +255,12 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(OperationException error, QueryResult result),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult error(OperationException error, QueryResult result),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -271,11 +271,11 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<TData> value),
-    @required Result loading(MutationStateLoading<TData> value),
-    @required Result error(MutationStateError<TData> value),
-    @required Result completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(MutationStateInitial<TData> value),
+    @required TResult loading(MutationStateLoading<TData> value),
+    @required TResult error(MutationStateError<TData> value),
+    @required TResult completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -286,12 +286,12 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<TData> value),
-    Result loading(MutationStateLoading<TData> value),
-    Result error(MutationStateError<TData> value),
-    Result completed(MutationStateCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(MutationStateInitial<TData> value),
+    TResult loading(MutationStateLoading<TData> value),
+    TResult error(MutationStateError<TData> value),
+    TResult completed(MutationStateCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -376,11 +376,11 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result completed(TData data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -391,12 +391,12 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(OperationException error, QueryResult result),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult error(OperationException error, QueryResult result),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -407,11 +407,11 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<TData> value),
-    @required Result loading(MutationStateLoading<TData> value),
-    @required Result error(MutationStateError<TData> value),
-    @required Result completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(MutationStateInitial<TData> value),
+    @required TResult loading(MutationStateLoading<TData> value),
+    @required TResult error(MutationStateError<TData> value),
+    @required TResult completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -422,12 +422,12 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<TData> value),
-    Result loading(MutationStateLoading<TData> value),
-    Result error(MutationStateError<TData> value),
-    Result completed(MutationStateCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(MutationStateInitial<TData> value),
+    TResult loading(MutationStateLoading<TData> value),
+    TResult error(MutationStateError<TData> value),
+    TResult completed(MutationStateCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -518,11 +518,11 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result error(OperationException error, QueryResult result),
-    @required Result completed(TData data, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(OperationException error, QueryResult result),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -533,12 +533,12 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result error(OperationException error, QueryResult result),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult error(OperationException error, QueryResult result),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (completed != null) {
@@ -549,11 +549,11 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(MutationStateInitial<TData> value),
-    @required Result loading(MutationStateLoading<TData> value),
-    @required Result error(MutationStateError<TData> value),
-    @required Result completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(MutationStateInitial<TData> value),
+    @required TResult loading(MutationStateLoading<TData> value),
+    @required TResult error(MutationStateError<TData> value),
+    @required TResult completed(MutationStateCompleted<TData> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -564,12 +564,12 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(MutationStateInitial<TData> value),
-    Result loading(MutationStateLoading<TData> value),
-    Result error(MutationStateError<TData> value),
-    Result completed(MutationStateCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(MutationStateInitial<TData> value),
+    TResult loading(MutationStateLoading<TData> value),
+    TResult error(MutationStateError<TData> value),
+    TResult completed(MutationStateCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (completed != null) {

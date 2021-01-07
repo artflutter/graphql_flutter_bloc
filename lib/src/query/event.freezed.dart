@@ -67,43 +67,43 @@ const $QueryEvent = _$QueryEventTearOff();
 /// @nodoc
 mixin _$QueryEvent<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   });
 }
 
@@ -193,14 +193,14 @@ class _$QueryEventError<T> implements QueryEventError<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -213,14 +213,14 @@ class _$QueryEventError<T> implements QueryEventError<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -231,13 +231,13 @@ class _$QueryEventError<T> implements QueryEventError<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -250,14 +250,14 @@ class _$QueryEventError<T> implements QueryEventError<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -350,14 +350,14 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -370,14 +370,14 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (run != null) {
@@ -388,13 +388,13 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -407,14 +407,14 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (run != null) {
@@ -494,14 +494,14 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -514,14 +514,14 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -532,13 +532,13 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -551,14 +551,14 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -645,14 +645,14 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -665,14 +665,14 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
@@ -683,13 +683,13 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -702,14 +702,14 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
@@ -766,14 +766,14 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -786,14 +786,14 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (refetch != null) {
@@ -804,13 +804,13 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -823,14 +823,14 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (refetch != null) {
@@ -906,14 +906,14 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result loading(QueryResult result),
-    @required Result loaded(T data, QueryResult result),
-    @required Result refetch(),
-    @required Result fetchMore(FetchMoreOptions options),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult loading(QueryResult result),
+    @required TResult loaded(T data, QueryResult result),
+    @required TResult refetch(),
+    @required TResult fetchMore(FetchMoreOptions options),
   }) {
     assert(error != null);
     assert(run != null);
@@ -926,14 +926,14 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result loading(QueryResult result),
-    Result loaded(T data, QueryResult result),
-    Result refetch(),
-    Result fetchMore(FetchMoreOptions options),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult loading(QueryResult result),
+    TResult loaded(T data, QueryResult result),
+    TResult refetch(),
+    TResult fetchMore(FetchMoreOptions options),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchMore != null) {
@@ -944,13 +944,13 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(QueryEventError<T> value),
-    @required Result run(QueryEventRun<T> value),
-    @required Result loading(QueryEventLoading<T> value),
-    @required Result loaded(QueryEventLoaded<T> value),
-    @required Result refetch(QueryEventRefetch<T> value),
-    @required Result fetchMore(QueryEventFetchMore<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(QueryEventError<T> value),
+    @required TResult run(QueryEventRun<T> value),
+    @required TResult loading(QueryEventLoading<T> value),
+    @required TResult loaded(QueryEventLoaded<T> value),
+    @required TResult refetch(QueryEventRefetch<T> value),
+    @required TResult fetchMore(QueryEventFetchMore<T> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -963,14 +963,14 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(QueryEventError<T> value),
-    Result run(QueryEventRun<T> value),
-    Result loading(QueryEventLoading<T> value),
-    Result loaded(QueryEventLoaded<T> value),
-    Result refetch(QueryEventRefetch<T> value),
-    Result fetchMore(QueryEventFetchMore<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(QueryEventError<T> value),
+    TResult run(QueryEventRun<T> value),
+    TResult loading(QueryEventLoading<T> value),
+    TResult loaded(QueryEventLoaded<T> value),
+    TResult refetch(QueryEventRefetch<T> value),
+    TResult fetchMore(QueryEventFetchMore<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchMore != null) {

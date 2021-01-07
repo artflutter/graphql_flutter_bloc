@@ -10,6 +10,8 @@ import 'helpers.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
 
+const response = r'''{ "data": { "viewer": { "id": 123 } } }''';
+
 const String query = r'''
   query DummyQuery($variable: Int!) {
     viewer { id }
@@ -70,7 +72,7 @@ void main() {
       when(
         mockHttpClient.send(any),
       ).thenAnswer((Invocation a) async {
-        return simpleResponse(body: r'''{ "data": {} }''');
+        return simpleResponse(body: response);
       });
 
       final states = [];
@@ -110,7 +112,7 @@ void main() {
       when(
         mockHttpClient.send(any),
       ).thenAnswer((Invocation a) async {
-        return simpleResponse(body: r'''{ "data": {} }''');
+        return simpleResponse(body: response);
       });
 
       testQueryBloc.run();
@@ -133,7 +135,7 @@ void main() {
       when(
         mockHttpClient.send(any),
       ).thenAnswer((Invocation a) async {
-        return simpleResponse(body: r'''{ "data": {} }''');
+        return simpleResponse(body: response);
       });
 
       testQueryBloc.run();

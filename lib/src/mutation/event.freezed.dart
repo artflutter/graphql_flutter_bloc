@@ -48,31 +48,31 @@ const $MutationEvent = _$MutationEventTearOff();
 /// @nodoc
 mixin _$MutationEvent<TData> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result completed(TData data, QueryResult result),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult completed(TData data, QueryResult result),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(MutationEventError<TData> value),
-    @required Result run(MutationEventRun<TData> value),
-    @required Result completed(MutationEventCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(MutationEventError<TData> value),
+    @required TResult run(MutationEventRun<TData> value),
+    @required TResult completed(MutationEventCompleted<TData> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<TData> value),
-    Result run(MutationEventRun<TData> value),
-    Result completed(MutationEventCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(MutationEventError<TData> value),
+    TResult run(MutationEventRun<TData> value),
+    TResult completed(MutationEventCompleted<TData> value),
+    @required TResult orElse(),
   });
 }
 
@@ -164,11 +164,11 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result completed(TData data, QueryResult result),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
@@ -178,11 +178,11 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -193,10 +193,10 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(MutationEventError<TData> value),
-    @required Result run(MutationEventRun<TData> value),
-    @required Result completed(MutationEventCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(MutationEventError<TData> value),
+    @required TResult run(MutationEventRun<TData> value),
+    @required TResult completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -206,11 +206,11 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<TData> value),
-    Result run(MutationEventRun<TData> value),
-    Result completed(MutationEventCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(MutationEventError<TData> value),
+    TResult run(MutationEventRun<TData> value),
+    TResult completed(MutationEventCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -305,11 +305,11 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result completed(TData data, QueryResult result),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
@@ -319,11 +319,11 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (run != null) {
@@ -334,10 +334,10 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(MutationEventError<TData> value),
-    @required Result run(MutationEventRun<TData> value),
-    @required Result completed(MutationEventCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(MutationEventError<TData> value),
+    @required TResult run(MutationEventRun<TData> value),
+    @required TResult completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -347,11 +347,11 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<TData> value),
-    Result run(MutationEventRun<TData> value),
-    Result completed(MutationEventCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(MutationEventError<TData> value),
+    TResult run(MutationEventRun<TData> value),
+    TResult completed(MutationEventCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (run != null) {
@@ -441,11 +441,11 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result error(OperationException error, QueryResult result),
+  TResult when<TResult extends Object>({
+    @required TResult error(OperationException error, QueryResult result),
     @required
-        Result run(Map<String, dynamic> variables, Object optimisticResult),
-    @required Result completed(TData data, QueryResult result),
+        TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    @required TResult completed(TData data, QueryResult result),
   }) {
     assert(error != null);
     assert(run != null);
@@ -455,11 +455,11 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result error(OperationException error, QueryResult result),
-    Result run(Map<String, dynamic> variables, Object optimisticResult),
-    Result completed(TData data, QueryResult result),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult error(OperationException error, QueryResult result),
+    TResult run(Map<String, dynamic> variables, Object optimisticResult),
+    TResult completed(TData data, QueryResult result),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (completed != null) {
@@ -470,10 +470,10 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result error(MutationEventError<TData> value),
-    @required Result run(MutationEventRun<TData> value),
-    @required Result completed(MutationEventCompleted<TData> value),
+  TResult map<TResult extends Object>({
+    @required TResult error(MutationEventError<TData> value),
+    @required TResult run(MutationEventRun<TData> value),
+    @required TResult completed(MutationEventCompleted<TData> value),
   }) {
     assert(error != null);
     assert(run != null);
@@ -483,11 +483,11 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result error(MutationEventError<TData> value),
-    Result run(MutationEventRun<TData> value),
-    Result completed(MutationEventCompleted<TData> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult error(MutationEventError<TData> value),
+    TResult run(MutationEventRun<TData> value),
+    TResult completed(MutationEventCompleted<TData> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (completed != null) {

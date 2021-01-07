@@ -16,6 +16,8 @@ const String subscriptionQuery = r'''
   }
 ''';
 
+const response = r'''{ "data": { "viewer": { "id": 123 } } }''';
+
 class TestSubscriptionBloc extends SubscriptionBloc<Map<String, dynamic>> {
   TestSubscriptionBloc({@required GraphQLClient client})
       : super(client: client);
@@ -57,7 +59,7 @@ void main() {
       when(
         mockHttpClient.send(any),
       ).thenAnswer((Invocation a) async {
-        return simpleResponse(body: r'''{ "data": {} }''');
+        return simpleResponse(body: response);
       });
 
       final states = [];

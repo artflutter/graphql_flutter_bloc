@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.5.1-beta.1
+- package updates
+- tests fix
+
 ## 0.4.6-beta.1
 - subscriptions bloc added
 
