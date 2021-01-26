@@ -291,6 +291,7 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith =>
       _$QueryStateLoadingCopyWithImpl<T, QueryStateLoading<T>>(
@@ -376,6 +377,7 @@ abstract class QueryStateLoading<T> implements QueryState<T> {
       _$QueryStateLoading<T>;
 
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith;
 }
 
@@ -442,6 +444,7 @@ class _$QueryStateError<T> implements QueryStateError<T> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith =>
       _$QueryStateErrorCopyWithImpl<T, QueryStateError<T>>(this, _$identity);
@@ -528,6 +531,7 @@ abstract class QueryStateError<T> implements QueryState<T> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith;
 }
 
@@ -594,6 +598,7 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith =>
       _$QueryStateLoadedCopyWithImpl<T, QueryStateLoaded<T>>(this, _$identity);
@@ -679,6 +684,7 @@ abstract class QueryStateLoaded<T> implements QueryState<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith;
 }
 
@@ -743,6 +749,7 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith =>
       _$QueryStateRefetchCopyWithImpl<T, QueryStateRefetch<T>>(
@@ -829,6 +836,7 @@ abstract class QueryStateRefetch<T> implements QueryState<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith;
 }
 
@@ -894,6 +902,7 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith =>
       _$QueryStateFetchMoreCopyWithImpl<T, QueryStateFetchMore<T>>(
@@ -980,5 +989,6 @@ abstract class QueryStateFetchMore<T> implements QueryState<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith;
 }

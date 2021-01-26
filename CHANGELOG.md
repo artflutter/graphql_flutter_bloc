@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.5.2-beta.1
+- internal code reorganisation
+
 ## 0.5.1-beta.1
 - package updates
 - tests fix

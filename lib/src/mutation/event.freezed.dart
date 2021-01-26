@@ -157,6 +157,7 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith =>
       _$MutationEventErrorCopyWithImpl<TData, MutationEventError<TData>>(
@@ -227,6 +228,7 @@ abstract class MutationEventError<TData> implements MutationEvent<TData> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith;
 }
 
@@ -298,6 +300,7 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
       const DeepCollectionEquality().hash(variables) ^
       const DeepCollectionEquality().hash(optimisticResult);
 
+  @JsonKey(ignore: true)
   @override
   $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith =>
       _$MutationEventRunCopyWithImpl<TData, MutationEventRun<TData>>(
@@ -367,6 +370,7 @@ abstract class MutationEventRun<TData> implements MutationEvent<TData> {
 
   Map<String, dynamic> get variables;
   Object get optimisticResult;
+  @JsonKey(ignore: true)
   $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith;
 }
 
@@ -434,6 +438,7 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
       get copyWith => _$MutationEventCompletedCopyWithImpl<TData,
@@ -504,6 +509,7 @@ abstract class MutationEventCompleted<TData> implements MutationEvent<TData> {
 
   TData get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
       get copyWith;
 }

@@ -369,6 +369,7 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
       _$MutationStateErrorCopyWithImpl<TData, MutationStateError<TData>>(
@@ -444,6 +445,7 @@ abstract class MutationStateError<TData> implements MutationState<TData> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith;
 }
 
@@ -511,6 +513,7 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
       get copyWith => _$MutationStateCompletedCopyWithImpl<TData,
@@ -586,6 +589,7 @@ abstract class MutationStateCompleted<TData> implements MutationState<TData> {
 
   TData get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
       get copyWith;
 }

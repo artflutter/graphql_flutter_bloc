@@ -7,14 +7,14 @@ import 'package:meta/meta.dart';
 import 'event.dart';
 import 'state.dart';
 
-abstract class MutationBloc<TData>
-    extends Bloc<MutationEvent<TData>, MutationState<TData>> {
+abstract class MutationBloc<T>
+    extends Bloc<MutationEvent<T>, MutationState<T>> {
   GraphQLClient client;
   ObservableQuery result;
   WatchQueryOptions options;
 
   MutationBloc({@required this.client, @required this.options})
-      : super(MutationState<TData>.initial()) {
+      : super(MutationState<T>.initial()) {
     result = client.watchQuery(options);
 
     result.stream.listen((QueryResult result) {
@@ -23,15 +23,14 @@ abstract class MutationBloc<TData>
       // }
 
       if (!result.isLoading && !result.hasException) {
-        add(MutationEvent<TData>.completed(
+        add(MutationEvent<T>.completed(
           data: parseData(result.data),
           result: result,
         ));
       }
 
       if (result.hasException) {
-        add(MutationEvent<TData>.error(
-            error: result.exception, result: result));
+        add(MutationEvent<T>.error(error: result.exception, result: result));
       }
     });
   }
@@ -41,42 +40,45 @@ abstract class MutationBloc<TData>
   }
 
   void run(Map<String, dynamic> variables, {Object optimisticResult}) {
-    add(MutationEvent<TData>.run(variables,
-        optimisticResult: optimisticResult));
+    add(MutationEvent<T>.run(variables, optimisticResult: optimisticResult));
   }
 
   bool get isLoading => state is MutationStateLoading;
 
   bool get isCompleted => state is MutationStateCompleted;
 
-  TData parseData(Map<String, dynamic> data);
+  T parseData(Map<String, dynamic> data);
 
-  bool get hasError => state is MutationStateError<TData>;
+  bool get hasError => state is MutationStateError<T>;
 
   String get getError => hasError
-      ? parseOperationException((state as MutationStateError<TData>).error)
+      ? parseOperationException((state as MutationStateError<T>).error)
       : null;
 
   @override
-  Stream<MutationState<TData>> mapEventToState(
-      MutationEvent<TData> event) async* {
-    if (event is MutationEventRun<TData>) {
-      (result
-            ..variables = event.variables
-            ..options.optimisticResult = event.optimisticResult)
-          .fetchResults();
+  Stream<MutationState<T>> mapEventToState(MutationEvent<T> event) =>
+      event.when(
+        error: _error,
+        run: _run,
+        completed: _completed,
+      );
 
-      yield MutationState.loading();
-    }
+  Stream<MutationState<T>> _error(
+      OperationException error, QueryResult result) async* {
+    yield MutationState<T>.error(error: error, result: result);
+  }
 
-    if (event is MutationEventCompleted<TData>) {
-      yield MutationState<TData>.completed(
-          data: event.data, result: event.result);
-    }
+  Stream<MutationState<T>> _run(
+      Map<String, dynamic> variables, Object optimisticResult) async* {
+    (result
+          ..variables = variables
+          ..options.optimisticResult = optimisticResult)
+        .fetchResults();
 
-    if (event is MutationEventError<TData>) {
-      yield MutationState<TData>.error(
-          error: event.error, result: event.result);
-    }
+    yield MutationState.loading();
+  }
+
+  Stream<MutationState<T>> _completed(T data, QueryResult result) async* {
+    yield MutationState<T>.completed(data: data, result: result);
   }
 }

@@ -187,6 +187,7 @@ class _$QueryEventError<T> implements QueryEventError<T> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith =>
       _$QueryEventErrorCopyWithImpl<T, QueryEventError<T>>(this, _$identity);
@@ -274,6 +275,7 @@ abstract class QueryEventError<T> implements QueryEvent<T> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith;
 }
 
@@ -344,6 +346,7 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
       const DeepCollectionEquality().hash(variables) ^
       const DeepCollectionEquality().hash(optimisticResult);
 
+  @JsonKey(ignore: true)
   @override
   $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith =>
       _$QueryEventRunCopyWithImpl<T, QueryEventRun<T>>(this, _$identity);
@@ -431,6 +434,7 @@ abstract class QueryEventRun<T> implements QueryEvent<T> {
 
   Map<String, dynamic> get variables;
   Object get optimisticResult;
+  @JsonKey(ignore: true)
   $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith;
 }
 
@@ -487,6 +491,7 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith =>
       _$QueryEventLoadingCopyWithImpl<T, QueryEventLoading<T>>(
@@ -573,6 +578,7 @@ abstract class QueryEventLoading<T> implements QueryEvent<T> {
       _$QueryEventLoading<T>;
 
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith;
 }
 
@@ -639,6 +645,7 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith =>
       _$QueryEventLoadedCopyWithImpl<T, QueryEventLoaded<T>>(this, _$identity);
@@ -725,6 +732,7 @@ abstract class QueryEventLoaded<T> implements QueryEvent<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith;
 }
 
@@ -899,6 +907,7 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(options);
 
+  @JsonKey(ignore: true)
   @override
   $QueryEventFetchMoreCopyWith<T, QueryEventFetchMore<T>> get copyWith =>
       _$QueryEventFetchMoreCopyWithImpl<T, QueryEventFetchMore<T>>(
@@ -985,5 +994,6 @@ abstract class QueryEventFetchMore<T> implements QueryEvent<T> {
       _$QueryEventFetchMore<T>;
 
   FetchMoreOptions get options;
+  @JsonKey(ignore: true)
   $QueryEventFetchMoreCopyWith<T, QueryEventFetchMore<T>> get copyWith;
 }

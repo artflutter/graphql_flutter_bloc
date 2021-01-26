@@ -61,26 +61,31 @@ abstract class SubscriptionBloc<T>
       : null;
 
   @override
-  Stream<SubscriptionState<T>> mapEventToState(
-      SubscriptionEvent<T> event) async* {
-    if (event is SubscriptionEventRun<T>) {
-      _streamSubscription?.cancel();
-      subscription = client.subscribe(event.options);
+  Stream<SubscriptionState<T>> mapEventToState(SubscriptionEvent<T> event) =>
+      event.when(
+        error: _error,
+        run: _run,
+        loading: _loading,
+        loaded: _loaded,
+      );
 
-      _streamSubscription = subscription.listen(_listener);
-    }
+  Stream<SubscriptionState<T>> _error(
+      OperationException error, QueryResult result) async* {
+    yield SubscriptionState<T>.error(error: error, result: result);
+  }
 
-    if (event is SubscriptionEventLoading<T>) {
-      yield SubscriptionState.loading(result: event.result);
-    }
+  Stream<SubscriptionState<T>> _run(SubscriptionOptions options) async* {
+    _streamSubscription?.cancel();
+    subscription = client.subscribe(options);
 
-    if (event is SubscriptionEventLoaded<T>) {
-      yield SubscriptionState<T>.loaded(data: event.data, result: event.result);
-    }
+    _streamSubscription = subscription.listen(_listener);
+  }
 
-    if (event is SubscriptionEventError<T>) {
-      yield SubscriptionState<T>.error(
-          error: event.error, result: event.result);
-    }
+  Stream<SubscriptionState<T>> _loading(QueryResult result) async* {
+    yield SubscriptionState.loading(result: result);
+  }
+
+  Stream<SubscriptionState<T>> _loaded(T data, QueryResult result) async* {
+    yield SubscriptionState<T>.loaded(data: data, result: result);
   }
 }

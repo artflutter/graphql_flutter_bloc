@@ -258,6 +258,7 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionStateLoadingCopyWith<T, SubscriptionStateLoading<T>>
       get copyWith => _$SubscriptionStateLoadingCopyWithImpl<T,
@@ -331,6 +332,7 @@ abstract class SubscriptionStateLoading<T> implements SubscriptionState<T> {
       _$SubscriptionStateLoading<T>;
 
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionStateLoadingCopyWith<T, SubscriptionStateLoading<T>>
       get copyWith;
 }
@@ -399,6 +401,7 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionStateErrorCopyWith<T, SubscriptionStateError<T>> get copyWith =>
       _$SubscriptionStateErrorCopyWithImpl<T, SubscriptionStateError<T>>(
@@ -474,6 +477,7 @@ abstract class SubscriptionStateError<T> implements SubscriptionState<T> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionStateErrorCopyWith<T, SubscriptionStateError<T>> get copyWith;
 }
 
@@ -541,6 +545,7 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionStateLoadedCopyWith<T, SubscriptionStateLoaded<T>>
       get copyWith =>
@@ -617,5 +622,6 @@ abstract class SubscriptionStateLoaded<T> implements SubscriptionState<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionStateLoadedCopyWith<T, SubscriptionStateLoaded<T>> get copyWith;
 }

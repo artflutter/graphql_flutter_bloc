@@ -165,6 +165,7 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionEventErrorCopyWith<T, SubscriptionEventError<T>> get copyWith =>
       _$SubscriptionEventErrorCopyWithImpl<T, SubscriptionEventError<T>>(
@@ -240,6 +241,7 @@ abstract class SubscriptionEventError<T> implements SubscriptionEvent<T> {
 
   OperationException get error;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionEventErrorCopyWith<T, SubscriptionEventError<T>> get copyWith;
 }
 
@@ -297,6 +299,7 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(options);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionEventRunCopyWith<T, SubscriptionEventRun<T>> get copyWith =>
       _$SubscriptionEventRunCopyWithImpl<T, SubscriptionEventRun<T>>(
@@ -370,6 +373,7 @@ abstract class SubscriptionEventRun<T> implements SubscriptionEvent<T> {
       _$SubscriptionEventRun<T>;
 
   SubscriptionOptions get options;
+  @JsonKey(ignore: true)
   $SubscriptionEventRunCopyWith<T, SubscriptionEventRun<T>> get copyWith;
 }
 
@@ -428,6 +432,7 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionEventLoadingCopyWith<T, SubscriptionEventLoading<T>>
       get copyWith => _$SubscriptionEventLoadingCopyWithImpl<T,
@@ -501,6 +506,7 @@ abstract class SubscriptionEventLoading<T> implements SubscriptionEvent<T> {
       _$SubscriptionEventLoading<T>;
 
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionEventLoadingCopyWith<T, SubscriptionEventLoading<T>>
       get copyWith;
 }
@@ -569,6 +575,7 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
       const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(result);
 
+  @JsonKey(ignore: true)
   @override
   $SubscriptionEventLoadedCopyWith<T, SubscriptionEventLoaded<T>>
       get copyWith =>
@@ -645,5 +652,6 @@ abstract class SubscriptionEventLoaded<T> implements SubscriptionEvent<T> {
 
   T get data;
   QueryResult get result;
+  @JsonKey(ignore: true)
   $SubscriptionEventLoadedCopyWith<T, SubscriptionEventLoaded<T>> get copyWith;
 }

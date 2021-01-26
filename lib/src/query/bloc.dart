@@ -81,51 +81,56 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
       ? parseOperationException((state as QueryStateError<T>).error)
       : null;
 
-  void _fetchMore(FetchMoreOptions options) {
-    result.fetchMore(options);
+  @override
+  Stream<QueryState<T>> mapEventToState(QueryEvent<T> event) => event.when(
+        error: _error,
+        run: _run,
+        loading: _loading,
+        loaded: _loaded,
+        refetch: _refetch,
+        fetchMore: _fetchMore,
+      );
+
+  Stream<QueryState<T>> _run(
+      Map<String, dynamic> variables, Object optimisticResult) async* {
+    if (variables != null) {
+      result.variables = variables;
+    }
+
+    if (optimisticResult != null) {
+      result.options.optimisticResult = optimisticResult;
+    }
+
+    result.fetchResults();
   }
 
-  void _refetch() => result.refetch();
+  Stream<QueryState<T>> _error(
+      OperationException error, QueryResult result) async* {
+    yield QueryState<T>.error(error: error, result: result);
+  }
 
-  @override
-  Stream<QueryState<T>> mapEventToState(QueryEvent<T> event) async* {
-    if (event is QueryEventRun<T>) {
-      if (event.variables != null) {
-        result.variables = event.variables;
-      }
+  Stream<QueryState<T>> _loading(QueryResult result) async* {
+    yield QueryState.loading(result: result);
+  }
 
-      if (event.optimisticResult != null) {
-        result.options.optimisticResult = event.optimisticResult;
-      }
+  Stream<QueryState<T>> _loaded(T data, QueryResult result) async* {
+    yield QueryState<T>.loaded(data: data, result: result);
+  }
 
-      result.fetchResults();
-    }
-
-    if (event is QueryEventLoading<T>) {
-      yield QueryState.loading(result: event.result);
-    }
-
-    if (event is QueryEventLoaded<T>) {
-      yield QueryState<T>.loaded(data: event.data, result: event.result);
-    }
-
-    if (event is QueryEventError<T>) {
-      yield QueryState<T>.error(error: event.error, result: event.result);
-    }
-
-    if (event is QueryEventRefetch<T> &&
-        (state is QueryStateLoaded<T> || state is QueryStateError<T>)) {
+  Stream<QueryState<T>> _refetch() async* {
+    if (state is QueryStateLoaded<T> || state is QueryStateError<T>) {
       yield QueryState<T>.refetch(
           data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
           result: null);
-      _refetch();
+      result.refetch();
     }
+  }
 
-    if (event is QueryEventFetchMore<T> && state is QueryStateLoaded<T>) {
-      yield QueryState<T>.fetchMore(
-          data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
-          result: null);
-      _fetchMore(event.options);
-    }
+  Stream<QueryState<T>> _fetchMore(FetchMoreOptions options) async* {
+    yield QueryState<T>.fetchMore(
+      data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
+      result: null,
+    );
+    result.fetchMore(options);
   }
 }
