@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.6.0
+- internal code reorganisation
+
 ## 0.5.2-beta.1
 - internal code reorganisation
 
