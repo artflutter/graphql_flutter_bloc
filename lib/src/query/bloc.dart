@@ -2,17 +2,16 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
-import 'package:meta/meta.dart';
 
 import 'event.dart';
 import 'state.dart';
 
 abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   GraphQLClient client;
-  ObservableQuery result;
+  late ObservableQuery result;
   WatchQueryOptions options;
 
-  QueryBloc({@required this.client, @required this.options})
+  QueryBloc({required this.client, required this.options})
       : super(QueryState<T>.initial()) {
     result = client.watchQuery(options);
 
@@ -36,8 +35,9 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
         );
       }
 
-      if (result.hasException) {
-        add(QueryEvent<T>.error(error: result.exception, result: result));
+      final exception = result.exception;
+      if (exception != null) {
+        add(QueryEvent<T>.error(error: exception, result: result));
       }
     });
   }
@@ -46,7 +46,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
     result.close();
   }
 
-  void run({Map<String, dynamic> variables, Object optimisticResult}) {
+  void run({Map<String, dynamic>? variables, Object? optimisticResult}) {
     add(
       QueryEvent<T>.run(
         variables: variables,
@@ -69,7 +69,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   bool get isRefetching => state is QueryStateRefetch;
 
-  T parseData(Map<String, dynamic> data);
+  T parseData(Map<String, dynamic>? data);
 
   bool get hasData => (state is QueryStateLoaded<T> ||
       state is QueryStateFetchMore<T> ||
@@ -77,7 +77,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   bool get hasError => state is QueryStateError<T>;
 
-  String get getError => hasError
+  String? get getError => hasError
       ? parseOperationException((state as QueryStateError<T>).error)
       : null;
 
@@ -92,7 +92,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
       );
 
   Stream<QueryState<T>> _run(
-      Map<String, dynamic> variables, Object optimisticResult) async* {
+      Map<String, dynamic>? variables, Object? optimisticResult) async* {
     if (variables != null) {
       result.variables = variables;
     }
@@ -118,17 +118,16 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   }
 
   Stream<QueryState<T>> _refetch() async* {
-    if (state is QueryStateLoaded<T> || state is QueryStateError<T>) {
-      yield QueryState<T>.refetch(
-          data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
-          result: null);
-      result.refetch();
-    }
+    yield QueryState<T>.refetch(
+        data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
+        result: null);
+
+    result.refetch();
   }
 
   Stream<QueryState<T>> _fetchMore(FetchMoreOptions options) async* {
     yield QueryState<T>.fetchMore(
-      data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
+      data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null as T),
       result: null,
     );
     result.fetchMore(options);

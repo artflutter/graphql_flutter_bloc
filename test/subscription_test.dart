@@ -1,14 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 import 'package:graphql/client.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:gql/language.dart';
 
+import 'subscription_test.mocks.dart';
 import 'helpers.dart';
-
-class MockHttpClient extends Mock implements http.Client {}
 
 const String subscriptionQuery = r'''
   subscription DummySubscription {
@@ -19,28 +20,28 @@ const String subscriptionQuery = r'''
 const response = r'''{ "data": { "viewer": { "id": 123 } } }''';
 
 class TestSubscriptionBloc extends SubscriptionBloc<Map<String, dynamic>> {
-  TestSubscriptionBloc({@required GraphQLClient client})
-      : super(client: client);
+  TestSubscriptionBloc({required GraphQLClient client}) : super(client: client);
 
   @override
-  Map<String, dynamic> parseData(Map<String, dynamic> data) {
+  Map<String, dynamic> parseData(Map<String, dynamic>? data) {
     return <String, dynamic>{};
   }
 }
 
+@GenerateMocks([http.Client])
 void main() {
   group('SubscriptionBloc', () {
-    TestSubscriptionBloc testSubscriptionBloc;
+    late TestSubscriptionBloc testSubscriptionBloc;
     HttpLink httpLink;
     GraphQLClient graphQLClientClient;
-    MockHttpClient mockHttpClient;
+    MockClient? mockClient;
 
     setUp(() {
-      mockHttpClient = MockHttpClient();
+      mockClient = MockClient();
 
       httpLink = HttpLink(
         'https://api.github.com/graphql',
-        httpClient: mockHttpClient,
+        httpClient: mockClient,
       );
 
       graphQLClientClient = GraphQLClient(
@@ -57,13 +58,14 @@ void main() {
 
     test('state is loading->loaded', () async {
       when(
-        mockHttpClient.send(any),
+        mockClient!.send(any),
       ).thenAnswer((Invocation a) async {
         return simpleResponse(body: response);
       });
 
       final states = [];
-      final subscription = testSubscriptionBloc.listen(states.add);
+      final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
+          subscription = testSubscriptionBloc.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));
@@ -79,11 +81,12 @@ void main() {
 
     test('state is loading->error', () async {
       when(
-        mockHttpClient.send(any),
+        mockClient!.send(any),
       ).thenThrow(Error());
 
       final states = [];
-      final subscription = testSubscriptionBloc.listen(states.add);
+      final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
+          subscription = testSubscriptionBloc.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));

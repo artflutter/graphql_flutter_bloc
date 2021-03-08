@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'event.dart';
 
@@ -9,36 +9,35 @@ part of 'event.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SubscriptionEventTearOff {
   const _$SubscriptionEventTearOff();
 
-// ignore: unused_element
   SubscriptionEventError<T> error<T>(
-      {@required OperationException error, @required QueryResult result}) {
+      {required OperationException error, required QueryResult result}) {
     return SubscriptionEventError<T>(
       error: error,
       result: result,
     );
   }
 
-// ignore: unused_element
-  SubscriptionEventRun<T> run<T>({SubscriptionOptions options}) {
+  SubscriptionEventRun<T> run<T>({required SubscriptionOptions options}) {
     return SubscriptionEventRun<T>(
       options: options,
     );
   }
 
-// ignore: unused_element
-  SubscriptionEventLoading<T> loading<T>({@required QueryResult result}) {
+  SubscriptionEventLoading<T> loading<T>({required QueryResult result}) {
     return SubscriptionEventLoading<T>(
       result: result,
     );
   }
 
-// ignore: unused_element
   SubscriptionEventLoaded<T> loaded<T>(
-      {@required T data, @required QueryResult result}) {
+      {required T? data, required QueryResult result}) {
     return SubscriptionEventLoaded<T>(
       data: data,
       result: result,
@@ -47,41 +46,45 @@ class _$SubscriptionEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SubscriptionEvent = _$SubscriptionEventTearOff();
 
 /// @nodoc
 mixin _$SubscriptionEvent<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult run(SubscriptionOptions options),
-    @required TResult loading(QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(T? data, QueryResult result) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult error(OperationException error, QueryResult result),
-    TResult run(SubscriptionOptions options),
-    TResult loading(QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult error(SubscriptionEventError<T> value),
-    @required TResult run(SubscriptionEventRun<T> value),
-    @required TResult loading(SubscriptionEventLoading<T> value),
-    @required TResult loaded(SubscriptionEventLoaded<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubscriptionEventError<T> value) error,
+    required TResult Function(SubscriptionEventRun<T> value) run,
+    required TResult Function(SubscriptionEventLoading<T> value) loading,
+    required TResult Function(SubscriptionEventLoaded<T> value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult error(SubscriptionEventError<T> value),
-    TResult run(SubscriptionEventRun<T> value),
-    TResult loading(SubscriptionEventLoading<T> value),
-    TResult loaded(SubscriptionEventLoaded<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -123,8 +126,8 @@ class _$SubscriptionEventErrorCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object error = freezed,
-    Object result = freezed,
+    Object? error = freezed,
+    Object? result = freezed,
   }) {
     return _then(SubscriptionEventError<T>(
       error: error == freezed ? _value.error : error as OperationException,
@@ -135,9 +138,7 @@ class _$SubscriptionEventErrorCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
-  const _$SubscriptionEventError({@required this.error, @required this.result})
-      : assert(error != null),
-        assert(result != null);
+  const _$SubscriptionEventError({required this.error, required this.result});
 
   @override
   final OperationException error;
@@ -173,29 +174,25 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult run(SubscriptionOptions options),
-    @required TResult loading(QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(T? data, QueryResult result) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(this.error, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult error(OperationException error, QueryResult result),
-    TResult run(SubscriptionOptions options),
-    TResult loading(QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this.error, result);
     }
@@ -204,29 +201,24 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult error(SubscriptionEventError<T> value),
-    @required TResult run(SubscriptionEventRun<T> value),
-    @required TResult loading(SubscriptionEventLoading<T> value),
-    @required TResult loaded(SubscriptionEventLoaded<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubscriptionEventError<T> value) error,
+    required TResult Function(SubscriptionEventRun<T> value) run,
+    required TResult Function(SubscriptionEventLoading<T> value) loading,
+    required TResult Function(SubscriptionEventLoaded<T> value) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult error(SubscriptionEventError<T> value),
-    TResult run(SubscriptionEventRun<T> value),
-    TResult loading(SubscriptionEventLoading<T> value),
-    TResult loaded(SubscriptionEventLoaded<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -236,13 +228,14 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
 
 abstract class SubscriptionEventError<T> implements SubscriptionEvent<T> {
   const factory SubscriptionEventError(
-      {@required OperationException error,
-      @required QueryResult result}) = _$SubscriptionEventError<T>;
+      {required OperationException error,
+      required QueryResult result}) = _$SubscriptionEventError<T>;
 
-  OperationException get error;
-  QueryResult get result;
+  OperationException get error => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventErrorCopyWith<T, SubscriptionEventError<T>> get copyWith;
+  $SubscriptionEventErrorCopyWith<T, SubscriptionEventError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -266,7 +259,7 @@ class _$SubscriptionEventRunCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object options = freezed,
+    Object? options = freezed,
   }) {
     return _then(SubscriptionEventRun<T>(
       options:
@@ -277,7 +270,7 @@ class _$SubscriptionEventRunCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
-  const _$SubscriptionEventRun({this.options});
+  const _$SubscriptionEventRun({required this.options});
 
   @override
   final SubscriptionOptions options;
@@ -307,29 +300,25 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult run(SubscriptionOptions options),
-    @required TResult loading(QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(T? data, QueryResult result) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return run(options);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult error(OperationException error, QueryResult result),
-    TResult run(SubscriptionOptions options),
-    TResult loading(QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (run != null) {
       return run(options);
     }
@@ -338,29 +327,24 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult error(SubscriptionEventError<T> value),
-    @required TResult run(SubscriptionEventRun<T> value),
-    @required TResult loading(SubscriptionEventLoading<T> value),
-    @required TResult loaded(SubscriptionEventLoaded<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubscriptionEventError<T> value) error,
+    required TResult Function(SubscriptionEventRun<T> value) run,
+    required TResult Function(SubscriptionEventLoading<T> value) loading,
+    required TResult Function(SubscriptionEventLoaded<T> value) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return run(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult error(SubscriptionEventError<T> value),
-    TResult run(SubscriptionEventRun<T> value),
-    TResult loading(SubscriptionEventLoading<T> value),
-    TResult loaded(SubscriptionEventLoaded<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (run != null) {
       return run(this);
     }
@@ -369,12 +353,13 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
 }
 
 abstract class SubscriptionEventRun<T> implements SubscriptionEvent<T> {
-  const factory SubscriptionEventRun({SubscriptionOptions options}) =
+  const factory SubscriptionEventRun({required SubscriptionOptions options}) =
       _$SubscriptionEventRun<T>;
 
-  SubscriptionOptions get options;
+  SubscriptionOptions get options => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventRunCopyWith<T, SubscriptionEventRun<T>> get copyWith;
+  $SubscriptionEventRunCopyWith<T, SubscriptionEventRun<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -399,7 +384,7 @@ class _$SubscriptionEventLoadingCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object result = freezed,
+    Object? result = freezed,
   }) {
     return _then(SubscriptionEventLoading<T>(
       result: result == freezed ? _value.result : result as QueryResult,
@@ -409,8 +394,7 @@ class _$SubscriptionEventLoadingCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
-  const _$SubscriptionEventLoading({@required this.result})
-      : assert(result != null);
+  const _$SubscriptionEventLoading({required this.result});
 
   @override
   final QueryResult result;
@@ -440,29 +424,25 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult run(SubscriptionOptions options),
-    @required TResult loading(QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(T? data, QueryResult result) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading(result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult error(OperationException error, QueryResult result),
-    TResult run(SubscriptionOptions options),
-    TResult loading(QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(result);
     }
@@ -471,29 +451,24 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult error(SubscriptionEventError<T> value),
-    @required TResult run(SubscriptionEventRun<T> value),
-    @required TResult loading(SubscriptionEventLoading<T> value),
-    @required TResult loaded(SubscriptionEventLoaded<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubscriptionEventError<T> value) error,
+    required TResult Function(SubscriptionEventRun<T> value) run,
+    required TResult Function(SubscriptionEventLoading<T> value) loading,
+    required TResult Function(SubscriptionEventLoaded<T> value) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult error(SubscriptionEventError<T> value),
-    TResult run(SubscriptionEventRun<T> value),
-    TResult loading(SubscriptionEventLoading<T> value),
-    TResult loaded(SubscriptionEventLoaded<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -502,13 +477,13 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
 }
 
 abstract class SubscriptionEventLoading<T> implements SubscriptionEvent<T> {
-  const factory SubscriptionEventLoading({@required QueryResult result}) =
+  const factory SubscriptionEventLoading({required QueryResult result}) =
       _$SubscriptionEventLoading<T>;
 
-  QueryResult get result;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SubscriptionEventLoadingCopyWith<T, SubscriptionEventLoading<T>>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -516,7 +491,7 @@ abstract class $SubscriptionEventLoadedCopyWith<T, $Res> {
   factory $SubscriptionEventLoadedCopyWith(SubscriptionEventLoaded<T> value,
           $Res Function(SubscriptionEventLoaded<T>) then) =
       _$SubscriptionEventLoadedCopyWithImpl<T, $Res>;
-  $Res call({T data, QueryResult result});
+  $Res call({T? data, QueryResult result});
 }
 
 /// @nodoc
@@ -533,11 +508,11 @@ class _$SubscriptionEventLoadedCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object result = freezed,
+    Object? data = freezed,
+    Object? result = freezed,
   }) {
     return _then(SubscriptionEventLoaded<T>(
-      data: data == freezed ? _value.data : data as T,
+      data: data == freezed ? _value.data : data as T?,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
@@ -545,12 +520,10 @@ class _$SubscriptionEventLoadedCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
-  const _$SubscriptionEventLoaded({@required this.data, @required this.result})
-      : assert(data != null),
-        assert(result != null);
+  const _$SubscriptionEventLoaded({required this.data, required this.result});
 
   @override
-  final T data;
+  final T? data;
   @override
   final QueryResult result;
 
@@ -584,29 +557,25 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult run(SubscriptionOptions options),
-    @required TResult loading(QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(T? data, QueryResult result) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(data, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult error(OperationException error, QueryResult result),
-    TResult run(SubscriptionOptions options),
-    TResult loading(QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(data, result);
     }
@@ -615,29 +584,24 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult error(SubscriptionEventError<T> value),
-    @required TResult run(SubscriptionEventRun<T> value),
-    @required TResult loading(SubscriptionEventLoading<T> value),
-    @required TResult loaded(SubscriptionEventLoaded<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubscriptionEventError<T> value) error,
+    required TResult Function(SubscriptionEventRun<T> value) run,
+    required TResult Function(SubscriptionEventLoading<T> value) loading,
+    required TResult Function(SubscriptionEventLoaded<T> value) loaded,
   }) {
-    assert(error != null);
-    assert(run != null);
-    assert(loading != null);
-    assert(loaded != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult error(SubscriptionEventError<T> value),
-    TResult run(SubscriptionEventRun<T> value),
-    TResult loading(SubscriptionEventLoading<T> value),
-    TResult loaded(SubscriptionEventLoaded<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -647,11 +611,12 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
 
 abstract class SubscriptionEventLoaded<T> implements SubscriptionEvent<T> {
   const factory SubscriptionEventLoaded(
-      {@required T data,
-      @required QueryResult result}) = _$SubscriptionEventLoaded<T>;
+      {required T? data,
+      required QueryResult result}) = _$SubscriptionEventLoaded<T>;
 
-  T get data;
-  QueryResult get result;
+  T? get data => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventLoadedCopyWith<T, SubscriptionEventLoaded<T>> get copyWith;
+  $SubscriptionEventLoadedCopyWith<T, SubscriptionEventLoaded<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

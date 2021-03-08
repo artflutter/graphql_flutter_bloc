@@ -11,7 +11,7 @@ String parseOperationException(OperationException error) {
     }
   }
 
-  if (error.graphqlErrors != null && error.graphqlErrors.isNotEmpty) {
+  if (error.graphqlErrors.isNotEmpty) {
     final errors = error.graphqlErrors;
 
     return errors.first.message;

@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
-http.StreamedResponse simpleResponse({@required String body, int status}) {
+http.StreamedResponse simpleResponse({required String body, int? status}) {
   final List<int> bytes = utf8.encode(body);
   final Stream<List<int>> stream =
       Stream<List<int>>.fromIterable(<List<int>>[bytes]);

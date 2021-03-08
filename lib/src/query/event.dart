@@ -1,33 +1,32 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphql/client.dart';
-import 'package:meta/meta.dart';
 
 part 'event.freezed.dart';
 
 @freezed
 abstract class QueryEvent<T> with _$QueryEvent<T> {
   const factory QueryEvent.error({
-    @required OperationException error,
-    @required QueryResult result,
+    required OperationException error,
+    required QueryResult result,
   }) = QueryEventError<T>;
 
   const factory QueryEvent.run({
-    Map<String, dynamic> variables,
-    Object optimisticResult,
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
   }) = QueryEventRun<T>;
 
   const factory QueryEvent.loading({
-    @required QueryResult result,
+    required QueryResult result,
   }) = QueryEventLoading<T>;
 
   const factory QueryEvent.loaded({
-    @required T data,
-    @required QueryResult result,
+    required T data,
+    required QueryResult result,
   }) = QueryEventLoaded<T>;
 
   const factory QueryEvent.refetch() = QueryEventRefetch<T>;
 
   const factory QueryEvent.fetchMore({
-    @required FetchMoreOptions options,
+    required FetchMoreOptions options,
   }) = QueryEventFetchMore<T>;
 }

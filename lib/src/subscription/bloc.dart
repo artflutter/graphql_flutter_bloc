@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
-import 'package:meta/meta.dart';
 
 import 'event.dart';
 import 'state.dart';
@@ -10,11 +9,11 @@ import 'state.dart';
 abstract class SubscriptionBloc<T>
     extends Bloc<SubscriptionEvent<T>, SubscriptionState<T>> {
   GraphQLClient client;
-  Stream<QueryResult> subscription;
-  StreamSubscription _streamSubscription;
-  SubscriptionOptions options;
+  late Stream<QueryResult> subscription;
+  StreamSubscription? _streamSubscription;
+  SubscriptionOptions? options;
 
-  SubscriptionBloc({@required this.client})
+  SubscriptionBloc({required this.client})
       : super(SubscriptionState<T>.initial());
 
   void _listener(QueryResult result) {
@@ -32,7 +31,7 @@ abstract class SubscriptionBloc<T>
     }
 
     if (result.hasException) {
-      add(SubscriptionEvent<T>.error(error: result.exception, result: result));
+      add(SubscriptionEvent<T>.error(error: result.exception!, result: result));
     }
   }
 
@@ -50,13 +49,13 @@ abstract class SubscriptionBloc<T>
 
   bool get isLoaded => state is SubscriptionStateLoaded;
 
-  T parseData(Map<String, dynamic> data);
+  T parseData(Map<String, dynamic>? data);
 
   bool get hasData => state is SubscriptionStateLoaded<T>;
 
   bool get hasError => state is SubscriptionStateError<T>;
 
-  String get getError => hasError
+  String? get getError => hasError
       ? parseOperationException((state as SubscriptionStateError<T>).error)
       : null;
 
@@ -85,7 +84,7 @@ abstract class SubscriptionBloc<T>
     yield SubscriptionState.loading(result: result);
   }
 
-  Stream<SubscriptionState<T>> _loaded(T data, QueryResult result) async* {
+  Stream<SubscriptionState<T>> _loaded(T? data, QueryResult result) async* {
     yield SubscriptionState<T>.loaded(data: data, result: result);
   }
 }

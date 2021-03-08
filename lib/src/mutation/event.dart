@@ -1,23 +1,22 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphql/client.dart';
-import 'package:meta/meta.dart';
 
 part 'event.freezed.dart';
 
 @freezed
-abstract class MutationEvent<TData> with _$MutationEvent<TData> {
+class MutationEvent<TData> with _$MutationEvent<TData> {
   const factory MutationEvent.error({
-    @required OperationException error,
-    @required QueryResult result,
-  }) = MutationEventError<TData>;
+    required OperationException error,
+    required QueryResult result,
+  }) = MutationEventError;
 
   const factory MutationEvent.run(
     Map<String, dynamic> variables, {
-    Object optimisticResult,
-  }) = MutationEventRun<TData>;
+    Object? optimisticResult,
+  }) = MutationEventRun;
 
   const factory MutationEvent.completed({
-    @required TData data,
-    @required QueryResult result,
+    required TData? data,
+    required QueryResult result,
   }) = MutationEventCompleted<TData>;
 }

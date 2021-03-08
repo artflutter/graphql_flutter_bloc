@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,32 +9,31 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$MutationStateTearOff {
   const _$MutationStateTearOff();
 
-// ignore: unused_element
   MutationStateInitial<TData> initial<TData>() {
     return MutationStateInitial<TData>();
   }
 
-// ignore: unused_element
   MutationStateLoading<TData> loading<TData>() {
     return MutationStateLoading<TData>();
   }
 
-// ignore: unused_element
   MutationStateError<TData> error<TData>(
-      {@required OperationException error, @required QueryResult result}) {
+      {required OperationException error, required QueryResult result}) {
     return MutationStateError<TData>(
       error: error,
       result: result,
     );
   }
 
-// ignore: unused_element
   MutationStateCompleted<TData> completed<TData>(
-      {@required TData data, @required QueryResult result}) {
+      {required TData? data, required QueryResult result}) {
     return MutationStateCompleted<TData>(
       data: data,
       result: result,
@@ -43,41 +42,45 @@ class _$MutationStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $MutationState = _$MutationStateTearOff();
 
 /// @nodoc
 mixin _$MutationState<TData> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult completed(TData data, QueryResult result),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(TData? data, QueryResult result) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult error(OperationException error, QueryResult result),
-    TResult completed(TData data, QueryResult result),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(TData? data, QueryResult result)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(MutationStateInitial<TData> value),
-    @required TResult loading(MutationStateLoading<TData> value),
-    @required TResult error(MutationStateError<TData> value),
-    @required TResult completed(MutationStateCompleted<TData> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(MutationStateInitial<TData> value) initial,
+    required TResult Function(MutationStateLoading<TData> value) loading,
+    required TResult Function(MutationStateError<TData> value) error,
+    required TResult Function(MutationStateCompleted<TData> value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(MutationStateInitial<TData> value),
-    TResult loading(MutationStateLoading<TData> value),
-    TResult error(MutationStateError<TData> value),
-    TResult completed(MutationStateCompleted<TData> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MutationStateInitial<TData> value)? initial,
+    TResult Function(MutationStateLoading<TData> value)? loading,
+    TResult Function(MutationStateError<TData> value)? error,
+    TResult Function(MutationStateCompleted<TData> value)? completed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -136,29 +139,25 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult completed(TData data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult error(OperationException error, QueryResult result),
-    TResult completed(TData data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(TData? data, QueryResult result)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -167,29 +166,24 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(MutationStateInitial<TData> value),
-    @required TResult loading(MutationStateLoading<TData> value),
-    @required TResult error(MutationStateError<TData> value),
-    @required TResult completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MutationStateInitial<TData> value) initial,
+    required TResult Function(MutationStateLoading<TData> value) loading,
+    required TResult Function(MutationStateError<TData> value) error,
+    required TResult Function(MutationStateCompleted<TData> value) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(MutationStateInitial<TData> value),
-    TResult loading(MutationStateLoading<TData> value),
-    TResult error(MutationStateError<TData> value),
-    TResult completed(MutationStateCompleted<TData> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MutationStateInitial<TData> value)? initial,
+    TResult Function(MutationStateLoading<TData> value)? loading,
+    TResult Function(MutationStateError<TData> value)? error,
+    TResult Function(MutationStateCompleted<TData> value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -240,29 +234,25 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult completed(TData data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult error(OperationException error, QueryResult result),
-    TResult completed(TData data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(TData? data, QueryResult result)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -271,29 +261,24 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(MutationStateInitial<TData> value),
-    @required TResult loading(MutationStateLoading<TData> value),
-    @required TResult error(MutationStateError<TData> value),
-    @required TResult completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MutationStateInitial<TData> value) initial,
+    required TResult Function(MutationStateLoading<TData> value) loading,
+    required TResult Function(MutationStateError<TData> value) error,
+    required TResult Function(MutationStateCompleted<TData> value) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(MutationStateInitial<TData> value),
-    TResult loading(MutationStateLoading<TData> value),
-    TResult error(MutationStateError<TData> value),
-    TResult completed(MutationStateCompleted<TData> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MutationStateInitial<TData> value)? initial,
+    TResult Function(MutationStateLoading<TData> value)? loading,
+    TResult Function(MutationStateError<TData> value)? error,
+    TResult Function(MutationStateCompleted<TData> value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -327,8 +312,8 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
 
   @override
   $Res call({
-    Object error = freezed,
-    Object result = freezed,
+    Object? error = freezed,
+    Object? result = freezed,
   }) {
     return _then(MutationStateError<TData>(
       error: error == freezed ? _value.error : error as OperationException,
@@ -339,9 +324,7 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
 
 /// @nodoc
 class _$MutationStateError<TData> implements MutationStateError<TData> {
-  const _$MutationStateError({@required this.error, @required this.result})
-      : assert(error != null),
-        assert(result != null);
+  const _$MutationStateError({required this.error, required this.result});
 
   @override
   final OperationException error;
@@ -377,29 +360,25 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult completed(TData data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return error(this.error, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult error(OperationException error, QueryResult result),
-    TResult completed(TData data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(TData? data, QueryResult result)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this.error, result);
     }
@@ -408,29 +387,24 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(MutationStateInitial<TData> value),
-    @required TResult loading(MutationStateLoading<TData> value),
-    @required TResult error(MutationStateError<TData> value),
-    @required TResult completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MutationStateInitial<TData> value) initial,
+    required TResult Function(MutationStateLoading<TData> value) loading,
+    required TResult Function(MutationStateError<TData> value) error,
+    required TResult Function(MutationStateCompleted<TData> value) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(MutationStateInitial<TData> value),
-    TResult loading(MutationStateLoading<TData> value),
-    TResult error(MutationStateError<TData> value),
-    TResult completed(MutationStateCompleted<TData> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MutationStateInitial<TData> value)? initial,
+    TResult Function(MutationStateLoading<TData> value)? loading,
+    TResult Function(MutationStateError<TData> value)? error,
+    TResult Function(MutationStateCompleted<TData> value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -440,13 +414,14 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
 abstract class MutationStateError<TData> implements MutationState<TData> {
   const factory MutationStateError(
-      {@required OperationException error,
-      @required QueryResult result}) = _$MutationStateError<TData>;
+      {required OperationException error,
+      required QueryResult result}) = _$MutationStateError<TData>;
 
-  OperationException get error;
-  QueryResult get result;
+  OperationException get error => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith;
+  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -454,7 +429,7 @@ abstract class $MutationStateCompletedCopyWith<TData, $Res> {
   factory $MutationStateCompletedCopyWith(MutationStateCompleted<TData> value,
           $Res Function(MutationStateCompleted<TData>) then) =
       _$MutationStateCompletedCopyWithImpl<TData, $Res>;
-  $Res call({TData data, QueryResult result});
+  $Res call({TData? data, QueryResult result});
 }
 
 /// @nodoc
@@ -471,11 +446,11 @@ class _$MutationStateCompletedCopyWithImpl<TData, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object result = freezed,
+    Object? data = freezed,
+    Object? result = freezed,
   }) {
     return _then(MutationStateCompleted<TData>(
-      data: data == freezed ? _value.data : data as TData,
+      data: data == freezed ? _value.data : data as TData?,
       result: result == freezed ? _value.result : result as QueryResult,
     ));
   }
@@ -483,12 +458,10 @@ class _$MutationStateCompletedCopyWithImpl<TData, $Res>
 
 /// @nodoc
 class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
-  const _$MutationStateCompleted({@required this.data, @required this.result})
-      : assert(data != null),
-        assert(result != null);
+  const _$MutationStateCompleted({required this.data, required this.result});
 
   @override
-  final TData data;
+  final TData? data;
   @override
   final QueryResult result;
 
@@ -521,29 +494,25 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult completed(TData data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return completed(data, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult error(OperationException error, QueryResult result),
-    TResult completed(TData data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(TData? data, QueryResult result)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(data, result);
     }
@@ -552,29 +521,24 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(MutationStateInitial<TData> value),
-    @required TResult loading(MutationStateLoading<TData> value),
-    @required TResult error(MutationStateError<TData> value),
-    @required TResult completed(MutationStateCompleted<TData> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MutationStateInitial<TData> value) initial,
+    required TResult Function(MutationStateLoading<TData> value) loading,
+    required TResult Function(MutationStateError<TData> value) error,
+    required TResult Function(MutationStateCompleted<TData> value) completed,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(completed != null);
     return completed(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(MutationStateInitial<TData> value),
-    TResult loading(MutationStateLoading<TData> value),
-    TResult error(MutationStateError<TData> value),
-    TResult completed(MutationStateCompleted<TData> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MutationStateInitial<TData> value)? initial,
+    TResult Function(MutationStateLoading<TData> value)? loading,
+    TResult Function(MutationStateError<TData> value)? error,
+    TResult Function(MutationStateCompleted<TData> value)? completed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (completed != null) {
       return completed(this);
     }
@@ -584,12 +548,12 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
 abstract class MutationStateCompleted<TData> implements MutationState<TData> {
   const factory MutationStateCompleted(
-      {@required TData data,
-      @required QueryResult result}) = _$MutationStateCompleted<TData>;
+      {required TData? data,
+      required QueryResult result}) = _$MutationStateCompleted<TData>;
 
-  TData get data;
-  QueryResult get result;
+  TData? get data => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

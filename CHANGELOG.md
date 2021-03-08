@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.7.0-nullsafety.0
+- nullsafety
+
 ## 0.6.0
 - internal code reorganisation
 

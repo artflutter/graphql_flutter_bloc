@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'state.dart';
 
@@ -9,50 +9,47 @@ part of 'state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$QueryStateTearOff {
   const _$QueryStateTearOff();
 
-// ignore: unused_element
   QueryStateInitial<T> initial<T>() {
     return QueryStateInitial<T>();
   }
 
-// ignore: unused_element
-  QueryStateLoading<T> loading<T>({@required QueryResult result}) {
+  QueryStateLoading<T> loading<T>({required QueryResult result}) {
     return QueryStateLoading<T>(
       result: result,
     );
   }
 
-// ignore: unused_element
   QueryStateError<T> error<T>(
-      {@required OperationException error, @required QueryResult result}) {
+      {required OperationException error, required QueryResult result}) {
     return QueryStateError<T>(
       error: error,
       result: result,
     );
   }
 
-// ignore: unused_element
   QueryStateLoaded<T> loaded<T>(
-      {@required T data, @required QueryResult result}) {
+      {required T data, required QueryResult result}) {
     return QueryStateLoaded<T>(
       data: data,
       result: result,
     );
   }
 
-// ignore: unused_element
-  QueryStateRefetch<T> refetch<T>({T data, QueryResult result}) {
+  QueryStateRefetch<T> refetch<T>({T? data, QueryResult? result}) {
     return QueryStateRefetch<T>(
       data: data,
       result: result,
     );
   }
 
-// ignore: unused_element
-  QueryStateFetchMore<T> fetchMore<T>({@required T data, QueryResult result}) {
+  QueryStateFetchMore<T> fetchMore<T>({required T data, QueryResult? result}) {
     return QueryStateFetchMore<T>(
       data: data,
       result: result,
@@ -61,49 +58,53 @@ class _$QueryStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $QueryState = _$QueryStateTearOff();
 
 /// @nodoc
 mixin _$QueryState<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -161,35 +162,29 @@ class _$QueryStateInitial<T> implements QueryStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -198,35 +193,28 @@ class _$QueryStateInitial<T> implements QueryStateInitial<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -259,7 +247,7 @@ class _$QueryStateLoadingCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object result = freezed,
+    Object? result = freezed,
   }) {
     return _then(QueryStateLoading<T>(
       result: result == freezed ? _value.result : result as QueryResult,
@@ -269,7 +257,7 @@ class _$QueryStateLoadingCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$QueryStateLoading<T> implements QueryStateLoading<T> {
-  const _$QueryStateLoading({@required this.result}) : assert(result != null);
+  const _$QueryStateLoading({required this.result});
 
   @override
   final QueryResult result;
@@ -299,35 +287,29 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return loading(result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(result);
     }
@@ -336,35 +318,28 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -373,12 +348,13 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
 }
 
 abstract class QueryStateLoading<T> implements QueryState<T> {
-  const factory QueryStateLoading({@required QueryResult result}) =
+  const factory QueryStateLoading({required QueryResult result}) =
       _$QueryStateLoading<T>;
 
-  QueryResult get result;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith;
+  $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -402,8 +378,8 @@ class _$QueryStateErrorCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object error = freezed,
-    Object result = freezed,
+    Object? error = freezed,
+    Object? result = freezed,
   }) {
     return _then(QueryStateError<T>(
       error: error == freezed ? _value.error : error as OperationException,
@@ -414,9 +390,7 @@ class _$QueryStateErrorCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$QueryStateError<T> implements QueryStateError<T> {
-  const _$QueryStateError({@required this.error, @required this.result})
-      : assert(error != null),
-        assert(result != null);
+  const _$QueryStateError({required this.error, required this.result});
 
   @override
   final OperationException error;
@@ -451,35 +425,29 @@ class _$QueryStateError<T> implements QueryStateError<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return error(this.error, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this.error, result);
     }
@@ -488,35 +456,28 @@ class _$QueryStateError<T> implements QueryStateError<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -526,13 +487,14 @@ class _$QueryStateError<T> implements QueryStateError<T> {
 
 abstract class QueryStateError<T> implements QueryState<T> {
   const factory QueryStateError(
-      {@required OperationException error,
-      @required QueryResult result}) = _$QueryStateError<T>;
+      {required OperationException error,
+      required QueryResult result}) = _$QueryStateError<T>;
 
-  OperationException get error;
-  QueryResult get result;
+  OperationException get error => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith;
+  $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -556,8 +518,8 @@ class _$QueryStateLoadedCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object result = freezed,
+    Object? data = freezed,
+    Object? result = freezed,
   }) {
     return _then(QueryStateLoaded<T>(
       data: data == freezed ? _value.data : data as T,
@@ -568,9 +530,7 @@ class _$QueryStateLoadedCopyWithImpl<T, $Res>
 
 /// @nodoc
 class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
-  const _$QueryStateLoaded({@required this.data, @required this.result})
-      : assert(data != null),
-        assert(result != null);
+  const _$QueryStateLoaded({required this.data, required this.result});
 
   @override
   final T data;
@@ -605,35 +565,29 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return loaded(data, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(data, result);
     }
@@ -642,35 +596,28 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -680,12 +627,13 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
 
 abstract class QueryStateLoaded<T> implements QueryState<T> {
   const factory QueryStateLoaded(
-      {@required T data, @required QueryResult result}) = _$QueryStateLoaded<T>;
+      {required T data, required QueryResult result}) = _$QueryStateLoaded<T>;
 
-  T get data;
-  QueryResult get result;
+  T get data => throw _privateConstructorUsedError;
+  QueryResult get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith;
+  $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -693,7 +641,7 @@ abstract class $QueryStateRefetchCopyWith<T, $Res> {
   factory $QueryStateRefetchCopyWith(QueryStateRefetch<T> value,
           $Res Function(QueryStateRefetch<T>) then) =
       _$QueryStateRefetchCopyWithImpl<T, $Res>;
-  $Res call({T data, QueryResult result});
+  $Res call({T? data, QueryResult? result});
 }
 
 /// @nodoc
@@ -709,12 +657,12 @@ class _$QueryStateRefetchCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object result = freezed,
+    Object? data = freezed,
+    Object? result = freezed,
   }) {
     return _then(QueryStateRefetch<T>(
-      data: data == freezed ? _value.data : data as T,
-      result: result == freezed ? _value.result : result as QueryResult,
+      data: data == freezed ? _value.data : data as T?,
+      result: result == freezed ? _value.result : result as QueryResult?,
     ));
   }
 }
@@ -724,9 +672,9 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
   const _$QueryStateRefetch({this.data, this.result});
 
   @override
-  final T data;
+  final T? data;
   @override
-  final QueryResult result;
+  final QueryResult? result;
 
   @override
   String toString() {
@@ -757,35 +705,29 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return refetch(data, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refetch != null) {
       return refetch(data, result);
     }
@@ -794,35 +736,28 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return refetch(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (refetch != null) {
       return refetch(this);
     }
@@ -831,13 +766,14 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
 }
 
 abstract class QueryStateRefetch<T> implements QueryState<T> {
-  const factory QueryStateRefetch({T data, QueryResult result}) =
+  const factory QueryStateRefetch({T? data, QueryResult? result}) =
       _$QueryStateRefetch<T>;
 
-  T get data;
-  QueryResult get result;
+  T? get data => throw _privateConstructorUsedError;
+  QueryResult? get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith;
+  $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -845,7 +781,7 @@ abstract class $QueryStateFetchMoreCopyWith<T, $Res> {
   factory $QueryStateFetchMoreCopyWith(QueryStateFetchMore<T> value,
           $Res Function(QueryStateFetchMore<T>) then) =
       _$QueryStateFetchMoreCopyWithImpl<T, $Res>;
-  $Res call({T data, QueryResult result});
+  $Res call({T data, QueryResult? result});
 }
 
 /// @nodoc
@@ -861,25 +797,24 @@ class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object result = freezed,
+    Object? data = freezed,
+    Object? result = freezed,
   }) {
     return _then(QueryStateFetchMore<T>(
       data: data == freezed ? _value.data : data as T,
-      result: result == freezed ? _value.result : result as QueryResult,
+      result: result == freezed ? _value.result : result as QueryResult?,
     ));
   }
 }
 
 /// @nodoc
 class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
-  const _$QueryStateFetchMore({@required this.data, this.result})
-      : assert(data != null);
+  const _$QueryStateFetchMore({required this.data, this.result});
 
   @override
   final T data;
   @override
-  final QueryResult result;
+  final QueryResult? result;
 
   @override
   String toString() {
@@ -910,35 +845,29 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(QueryResult result),
-    @required TResult error(OperationException error, QueryResult result),
-    @required TResult loaded(T data, QueryResult result),
-    @required TResult refetch(T data, QueryResult result),
-    @required TResult fetchMore(T data, QueryResult result),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(OperationException error, QueryResult result)
+        error,
+    required TResult Function(T data, QueryResult result) loaded,
+    required TResult Function(T? data, QueryResult? result) refetch,
+    required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return fetchMore(data, result);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(QueryResult result),
-    TResult error(OperationException error, QueryResult result),
-    TResult loaded(T data, QueryResult result),
-    TResult refetch(T data, QueryResult result),
-    TResult fetchMore(T data, QueryResult result),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (fetchMore != null) {
       return fetchMore(data, result);
     }
@@ -947,35 +876,28 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(QueryStateInitial<T> value),
-    @required TResult loading(QueryStateLoading<T> value),
-    @required TResult error(QueryStateError<T> value),
-    @required TResult loaded(QueryStateLoaded<T> value),
-    @required TResult refetch(QueryStateRefetch<T> value),
-    @required TResult fetchMore(QueryStateFetchMore<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<T> value) initial,
+    required TResult Function(QueryStateLoading<T> value) loading,
+    required TResult Function(QueryStateError<T> value) error,
+    required TResult Function(QueryStateLoaded<T> value) loaded,
+    required TResult Function(QueryStateRefetch<T> value) refetch,
+    required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    assert(loaded != null);
-    assert(refetch != null);
-    assert(fetchMore != null);
     return fetchMore(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(QueryStateInitial<T> value),
-    TResult loading(QueryStateLoading<T> value),
-    TResult error(QueryStateError<T> value),
-    TResult loaded(QueryStateLoaded<T> value),
-    TResult refetch(QueryStateRefetch<T> value),
-    TResult fetchMore(QueryStateFetchMore<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (fetchMore != null) {
       return fetchMore(this);
     }
@@ -984,11 +906,12 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
 }
 
 abstract class QueryStateFetchMore<T> implements QueryState<T> {
-  const factory QueryStateFetchMore({@required T data, QueryResult result}) =
+  const factory QueryStateFetchMore({required T data, QueryResult? result}) =
       _$QueryStateFetchMore<T>;
 
-  T get data;
-  QueryResult get result;
+  T get data => throw _privateConstructorUsedError;
+  QueryResult? get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith;
+  $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

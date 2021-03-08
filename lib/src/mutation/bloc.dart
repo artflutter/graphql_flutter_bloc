@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/src/helper.dart';
-import 'package:meta/meta.dart';
 
 import 'event.dart';
 import 'state.dart';
@@ -10,14 +9,14 @@ import 'state.dart';
 abstract class MutationBloc<T>
     extends Bloc<MutationEvent<T>, MutationState<T>> {
   GraphQLClient client;
-  ObservableQuery result;
+  late ObservableQuery result;
   WatchQueryOptions options;
 
-  MutationBloc({@required this.client, @required this.options})
+  MutationBloc({required this.client, required this.options})
       : super(MutationState<T>.initial()) {
     result = client.watchQuery(options);
 
-    result.stream.listen((QueryResult result) {
+    result.stream.listen((result) {
       // if (result.loading && result.data == null) {
       //   add(MutationEvent.loading(result: result));
       // }
@@ -29,8 +28,9 @@ abstract class MutationBloc<T>
         ));
       }
 
-      if (result.hasException) {
-        add(MutationEvent<T>.error(error: result.exception, result: result));
+      final exception = result.exception;
+      if (exception != null) {
+        add(MutationEvent<T>.error(error: exception, result: result));
       }
     });
   }
@@ -39,7 +39,7 @@ abstract class MutationBloc<T>
     result.close();
   }
 
-  void run(Map<String, dynamic> variables, {Object optimisticResult}) {
+  void run(Map<String, dynamic> variables, {Object? optimisticResult}) {
     add(MutationEvent<T>.run(variables, optimisticResult: optimisticResult));
   }
 
@@ -47,11 +47,11 @@ abstract class MutationBloc<T>
 
   bool get isCompleted => state is MutationStateCompleted;
 
-  T parseData(Map<String, dynamic> data);
+  T parseData(Map<String, dynamic>? data);
 
   bool get hasError => state is MutationStateError<T>;
 
-  String get getError => hasError
+  String? get getError => hasError
       ? parseOperationException((state as MutationStateError<T>).error)
       : null;
 
@@ -69,7 +69,7 @@ abstract class MutationBloc<T>
   }
 
   Stream<MutationState<T>> _run(
-      Map<String, dynamic> variables, Object optimisticResult) async* {
+      Map<String, dynamic> variables, Object? optimisticResult) async* {
     (result
           ..variables = variables
           ..options.optimisticResult = optimisticResult)
@@ -78,7 +78,7 @@ abstract class MutationBloc<T>
     yield MutationState.loading();
   }
 
-  Stream<MutationState<T>> _completed(T data, QueryResult result) async* {
+  Stream<MutationState<T>> _completed(T? data, QueryResult result) async* {
     yield MutationState<T>.completed(data: data, result: result);
   }
 }
