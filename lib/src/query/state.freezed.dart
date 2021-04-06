@@ -250,7 +250,10 @@ class _$QueryStateLoadingCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryStateLoading<T>(
-      result: result == freezed ? _value.result : result as QueryResult,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -382,8 +385,14 @@ class _$QueryStateErrorCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryStateError<T>(
-      error: error == freezed ? _value.error : error as OperationException,
-      result: result == freezed ? _value.result : result as QueryResult,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as OperationException,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -522,8 +531,14 @@ class _$QueryStateLoadedCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryStateLoaded<T>(
-      data: data == freezed ? _value.data : data as T,
-      result: result == freezed ? _value.result : result as QueryResult,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -661,8 +676,14 @@ class _$QueryStateRefetchCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryStateRefetch<T>(
-      data: data == freezed ? _value.data : data as T?,
-      result: result == freezed ? _value.result : result as QueryResult?,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T?,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult?,
     ));
   }
 }
@@ -801,8 +822,14 @@ class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryStateFetchMore<T>(
-      data: data == freezed ? _value.data : data as T,
-      result: result == freezed ? _value.result : result as QueryResult?,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult?,
     ));
   }
 }

@@ -12,7 +12,7 @@ class BlocSubscription extends StatefulWidget {
 }
 
 class _BlocSubscriptionState extends State<BlocSubscription> {
-  SubscriptionDataBloc bloc;
+  late SubscriptionDataBloc bloc;
 
   @override
   void initState() {
@@ -37,7 +37,7 @@ class _BlocSubscriptionState extends State<BlocSubscription> {
       ),
       body: BlocBuilder<SubscriptionDataBloc,
           SubscriptionState<SubscriptionData$Subscription>>(
-        cubit: bloc,
+        bloc: bloc,
         builder: (context, state) {
           return state.when(
               initial: () => Container(

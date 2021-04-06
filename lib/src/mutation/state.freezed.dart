@@ -316,8 +316,14 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
     Object? result = freezed,
   }) {
     return _then(MutationStateError<TData>(
-      error: error == freezed ? _value.error : error as OperationException,
-      result: result == freezed ? _value.result : result as QueryResult,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as OperationException,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -450,8 +456,14 @@ class _$MutationStateCompletedCopyWithImpl<TData, $Res>
     Object? result = freezed,
   }) {
     return _then(MutationStateCompleted<TData>(
-      data: data == freezed ? _value.data : data as TData?,
-      result: result == freezed ? _value.result : result as QueryResult,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TData?,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }

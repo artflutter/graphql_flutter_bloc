@@ -13,38 +13,43 @@ description: Demo on how to use `graphql_flutter_bloc`
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  path_provider: ^1.6.22
-  flutter_bloc: ^6.0.6
-#  equatable: ^1.1.1
-  json_serializable: ^3.5.0
-  gql: ^0.12.4-alpha
-  http: ^0.12.2
-  hive: ^1.4.4+1
-  graphql: ^4.0.0-beta.3
+  path_provider: ^2.0.1
+  flutter_bloc: ^7.0.0
+  json_serializable: ^4.1.0
+  gql: ^0.13.0-nullsafety.2
+  http: ^0.13.1
+  hive: ^2.0.2
+  graphql: ^5.0.0-nullsafety.2
   graphql_flutter_bloc:
     path: ../
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.1
-  artemis: ^6.15.1-beta.1
+  build_runner: ^1.12.2
+#  artemis: ^7.0.0-beta.1
+  artemis:
+    git:
+      url: https://github.com/comigor/artemis.git
+      ref: d447415fa16b3e8265152de47d6aba192ff8a1d1
 
-dependency_overrides:
-  gql_http_link: ^0.3.1
-  gql_link: ^0.3.1-alpha
+#dependency_overrides:
+#  gql_http_link: ^0.4.0-nullsafety.1
+#  gql_link: ^0.4.0-nullsafety.3
 
-  rxdart: ^0.24.1
+#  rxdart: ^0.24.1
 #  meta: 1.2.2
 #  analyzer: ^0.39.15
 

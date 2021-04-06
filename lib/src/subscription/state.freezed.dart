@@ -221,7 +221,10 @@ class _$SubscriptionStateLoadingCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(SubscriptionStateLoading<T>(
-      result: result == freezed ? _value.result : result as QueryResult,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -346,8 +349,14 @@ class _$SubscriptionStateErrorCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(SubscriptionStateError<T>(
-      error: error == freezed ? _value.error : error as OperationException,
-      result: result == freezed ? _value.result : result as QueryResult,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as OperationException,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -480,8 +489,14 @@ class _$SubscriptionStateLoadedCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(SubscriptionStateLoaded<T>(
-      data: data == freezed ? _value.data : data as T?,
-      result: result == freezed ? _value.result : result as QueryResult,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T?,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }

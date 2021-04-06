@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// @dart=2.12
 
 part of 'q.graphql_api.graphql.dart';
 
@@ -10,9 +11,9 @@ SearchCompany$Query$SearchCompany _$SearchCompany$Query$SearchCompanyFromJson(
     Map<String, dynamic> json) {
   return SearchCompany$Query$SearchCompany()
     ..id = json['id'] as String
-    ..name = json['name'] as String
-    ..industry = json['industry'] as String
-    ..$$typename = json['__typename'] as String;
+    ..name = json['name'] as String?
+    ..industry = json['industry'] as String?
+    ..$$typename = json['__typename'] as String?;
 }
 
 Map<String, dynamic> _$SearchCompany$Query$SearchCompanyToJson(
@@ -26,28 +27,25 @@ Map<String, dynamic> _$SearchCompany$Query$SearchCompanyToJson(
 
 SearchCompany$Query _$SearchCompany$QueryFromJson(Map<String, dynamic> json) {
   return SearchCompany$Query()
-    ..searchCompany = (json['searchCompany'] as List)
-        ?.map((e) => e == null
-            ? null
-            : SearchCompany$Query$SearchCompany.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..searchCompany = (json['searchCompany'] as List<dynamic>)
+        .map((e) => SearchCompany$Query$SearchCompany.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$SearchCompany$QueryToJson(
         SearchCompany$Query instance) =>
     <String, dynamic>{
-      'searchCompany':
-          instance.searchCompany?.map((e) => e?.toJson())?.toList(),
+      'searchCompany': instance.searchCompany.map((e) => e.toJson()).toList(),
     };
 
 AddCompany$Mutation$AddCompany _$AddCompany$Mutation$AddCompanyFromJson(
     Map<String, dynamic> json) {
   return AddCompany$Mutation$AddCompany()
     ..id = json['id'] as String
-    ..name = json['name'] as String
-    ..industry = json['industry'] as String
-    ..$$typename = json['__typename'] as String;
+    ..name = json['name'] as String?
+    ..industry = json['industry'] as String?
+    ..$$typename = json['__typename'] as String?;
 }
 
 Map<String, dynamic> _$AddCompany$Mutation$AddCompanyToJson(
@@ -75,8 +73,8 @@ Map<String, dynamic> _$AddCompany$MutationToJson(
 
 CompanyInput _$CompanyInputFromJson(Map<String, dynamic> json) {
   return CompanyInput(
-    industry: json['industry'] as String,
-    name: json['name'] as String,
+    industry: json['industry'] as String?,
+    name: json['name'] as String?,
   );
 }
 
@@ -91,9 +89,9 @@ CompaniesPaginatedData$Query$AllCompaniesPaginated
         Map<String, dynamic> json) {
   return CompaniesPaginatedData$Query$AllCompaniesPaginated()
     ..id = json['id'] as String
-    ..name = json['name'] as String
-    ..industry = json['industry'] as String
-    ..$$typename = json['__typename'] as String;
+    ..name = json['name'] as String?
+    ..industry = json['industry'] as String?
+    ..$$typename = json['__typename'] as String?;
 }
 
 Map<String, dynamic> _$CompaniesPaginatedData$Query$AllCompaniesPaginatedToJson(
@@ -108,19 +106,17 @@ Map<String, dynamic> _$CompaniesPaginatedData$Query$AllCompaniesPaginatedToJson(
 CompaniesPaginatedData$Query _$CompaniesPaginatedData$QueryFromJson(
     Map<String, dynamic> json) {
   return CompaniesPaginatedData$Query()
-    ..allCompaniesPaginated = (json['allCompaniesPaginated'] as List)
-        ?.map((e) => e == null
-            ? null
-            : CompaniesPaginatedData$Query$AllCompaniesPaginated.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..allCompaniesPaginated = (json['allCompaniesPaginated'] as List<dynamic>)
+        .map((e) => CompaniesPaginatedData$Query$AllCompaniesPaginated.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$CompaniesPaginatedData$QueryToJson(
         CompaniesPaginatedData$Query instance) =>
     <String, dynamic>{
       'allCompaniesPaginated':
-          instance.allCompaniesPaginated?.map((e) => e?.toJson())?.toList(),
+          instance.allCompaniesPaginated.map((e) => e.toJson()).toList(),
     };
 
 PaginationInput _$PaginationInputFromJson(Map<String, dynamic> json) {
@@ -140,9 +136,9 @@ CompaniesData$Query$AllCompanies _$CompaniesData$Query$AllCompaniesFromJson(
     Map<String, dynamic> json) {
   return CompaniesData$Query$AllCompanies()
     ..id = json['id'] as String
-    ..name = json['name'] as String
-    ..industry = json['industry'] as String
-    ..$$typename = json['__typename'] as String;
+    ..name = json['name'] as String?
+    ..industry = json['industry'] as String?
+    ..$$typename = json['__typename'] as String?;
 }
 
 Map<String, dynamic> _$CompaniesData$Query$AllCompaniesToJson(
@@ -156,18 +152,16 @@ Map<String, dynamic> _$CompaniesData$Query$AllCompaniesToJson(
 
 CompaniesData$Query _$CompaniesData$QueryFromJson(Map<String, dynamic> json) {
   return CompaniesData$Query()
-    ..allCompanies = (json['allCompanies'] as List)
-        ?.map((e) => e == null
-            ? null
-            : CompaniesData$Query$AllCompanies.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..allCompanies = (json['allCompanies'] as List<dynamic>)
+        .map((e) => CompaniesData$Query$AllCompanies.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$CompaniesData$QueryToJson(
         CompaniesData$Query instance) =>
     <String, dynamic>{
-      'allCompanies': instance.allCompanies?.map((e) => e?.toJson())?.toList(),
+      'allCompanies': instance.allCompanies.map((e) => e.toJson()).toList(),
     };
 
 SearchCompanyArguments _$SearchCompanyArgumentsFromJson(
@@ -185,29 +179,26 @@ Map<String, dynamic> _$SearchCompanyArgumentsToJson(
 
 AddCompanyArguments _$AddCompanyArgumentsFromJson(Map<String, dynamic> json) {
   return AddCompanyArguments(
-    input: json['input'] == null
-        ? null
-        : CompanyInput.fromJson(json['input'] as Map<String, dynamic>),
+    input: CompanyInput.fromJson(json['input'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$AddCompanyArgumentsToJson(
         AddCompanyArguments instance) =>
     <String, dynamic>{
-      'input': instance.input?.toJson(),
+      'input': instance.input.toJson(),
     };
 
 CompaniesPaginatedDataArguments _$CompaniesPaginatedDataArgumentsFromJson(
     Map<String, dynamic> json) {
   return CompaniesPaginatedDataArguments(
-    pagination: json['pagination'] == null
-        ? null
-        : PaginationInput.fromJson(json['pagination'] as Map<String, dynamic>),
+    pagination:
+        PaginationInput.fromJson(json['pagination'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$CompaniesPaginatedDataArgumentsToJson(
         CompaniesPaginatedDataArguments instance) =>
     <String, dynamic>{
-      'pagination': instance.pagination?.toJson(),
+      'pagination': instance.pagination.toJson(),
     };

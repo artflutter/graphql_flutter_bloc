@@ -26,8 +26,8 @@ type Mutation {
 }
 
 type Query {
-    allCompanies: [Company!]
-    allCompaniesPaginated(pagination: PaginationInput!): [Company!]
+    allCompanies: [Company!]!
+    allCompaniesPaginated(pagination: PaginationInput!): [Company!]!
     company(id: ID): Company
     employee(id: ID): Employee
     searchCompany(name: String!): [Company!]!

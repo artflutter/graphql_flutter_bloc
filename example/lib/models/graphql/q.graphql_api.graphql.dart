@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// @dart = 2.12
 
-import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -8,203 +8,208 @@ import 'package:gql/ast.dart';
 part 'q.graphql_api.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class SearchCompany$Query$SearchCompany with EquatableMixin {
+class SearchCompany$Query$SearchCompany extends JsonSerializable
+    with EquatableMixin {
   SearchCompany$Query$SearchCompany();
 
   factory SearchCompany$Query$SearchCompany.fromJson(
           Map<String, dynamic> json) =>
       _$SearchCompany$Query$SearchCompanyFromJson(json);
 
-  String id;
+  late String id;
 
-  String name;
+  String? name;
 
-  String industry;
+  String? industry;
 
   @JsonKey(name: '__typename')
-  String $$typename;
+  String? $$typename;
 
   @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object?> get props => [id, name, industry, $$typename];
   Map<String, dynamic> toJson() =>
       _$SearchCompany$Query$SearchCompanyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class SearchCompany$Query with EquatableMixin {
+class SearchCompany$Query extends JsonSerializable with EquatableMixin {
   SearchCompany$Query();
 
   factory SearchCompany$Query.fromJson(Map<String, dynamic> json) =>
       _$SearchCompany$QueryFromJson(json);
 
-  List<SearchCompany$Query$SearchCompany> searchCompany;
+  late List<SearchCompany$Query$SearchCompany> searchCompany;
 
   @override
-  List<Object> get props => [searchCompany];
+  List<Object?> get props => [searchCompany];
   Map<String, dynamic> toJson() => _$SearchCompany$QueryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class AddCompany$Mutation$AddCompany with EquatableMixin {
+class AddCompany$Mutation$AddCompany extends JsonSerializable
+    with EquatableMixin {
   AddCompany$Mutation$AddCompany();
 
   factory AddCompany$Mutation$AddCompany.fromJson(Map<String, dynamic> json) =>
       _$AddCompany$Mutation$AddCompanyFromJson(json);
 
-  String id;
+  late String id;
 
-  String name;
+  String? name;
 
-  String industry;
+  String? industry;
 
   @JsonKey(name: '__typename')
-  String $$typename;
+  String? $$typename;
 
   @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object?> get props => [id, name, industry, $$typename];
   Map<String, dynamic> toJson() => _$AddCompany$Mutation$AddCompanyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class AddCompany$Mutation with EquatableMixin {
+class AddCompany$Mutation extends JsonSerializable with EquatableMixin {
   AddCompany$Mutation();
 
   factory AddCompany$Mutation.fromJson(Map<String, dynamic> json) =>
       _$AddCompany$MutationFromJson(json);
 
-  AddCompany$Mutation$AddCompany addCompany;
+  AddCompany$Mutation$AddCompany? addCompany;
 
   @override
-  List<Object> get props => [addCompany];
+  List<Object?> get props => [addCompany];
   Map<String, dynamic> toJson() => _$AddCompany$MutationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompanyInput with EquatableMixin {
+class CompanyInput extends JsonSerializable with EquatableMixin {
   CompanyInput({this.industry, this.name});
 
   factory CompanyInput.fromJson(Map<String, dynamic> json) =>
       _$CompanyInputFromJson(json);
 
-  String industry;
+  String? industry;
 
-  String name;
+  String? name;
 
   @override
-  List<Object> get props => [industry, name];
+  List<Object?> get props => [industry, name];
   Map<String, dynamic> toJson() => _$CompanyInputToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesPaginatedData$Query$AllCompaniesPaginated with EquatableMixin {
+class CompaniesPaginatedData$Query$AllCompaniesPaginated
+    extends JsonSerializable with EquatableMixin {
   CompaniesPaginatedData$Query$AllCompaniesPaginated();
 
   factory CompaniesPaginatedData$Query$AllCompaniesPaginated.fromJson(
           Map<String, dynamic> json) =>
       _$CompaniesPaginatedData$Query$AllCompaniesPaginatedFromJson(json);
 
-  String id;
+  late String id;
 
-  String name;
+  String? name;
 
-  String industry;
+  String? industry;
 
   @JsonKey(name: '__typename')
-  String $$typename;
+  String? $$typename;
 
   @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object?> get props => [id, name, industry, $$typename];
   Map<String, dynamic> toJson() =>
       _$CompaniesPaginatedData$Query$AllCompaniesPaginatedToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesPaginatedData$Query with EquatableMixin {
+class CompaniesPaginatedData$Query extends JsonSerializable
+    with EquatableMixin {
   CompaniesPaginatedData$Query();
 
   factory CompaniesPaginatedData$Query.fromJson(Map<String, dynamic> json) =>
       _$CompaniesPaginatedData$QueryFromJson(json);
 
-  List<CompaniesPaginatedData$Query$AllCompaniesPaginated>
+  late List<CompaniesPaginatedData$Query$AllCompaniesPaginated>
       allCompaniesPaginated;
 
   @override
-  List<Object> get props => [allCompaniesPaginated];
+  List<Object?> get props => [allCompaniesPaginated];
   Map<String, dynamic> toJson() => _$CompaniesPaginatedData$QueryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class PaginationInput with EquatableMixin {
-  PaginationInput({@required this.limit, @required this.offset});
+class PaginationInput extends JsonSerializable with EquatableMixin {
+  PaginationInput({required this.limit, required this.offset});
 
   factory PaginationInput.fromJson(Map<String, dynamic> json) =>
       _$PaginationInputFromJson(json);
 
-  int limit;
+  late int limit;
 
-  int offset;
+  late int offset;
 
   @override
-  List<Object> get props => [limit, offset];
+  List<Object?> get props => [limit, offset];
   Map<String, dynamic> toJson() => _$PaginationInputToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesData$Query$AllCompanies with EquatableMixin {
+class CompaniesData$Query$AllCompanies extends JsonSerializable
+    with EquatableMixin {
   CompaniesData$Query$AllCompanies();
 
   factory CompaniesData$Query$AllCompanies.fromJson(
           Map<String, dynamic> json) =>
       _$CompaniesData$Query$AllCompaniesFromJson(json);
 
-  String id;
+  late String id;
 
-  String name;
+  String? name;
 
-  String industry;
+  String? industry;
 
   @JsonKey(name: '__typename')
-  String $$typename;
+  String? $$typename;
 
   @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object?> get props => [id, name, industry, $$typename];
   Map<String, dynamic> toJson() =>
       _$CompaniesData$Query$AllCompaniesToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesData$Query with EquatableMixin {
+class CompaniesData$Query extends JsonSerializable with EquatableMixin {
   CompaniesData$Query();
 
   factory CompaniesData$Query.fromJson(Map<String, dynamic> json) =>
       _$CompaniesData$QueryFromJson(json);
 
-  List<CompaniesData$Query$AllCompanies> allCompanies;
+  late List<CompaniesData$Query$AllCompanies> allCompanies;
 
   @override
-  List<Object> get props => [allCompanies];
+  List<Object?> get props => [allCompanies];
   Map<String, dynamic> toJson() => _$CompaniesData$QueryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class SearchCompanyArguments extends JsonSerializable with EquatableMixin {
-  SearchCompanyArguments({@required this.name});
+  SearchCompanyArguments({required this.name});
 
   @override
   factory SearchCompanyArguments.fromJson(Map<String, dynamic> json) =>
       _$SearchCompanyArgumentsFromJson(json);
 
-  final String name;
+  late String name;
 
   @override
-  List<Object> get props => [name];
+  List<Object?> get props => [name];
   @override
   Map<String, dynamic> toJson() => _$SearchCompanyArgumentsToJson(this);
 }
 
 class SearchCompanyQuery
     extends GraphQLQuery<SearchCompany$Query, SearchCompanyArguments> {
-  SearchCompanyQuery({this.variables});
+  SearchCompanyQuery({required this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
@@ -266,7 +271,7 @@ class SearchCompanyQuery
   final SearchCompanyArguments variables;
 
   @override
-  List<Object> get props => [document, operationName, variables];
+  List<Object?> get props => [document, operationName, variables];
   @override
   SearchCompany$Query parse(Map<String, dynamic> json) =>
       SearchCompany$Query.fromJson(json);
@@ -274,23 +279,23 @@ class SearchCompanyQuery
 
 @JsonSerializable(explicitToJson: true)
 class AddCompanyArguments extends JsonSerializable with EquatableMixin {
-  AddCompanyArguments({@required this.input});
+  AddCompanyArguments({required this.input});
 
   @override
   factory AddCompanyArguments.fromJson(Map<String, dynamic> json) =>
       _$AddCompanyArgumentsFromJson(json);
 
-  final CompanyInput input;
+  late CompanyInput input;
 
   @override
-  List<Object> get props => [input];
+  List<Object?> get props => [input];
   @override
   Map<String, dynamic> toJson() => _$AddCompanyArgumentsToJson(this);
 }
 
 class AddCompanyMutation
     extends GraphQLQuery<AddCompany$Mutation, AddCompanyArguments> {
-  AddCompanyMutation({this.variables});
+  AddCompanyMutation({required this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
@@ -352,7 +357,7 @@ class AddCompanyMutation
   final AddCompanyArguments variables;
 
   @override
-  List<Object> get props => [document, operationName, variables];
+  List<Object?> get props => [document, operationName, variables];
   @override
   AddCompany$Mutation parse(Map<String, dynamic> json) =>
       AddCompany$Mutation.fromJson(json);
@@ -361,16 +366,16 @@ class AddCompanyMutation
 @JsonSerializable(explicitToJson: true)
 class CompaniesPaginatedDataArguments extends JsonSerializable
     with EquatableMixin {
-  CompaniesPaginatedDataArguments({@required this.pagination});
+  CompaniesPaginatedDataArguments({required this.pagination});
 
   @override
   factory CompaniesPaginatedDataArguments.fromJson(Map<String, dynamic> json) =>
       _$CompaniesPaginatedDataArgumentsFromJson(json);
 
-  final PaginationInput pagination;
+  late PaginationInput pagination;
 
   @override
-  List<Object> get props => [pagination];
+  List<Object?> get props => [pagination];
   @override
   Map<String, dynamic> toJson() =>
       _$CompaniesPaginatedDataArgumentsToJson(this);
@@ -378,7 +383,7 @@ class CompaniesPaginatedDataArguments extends JsonSerializable
 
 class CompaniesPaginatedDataQuery extends GraphQLQuery<
     CompaniesPaginatedData$Query, CompaniesPaginatedDataArguments> {
-  CompaniesPaginatedDataQuery({this.variables});
+  CompaniesPaginatedDataQuery({required this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
@@ -440,7 +445,7 @@ class CompaniesPaginatedDataQuery extends GraphQLQuery<
   final CompaniesPaginatedDataArguments variables;
 
   @override
-  List<Object> get props => [document, operationName, variables];
+  List<Object?> get props => [document, operationName, variables];
   @override
   CompaniesPaginatedData$Query parse(Map<String, dynamic> json) =>
       CompaniesPaginatedData$Query.fromJson(json);
@@ -496,7 +501,7 @@ class CompaniesDataQuery
   final String operationName = 'CompaniesData';
 
   @override
-  List<Object> get props => [document, operationName];
+  List<Object?> get props => [document, operationName];
   @override
   CompaniesData$Query parse(Map<String, dynamic> json) =>
       CompaniesData$Query.fromJson(json);

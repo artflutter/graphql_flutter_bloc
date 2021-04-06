@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// @dart = 2.12
 
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -7,33 +8,34 @@ import 'package:gql/ast.dart';
 part 's.graphql_api.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class SubscriptionData$Subscription$Post$Data with EquatableMixin {
+class SubscriptionData$Subscription$Post$Data extends JsonSerializable
+    with EquatableMixin {
   SubscriptionData$Subscription$Post$Data();
 
   factory SubscriptionData$Subscription$Post$Data.fromJson(
           Map<String, dynamic> json) =>
       _$SubscriptionData$Subscription$Post$DataFromJson(json);
 
-  String id;
+  late String id;
 
-  String title;
+  late String title;
 
-  String subtitle;
+  late String subtitle;
 
-  String body;
+  late String body;
 
-  bool published;
+  late bool published;
 
-  String author;
+  late String author;
 
-  int upvotes;
+  late int upvotes;
 
-  int downvotes;
+  late int downvotes;
 
-  int commentCount;
+  late int commentCount;
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         title,
         subtitle,
@@ -49,34 +51,36 @@ class SubscriptionData$Subscription$Post$Data with EquatableMixin {
 }
 
 @JsonSerializable(explicitToJson: true)
-class SubscriptionData$Subscription$Post with EquatableMixin {
+class SubscriptionData$Subscription$Post extends JsonSerializable
+    with EquatableMixin {
   SubscriptionData$Subscription$Post();
 
   factory SubscriptionData$Subscription$Post.fromJson(
           Map<String, dynamic> json) =>
       _$SubscriptionData$Subscription$PostFromJson(json);
 
-  String mutation;
+  late String mutation;
 
-  SubscriptionData$Subscription$Post$Data data;
+  late SubscriptionData$Subscription$Post$Data data;
 
   @override
-  List<Object> get props => [mutation, data];
+  List<Object?> get props => [mutation, data];
   Map<String, dynamic> toJson() =>
       _$SubscriptionData$Subscription$PostToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class SubscriptionData$Subscription with EquatableMixin {
+class SubscriptionData$Subscription extends JsonSerializable
+    with EquatableMixin {
   SubscriptionData$Subscription();
 
   factory SubscriptionData$Subscription.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionData$SubscriptionFromJson(json);
 
-  SubscriptionData$Subscription$Post post;
+  late SubscriptionData$Subscription$Post post;
 
   @override
-  List<Object> get props => [post];
+  List<Object?> get props => [post];
   Map<String, dynamic> toJson() => _$SubscriptionData$SubscriptionToJson(this);
 }
 
@@ -173,7 +177,7 @@ class SubscriptionDataSubscription
   final String operationName = 'SubscriptionData';
 
   @override
-  List<Object> get props => [document, operationName];
+  List<Object?> get props => [document, operationName];
   @override
   SubscriptionData$Subscription parse(Map<String, dynamic> json) =>
       SubscriptionData$Subscription.fromJson(json);

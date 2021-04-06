@@ -8,14 +8,14 @@ import 'bloc/search_company_bloc.dart';
 import 'models/graphql/q.graphql_api.graphql.dart';
 
 class BlocSearchQuery extends StatefulWidget {
-  BlocSearchQuery({Key key}) : super(key: key);
+  BlocSearchQuery({Key? key}) : super(key: key);
 
   @override
   _BlocSearchQueryState createState() => _BlocSearchQueryState();
 }
 
 class _BlocSearchQueryState extends State<BlocSearchQuery> {
-  SearchCompanyBloc bloc;
+  late SearchCompanyBloc bloc;
 
   @override
   void initState() {
@@ -30,9 +30,13 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
   }
 
   Widget _displayResult(
-    SearchCompany$Query data,
-    QueryResult result,
+    SearchCompany$Query? data,
+    QueryResult? result,
   ) {
+    if (data == null) {
+      return Container();
+    }
+
     final itemCount = data.searchCompany.length;
 
     if (itemCount == 0) {
@@ -56,7 +60,7 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
           final company = data.searchCompany[index];
 
           return ListTile(
-            title: Text(company.name),
+            title: Text(company.name ?? 'Unnamed'),
           );
         },
       );
@@ -80,7 +84,7 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
                 variables: SearchCompanyArguments(name: value).toJson(),
               ),
               validator: (value) {
-                if (value.isEmpty) {
+                if (value != null && value.isEmpty) {
                   return 'Please enter some text';
                 }
                 return null;
@@ -88,7 +92,7 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
             ),
           ),
           BlocBuilder<SearchCompanyBloc, QueryState<SearchCompany$Query>>(
-            cubit: bloc,
+            bloc: bloc,
             builder: (_, state) {
               return state.when(
                 initial: () => Container(),

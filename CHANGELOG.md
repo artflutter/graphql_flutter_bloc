@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.7.0-nullsafety.2
+- example => null safe
+- package update
+
 ## 0.7.0-nullsafety.0
 - nullsafety
 

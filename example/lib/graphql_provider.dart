@@ -3,13 +3,13 @@ import 'package:graphql/client.dart';
 import 'package:example/main.dart';
 
 final client = getClient(
-  uri: 'http://$host:3000',
+  uri: 'https://0859e500ade6.ngrok.io/graphql',
   subscriptionUri: 'ws://$host:3000/',
 );
 
 GraphQLClient getClient({
-  @required String uri,
-  String subscriptionUri,
+  required String uri,
+  String? subscriptionUri,
 }) {
   Link link = HttpLink(uri);
 
@@ -32,10 +32,10 @@ GraphQLClient getClient({
   );
 }
 
-String uuidFromObject(Object object) {
+String? uuidFromObject(Object object) {
   if (object is Map<String, Object>) {
-    final String typeName = object['__typename'] as String;
-    final String id = object['id'].toString();
+    final String? typeName = object['__typename'] as String;
+    final String? id = object['id'].toString();
     if (typeName != null && id != null) {
       return <String>[typeName, id].join('/');
     }
@@ -46,8 +46,8 @@ String uuidFromObject(Object object) {
 final cache = GraphQLCache(store: InMemoryStore());
 
 ValueNotifier<GraphQLClient> clientFor({
-  @required String uri,
-  String subscriptionUri,
+  required String uri,
+  String? subscriptionUri,
 }) {
   Link link = HttpLink(uri);
   if (subscriptionUri != null) {

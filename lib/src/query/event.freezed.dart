@@ -152,8 +152,14 @@ class _$QueryEventErrorCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryEventError<T>(
-      error: error == freezed ? _value.error : error as OperationException,
-      result: result == freezed ? _value.result : result as QueryResult,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as OperationException,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -297,7 +303,8 @@ class _$QueryEventRunCopyWithImpl<T, $Res>
     return _then(QueryEventRun<T>(
       variables: variables == freezed
           ? _value.variables
-          : variables as Map<String, dynamic>?,
+          : variables // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       optimisticResult: optimisticResult == freezed
           ? _value.optimisticResult
           : optimisticResult,
@@ -443,7 +450,10 @@ class _$QueryEventLoadingCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryEventLoading<T>(
-      result: result == freezed ? _value.result : result as QueryResult,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -578,8 +588,14 @@ class _$QueryEventLoadedCopyWithImpl<T, $Res>
     Object? result = freezed,
   }) {
     return _then(QueryEventLoaded<T>(
-      data: data == freezed ? _value.data : data as T,
-      result: result == freezed ? _value.result : result as QueryResult,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as QueryResult,
     ));
   }
 }
@@ -824,8 +840,10 @@ class _$QueryEventFetchMoreCopyWithImpl<T, $Res>
     Object? options = freezed,
   }) {
     return _then(QueryEventFetchMore<T>(
-      options:
-          options == freezed ? _value.options : options as FetchMoreOptions,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as FetchMoreOptions,
     ));
   }
 }

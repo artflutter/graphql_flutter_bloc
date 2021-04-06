@@ -35,8 +35,8 @@ input PaginationInput {
 type Query {
   employee(id: ID): Employee
   company(id: ID): Company
-  allCompanies: [Company!]
-  allCompaniesPaginated(pagination: PaginationInput!): [Company!] @listLength(min: 5, max: 5)
+  allCompanies: [Company!]!
+  allCompaniesPaginated(pagination: PaginationInput!): [Company!]! @listLength(min: 5, max: 5)
   searchCompany(name: String!): [Company!]!  @listLength(min: 5, max: 5)
 }
 

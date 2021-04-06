@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// @dart=2.12
 
 part of 's.graphql_api.graphql.dart';
 
@@ -39,30 +40,26 @@ SubscriptionData$Subscription$Post _$SubscriptionData$Subscription$PostFromJson(
     Map<String, dynamic> json) {
   return SubscriptionData$Subscription$Post()
     ..mutation = json['mutation'] as String
-    ..data = json['data'] == null
-        ? null
-        : SubscriptionData$Subscription$Post$Data.fromJson(
-            json['data'] as Map<String, dynamic>);
+    ..data = SubscriptionData$Subscription$Post$Data.fromJson(
+        json['data'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$SubscriptionData$Subscription$PostToJson(
         SubscriptionData$Subscription$Post instance) =>
     <String, dynamic>{
       'mutation': instance.mutation,
-      'data': instance.data?.toJson(),
+      'data': instance.data.toJson(),
     };
 
 SubscriptionData$Subscription _$SubscriptionData$SubscriptionFromJson(
     Map<String, dynamic> json) {
   return SubscriptionData$Subscription()
-    ..post = json['post'] == null
-        ? null
-        : SubscriptionData$Subscription$Post.fromJson(
-            json['post'] as Map<String, dynamic>);
+    ..post = SubscriptionData$Subscription$Post.fromJson(
+        json['post'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$SubscriptionData$SubscriptionToJson(
         SubscriptionData$Subscription instance) =>
     <String, dynamic>{
-      'post': instance.post?.toJson(),
+      'post': instance.post.toJson(),
     };

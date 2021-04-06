@@ -14,13 +14,12 @@ class BlocQuery extends StatefulWidget {
 }
 
 class _BlocQueryState extends State<BlocQuery> {
-  Completer<void> _refreshCompleter;
-  CompaniesPaginatedBloc bloc;
+  Completer<void> _refreshCompleter = Completer<void>();
+  late CompaniesPaginatedBloc bloc;
 
   @override
   void initState() {
     super.initState();
-    _refreshCompleter = Completer<void>();
     bloc = CompaniesPaginatedBloc(client: client)..run();
   }
 
@@ -36,14 +35,18 @@ class _BlocQueryState extends State<BlocQuery> {
   }
 
   void _handleRefreshEnd() {
-    _refreshCompleter?.complete();
+    _refreshCompleter.complete();
     _refreshCompleter = Completer();
   }
 
   Widget _displayResult(
-    CompaniesPaginatedData$Query data,
-    QueryResult result,
+    CompaniesPaginatedData$Query? data,
+    QueryResult? result,
   ) {
+    if (data == null) {
+      return Container();
+    }
+
     final itemCount = data.allCompaniesPaginated.length;
 
     if (itemCount == 0) {
@@ -72,7 +75,7 @@ class _BlocQueryState extends State<BlocQuery> {
           final company = data.allCompaniesPaginated[index];
 
           Widget tile = ListTile(
-            title: Text(company.name),
+            title: Text(company.name ?? 'Unnamed'),
           );
 
           final isLast = index == data.allCompaniesPaginated.length - 1;
@@ -105,7 +108,7 @@ class _BlocQueryState extends State<BlocQuery> {
         onRefresh: () async => _handleRefreshStart(bloc),
         child: BlocBuilder<CompaniesPaginatedBloc,
             QueryState<CompaniesPaginatedData$Query>>(
-          cubit: bloc,
+          bloc: bloc,
           builder: (_, state) {
             if (state is! QueryStateRefetch) {
               _handleRefreshEnd();

@@ -12,7 +12,7 @@ class BlocMutationOptimistic extends StatefulWidget {
 
 class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
   final _formKey = GlobalKey<FormState>();
-  AddCompanyBloc bloc;
+  late AddCompanyBloc bloc;
 
   @override
   void initState() {
@@ -31,11 +31,11 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
         child: LoadingButton(
           loading: loading,
           onPressed: () {
-            if (_formKey.currentState.validate()) {
-              _formKey.currentState.save();
+            if (_formKey.currentState?.validate() ?? true) {
+              _formKey.currentState?.save();
               bloc.run(
                   AddCompanyArguments(
-                    input: company..industry = null,
+                    input: company..industry = 'Some industry',
                   ).toJson(),
                   optimisticResult: {
                     "id": 'someId',
@@ -61,21 +61,21 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                 decoration:
                     InputDecoration(labelText: 'Company name', helperText: ''),
                 onSaved: (value) {
-                  company.name = value;
+                  if (value != null) company.name = value;
                 },
                 validator: (value) {
-                  if (value.isEmpty) {
+                  if (value != null && value.isEmpty) {
                     return 'Please enter some text';
                   }
                   return null;
                 },
               ),
               BlocListener<AddCompanyBloc, MutationState<AddCompany$Mutation>>(
-                cubit: bloc,
+                bloc: bloc,
                 listener: (context, state) {
                   state.maybeWhen(
                     error: (error, _) {
-                      Scaffold.of(context).showSnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
                             error.linkException.toString(),
@@ -87,7 +87,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                     },
                     completed: (_, result) {
                       if (result.isOptimistic) {
-                        Scaffold.of(context).showSnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
                               'Optimistically saved',
@@ -103,7 +103,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                       }
 
                       if (result.isConcrete) {
-                        Scaffold.of(context).showSnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
                               'Save complete',
@@ -122,7 +122,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                 },
                 child: BlocBuilder<AddCompanyBloc,
                     MutationState<AddCompany$Mutation>>(
-                  cubit: bloc,
+                  bloc: bloc,
                   builder: (context, state) {
                     return state.when(
                       initial: () => _submitButton(false),
@@ -149,14 +149,14 @@ class LoadingButton extends StatelessWidget {
   final bool loading;
 
   const LoadingButton({
-    Key key,
-    this.onPressed,
-    this.loading,
+    Key? key,
+    required this.onPressed,
+    this.loading = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton.icon(
+    return ElevatedButton.icon(
       icon: loading
           ? Container(
               padding: const EdgeInsets.all(4),
