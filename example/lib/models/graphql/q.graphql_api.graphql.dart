@@ -27,6 +27,7 @@ class SearchCompany$Query$SearchCompany extends JsonSerializable
 
   @override
   List<Object?> get props => [id, name, industry, $$typename];
+  @override
   Map<String, dynamic> toJson() =>
       _$SearchCompany$Query$SearchCompanyToJson(this);
 }
@@ -42,6 +43,7 @@ class SearchCompany$Query extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [searchCompany];
+  @override
   Map<String, dynamic> toJson() => _$SearchCompany$QueryToJson(this);
 }
 
@@ -64,6 +66,7 @@ class AddCompany$Mutation$AddCompany extends JsonSerializable
 
   @override
   List<Object?> get props => [id, name, industry, $$typename];
+  @override
   Map<String, dynamic> toJson() => _$AddCompany$Mutation$AddCompanyToJson(this);
 }
 
@@ -78,6 +81,7 @@ class AddCompany$Mutation extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [addCompany];
+  @override
   Map<String, dynamic> toJson() => _$AddCompany$MutationToJson(this);
 }
 
@@ -94,6 +98,7 @@ class CompanyInput extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [industry, name];
+  @override
   Map<String, dynamic> toJson() => _$CompanyInputToJson(this);
 }
 
@@ -117,6 +122,7 @@ class CompaniesPaginatedData$Query$AllCompaniesPaginated
 
   @override
   List<Object?> get props => [id, name, industry, $$typename];
+  @override
   Map<String, dynamic> toJson() =>
       _$CompaniesPaginatedData$Query$AllCompaniesPaginatedToJson(this);
 }
@@ -134,6 +140,7 @@ class CompaniesPaginatedData$Query extends JsonSerializable
 
   @override
   List<Object?> get props => [allCompaniesPaginated];
+  @override
   Map<String, dynamic> toJson() => _$CompaniesPaginatedData$QueryToJson(this);
 }
 
@@ -150,6 +157,7 @@ class PaginationInput extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [limit, offset];
+  @override
   Map<String, dynamic> toJson() => _$PaginationInputToJson(this);
 }
 
@@ -173,6 +181,7 @@ class CompaniesData$Query$AllCompanies extends JsonSerializable
 
   @override
   List<Object?> get props => [id, name, industry, $$typename];
+  @override
   Map<String, dynamic> toJson() =>
       _$CompaniesData$Query$AllCompaniesToJson(this);
 }
@@ -188,6 +197,7 @@ class CompaniesData$Query extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [allCompanies];
+  @override
   Map<String, dynamic> toJson() => _$CompaniesData$QueryToJson(this);
 }
 
@@ -207,62 +217,64 @@ class SearchCompanyArguments extends JsonSerializable with EquatableMixin {
   Map<String, dynamic> toJson() => _$SearchCompanyArgumentsToJson(this);
 }
 
+final SEARCH_COMPANY_QUERY_DOCUMENT = DocumentNode(definitions: [
+  OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'SearchCompany'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+            variable: VariableNode(name: NameNode(value: 'name')),
+            type:
+                NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+            defaultValue: DefaultValueNode(value: null),
+            directives: [])
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(selections: [
+        FieldNode(
+            name: NameNode(value: 'searchCompany'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                  name: NameNode(value: 'name'),
+                  value: VariableNode(name: NameNode(value: 'name')))
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'industry'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null)
+            ]))
+      ]))
+]);
+
 class SearchCompanyQuery
     extends GraphQLQuery<SearchCompany$Query, SearchCompanyArguments> {
   SearchCompanyQuery({required this.variables});
 
   @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.query,
-        name: NameNode(value: 'SearchCompany'),
-        variableDefinitions: [
-          VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'name')),
-              type: NamedTypeNode(
-                  name: NameNode(value: 'String'), isNonNull: true),
-              defaultValue: DefaultValueNode(value: null),
-              directives: [])
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'searchCompany'),
-              alias: null,
-              arguments: [
-                ArgumentNode(
-                    name: NameNode(value: 'name'),
-                    value: VariableNode(name: NameNode(value: 'name')))
-              ],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ]))
-        ]))
-  ]);
+  final DocumentNode document = SEARCH_COMPANY_QUERY_DOCUMENT;
 
   @override
   final String operationName = 'SearchCompany';
@@ -293,62 +305,64 @@ class AddCompanyArguments extends JsonSerializable with EquatableMixin {
   Map<String, dynamic> toJson() => _$AddCompanyArgumentsToJson(this);
 }
 
+final ADD_COMPANY_MUTATION_DOCUMENT = DocumentNode(definitions: [
+  OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'AddCompany'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+            variable: VariableNode(name: NameNode(value: 'input')),
+            type: NamedTypeNode(
+                name: NameNode(value: 'CompanyInput'), isNonNull: true),
+            defaultValue: DefaultValueNode(value: null),
+            directives: [])
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(selections: [
+        FieldNode(
+            name: NameNode(value: 'addCompany'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                  name: NameNode(value: 'input'),
+                  value: VariableNode(name: NameNode(value: 'input')))
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'industry'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null)
+            ]))
+      ]))
+]);
+
 class AddCompanyMutation
     extends GraphQLQuery<AddCompany$Mutation, AddCompanyArguments> {
   AddCompanyMutation({required this.variables});
 
   @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.mutation,
-        name: NameNode(value: 'AddCompany'),
-        variableDefinitions: [
-          VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'input')),
-              type: NamedTypeNode(
-                  name: NameNode(value: 'CompanyInput'), isNonNull: true),
-              defaultValue: DefaultValueNode(value: null),
-              directives: [])
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'addCompany'),
-              alias: null,
-              arguments: [
-                ArgumentNode(
-                    name: NameNode(value: 'input'),
-                    value: VariableNode(name: NameNode(value: 'input')))
-              ],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ]))
-        ]))
-  ]);
+  final DocumentNode document = ADD_COMPANY_MUTATION_DOCUMENT;
 
   @override
   final String operationName = 'AddCompany';
@@ -381,62 +395,64 @@ class CompaniesPaginatedDataArguments extends JsonSerializable
       _$CompaniesPaginatedDataArgumentsToJson(this);
 }
 
+final COMPANIES_PAGINATED_DATA_QUERY_DOCUMENT = DocumentNode(definitions: [
+  OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'CompaniesPaginatedData'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+            variable: VariableNode(name: NameNode(value: 'pagination')),
+            type: NamedTypeNode(
+                name: NameNode(value: 'PaginationInput'), isNonNull: true),
+            defaultValue: DefaultValueNode(value: null),
+            directives: [])
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(selections: [
+        FieldNode(
+            name: NameNode(value: 'allCompaniesPaginated'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                  name: NameNode(value: 'pagination'),
+                  value: VariableNode(name: NameNode(value: 'pagination')))
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'industry'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null)
+            ]))
+      ]))
+]);
+
 class CompaniesPaginatedDataQuery extends GraphQLQuery<
     CompaniesPaginatedData$Query, CompaniesPaginatedDataArguments> {
   CompaniesPaginatedDataQuery({required this.variables});
 
   @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.query,
-        name: NameNode(value: 'CompaniesPaginatedData'),
-        variableDefinitions: [
-          VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'pagination')),
-              type: NamedTypeNode(
-                  name: NameNode(value: 'PaginationInput'), isNonNull: true),
-              defaultValue: DefaultValueNode(value: null),
-              directives: [])
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'allCompaniesPaginated'),
-              alias: null,
-              arguments: [
-                ArgumentNode(
-                    name: NameNode(value: 'pagination'),
-                    value: VariableNode(name: NameNode(value: 'pagination')))
-              ],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ]))
-        ]))
-  ]);
+  final DocumentNode document = COMPANIES_PAGINATED_DATA_QUERY_DOCUMENT;
 
   @override
   final String operationName = 'CompaniesPaginatedData';
@@ -451,51 +467,53 @@ class CompaniesPaginatedDataQuery extends GraphQLQuery<
       CompaniesPaginatedData$Query.fromJson(json);
 }
 
+final COMPANIES_DATA_QUERY_DOCUMENT = DocumentNode(definitions: [
+  OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'CompaniesData'),
+      variableDefinitions: [],
+      directives: [],
+      selectionSet: SelectionSetNode(selections: [
+        FieldNode(
+            name: NameNode(value: 'allCompanies'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: 'industry'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null),
+              FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null)
+            ]))
+      ]))
+]);
+
 class CompaniesDataQuery
     extends GraphQLQuery<CompaniesData$Query, JsonSerializable> {
   CompaniesDataQuery();
 
   @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.query,
-        name: NameNode(value: 'CompaniesData'),
-        variableDefinitions: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'allCompanies'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ]))
-        ]))
-  ]);
+  final DocumentNode document = COMPANIES_DATA_QUERY_DOCUMENT;
 
   @override
   final String operationName = 'CompaniesData';

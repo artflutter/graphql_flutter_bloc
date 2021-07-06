@@ -73,7 +73,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<MutationState<Map<String, dynamic>>>
-          subscription = testMutationBloc.listen(states.add);
+          subscription = testMutationBloc.stream.listen(states.add);
 
       testMutationBloc.run({});
 
@@ -93,7 +93,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<MutationState<Map<String, dynamic>>>
-          subscription = testMutationBloc.listen(states.add);
+          subscription = testMutationBloc.stream.listen(states.add);
 
       testMutationBloc.run({});
 

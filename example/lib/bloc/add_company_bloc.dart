@@ -9,9 +9,7 @@ class AddCompanyBloc extends MutationBloc<AddCompany$Mutation> {
           options: options ??
               WatchQueryOptions(
                 fetchPolicy: FetchPolicy.noCache,
-                document: AddCompanyMutation(
-                  variables: AddCompanyArguments(input: CompanyInput()),
-                ).document,
+                document: ADD_COMPANY_MUTATION_DOCUMENT,
               ),
         );
 

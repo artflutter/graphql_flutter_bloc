@@ -79,7 +79,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.listen(states.add);
+          testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.run();
 
@@ -99,7 +99,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.listen(states.add);
+          testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.run();
 
@@ -124,7 +124,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.listen(states.add);
+          testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.fetchMore();
       await Future<void>.delayed(Duration.zero);
@@ -148,7 +148,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.listen(states.add);
+          testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.refetch();
       await Future<void>.delayed(Duration.zero);

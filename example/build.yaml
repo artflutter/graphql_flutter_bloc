@@ -9,7 +9,7 @@ targets:
     builders:
       artemis:
         options:
-          fragments_glob: graphql/fragments/common.graphql
+#          fragments_glob: graphql/fragments/common.graphql
           schema_mapping:
             - schema: graphql/q/q.schema.graphql
               queries_glob: graphql/q/queries/*.graphql

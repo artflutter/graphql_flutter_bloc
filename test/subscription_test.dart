@@ -65,7 +65,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
-          subscription = testSubscriptionBloc.listen(states.add);
+          subscription = testSubscriptionBloc.stream.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));
@@ -86,7 +86,7 @@ void main() {
 
       final states = [];
       final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
-          subscription = testSubscriptionBloc.listen(states.add);
+          subscription = testSubscriptionBloc.stream.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));
