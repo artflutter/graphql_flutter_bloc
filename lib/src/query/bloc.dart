@@ -13,6 +13,13 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   QueryBloc({required this.client, required this.options})
       : super(QueryState<T>.initial()) {
+    on<QueryEventRun<T>>(_run);
+    on<QueryEventError<T>>(_error);
+    on<QueryEventLoading<T>>(_loading);
+    on<QueryEventLoaded<T>>(_loaded);
+    on<QueryEventRefetch<T>>(_refetch);
+    on<QueryEventFetchMore<T>>(_fetchMore);
+
     result = client.watchQuery(options);
 
     result.stream.listen((QueryResult result) {
@@ -81,18 +88,13 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
       ? parseOperationException((state as QueryStateError<T>).error)
       : null;
 
-  @override
-  Stream<QueryState<T>> mapEventToState(QueryEvent<T> event) => event.when(
-        error: _error,
-        run: _run,
-        loading: _loading,
-        loaded: _loaded,
-        refetch: _refetch,
-        fetchMore: _fetchMore,
-      );
+  FutureOr<void> _run(
+    QueryEventRun<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    final variables = event.variables;
+    final optimisticResult = event.optimisticResult;
 
-  Stream<QueryState<T>> _run(
-      Map<String, dynamic>? variables, Object? optimisticResult) async* {
     if (variables != null) {
       result.variables = variables;
     }
@@ -104,32 +106,52 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
     result.fetchResults();
   }
 
-  Stream<QueryState<T>> _error(
-      OperationException error, QueryResult result) async* {
-    yield QueryState<T>.error(error: error, result: result);
+  FutureOr<void> _error(
+    QueryEventError<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    emit(QueryState<T>.error(error: event.error, result: event.result));
   }
 
-  Stream<QueryState<T>> _loading(QueryResult result) async* {
-    yield QueryState.loading(result: result);
+  FutureOr<void> _loading(
+    QueryEventLoading<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    emit(QueryState.loading(result: event.result));
   }
 
-  Stream<QueryState<T>> _loaded(T data, QueryResult result) async* {
-    yield QueryState<T>.loaded(data: data, result: result);
+  FutureOr<void> _loaded(
+    QueryEventLoaded<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    emit(QueryState<T>.loaded(data: event.data, result: event.result));
   }
 
-  Stream<QueryState<T>> _refetch() async* {
-    yield QueryState<T>.refetch(
-        data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
-        result: null);
+  FutureOr<void> _refetch(
+    QueryEventRefetch<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    emit(
+      QueryState<T>.refetch(
+          data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
+          result: null),
+    );
 
     result.refetch();
   }
 
-  Stream<QueryState<T>> _fetchMore(FetchMoreOptions options) async* {
-    yield QueryState<T>.fetchMore(
-      data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null as T),
-      result: null,
+  FutureOr<void> _fetchMore(
+    QueryEventFetchMore<T> event,
+    Emitter<QueryState<T>> emit,
+  ) async {
+    emit(
+      QueryState<T>.fetchMore(
+        data:
+            state.maybeWhen(loaded: (data, _) => data, orElse: () => null as T),
+        result: null,
+      ),
     );
-    result.fetchMore(options);
+
+    result.fetchMore(event.options);
   }
 }

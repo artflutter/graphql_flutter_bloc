@@ -14,7 +14,12 @@ abstract class SubscriptionBloc<T>
   SubscriptionOptions? options;
 
   SubscriptionBloc({required this.client})
-      : super(SubscriptionState<T>.initial());
+      : super(SubscriptionState<T>.initial()) {
+    on<SubscriptionEventError<T>>(_error);
+    on<SubscriptionEventRun<T>>(_run);
+    on<SubscriptionEventLoading<T>>(_loading);
+    on<SubscriptionEventLoaded<T>>(_loaded);
+  }
 
   void _listener(QueryResult result) {
     if (result.isLoading && result.data == null) {
@@ -59,32 +64,34 @@ abstract class SubscriptionBloc<T>
       ? parseOperationException((state as SubscriptionStateError<T>).error)
       : null;
 
-  @override
-  Stream<SubscriptionState<T>> mapEventToState(SubscriptionEvent<T> event) =>
-      event.when(
-        error: _error,
-        run: _run,
-        loading: _loading,
-        loaded: _loaded,
-      );
-
-  Stream<SubscriptionState<T>> _error(
-      OperationException error, QueryResult result) async* {
-    yield SubscriptionState<T>.error(error: error, result: result);
+  FutureOr<void> _error(
+    SubscriptionEventError<T> event,
+    Emitter<SubscriptionState<T>> emit,
+  ) async {
+    emit(SubscriptionState<T>.error(error: event.error, result: event.result));
   }
 
-  Stream<SubscriptionState<T>> _run(SubscriptionOptions options) async* {
+  FutureOr<void> _run(
+    SubscriptionEventRun<T> event,
+    Emitter<SubscriptionState<T>> emit,
+  ) async {
     _streamSubscription?.cancel();
-    subscription = client.subscribe(options);
+    subscription = client.subscribe(event.options);
 
     _streamSubscription = subscription.listen(_listener);
   }
 
-  Stream<SubscriptionState<T>> _loading(QueryResult result) async* {
-    yield SubscriptionState.loading(result: result);
+  FutureOr<void> _loading(
+    SubscriptionEventLoading<T> event,
+    Emitter<SubscriptionState<T>> emit,
+  ) async {
+    emit(SubscriptionState.loading(result: event.result));
   }
 
-  Stream<SubscriptionState<T>> _loaded(T? data, QueryResult result) async* {
-    yield SubscriptionState<T>.loaded(data: data, result: result);
+  FutureOr<void> _loaded(
+    SubscriptionEventLoaded<T> event,
+    Emitter<SubscriptionState<T>> emit,
+  ) async {
+    emit(SubscriptionState<T>.loaded(data: event.data, result: event.result));
   }
 }

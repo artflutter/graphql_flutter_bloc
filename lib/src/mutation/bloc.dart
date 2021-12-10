@@ -14,6 +14,10 @@ abstract class MutationBloc<T>
 
   MutationBloc({required this.client, required this.options})
       : super(MutationState<T>.initial()) {
+    on<MutationEventRun<T>>(_run);
+    on<MutationEventCompleted<T>>(_completed);
+    on<MutationEventError<T>>(_error);
+
     result = client.watchQuery(options);
 
     result.stream.listen((result) {
@@ -55,30 +59,29 @@ abstract class MutationBloc<T>
       ? parseOperationException((state as MutationStateError<T>).error)
       : null;
 
-  @override
-  Stream<MutationState<T>> mapEventToState(MutationEvent<T> event) =>
-      event.when(
-        error: _error,
-        run: _run,
-        completed: _completed,
-      );
-
-  Stream<MutationState<T>> _error(
-      OperationException error, QueryResult result) async* {
-    yield MutationState<T>.error(error: error, result: result);
+  FutureOr<void> _error(
+    MutationEventError<T> event,
+    Emitter<MutationState<T>> emit,
+  ) async {
+    emit(MutationState<T>.error(error: event.error, result: event.result));
   }
 
-  Stream<MutationState<T>> _run(
-      Map<String, dynamic> variables, Object? optimisticResult) async* {
+  FutureOr<void> _run(
+    MutationEventRun<T> event,
+    Emitter<MutationState<T>> emit,
+  ) async {
     (result
-          ..variables = variables
-          ..options.optimisticResult = optimisticResult)
+          ..variables = event.variables
+          ..options.optimisticResult = event.optimisticResult)
         .fetchResults();
 
-    yield const MutationState.loading();
+    emit(const MutationState.loading());
   }
 
-  Stream<MutationState<T>> _completed(T? data, QueryResult result) async* {
-    yield MutationState<T>.completed(data: data, result: result);
+  FutureOr<void> _completed(
+    MutationEventCompleted<T> event,
+    Emitter<MutationState<T>> emit,
+  ) async {
+    emit(MutationState<T>.completed(data: event.data, result: event.result));
   }
 }

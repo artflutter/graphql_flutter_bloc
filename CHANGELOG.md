@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.8.0
+- package updates
+ 
 ## 0.7.0
 - package updates
 - null-safety support release
