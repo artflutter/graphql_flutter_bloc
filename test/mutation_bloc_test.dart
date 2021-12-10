@@ -32,7 +32,7 @@ class TestMutationBloc extends MutationBloc<Map<String, dynamic>> {
 
   @override
   Map<String, dynamic> parseData(Map<String, dynamic>? data) {
-    return {};
+    return <String, dynamic>{};
   }
 }
 
@@ -61,7 +61,10 @@ void main() {
     });
 
     test('state is initial', () {
-      expect(testMutationBloc.state, MutationState.initial());
+      expect(
+        testMutationBloc.state,
+        const MutationState<Map<String, dynamic>>.initial(),
+      );
     });
 
     test('state is loading->completed', () async {
@@ -71,11 +74,11 @@ void main() {
         return simpleResponse(body: response);
       });
 
-      final states = [];
+      final states = <MutationState<Map<String, dynamic>>>[];
       final StreamSubscription<MutationState<Map<String, dynamic>>>
           subscription = testMutationBloc.stream.listen(states.add);
 
-      testMutationBloc.run({});
+      testMutationBloc.run(<String, dynamic>{});
 
       await Future<void>.delayed(Duration.zero);
 
@@ -91,11 +94,11 @@ void main() {
         mockClient!.send(any),
       ).thenThrow(Error());
 
-      final states = [];
+      final states = <MutationState<Map<String, dynamic>>>[];
       final StreamSubscription<MutationState<Map<String, dynamic>>>
           subscription = testMutationBloc.stream.listen(states.add);
 
-      testMutationBloc.run({});
+      testMutationBloc.run(<String, dynamic>{});
 
       await Future<void>.delayed(Duration.zero);
 

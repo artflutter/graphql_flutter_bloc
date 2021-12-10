@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'event.dart';
 
@@ -76,6 +77,17 @@ mixin _$QueryEvent<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OperationException error, QueryResult result)? error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
@@ -95,6 +107,16 @@ mixin _$QueryEvent<T> {
     required TResult Function(QueryEventLoaded<T> value) loaded,
     required TResult Function(QueryEventRefetch<T> value) refetch,
     required TResult Function(QueryEventFetchMore<T> value) fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,6 +187,7 @@ class _$QueryEventErrorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventError<T> implements QueryEventError<T> {
   const _$QueryEventError({required this.error, required this.result});
 
@@ -181,18 +204,17 @@ class _$QueryEventError<T> implements QueryEventError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryEventError<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryEventError<T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -213,6 +235,20 @@ class _$QueryEventError<T> implements QueryEventError<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return error(this.error, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return error?.call(this.error, result);
   }
 
   @override
@@ -248,6 +284,19 @@ class _$QueryEventError<T> implements QueryEventError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryEventError<T> value)? error,
     TResult Function(QueryEventRun<T> value)? run,
@@ -269,8 +318,8 @@ abstract class QueryEventError<T> implements QueryEvent<T> {
       {required OperationException error,
       required QueryResult result}) = _$QueryEventError<T>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryEventErrorCopyWith<T, QueryEventError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -313,6 +362,7 @@ class _$QueryEventRunCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventRun<T> implements QueryEventRun<T> {
   const _$QueryEventRun({this.variables, this.optimisticResult});
 
@@ -329,20 +379,18 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryEventRun<T> &&
-            (identical(other.variables, variables) ||
-                const DeepCollectionEquality()
-                    .equals(other.variables, variables)) &&
-            (identical(other.optimisticResult, optimisticResult) ||
-                const DeepCollectionEquality()
-                    .equals(other.optimisticResult, optimisticResult)));
+        (other.runtimeType == runtimeType &&
+            other is QueryEventRun<T> &&
+            const DeepCollectionEquality().equals(other.variables, variables) &&
+            const DeepCollectionEquality()
+                .equals(other.optimisticResult, optimisticResult));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(variables) ^
-      const DeepCollectionEquality().hash(optimisticResult);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(variables),
+      const DeepCollectionEquality().hash(optimisticResult));
 
   @JsonKey(ignore: true)
   @override
@@ -363,6 +411,20 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return run(variables, optimisticResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return run?.call(variables, optimisticResult);
   }
 
   @override
@@ -398,6 +460,19 @@ class _$QueryEventRun<T> implements QueryEventRun<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return run?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryEventError<T> value)? error,
     TResult Function(QueryEventRun<T> value)? run,
@@ -419,8 +494,8 @@ abstract class QueryEventRun<T> implements QueryEvent<T> {
       {Map<String, dynamic>? variables,
       Object? optimisticResult}) = _$QueryEventRun<T>;
 
-  Map<String, dynamic>? get variables => throw _privateConstructorUsedError;
-  Object? get optimisticResult => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get variables;
+  Object? get optimisticResult;
   @JsonKey(ignore: true)
   $QueryEventRunCopyWith<T, QueryEventRun<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -459,6 +534,7 @@ class _$QueryEventLoadingCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   const _$QueryEventLoading({required this.result});
 
@@ -473,14 +549,14 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryEventLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryEventLoading<T> &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -502,6 +578,20 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return loading(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return loading?.call(result);
   }
 
   @override
@@ -537,6 +627,19 @@ class _$QueryEventLoading<T> implements QueryEventLoading<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryEventError<T> value)? error,
     TResult Function(QueryEventRun<T> value)? run,
@@ -557,7 +660,7 @@ abstract class QueryEventLoading<T> implements QueryEvent<T> {
   const factory QueryEventLoading({required QueryResult result}) =
       _$QueryEventLoading<T>;
 
-  QueryResult get result => throw _privateConstructorUsedError;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryEventLoadingCopyWith<T, QueryEventLoading<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -601,6 +704,7 @@ class _$QueryEventLoadedCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
   const _$QueryEventLoaded({required this.data, required this.result});
 
@@ -617,18 +721,17 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryEventLoaded<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryEventLoaded<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -649,6 +752,20 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return loaded(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return loaded?.call(data, result);
   }
 
   @override
@@ -684,6 +801,19 @@ class _$QueryEventLoaded<T> implements QueryEventLoaded<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryEventError<T> value)? error,
     TResult Function(QueryEventRun<T> value)? run,
@@ -704,8 +834,8 @@ abstract class QueryEventLoaded<T> implements QueryEvent<T> {
   const factory QueryEventLoaded(
       {required T data, required QueryResult result}) = _$QueryEventLoaded<T>;
 
-  T get data => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  T get data;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryEventLoadedCopyWith<T, QueryEventLoaded<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -731,6 +861,7 @@ class _$QueryEventRefetchCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
   const _$QueryEventRefetch();
 
@@ -741,7 +872,8 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is QueryEventRefetch<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is QueryEventRefetch<T>);
   }
 
   @override
@@ -761,6 +893,20 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return refetch();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return refetch?.call();
   }
 
   @override
@@ -792,6 +938,19 @@ class _$QueryEventRefetch<T> implements QueryEventRefetch<T> {
     required TResult Function(QueryEventFetchMore<T> value) fetchMore,
   }) {
     return refetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return refetch?.call(this);
   }
 
   @override
@@ -849,6 +1008,7 @@ class _$QueryEventFetchMoreCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   const _$QueryEventFetchMore({required this.options});
 
@@ -863,14 +1023,14 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryEventFetchMore<T> &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality().equals(other.options, options)));
+        (other.runtimeType == runtimeType &&
+            other is QueryEventFetchMore<T> &&
+            const DeepCollectionEquality().equals(other.options, options));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(options);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
@@ -892,6 +1052,20 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
     return fetchMore(options);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
+        run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function()? refetch,
+    TResult Function(FetchMoreOptions options)? fetchMore,
+  }) {
+    return fetchMore?.call(options);
   }
 
   @override
@@ -927,6 +1101,19 @@ class _$QueryEventFetchMore<T> implements QueryEventFetchMore<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryEventError<T> value)? error,
+    TResult Function(QueryEventRun<T> value)? run,
+    TResult Function(QueryEventLoading<T> value)? loading,
+    TResult Function(QueryEventLoaded<T> value)? loaded,
+    TResult Function(QueryEventRefetch<T> value)? refetch,
+    TResult Function(QueryEventFetchMore<T> value)? fetchMore,
+  }) {
+    return fetchMore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryEventError<T> value)? error,
     TResult Function(QueryEventRun<T> value)? run,
@@ -947,7 +1134,7 @@ abstract class QueryEventFetchMore<T> implements QueryEvent<T> {
   const factory QueryEventFetchMore({required FetchMoreOptions options}) =
       _$QueryEventFetchMore<T>;
 
-  FetchMoreOptions get options => throw _privateConstructorUsedError;
+  FetchMoreOptions get options;
   @JsonKey(ignore: true)
   $QueryEventFetchMoreCopyWith<T, QueryEventFetchMore<T>> get copyWith =>
       throw _privateConstructorUsedError;

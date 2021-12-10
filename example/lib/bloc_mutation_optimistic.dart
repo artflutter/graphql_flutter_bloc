@@ -6,6 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 class BlocMutationOptimistic extends StatefulWidget {
+  const BlocMutationOptimistic({Key? key}) : super(key: key);
+
   @override
   _BlocMutationOptimisticState createState() => _BlocMutationOptimisticState();
 }
@@ -49,7 +51,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text('BLOC Mutation Optimistic')),
+      appBar: AppBar(title: const Text('BLOC Mutation Optimistic')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -58,8 +60,8 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
-                decoration:
-                    InputDecoration(labelText: 'Company name', helperText: ''),
+                decoration: const InputDecoration(
+                    labelText: 'Company name', helperText: ''),
                 onSaved: (value) {
                   if (value != null) company.name = value;
                 },
@@ -80,7 +82,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                           content: Text(
                             error.linkException.toString(),
                           ),
-                          duration: Duration(milliseconds: 400),
+                          duration: const Duration(milliseconds: 400),
                           backgroundColor: Colors.red,
                         ),
                       );
@@ -88,7 +90,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                     completed: (_, result) {
                       if (result.isOptimistic) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text(
                               'Optimistically saved',
                               style: TextStyle(
@@ -104,7 +106,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
 
                       if (result.isConcrete) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text(
                               'Save complete',
                               style: TextStyle(
@@ -117,7 +119,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                         );
                       }
                     },
-                    orElse: () => {},
+                    orElse: () => <String, dynamic>{},
                   );
                 },
                 child: BlocBuilder<AddCompanyBloc,
@@ -129,7 +131,6 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                       loading: () => _submitButton(true),
                       error: (_, __) => _submitButton(false),
                       completed: (data, result) {
-                        print(result.source);
                         return _submitButton(false);
                       },
                     );
@@ -162,12 +163,12 @@ class LoadingButton extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               width: 24,
               height: 24,
-              child: CircularProgressIndicator(
+              child: const CircularProgressIndicator(
                 strokeWidth: 2,
               ))
-          : Icon(Icons.save),
+          : const Icon(Icons.save),
       onPressed: onPressed,
-      label: Text('Submit'),
+      label: const Text('Submit'),
     );
   }
 }

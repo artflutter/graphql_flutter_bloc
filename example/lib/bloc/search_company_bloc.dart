@@ -12,6 +12,6 @@ class SearchCompanyBloc extends QueryBloc<SearchCompany$Query> {
 
   @override
   SearchCompany$Query parseData(Map<String, dynamic>? data) {
-    return SearchCompany$Query.fromJson(data ?? {});
+    return SearchCompany$Query.fromJson(data ?? <String, dynamic>{});
   }
 }

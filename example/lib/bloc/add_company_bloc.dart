@@ -15,6 +15,6 @@ class AddCompanyBloc extends MutationBloc<AddCompany$Mutation> {
 
   @override
   AddCompany$Mutation parseData(Map<String, dynamic>? data) {
-    return AddCompany$Mutation.fromJson(data ?? {});
+    return AddCompany$Mutation.fromJson(data ?? <String, dynamic>{});
   }
 }

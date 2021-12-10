@@ -53,7 +53,10 @@ void main() {
     });
 
     test('state is initial', () {
-      expect(testSubscriptionBloc.state, SubscriptionState.initial());
+      expect(
+        testSubscriptionBloc.state,
+        const SubscriptionState<Map<String, dynamic>>.initial(),
+      );
     });
 
     test('state is loading->loaded', () async {
@@ -63,9 +66,8 @@ void main() {
         return simpleResponse(body: response);
       });
 
-      final states = [];
-      final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
-          subscription = testSubscriptionBloc.stream.listen(states.add);
+      final states = <SubscriptionState<Map<String, dynamic>>>[];
+      final subscription = testSubscriptionBloc.stream.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));
@@ -84,9 +86,8 @@ void main() {
         mockClient!.send(any),
       ).thenThrow(Error());
 
-      final states = [];
-      final StreamSubscription<SubscriptionState<Map<String, dynamic>>>
-          subscription = testSubscriptionBloc.stream.listen(states.add);
+      final states = <SubscriptionState<Map<String, dynamic>>>[];
+      final subscription = testSubscriptionBloc.stream.listen(states.add);
 
       testSubscriptionBloc
           .run(SubscriptionOptions(document: parseString(subscriptionQuery)));

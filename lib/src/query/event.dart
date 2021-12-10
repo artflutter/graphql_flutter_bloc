@@ -4,7 +4,7 @@ import 'package:graphql/client.dart';
 part 'event.freezed.dart';
 
 @freezed
-abstract class QueryEvent<T> with _$QueryEvent<T> {
+class QueryEvent<T> with _$QueryEvent<T> {
   const factory QueryEvent.error({
     required OperationException error,
     required QueryResult result,

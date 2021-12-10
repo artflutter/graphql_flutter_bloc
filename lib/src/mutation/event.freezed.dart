@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'event.dart';
 
@@ -57,6 +58,14 @@ mixin _$MutationEvent<TData> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+        run,
+    TResult Function(TData? data, QueryResult result)? completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OperationException error, QueryResult result)? error,
     TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
@@ -70,6 +79,13 @@ mixin _$MutationEvent<TData> {
     required TResult Function(MutationEventError<TData> value) error,
     required TResult Function(MutationEventRun<TData> value) run,
     required TResult Function(MutationEventCompleted<TData> value) completed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MutationEventError<TData> value)? error,
+    TResult Function(MutationEventRun<TData> value)? run,
+    TResult Function(MutationEventCompleted<TData> value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -138,6 +154,7 @@ class _$MutationEventErrorCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
+
 class _$MutationEventError<TData> implements MutationEventError<TData> {
   const _$MutationEventError({required this.error, required this.result});
 
@@ -154,18 +171,17 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventError<TData> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is MutationEventError<TData> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -184,6 +200,17 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
     required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return error(this.error, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+        run,
+    TResult Function(TData? data, QueryResult result)? completed,
+  }) {
+    return error?.call(this.error, result);
   }
 
   @override
@@ -213,6 +240,16 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MutationEventError<TData> value)? error,
+    TResult Function(MutationEventRun<TData> value)? run,
+    TResult Function(MutationEventCompleted<TData> value)? completed,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MutationEventError<TData> value)? error,
     TResult Function(MutationEventRun<TData> value)? run,
@@ -231,8 +268,8 @@ abstract class MutationEventError<TData> implements MutationEvent<TData> {
       {required OperationException error,
       required QueryResult result}) = _$MutationEventError<TData>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -275,6 +312,7 @@ class _$MutationEventRunCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
+
 class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   const _$MutationEventRun(this.variables, {this.optimisticResult});
 
@@ -291,20 +329,18 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventRun<TData> &&
-            (identical(other.variables, variables) ||
-                const DeepCollectionEquality()
-                    .equals(other.variables, variables)) &&
-            (identical(other.optimisticResult, optimisticResult) ||
-                const DeepCollectionEquality()
-                    .equals(other.optimisticResult, optimisticResult)));
+        (other.runtimeType == runtimeType &&
+            other is MutationEventRun<TData> &&
+            const DeepCollectionEquality().equals(other.variables, variables) &&
+            const DeepCollectionEquality()
+                .equals(other.optimisticResult, optimisticResult));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(variables) ^
-      const DeepCollectionEquality().hash(optimisticResult);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(variables),
+      const DeepCollectionEquality().hash(optimisticResult));
 
   @JsonKey(ignore: true)
   @override
@@ -323,6 +359,17 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
     required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return run(variables, optimisticResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+        run,
+    TResult Function(TData? data, QueryResult result)? completed,
+  }) {
+    return run?.call(variables, optimisticResult);
   }
 
   @override
@@ -352,6 +399,16 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MutationEventError<TData> value)? error,
+    TResult Function(MutationEventRun<TData> value)? run,
+    TResult Function(MutationEventCompleted<TData> value)? completed,
+  }) {
+    return run?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MutationEventError<TData> value)? error,
     TResult Function(MutationEventRun<TData> value)? run,
@@ -369,8 +426,8 @@ abstract class MutationEventRun<TData> implements MutationEvent<TData> {
   const factory MutationEventRun(Map<String, dynamic> variables,
       {Object? optimisticResult}) = _$MutationEventRun<TData>;
 
-  Map<String, dynamic> get variables => throw _privateConstructorUsedError;
-  Object? get optimisticResult => throw _privateConstructorUsedError;
+  Map<String, dynamic> get variables;
+  Object? get optimisticResult;
   @JsonKey(ignore: true)
   $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -415,6 +472,7 @@ class _$MutationEventCompletedCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
+
 class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   const _$MutationEventCompleted({required this.data, required this.result});
 
@@ -431,18 +489,17 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MutationEventCompleted<TData> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is MutationEventCompleted<TData> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -461,6 +518,17 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
     required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return completed(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+        run,
+    TResult Function(TData? data, QueryResult result)? completed,
+  }) {
+    return completed?.call(data, result);
   }
 
   @override
@@ -490,6 +558,16 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MutationEventError<TData> value)? error,
+    TResult Function(MutationEventRun<TData> value)? run,
+    TResult Function(MutationEventCompleted<TData> value)? completed,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MutationEventError<TData> value)? error,
     TResult Function(MutationEventRun<TData> value)? run,
@@ -508,8 +586,8 @@ abstract class MutationEventCompleted<TData> implements MutationEvent<TData> {
       {required TData? data,
       required QueryResult result}) = _$MutationEventCompleted<TData>;
 
-  TData? get data => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  TData? get data;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
       get copyWith => throw _privateConstructorUsedError;

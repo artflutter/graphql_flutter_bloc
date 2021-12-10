@@ -4,7 +4,7 @@ import 'package:graphql/client.dart';
 part 'state.freezed.dart';
 
 @freezed
-abstract class QueryState<T> with _$QueryState<T> {
+class QueryState<T> with _$QueryState<T> {
   const factory QueryState.initial() = QueryStateInitial;
 
   const factory QueryState.loading({

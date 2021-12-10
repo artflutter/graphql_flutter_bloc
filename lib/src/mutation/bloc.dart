@@ -75,7 +75,7 @@ abstract class MutationBloc<T>
           ..options.optimisticResult = optimisticResult)
         .fetchResults();
 
-    yield MutationState.loading();
+    yield const MutationState.loading();
   }
 
   Stream<MutationState<T>> _completed(T? data, QueryResult result) async* {

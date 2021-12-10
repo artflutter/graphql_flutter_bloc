@@ -6,6 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 class BlocMutation extends StatefulWidget {
+  const BlocMutation({Key? key}) : super(key: key);
+
   @override
   _BlocMutationState createState() => _BlocMutationState();
 }
@@ -43,7 +45,7 @@ class _BlocMutationState extends State<BlocMutation> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text('BLOC Mutation')),
+      appBar: AppBar(title: const Text('BLOC Mutation')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -52,8 +54,8 @@ class _BlocMutationState extends State<BlocMutation> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
-                decoration:
-                    InputDecoration(labelText: 'Company name', helperText: ''),
+                decoration: const InputDecoration(
+                    labelText: 'Company name', helperText: ''),
                 onSaved: (value) {
                   if (value != null) company.name = value;
                 },
@@ -77,10 +79,10 @@ class _BlocMutationState extends State<BlocMutation> {
                     },
                     completed: (_, __) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Save complete')),
+                        const SnackBar(content: Text('Save complete')),
                       );
                     },
-                    orElse: () => {},
+                    orElse: () => <String, dynamic>{},
                   );
                 },
                 child: BlocBuilder<AddCompanyBloc,
@@ -122,12 +124,12 @@ class LoadingButton extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               width: 24,
               height: 24,
-              child: CircularProgressIndicator(
+              child: const CircularProgressIndicator(
                 strokeWidth: 2,
               ))
-          : Icon(Icons.save),
+          : const Icon(Icons.save),
       onPressed: onPressed,
-      label: Text('Submit'),
+      label: const Text('Submit'),
     );
   }
 }

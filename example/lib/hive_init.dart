@@ -29,6 +29,6 @@ Future<void> initHiveForFlutter({
   }
 
   for (var box in boxes) {
-    await Hive.openBox(box);
+    await Hive.openBox<dynamic>(box);
   }
 }

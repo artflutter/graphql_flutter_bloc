@@ -7,6 +7,8 @@ import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 class BlocSubscription extends StatefulWidget {
+  const BlocSubscription({Key? key}) : super(key: key);
+
   @override
   _BlocSubscriptionState createState() => _BlocSubscriptionState();
 }
@@ -33,17 +35,15 @@ class _BlocSubscriptionState extends State<BlocSubscription> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLOC Subscription'),
+        title: const Text('BLOC Subscription'),
       ),
       body: BlocBuilder<SubscriptionDataBloc,
           SubscriptionState<SubscriptionData$Subscription>>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
-              initial: () => Container(
-                    child: Text('Awaiting data'),
-                  ),
-              loading: (_) => Center(child: CircularProgressIndicator()),
+              initial: () => const Text('Awaiting data'),
+              loading: (_) => const Center(child: CircularProgressIndicator()),
               error: (error, _) => Text(
                     parseOperationException(error),
                     style: TextStyle(color: Theme.of(context).errorColor),
@@ -55,7 +55,7 @@ class _BlocSubscriptionState extends State<BlocSubscription> {
                       '${data.post.data.id} - ${data.post.data.title}',
                     ),
                     subtitle: Text(
-                      '${data.post.data.subtitle}',
+                      data.post.data.subtitle,
                     ),
                   );
                 }

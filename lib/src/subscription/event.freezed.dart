@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'event.dart';
 
@@ -60,6 +61,14 @@ mixin _$SubscriptionEvent<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OperationException error, QueryResult result)? error,
     TResult Function(SubscriptionOptions options)? run,
@@ -74,6 +83,14 @@ mixin _$SubscriptionEvent<T> {
     required TResult Function(SubscriptionEventRun<T> value) run,
     required TResult Function(SubscriptionEventLoading<T> value) loading,
     required TResult Function(SubscriptionEventLoaded<T> value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,6 +160,7 @@ class _$SubscriptionEventErrorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
   const _$SubscriptionEventError({required this.error, required this.result});
 
@@ -159,18 +177,17 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionEventError<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionEventError<T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -188,6 +205,17 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return error(this.error, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return error?.call(this.error, result);
   }
 
   @override
@@ -218,6 +246,17 @@ class _$SubscriptionEventError<T> implements SubscriptionEventError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionEventError<T> value)? error,
     TResult Function(SubscriptionEventRun<T> value)? run,
@@ -237,8 +276,8 @@ abstract class SubscriptionEventError<T> implements SubscriptionEvent<T> {
       {required OperationException error,
       required QueryResult result}) = _$SubscriptionEventError<T>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionEventErrorCopyWith<T, SubscriptionEventError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -277,6 +316,7 @@ class _$SubscriptionEventRunCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
   const _$SubscriptionEventRun({required this.options});
 
@@ -291,14 +331,14 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionEventRun<T> &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality().equals(other.options, options)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionEventRun<T> &&
+            const DeepCollectionEquality().equals(other.options, options));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(options);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(options));
 
   @JsonKey(ignore: true)
   @override
@@ -316,6 +356,17 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return run(options);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return run?.call(options);
   }
 
   @override
@@ -346,6 +397,17 @@ class _$SubscriptionEventRun<T> implements SubscriptionEventRun<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+  }) {
+    return run?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionEventError<T> value)? error,
     TResult Function(SubscriptionEventRun<T> value)? run,
@@ -364,7 +426,7 @@ abstract class SubscriptionEventRun<T> implements SubscriptionEvent<T> {
   const factory SubscriptionEventRun({required SubscriptionOptions options}) =
       _$SubscriptionEventRun<T>;
 
-  SubscriptionOptions get options => throw _privateConstructorUsedError;
+  SubscriptionOptions get options;
   @JsonKey(ignore: true)
   $SubscriptionEventRunCopyWith<T, SubscriptionEventRun<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -404,6 +466,7 @@ class _$SubscriptionEventLoadingCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
   const _$SubscriptionEventLoading({required this.result});
 
@@ -418,14 +481,14 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionEventLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionEventLoading<T> &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -443,6 +506,17 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return loading(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return loading?.call(result);
   }
 
   @override
@@ -473,6 +547,17 @@ class _$SubscriptionEventLoading<T> implements SubscriptionEventLoading<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionEventError<T> value)? error,
     TResult Function(SubscriptionEventRun<T> value)? run,
@@ -491,7 +576,7 @@ abstract class SubscriptionEventLoading<T> implements SubscriptionEvent<T> {
   const factory SubscriptionEventLoading({required QueryResult result}) =
       _$SubscriptionEventLoading<T>;
 
-  QueryResult get result => throw _privateConstructorUsedError;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionEventLoadingCopyWith<T, SubscriptionEventLoading<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -536,6 +621,7 @@ class _$SubscriptionEventLoadedCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
   const _$SubscriptionEventLoaded({required this.data, required this.result});
 
@@ -552,18 +638,17 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionEventLoaded<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionEventLoaded<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -582,6 +667,17 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return loaded(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return loaded?.call(data, result);
   }
 
   @override
@@ -612,6 +708,17 @@ class _$SubscriptionEventLoaded<T> implements SubscriptionEventLoaded<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionEventError<T> value)? error,
+    TResult Function(SubscriptionEventRun<T> value)? run,
+    TResult Function(SubscriptionEventLoading<T> value)? loading,
+    TResult Function(SubscriptionEventLoaded<T> value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionEventError<T> value)? error,
     TResult Function(SubscriptionEventRun<T> value)? run,
@@ -631,8 +738,8 @@ abstract class SubscriptionEventLoaded<T> implements SubscriptionEvent<T> {
       {required T? data,
       required QueryResult result}) = _$SubscriptionEventLoaded<T>;
 
-  T? get data => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  T? get data;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionEventLoadedCopyWith<T, SubscriptionEventLoaded<T>>
       get copyWith => throw _privateConstructorUsedError;

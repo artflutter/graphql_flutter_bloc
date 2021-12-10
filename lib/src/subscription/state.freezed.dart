@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -57,6 +58,14 @@ mixin _$SubscriptionState<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(QueryResult result)? loading,
@@ -71,6 +80,14 @@ mixin _$SubscriptionState<T> {
     required TResult Function(SubscriptionStateLoading<T> value) loading,
     required TResult Function(SubscriptionStateError<T> value) error,
     required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionStateInitial<T> value)? initial,
+    TResult Function(SubscriptionStateLoading<T> value)? loading,
+    TResult Function(SubscriptionStateError<T> value)? error,
+    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +139,7 @@ class _$SubscriptionStateInitialCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   const _$SubscriptionStateInitial();
 
@@ -132,7 +150,9 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SubscriptionStateInitial<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionStateInitial<T>);
   }
 
   @override
@@ -148,6 +168,17 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -174,6 +205,17 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
     required TResult Function(SubscriptionStateLoaded<T> value) loaded,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionStateInitial<T> value)? initial,
+    TResult Function(SubscriptionStateLoading<T> value)? loading,
+    TResult Function(SubscriptionStateError<T> value)? error,
+    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -230,6 +272,7 @@ class _$SubscriptionStateLoadingCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   const _$SubscriptionStateLoading({required this.result});
 
@@ -244,14 +287,14 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionStateLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionStateLoading<T> &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -269,6 +312,17 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return loading(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return loading?.call(result);
   }
 
   @override
@@ -299,6 +353,17 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionStateInitial<T> value)? initial,
+    TResult Function(SubscriptionStateLoading<T> value)? loading,
+    TResult Function(SubscriptionStateError<T> value)? error,
+    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionStateInitial<T> value)? initial,
     TResult Function(SubscriptionStateLoading<T> value)? loading,
@@ -317,7 +382,7 @@ abstract class SubscriptionStateLoading<T> implements SubscriptionState<T> {
   const factory SubscriptionStateLoading({required QueryResult result}) =
       _$SubscriptionStateLoading<T>;
 
-  QueryResult get result => throw _privateConstructorUsedError;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionStateLoadingCopyWith<T, SubscriptionStateLoading<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -362,6 +427,7 @@ class _$SubscriptionStateErrorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   const _$SubscriptionStateError({required this.error, required this.result});
 
@@ -378,18 +444,17 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionStateError<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionStateError<T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -407,6 +472,17 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return error(this.error, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return error?.call(this.error, result);
   }
 
   @override
@@ -437,6 +513,17 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionStateInitial<T> value)? initial,
+    TResult Function(SubscriptionStateLoading<T> value)? loading,
+    TResult Function(SubscriptionStateError<T> value)? error,
+    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionStateInitial<T> value)? initial,
     TResult Function(SubscriptionStateLoading<T> value)? loading,
@@ -456,8 +543,8 @@ abstract class SubscriptionStateError<T> implements SubscriptionState<T> {
       {required OperationException error,
       required QueryResult result}) = _$SubscriptionStateError<T>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionStateErrorCopyWith<T, SubscriptionStateError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -502,6 +589,7 @@ class _$SubscriptionStateLoadedCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   const _$SubscriptionStateLoaded({this.data, required this.result});
 
@@ -518,18 +606,17 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubscriptionStateLoaded<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is SubscriptionStateLoaded<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -548,6 +635,17 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
     required TResult Function(T? data, QueryResult result) loaded,
   }) {
     return loaded(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T? data, QueryResult result)? loaded,
+  }) {
+    return loaded?.call(data, result);
   }
 
   @override
@@ -578,6 +676,17 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SubscriptionStateInitial<T> value)? initial,
+    TResult Function(SubscriptionStateLoading<T> value)? loading,
+    TResult Function(SubscriptionStateError<T> value)? error,
+    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SubscriptionStateInitial<T> value)? initial,
     TResult Function(SubscriptionStateLoading<T> value)? loading,
@@ -596,8 +705,8 @@ abstract class SubscriptionStateLoaded<T> implements SubscriptionState<T> {
   const factory SubscriptionStateLoaded(
       {T? data, required QueryResult result}) = _$SubscriptionStateLoaded<T>;
 
-  T? get data => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  T? get data;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionStateLoadedCopyWith<T, SubscriptionStateLoaded<T>>
       get copyWith => throw _privateConstructorUsedError;

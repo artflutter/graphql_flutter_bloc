@@ -12,7 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initHiveForFlutter();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 String get host {
@@ -24,6 +24,8 @@ String get host {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -33,58 +35,60 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        'bloc-query': (_) => BlocQuery(),
-        'bloc-mutation': (_) => BlocMutation(),
-        'bloc-mutation-optimistic': (_) => BlocMutationOptimistic(),
-        'bloc-search-query': (_) => BlocSearchQuery(),
-        'bloc-subscription': (_) => BlocSubscription(),
+        'bloc-query': (_) => const BlocQuery(),
+        'bloc-mutation': (_) => const BlocMutation(),
+        'bloc-mutation-optimistic': (_) => const BlocMutationOptimistic(),
+        'bloc-search-query': (_) => const BlocSearchQuery(),
+        'bloc-subscription': (_) => const BlocSubscription(),
       },
-      home: Home(),
+      home: const Home(),
     );
   }
 }
 
 class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Select example"),
+        title: const Text("Select example"),
       ),
       body: ListView(
         children: [
           ListTile(
-            title: Text('BLOC Query'),
-            subtitle: Text('query, fetchMore, refetch'),
+            title: const Text('BLOC Query'),
+            subtitle: const Text('query, fetchMore, refetch'),
             onTap: () => Navigator.of(context).pushNamed('bloc-query'),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('BLOC Mutation'),
-            subtitle: Text('simple form + submit to call mutation'),
+            title: const Text('BLOC Mutation'),
+            subtitle: const Text('simple form + submit to call mutation'),
             onTap: () => Navigator.of(context).pushNamed(
               'bloc-mutation',
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('BLOC Mutation Optimistic'),
-            subtitle: Text(
+            title: const Text('BLOC Mutation Optimistic'),
+            subtitle: const Text(
                 'simple form + submit to call mutation + optimistic results'),
             onTap: () =>
                 Navigator.of(context).pushNamed('bloc-mutation-optimistic'),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('BLOC Search Query'),
+            title: const Text('BLOC Search Query'),
             onTap: () => Navigator.of(context).pushNamed('bloc-search-query'),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('BLOC Subscription'),
+            title: const Text('BLOC Subscription'),
             onTap: () => Navigator.of(context).pushNamed('bloc-subscription'),
           ),
-          Divider(),
+          const Divider(),
         ],
       ),
     );

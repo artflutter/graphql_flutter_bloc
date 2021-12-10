@@ -8,7 +8,7 @@ import 'bloc/search_company_bloc.dart';
 import 'models/graphql/q.graphql_api.graphql.dart';
 
 class BlocSearchQuery extends StatefulWidget {
-  BlocSearchQuery({Key? key}) : super(key: key);
+  const BlocSearchQuery({Key? key}) : super(key: key);
 
   @override
   _BlocSearchQueryState createState() => _BlocSearchQueryState();
@@ -43,7 +43,7 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
       return ListView(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
             Icon(Icons.inbox),
             SizedBox(width: 8),
             Text('No data'),
@@ -53,8 +53,8 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
     } else {
       return ListView.separated(
         shrinkWrap: true,
-        separatorBuilder: (_, __) => SizedBox(height: 8.0),
-        key: PageStorageKey('reports'),
+        separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+        key: const PageStorageKey('reports'),
         itemCount: itemCount,
         itemBuilder: (BuildContext context, int index) {
           final company = data.searchCompany[index];
@@ -71,14 +71,14 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLOC Search Query'),
+        title: const Text('BLOC Search Query'),
       ),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'Search company by name', helperText: ''),
               onChanged: (value) => bloc.run(
                 variables: SearchCompanyArguments(name: value).toJson(),
@@ -96,7 +96,8 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
             builder: (_, state) {
               return state.when(
                 initial: () => Container(),
-                loading: (_) => Center(child: CircularProgressIndicator()),
+                loading: (_) =>
+                    const Center(child: CircularProgressIndicator()),
                 error: (error, __) => ListView(children: [
                   Text(
                     parseOperationException(error),

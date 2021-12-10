@@ -16,7 +16,7 @@ GraphQLClient getClient({
   if (subscriptionUri != null) {
     final WebSocketLink websocketLink = WebSocketLink(
       subscriptionUri,
-      config: SocketClientConfig(
+      config: const SocketClientConfig(
         autoReconnect: true,
         inactivityTimeout: Duration(seconds: 30),
       ),
@@ -53,7 +53,7 @@ ValueNotifier<GraphQLClient> clientFor({
   if (subscriptionUri != null) {
     final WebSocketLink websocketLink = WebSocketLink(
       subscriptionUri,
-      config: SocketClientConfig(
+      config: const SocketClientConfig(
         autoReconnect: true,
         inactivityTimeout: Duration(seconds: 30),
       ),

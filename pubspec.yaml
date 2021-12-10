@@ -10,20 +10,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  freezed_annotation: ^0.14.2
+  freezed_annotation: ^1.0.0
   flutter_bloc: ^7.0.1
-  http: ^0.13.3
+  http: ^0.13.4
   gql: ^0.13.0
   graphql: ^5.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: ^1.17.9
+  test: ^1.19.5
   bloc_test: ^8.0.2
-  mockito: ^5.0.10
-  build_runner: ^2.0.5
-  freezed: ^0.14.2
+  mockito: ^5.0.16
+  build_runner: ^2.1.5
+  freezed: ^1.0.2+1
+  flutter_lints: ^1.0.4
 
 dependency_overrides:
   test_api: 0.4.1

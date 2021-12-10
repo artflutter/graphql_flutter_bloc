@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
 
@@ -74,6 +75,16 @@ mixin _$QueryState<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(QueryResult result)? loading,
@@ -92,6 +103,16 @@ mixin _$QueryState<T> {
     required TResult Function(QueryStateLoaded<T> value) loaded,
     required TResult Function(QueryStateRefetch<T> value) refetch,
     required TResult Function(QueryStateFetchMore<T> value) fetchMore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,6 +165,7 @@ class _$QueryStateInitialCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateInitial<T> implements QueryStateInitial<T> {
   const _$QueryStateInitial();
 
@@ -154,7 +176,8 @@ class _$QueryStateInitial<T> implements QueryStateInitial<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is QueryStateInitial<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is QueryStateInitial<T>);
   }
 
   @override
@@ -172,6 +195,19 @@ class _$QueryStateInitial<T> implements QueryStateInitial<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -202,6 +238,19 @@ class _$QueryStateInitial<T> implements QueryStateInitial<T> {
     required TResult Function(QueryStateFetchMore<T> value) fetchMore,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -259,6 +308,7 @@ class _$QueryStateLoadingCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateLoading<T> implements QueryStateLoading<T> {
   const _$QueryStateLoading({required this.result});
 
@@ -273,14 +323,14 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryStateLoading<T> &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryStateLoading<T> &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -300,6 +350,19 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return loading(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return loading?.call(result);
   }
 
   @override
@@ -334,6 +397,19 @@ class _$QueryStateLoading<T> implements QueryStateLoading<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<T> value)? initial,
     TResult Function(QueryStateLoading<T> value)? loading,
@@ -354,7 +430,7 @@ abstract class QueryStateLoading<T> implements QueryState<T> {
   const factory QueryStateLoading({required QueryResult result}) =
       _$QueryStateLoading<T>;
 
-  QueryResult get result => throw _privateConstructorUsedError;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryStateLoadingCopyWith<T, QueryStateLoading<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -398,6 +474,7 @@ class _$QueryStateErrorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateError<T> implements QueryStateError<T> {
   const _$QueryStateError({required this.error, required this.result});
 
@@ -414,18 +491,17 @@ class _$QueryStateError<T> implements QueryStateError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryStateError<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryStateError<T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -444,6 +520,19 @@ class _$QueryStateError<T> implements QueryStateError<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return error(this.error, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return error?.call(this.error, result);
   }
 
   @override
@@ -478,6 +567,19 @@ class _$QueryStateError<T> implements QueryStateError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<T> value)? initial,
     TResult Function(QueryStateLoading<T> value)? loading,
@@ -499,8 +601,8 @@ abstract class QueryStateError<T> implements QueryState<T> {
       {required OperationException error,
       required QueryResult result}) = _$QueryStateError<T>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryStateErrorCopyWith<T, QueryStateError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -544,6 +646,7 @@ class _$QueryStateLoadedCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
   const _$QueryStateLoaded({required this.data, required this.result});
 
@@ -560,18 +663,17 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryStateLoaded<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryStateLoaded<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -590,6 +692,19 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return loaded(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return loaded?.call(data, result);
   }
 
   @override
@@ -624,6 +739,19 @@ class _$QueryStateLoaded<T> implements QueryStateLoaded<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<T> value)? initial,
     TResult Function(QueryStateLoading<T> value)? loading,
@@ -644,8 +772,8 @@ abstract class QueryStateLoaded<T> implements QueryState<T> {
   const factory QueryStateLoaded(
       {required T data, required QueryResult result}) = _$QueryStateLoaded<T>;
 
-  T get data => throw _privateConstructorUsedError;
-  QueryResult get result => throw _privateConstructorUsedError;
+  T get data;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryStateLoadedCopyWith<T, QueryStateLoaded<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -689,6 +817,7 @@ class _$QueryStateRefetchCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
   const _$QueryStateRefetch({this.data, this.result});
 
@@ -705,18 +834,17 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryStateRefetch<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryStateRefetch<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -736,6 +864,19 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return refetch(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return refetch?.call(data, result);
   }
 
   @override
@@ -770,6 +911,19 @@ class _$QueryStateRefetch<T> implements QueryStateRefetch<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return refetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<T> value)? initial,
     TResult Function(QueryStateLoading<T> value)? loading,
@@ -790,8 +944,8 @@ abstract class QueryStateRefetch<T> implements QueryState<T> {
   const factory QueryStateRefetch({T? data, QueryResult? result}) =
       _$QueryStateRefetch<T>;
 
-  T? get data => throw _privateConstructorUsedError;
-  QueryResult? get result => throw _privateConstructorUsedError;
+  T? get data;
+  QueryResult? get result;
   @JsonKey(ignore: true)
   $QueryStateRefetchCopyWith<T, QueryStateRefetch<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -835,6 +989,7 @@ class _$QueryStateFetchMoreCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
   const _$QueryStateFetchMore({required this.data, this.result});
 
@@ -851,18 +1006,17 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is QueryStateFetchMore<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is QueryStateFetchMore<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -882,6 +1036,19 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
     required TResult Function(T data, QueryResult? result) fetchMore,
   }) {
     return fetchMore(data, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result)? error,
+    TResult Function(T data, QueryResult result)? loaded,
+    TResult Function(T? data, QueryResult? result)? refetch,
+    TResult Function(T data, QueryResult? result)? fetchMore,
+  }) {
+    return fetchMore?.call(data, result);
   }
 
   @override
@@ -916,6 +1083,19 @@ class _$QueryStateFetchMore<T> implements QueryStateFetchMore<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(QueryStateInitial<T> value)? initial,
+    TResult Function(QueryStateLoading<T> value)? loading,
+    TResult Function(QueryStateError<T> value)? error,
+    TResult Function(QueryStateLoaded<T> value)? loaded,
+    TResult Function(QueryStateRefetch<T> value)? refetch,
+    TResult Function(QueryStateFetchMore<T> value)? fetchMore,
+  }) {
+    return fetchMore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<T> value)? initial,
     TResult Function(QueryStateLoading<T> value)? loading,
@@ -936,8 +1116,8 @@ abstract class QueryStateFetchMore<T> implements QueryState<T> {
   const factory QueryStateFetchMore({required T data, QueryResult? result}) =
       _$QueryStateFetchMore<T>;
 
-  T get data => throw _privateConstructorUsedError;
-  QueryResult? get result => throw _privateConstructorUsedError;
+  T get data;
+  QueryResult? get result;
   @JsonKey(ignore: true)
   $QueryStateFetchMoreCopyWith<T, QueryStateFetchMore<T>> get copyWith =>
       throw _privateConstructorUsedError;

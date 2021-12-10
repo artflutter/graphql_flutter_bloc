@@ -9,6 +9,8 @@ import 'package:example/models/graphql/q.graphql_api.graphql.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 class BlocQuery extends StatefulWidget {
+  const BlocQuery({Key? key}) : super(key: key);
+
   @override
   _BlocQueryState createState() => _BlocQueryState();
 }
@@ -53,7 +55,7 @@ class _BlocQueryState extends State<BlocQuery> {
       return ListView(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
             Icon(Icons.inbox),
             SizedBox(width: 8),
             Text('No data'),
@@ -62,10 +64,10 @@ class _BlocQueryState extends State<BlocQuery> {
       ]);
     } else {
       return ListView.separated(
-        separatorBuilder: (_, __) => SizedBox(
+        separatorBuilder: (_, __) => const SizedBox(
           height: 8.0,
         ),
-        key: PageStorageKey('reports'),
+        key: const PageStorageKey('reports'),
         itemCount: itemCount,
         itemBuilder: (BuildContext context, int index) {
           if (bloc.shouldFetchMore(index, 5)) {
@@ -84,8 +86,8 @@ class _BlocQueryState extends State<BlocQuery> {
             tile = Column(
               children: [
                 tile,
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: CircularProgressIndicator(),
                 ),
               ],
@@ -102,7 +104,7 @@ class _BlocQueryState extends State<BlocQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLOC query'),
+        title: const Text('BLOC query'),
       ),
       body: RefreshIndicator(
         onRefresh: () async => _handleRefreshStart(bloc),
@@ -116,7 +118,7 @@ class _BlocQueryState extends State<BlocQuery> {
 
             return state.when(
               initial: () => Container(),
-              loading: (_) => Center(child: CircularProgressIndicator()),
+              loading: (_) => const Center(child: CircularProgressIndicator()),
               error: (error, __) => ListView(children: [
                 Text(
                   parseOperationException(error),

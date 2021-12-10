@@ -20,7 +20,7 @@ class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
 
   @override
   CompaniesPaginatedData$Query parseData(Map<String, dynamic>? data) {
-    return CompaniesPaginatedData$Query.fromJson(data ?? {});
+    return CompaniesPaginatedData$Query.fromJson(data ?? <String, dynamic>{});
   }
 
   @override
@@ -52,7 +52,7 @@ class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
 
         fetchMoreResultData['allCompaniesPaginated'] = repos;
 
-        return fetchMoreResultData;
+        return fetchMoreResultData as Map<String, dynamic>?;
       },
     )));
   }

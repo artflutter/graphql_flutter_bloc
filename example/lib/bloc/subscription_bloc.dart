@@ -8,6 +8,6 @@ class SubscriptionDataBloc
 
   @override
   SubscriptionData$Subscription parseData(Map<String, dynamic>? data) {
-    return SubscriptionData$Subscription.fromJson(data ?? {});
+    return SubscriptionData$Subscription.fromJson(data ?? <String, dynamic>{});
   }
 }

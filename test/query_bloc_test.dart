@@ -29,9 +29,9 @@ class TestQueryBloc extends QueryBloc<Map<String, dynamic>> {
   void fetchMore() {
     add(QueryEvent.fetchMore(
         options: FetchMoreOptions(
-      variables: {},
+      variables: <String, dynamic>{},
       updateQuery: (dynamic previousResultData, dynamic fetchMoreResultData) {
-        return fetchMoreResultData;
+        return fetchMoreResultData as Map<String, dynamic>;
       },
     )));
   }
@@ -67,7 +67,10 @@ void main() {
     });
 
     test('state is initial', () {
-      expect(testQueryBloc.state, QueryState.initial());
+      expect(
+        testQueryBloc.state,
+        const QueryState<Map<String, dynamic>>.initial(),
+      );
     });
 
     test('state is loading->loaded', () async {
@@ -77,9 +80,8 @@ void main() {
         return simpleResponse(body: response);
       });
 
-      final states = [];
-      final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.stream.listen(states.add);
+      final states = <QueryState<Map<String, dynamic>>>[];
+      final subscription = testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.run();
 
@@ -97,9 +99,8 @@ void main() {
         mockClient!.send(any),
       ).thenThrow(Error());
 
-      final states = [];
-      final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.stream.listen(states.add);
+      final states = <QueryState<Map<String, dynamic>>>[];
+      final subscription = testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.run();
 
@@ -122,9 +123,8 @@ void main() {
       testQueryBloc.run();
       await Future<void>.delayed(Duration.zero);
 
-      final states = [];
-      final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.stream.listen(states.add);
+      final states = <QueryState<Map<String, dynamic>>>[];
+      final subscription = testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.fetchMore();
       await Future<void>.delayed(Duration.zero);
@@ -146,9 +146,8 @@ void main() {
       testQueryBloc.run();
       await Future<void>.delayed(Duration.zero);
 
-      final states = [];
-      final StreamSubscription<QueryState<Map<String, dynamic>>> subscription =
-          testQueryBloc.stream.listen(states.add);
+      final states = <QueryState<Map<String, dynamic>>>[];
+      final subscription = testQueryBloc.stream.listen(states.add);
 
       testQueryBloc.refetch();
       await Future<void>.delayed(Duration.zero);
