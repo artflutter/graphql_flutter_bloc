@@ -4,29 +4,30 @@ import 'package:graphql/client.dart';
 part 'event.freezed.dart';
 
 @freezed
-class QueryEvent<T> with _$QueryEvent<T> {
+class QueryEvent<TData> with _$QueryEvent<TData> {
   const factory QueryEvent.error({
     required OperationException error,
     required QueryResult result,
-  }) = QueryEventError<T>;
+    TData? data,
+  }) = QueryEventError<TData>;
 
   const factory QueryEvent.run({
     Map<String, dynamic>? variables,
     Object? optimisticResult,
-  }) = QueryEventRun<T>;
+  }) = QueryEventRun<TData>;
 
   const factory QueryEvent.loading({
     required QueryResult result,
-  }) = QueryEventLoading<T>;
+  }) = QueryEventLoading<TData>;
 
   const factory QueryEvent.loaded({
-    required T data,
+    required TData data,
     required QueryResult result,
-  }) = QueryEventLoaded<T>;
+  }) = QueryEventLoaded<TData>;
 
-  const factory QueryEvent.refetch() = QueryEventRefetch<T>;
+  const factory QueryEvent.refetch() = QueryEventRefetch<TData>;
 
   const factory QueryEvent.fetchMore({
     required FetchMoreOptions options,
-  }) = QueryEventFetchMore<T>;
+  }) = QueryEventFetchMore<TData>;
 }

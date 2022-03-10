@@ -76,7 +76,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                 bloc: bloc,
                 listener: (context, state) {
                   state.maybeWhen(
-                    error: (error, _) {
+                    error: (error, _, __) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -129,7 +129,7 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
                     return state.when(
                       initial: () => _submitButton(false),
                       loading: () => _submitButton(true),
-                      error: (_, __) => _submitButton(false),
+                      error: (_, __, ___) => _submitButton(false),
                       completed: (data, result) {
                         return _submitButton(false);
                       },

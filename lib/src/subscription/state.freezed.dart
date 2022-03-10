@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
@@ -17,26 +18,31 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SubscriptionStateTearOff {
   const _$SubscriptionStateTearOff();
 
-  SubscriptionStateInitial<T> initial<T>() {
-    return SubscriptionStateInitial<T>();
+  SubscriptionStateInitial<TData> initial<TData>() {
+    return SubscriptionStateInitial<TData>();
   }
 
-  SubscriptionStateLoading<T> loading<T>({required QueryResult result}) {
-    return SubscriptionStateLoading<T>(
+  SubscriptionStateLoading<TData> loading<TData>(
+      {required QueryResult<dynamic> result}) {
+    return SubscriptionStateLoading<TData>(
       result: result,
     );
   }
 
-  SubscriptionStateError<T> error<T>(
-      {required OperationException error, required QueryResult result}) {
-    return SubscriptionStateError<T>(
+  SubscriptionStateError<TData> error<TData>(
+      {required OperationException error,
+      required QueryResult<dynamic> result,
+      TData? data}) {
+    return SubscriptionStateError<TData>(
       error: error,
       result: result,
+      data: data,
     );
   }
 
-  SubscriptionStateLoaded<T> loaded<T>({T? data, required QueryResult result}) {
-    return SubscriptionStateLoaded<T>(
+  SubscriptionStateLoaded<TData> loaded<TData>(
+      {TData? data, required QueryResult<dynamic> result}) {
+    return SubscriptionStateLoaded<TData>(
       data: data,
       result: result,
     );
@@ -47,112 +53,119 @@ class _$SubscriptionStateTearOff {
 const $SubscriptionState = _$SubscriptionStateTearOff();
 
 /// @nodoc
-mixin _$SubscriptionState<T> {
+mixin _$SubscriptionState<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(OperationException error, QueryResult result)
+    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)
         error,
-    required TResult Function(T? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SubscriptionStateInitial<T> value) initial,
-    required TResult Function(SubscriptionStateLoading<T> value) loading,
-    required TResult Function(SubscriptionStateError<T> value) error,
-    required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+    required TResult Function(SubscriptionStateInitial<TData> value) initial,
+    required TResult Function(SubscriptionStateLoading<TData> value) loading,
+    required TResult Function(SubscriptionStateError<TData> value) error,
+    required TResult Function(SubscriptionStateLoaded<TData> value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateCopyWith<T, $Res> {
-  factory $SubscriptionStateCopyWith(SubscriptionState<T> value,
-          $Res Function(SubscriptionState<T>) then) =
-      _$SubscriptionStateCopyWithImpl<T, $Res>;
+abstract class $SubscriptionStateCopyWith<TData, $Res> {
+  factory $SubscriptionStateCopyWith(SubscriptionState<TData> value,
+          $Res Function(SubscriptionState<TData>) then) =
+      _$SubscriptionStateCopyWithImpl<TData, $Res>;
 }
 
 /// @nodoc
-class _$SubscriptionStateCopyWithImpl<T, $Res>
-    implements $SubscriptionStateCopyWith<T, $Res> {
+class _$SubscriptionStateCopyWithImpl<TData, $Res>
+    implements $SubscriptionStateCopyWith<TData, $Res> {
   _$SubscriptionStateCopyWithImpl(this._value, this._then);
 
-  final SubscriptionState<T> _value;
+  final SubscriptionState<TData> _value;
   // ignore: unused_field
-  final $Res Function(SubscriptionState<T>) _then;
+  final $Res Function(SubscriptionState<TData>) _then;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateInitialCopyWith<T, $Res> {
-  factory $SubscriptionStateInitialCopyWith(SubscriptionStateInitial<T> value,
-          $Res Function(SubscriptionStateInitial<T>) then) =
-      _$SubscriptionStateInitialCopyWithImpl<T, $Res>;
+abstract class $SubscriptionStateInitialCopyWith<TData, $Res> {
+  factory $SubscriptionStateInitialCopyWith(
+          SubscriptionStateInitial<TData> value,
+          $Res Function(SubscriptionStateInitial<TData>) then) =
+      _$SubscriptionStateInitialCopyWithImpl<TData, $Res>;
 }
 
 /// @nodoc
-class _$SubscriptionStateInitialCopyWithImpl<T, $Res>
-    extends _$SubscriptionStateCopyWithImpl<T, $Res>
-    implements $SubscriptionStateInitialCopyWith<T, $Res> {
-  _$SubscriptionStateInitialCopyWithImpl(SubscriptionStateInitial<T> _value,
-      $Res Function(SubscriptionStateInitial<T>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateInitial<T>));
+class _$SubscriptionStateInitialCopyWithImpl<TData, $Res>
+    extends _$SubscriptionStateCopyWithImpl<TData, $Res>
+    implements $SubscriptionStateInitialCopyWith<TData, $Res> {
+  _$SubscriptionStateInitialCopyWithImpl(SubscriptionStateInitial<TData> _value,
+      $Res Function(SubscriptionStateInitial<TData>) _then)
+      : super(_value, (v) => _then(v as SubscriptionStateInitial<TData>));
 
   @override
-  SubscriptionStateInitial<T> get _value =>
-      super._value as SubscriptionStateInitial<T>;
+  SubscriptionStateInitial<TData> get _value =>
+      super._value as SubscriptionStateInitial<TData>;
 }
 
 /// @nodoc
 
-class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
+class _$SubscriptionStateInitial<TData>
+    implements SubscriptionStateInitial<TData> {
   const _$SubscriptionStateInitial();
 
   @override
   String toString() {
-    return 'SubscriptionState<$T>.initial()';
+    return 'SubscriptionState<$TData>.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateInitial<T>);
+            other is SubscriptionStateInitial<TData>);
   }
 
   @override
@@ -162,10 +175,11 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(OperationException error, QueryResult result)
+    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)
         error,
-    required TResult Function(T? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
   }) {
     return initial();
   }
@@ -174,9 +188,11 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
   }) {
     return initial?.call();
   }
@@ -185,9 +201,11 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -199,10 +217,10 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SubscriptionStateInitial<T> value) initial,
-    required TResult Function(SubscriptionStateLoading<T> value) loading,
-    required TResult Function(SubscriptionStateError<T> value) error,
-    required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+    required TResult Function(SubscriptionStateInitial<TData> value) initial,
+    required TResult Function(SubscriptionStateLoading<TData> value) loading,
+    required TResult Function(SubscriptionStateError<TData> value) error,
+    required TResult Function(SubscriptionStateLoaded<TData> value) loaded,
   }) {
     return initial(this);
   }
@@ -210,10 +228,10 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -221,10 +239,10 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -234,61 +252,64 @@ class _$SubscriptionStateInitial<T> implements SubscriptionStateInitial<T> {
   }
 }
 
-abstract class SubscriptionStateInitial<T> implements SubscriptionState<T> {
-  const factory SubscriptionStateInitial() = _$SubscriptionStateInitial<T>;
+abstract class SubscriptionStateInitial<TData>
+    implements SubscriptionState<TData> {
+  const factory SubscriptionStateInitial() = _$SubscriptionStateInitial<TData>;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateLoadingCopyWith<T, $Res> {
-  factory $SubscriptionStateLoadingCopyWith(SubscriptionStateLoading<T> value,
-          $Res Function(SubscriptionStateLoading<T>) then) =
-      _$SubscriptionStateLoadingCopyWithImpl<T, $Res>;
-  $Res call({QueryResult result});
+abstract class $SubscriptionStateLoadingCopyWith<TData, $Res> {
+  factory $SubscriptionStateLoadingCopyWith(
+          SubscriptionStateLoading<TData> value,
+          $Res Function(SubscriptionStateLoading<TData>) then) =
+      _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>;
+  $Res call({QueryResult<dynamic> result});
 }
 
 /// @nodoc
-class _$SubscriptionStateLoadingCopyWithImpl<T, $Res>
-    extends _$SubscriptionStateCopyWithImpl<T, $Res>
-    implements $SubscriptionStateLoadingCopyWith<T, $Res> {
-  _$SubscriptionStateLoadingCopyWithImpl(SubscriptionStateLoading<T> _value,
-      $Res Function(SubscriptionStateLoading<T>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateLoading<T>));
+class _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>
+    extends _$SubscriptionStateCopyWithImpl<TData, $Res>
+    implements $SubscriptionStateLoadingCopyWith<TData, $Res> {
+  _$SubscriptionStateLoadingCopyWithImpl(SubscriptionStateLoading<TData> _value,
+      $Res Function(SubscriptionStateLoading<TData>) _then)
+      : super(_value, (v) => _then(v as SubscriptionStateLoading<TData>));
 
   @override
-  SubscriptionStateLoading<T> get _value =>
-      super._value as SubscriptionStateLoading<T>;
+  SubscriptionStateLoading<TData> get _value =>
+      super._value as SubscriptionStateLoading<TData>;
 
   @override
   $Res call({
     Object? result = freezed,
   }) {
-    return _then(SubscriptionStateLoading<T>(
+    return _then(SubscriptionStateLoading<TData>(
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<dynamic>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
+class _$SubscriptionStateLoading<TData>
+    implements SubscriptionStateLoading<TData> {
   const _$SubscriptionStateLoading({required this.result});
 
   @override
-  final QueryResult result;
+  final QueryResult<dynamic> result;
 
   @override
   String toString() {
-    return 'SubscriptionState<$T>.loading(result: $result)';
+    return 'SubscriptionState<$TData>.loading(result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateLoading<T> &&
+            other is SubscriptionStateLoading<TData> &&
             const DeepCollectionEquality().equals(other.result, result));
   }
 
@@ -298,18 +319,19 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateLoadingCopyWith<T, SubscriptionStateLoading<T>>
-      get copyWith => _$SubscriptionStateLoadingCopyWithImpl<T,
-          SubscriptionStateLoading<T>>(this, _$identity);
+  $SubscriptionStateLoadingCopyWith<TData, SubscriptionStateLoading<TData>>
+      get copyWith => _$SubscriptionStateLoadingCopyWithImpl<TData,
+          SubscriptionStateLoading<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(OperationException error, QueryResult result)
+    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)
         error,
-    required TResult Function(T? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
   }) {
     return loading(result);
   }
@@ -318,9 +340,11 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
   }) {
     return loading?.call(result);
   }
@@ -329,9 +353,11 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -343,10 +369,10 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SubscriptionStateInitial<T> value) initial,
-    required TResult Function(SubscriptionStateLoading<T> value) loading,
-    required TResult Function(SubscriptionStateError<T> value) error,
-    required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+    required TResult Function(SubscriptionStateInitial<TData> value) initial,
+    required TResult Function(SubscriptionStateLoading<TData> value) loading,
+    required TResult Function(SubscriptionStateError<TData> value) error,
+    required TResult Function(SubscriptionStateLoaded<TData> value) loaded,
   }) {
     return loading(this);
   }
@@ -354,10 +380,10 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -365,10 +391,10 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -378,42 +404,46 @@ class _$SubscriptionStateLoading<T> implements SubscriptionStateLoading<T> {
   }
 }
 
-abstract class SubscriptionStateLoading<T> implements SubscriptionState<T> {
-  const factory SubscriptionStateLoading({required QueryResult result}) =
-      _$SubscriptionStateLoading<T>;
+abstract class SubscriptionStateLoading<TData>
+    implements SubscriptionState<TData> {
+  const factory SubscriptionStateLoading(
+          {required QueryResult<dynamic> result}) =
+      _$SubscriptionStateLoading<TData>;
 
-  QueryResult get result;
+  QueryResult<dynamic> get result;
   @JsonKey(ignore: true)
-  $SubscriptionStateLoadingCopyWith<T, SubscriptionStateLoading<T>>
+  $SubscriptionStateLoadingCopyWith<TData, SubscriptionStateLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateErrorCopyWith<T, $Res> {
-  factory $SubscriptionStateErrorCopyWith(SubscriptionStateError<T> value,
-          $Res Function(SubscriptionStateError<T>) then) =
-      _$SubscriptionStateErrorCopyWithImpl<T, $Res>;
-  $Res call({OperationException error, QueryResult result});
+abstract class $SubscriptionStateErrorCopyWith<TData, $Res> {
+  factory $SubscriptionStateErrorCopyWith(SubscriptionStateError<TData> value,
+          $Res Function(SubscriptionStateError<TData>) then) =
+      _$SubscriptionStateErrorCopyWithImpl<TData, $Res>;
+  $Res call(
+      {OperationException error, QueryResult<dynamic> result, TData? data});
 }
 
 /// @nodoc
-class _$SubscriptionStateErrorCopyWithImpl<T, $Res>
-    extends _$SubscriptionStateCopyWithImpl<T, $Res>
-    implements $SubscriptionStateErrorCopyWith<T, $Res> {
-  _$SubscriptionStateErrorCopyWithImpl(SubscriptionStateError<T> _value,
-      $Res Function(SubscriptionStateError<T>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateError<T>));
+class _$SubscriptionStateErrorCopyWithImpl<TData, $Res>
+    extends _$SubscriptionStateCopyWithImpl<TData, $Res>
+    implements $SubscriptionStateErrorCopyWith<TData, $Res> {
+  _$SubscriptionStateErrorCopyWithImpl(SubscriptionStateError<TData> _value,
+      $Res Function(SubscriptionStateError<TData>) _then)
+      : super(_value, (v) => _then(v as SubscriptionStateError<TData>));
 
   @override
-  SubscriptionStateError<T> get _value =>
-      super._value as SubscriptionStateError<T>;
+  SubscriptionStateError<TData> get _value =>
+      super._value as SubscriptionStateError<TData>;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? result = freezed,
+    Object? data = freezed,
   }) {
-    return _then(SubscriptionStateError<T>(
+    return _then(SubscriptionStateError<TData>(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -421,81 +451,95 @@ class _$SubscriptionStateErrorCopyWithImpl<T, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<dynamic>,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TData?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
-  const _$SubscriptionStateError({required this.error, required this.result});
+class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
+  const _$SubscriptionStateError(
+      {required this.error, required this.result, this.data});
 
   @override
   final OperationException error;
   @override
-  final QueryResult result;
+  final QueryResult<dynamic> result;
+  @override
+  final TData? data;
 
   @override
   String toString() {
-    return 'SubscriptionState<$T>.error(error: $error, result: $result)';
+    return 'SubscriptionState<$TData>.error(error: $error, result: $result, data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateError<T> &&
+            other is SubscriptionStateError<TData> &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            const DeepCollectionEquality().equals(other.result, result) &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(result));
+      const DeepCollectionEquality().hash(result),
+      const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateErrorCopyWith<T, SubscriptionStateError<T>> get copyWith =>
-      _$SubscriptionStateErrorCopyWithImpl<T, SubscriptionStateError<T>>(
-          this, _$identity);
+  $SubscriptionStateErrorCopyWith<TData, SubscriptionStateError<TData>>
+      get copyWith => _$SubscriptionStateErrorCopyWithImpl<TData,
+          SubscriptionStateError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(OperationException error, QueryResult result)
+    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)
         error,
-    required TResult Function(T? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
   }) {
-    return error(this.error, result);
+    return error(this.error, result, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
   }) {
-    return error?.call(this.error, result);
+    return error?.call(this.error, result, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error, result);
+      return error(this.error, result, data);
     }
     return orElse();
   }
@@ -503,10 +547,10 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SubscriptionStateInitial<T> value) initial,
-    required TResult Function(SubscriptionStateLoading<T> value) loading,
-    required TResult Function(SubscriptionStateError<T> value) error,
-    required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+    required TResult Function(SubscriptionStateInitial<TData> value) initial,
+    required TResult Function(SubscriptionStateLoading<TData> value) loading,
+    required TResult Function(SubscriptionStateError<TData> value) error,
+    required TResult Function(SubscriptionStateLoaded<TData> value) loaded,
   }) {
     return error(this);
   }
@@ -514,10 +558,10 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -525,10 +569,10 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -538,76 +582,80 @@ class _$SubscriptionStateError<T> implements SubscriptionStateError<T> {
   }
 }
 
-abstract class SubscriptionStateError<T> implements SubscriptionState<T> {
+abstract class SubscriptionStateError<TData>
+    implements SubscriptionState<TData> {
   const factory SubscriptionStateError(
       {required OperationException error,
-      required QueryResult result}) = _$SubscriptionStateError<T>;
+      required QueryResult<dynamic> result,
+      TData? data}) = _$SubscriptionStateError<TData>;
 
   OperationException get error;
-  QueryResult get result;
+  QueryResult<dynamic> get result;
+  TData? get data;
   @JsonKey(ignore: true)
-  $SubscriptionStateErrorCopyWith<T, SubscriptionStateError<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SubscriptionStateErrorCopyWith<TData, SubscriptionStateError<TData>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateLoadedCopyWith<T, $Res> {
-  factory $SubscriptionStateLoadedCopyWith(SubscriptionStateLoaded<T> value,
-          $Res Function(SubscriptionStateLoaded<T>) then) =
-      _$SubscriptionStateLoadedCopyWithImpl<T, $Res>;
-  $Res call({T? data, QueryResult result});
+abstract class $SubscriptionStateLoadedCopyWith<TData, $Res> {
+  factory $SubscriptionStateLoadedCopyWith(SubscriptionStateLoaded<TData> value,
+          $Res Function(SubscriptionStateLoaded<TData>) then) =
+      _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>;
+  $Res call({TData? data, QueryResult<dynamic> result});
 }
 
 /// @nodoc
-class _$SubscriptionStateLoadedCopyWithImpl<T, $Res>
-    extends _$SubscriptionStateCopyWithImpl<T, $Res>
-    implements $SubscriptionStateLoadedCopyWith<T, $Res> {
-  _$SubscriptionStateLoadedCopyWithImpl(SubscriptionStateLoaded<T> _value,
-      $Res Function(SubscriptionStateLoaded<T>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateLoaded<T>));
+class _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>
+    extends _$SubscriptionStateCopyWithImpl<TData, $Res>
+    implements $SubscriptionStateLoadedCopyWith<TData, $Res> {
+  _$SubscriptionStateLoadedCopyWithImpl(SubscriptionStateLoaded<TData> _value,
+      $Res Function(SubscriptionStateLoaded<TData>) _then)
+      : super(_value, (v) => _then(v as SubscriptionStateLoaded<TData>));
 
   @override
-  SubscriptionStateLoaded<T> get _value =>
-      super._value as SubscriptionStateLoaded<T>;
+  SubscriptionStateLoaded<TData> get _value =>
+      super._value as SubscriptionStateLoaded<TData>;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
-    return _then(SubscriptionStateLoaded<T>(
+    return _then(SubscriptionStateLoaded<TData>(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T?,
+              as TData?,
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<dynamic>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
+class _$SubscriptionStateLoaded<TData>
+    implements SubscriptionStateLoaded<TData> {
   const _$SubscriptionStateLoaded({this.data, required this.result});
 
   @override
-  final T? data;
+  final TData? data;
   @override
-  final QueryResult result;
+  final QueryResult<dynamic> result;
 
   @override
   String toString() {
-    return 'SubscriptionState<$T>.loaded(data: $data, result: $result)';
+    return 'SubscriptionState<$TData>.loaded(data: $data, result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateLoaded<T> &&
+            other is SubscriptionStateLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.result, result));
   }
@@ -620,19 +668,19 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateLoadedCopyWith<T, SubscriptionStateLoaded<T>>
-      get copyWith =>
-          _$SubscriptionStateLoadedCopyWithImpl<T, SubscriptionStateLoaded<T>>(
-              this, _$identity);
+  $SubscriptionStateLoadedCopyWith<TData, SubscriptionStateLoaded<TData>>
+      get copyWith => _$SubscriptionStateLoadedCopyWithImpl<TData,
+          SubscriptionStateLoaded<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(OperationException error, QueryResult result)
+    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)
         error,
-    required TResult Function(T? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
   }) {
     return loaded(data, result);
   }
@@ -641,9 +689,11 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
   }) {
     return loaded?.call(data, result);
   }
@@ -652,9 +702,11 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result)? error,
-    TResult Function(T? data, QueryResult result)? loaded,
+    TResult Function(QueryResult<dynamic> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<dynamic> result, TData? data)?
+        error,
+    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -666,10 +718,10 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SubscriptionStateInitial<T> value) initial,
-    required TResult Function(SubscriptionStateLoading<T> value) loading,
-    required TResult Function(SubscriptionStateError<T> value) error,
-    required TResult Function(SubscriptionStateLoaded<T> value) loaded,
+    required TResult Function(SubscriptionStateInitial<TData> value) initial,
+    required TResult Function(SubscriptionStateLoading<TData> value) loading,
+    required TResult Function(SubscriptionStateError<TData> value) error,
+    required TResult Function(SubscriptionStateLoaded<TData> value) loaded,
   }) {
     return loaded(this);
   }
@@ -677,10 +729,10 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -688,10 +740,10 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SubscriptionStateInitial<T> value)? initial,
-    TResult Function(SubscriptionStateLoading<T> value)? loading,
-    TResult Function(SubscriptionStateError<T> value)? error,
-    TResult Function(SubscriptionStateLoaded<T> value)? loaded,
+    TResult Function(SubscriptionStateInitial<TData> value)? initial,
+    TResult Function(SubscriptionStateLoading<TData> value)? loading,
+    TResult Function(SubscriptionStateError<TData> value)? error,
+    TResult Function(SubscriptionStateLoaded<TData> value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -701,13 +753,15 @@ class _$SubscriptionStateLoaded<T> implements SubscriptionStateLoaded<T> {
   }
 }
 
-abstract class SubscriptionStateLoaded<T> implements SubscriptionState<T> {
+abstract class SubscriptionStateLoaded<TData>
+    implements SubscriptionState<TData> {
   const factory SubscriptionStateLoaded(
-      {T? data, required QueryResult result}) = _$SubscriptionStateLoaded<T>;
+      {TData? data,
+      required QueryResult<dynamic> result}) = _$SubscriptionStateLoaded<TData>;
 
-  T? get data;
-  QueryResult get result;
+  TData? get data;
+  QueryResult<dynamic> get result;
   @JsonKey(ignore: true)
-  $SubscriptionStateLoadedCopyWith<T, SubscriptionStateLoaded<T>>
+  $SubscriptionStateLoadedCopyWith<TData, SubscriptionStateLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }

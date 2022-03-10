@@ -44,7 +44,7 @@ class _BlocSubscriptionState extends State<BlocSubscription> {
           return state.when(
               initial: () => const Text('Awaiting data'),
               loading: (_) => const Center(child: CircularProgressIndicator()),
-              error: (error, _) => Text(
+              error: (error, _, __) => Text(
                     parseOperationException(error),
                     style: TextStyle(color: Theme.of(context).errorColor),
                   ),

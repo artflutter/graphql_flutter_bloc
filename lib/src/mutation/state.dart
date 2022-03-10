@@ -12,10 +12,11 @@ class MutationState<TData> with _$MutationState<TData?> {
   const factory MutationState.error({
     required OperationException error,
     required QueryResult result,
+    TData? data,
   }) = MutationStateError;
 
   const factory MutationState.completed({
-    required TData? data,
+    TData? data,
     required QueryResult result,
   }) = MutationStateCompleted<TData>;
 }

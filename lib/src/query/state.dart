@@ -4,30 +4,31 @@ import 'package:graphql/client.dart';
 part 'state.freezed.dart';
 
 @freezed
-class QueryState<T> with _$QueryState<T> {
+class QueryState<TData> with _$QueryState<TData> {
   const factory QueryState.initial() = QueryStateInitial;
 
   const factory QueryState.loading({
     required QueryResult result,
-  }) = QueryStateLoading<T>;
+  }) = QueryStateLoading<TData>;
 
   const factory QueryState.error({
     required OperationException error,
     required QueryResult result,
-  }) = QueryStateError<T>;
+    TData? data,
+  }) = QueryStateError<TData>;
 
   const factory QueryState.loaded({
-    required T data,
+    required TData data,
     required QueryResult result,
-  }) = QueryStateLoaded<T>;
+  }) = QueryStateLoaded<TData>;
 
   const factory QueryState.refetch({
-    T? data,
+    TData? data,
     QueryResult? result,
-  }) = QueryStateRefetch<T>;
+  }) = QueryStateRefetch<TData>;
 
   const factory QueryState.fetchMore({
-    required T data,
+    required TData data,
     QueryResult? result,
-  }) = QueryStateFetchMore<T>;
+  }) = QueryStateFetchMore<TData>;
 }

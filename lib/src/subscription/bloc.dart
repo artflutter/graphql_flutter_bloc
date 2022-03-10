@@ -6,19 +6,19 @@ import 'package:graphql_flutter_bloc/src/helper.dart';
 import 'event.dart';
 import 'state.dart';
 
-abstract class SubscriptionBloc<T>
-    extends Bloc<SubscriptionEvent<T>, SubscriptionState<T>> {
+abstract class SubscriptionBloc<TData>
+    extends Bloc<SubscriptionEvent<TData>, SubscriptionState<TData>> {
   GraphQLClient client;
   late Stream<QueryResult> subscription;
   StreamSubscription? _streamSubscription;
   SubscriptionOptions? options;
 
   SubscriptionBloc({required this.client})
-      : super(SubscriptionState<T>.initial()) {
-    on<SubscriptionEventError<T>>(_error);
-    on<SubscriptionEventRun<T>>(_run);
-    on<SubscriptionEventLoading<T>>(_loading);
-    on<SubscriptionEventLoaded<T>>(_loaded);
+      : super(SubscriptionState<TData>.initial()) {
+    on<SubscriptionEventError<TData>>(_error);
+    on<SubscriptionEventRun<TData>>(_run);
+    on<SubscriptionEventLoading<TData>>(_loading);
+    on<SubscriptionEventLoaded<TData>>(_loaded);
   }
 
   void _listener(QueryResult result) {
@@ -28,7 +28,7 @@ abstract class SubscriptionBloc<T>
 
     if (!result.isLoading && result.data != null) {
       add(
-        SubscriptionEvent<T>.loaded(
+        SubscriptionEvent<TData>.loaded(
           data: parseData(result.data),
           result: result,
         ),
@@ -36,7 +36,17 @@ abstract class SubscriptionBloc<T>
     }
 
     if (result.hasException) {
-      add(SubscriptionEvent<T>.error(error: result.exception!, result: result));
+      TData? data;
+
+      if (result.data != null) {
+        data = parseData(result.data);
+      }
+
+      add(SubscriptionEvent<TData>.error(
+        error: result.exception!,
+        result: result,
+        data: data,
+      ));
     }
   }
 
@@ -44,8 +54,8 @@ abstract class SubscriptionBloc<T>
     _streamSubscription?.cancel();
   }
 
-  void run(SubscriptionOptions options) {
-    add(SubscriptionEvent<T>.run(options: options));
+  void run(SubscriptionOptions<TData> options) {
+    add(SubscriptionEvent<TData>.run(options: options));
   }
 
   bool shouldFetchMore(int i, int threshold) => false;
@@ -54,44 +64,55 @@ abstract class SubscriptionBloc<T>
 
   bool get isLoaded => state is SubscriptionStateLoaded;
 
-  T parseData(Map<String, dynamic>? data);
+  TData parseData(Map<String, dynamic>? data);
 
-  bool get hasData => state is SubscriptionStateLoaded<T>;
+  bool get hasData => state is SubscriptionStateLoaded<TData>;
 
-  bool get hasError => state is SubscriptionStateError<T>;
+  bool get hasError => state is SubscriptionStateError<TData>;
 
   String? get getError => hasError
-      ? parseOperationException((state as SubscriptionStateError<T>).error)
+      ? parseOperationException((state as SubscriptionStateError<TData>).error)
       : null;
 
   FutureOr<void> _error(
-    SubscriptionEventError<T> event,
-    Emitter<SubscriptionState<T>> emit,
+    SubscriptionEventError<TData> event,
+    Emitter<SubscriptionState<TData>> emit,
   ) async {
-    emit(SubscriptionState<T>.error(error: event.error, result: event.result));
+    TData? data;
+
+    if (event.result.data != null) {
+      data = parseData(event.result.data);
+    }
+
+    emit(SubscriptionState<TData>.error(
+      error: event.error,
+      result: event.result,
+      data: data,
+    ));
   }
 
   FutureOr<void> _run(
-    SubscriptionEventRun<T> event,
-    Emitter<SubscriptionState<T>> emit,
+    SubscriptionEventRun<TData> event,
+    Emitter<SubscriptionState<TData>> emit,
   ) async {
     _streamSubscription?.cancel();
-    subscription = client.subscribe(event.options);
+    subscription = client.subscribe<TData>(event.options);
 
     _streamSubscription = subscription.listen(_listener);
   }
 
   FutureOr<void> _loading(
-    SubscriptionEventLoading<T> event,
-    Emitter<SubscriptionState<T>> emit,
+    SubscriptionEventLoading<TData> event,
+    Emitter<SubscriptionState<TData>> emit,
   ) async {
     emit(SubscriptionState.loading(result: event.result));
   }
 
   FutureOr<void> _loaded(
-    SubscriptionEventLoaded<T> event,
-    Emitter<SubscriptionState<T>> emit,
+    SubscriptionEventLoaded<TData> event,
+    Emitter<SubscriptionState<TData>> emit,
   ) async {
-    emit(SubscriptionState<T>.loaded(data: event.data, result: event.result));
+    emit(SubscriptionState<TData>.loaded(
+        data: event.data, result: event.result));
   }
 }

@@ -70,7 +70,7 @@ class _BlocMutationState extends State<BlocMutation> {
                 bloc: bloc,
                 listener: (context, state) {
                   state.maybeWhen(
-                    error: (error, _) {
+                    error: (error, _, __) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(error.linkException.toString()),
@@ -92,7 +92,7 @@ class _BlocMutationState extends State<BlocMutation> {
                     return state.when(
                       initial: () => _submitButton(false),
                       loading: () => _submitButton(true),
-                      error: (_, __) => _submitButton(false),
+                      error: (_, __, ___) => _submitButton(false),
                       completed: (data, result) => _submitButton(false),
                     );
                   },

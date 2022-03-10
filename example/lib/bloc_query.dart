@@ -119,7 +119,7 @@ class _BlocQueryState extends State<BlocQuery> {
             return state.when(
               initial: () => Container(),
               loading: (_) => const Center(child: CircularProgressIndicator()),
-              error: (error, __) => ListView(children: [
+              error: (error, __, ___) => ListView(children: [
                 Text(
                   parseOperationException(error),
                   style: TextStyle(color: Theme.of(context).errorColor),

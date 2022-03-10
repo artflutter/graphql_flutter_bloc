@@ -4,28 +4,29 @@ import 'package:graphql/client.dart';
 part 'event.freezed.dart';
 
 @freezed
-class SubscriptionEvent<T> with _$SubscriptionEvent<T> {
+class SubscriptionEvent<TData> with _$SubscriptionEvent<TData> {
   const factory SubscriptionEvent.error({
     required OperationException error,
     required QueryResult result,
-  }) = SubscriptionEventError<T>;
+    TData? data,
+  }) = SubscriptionEventError<TData>;
 
   const factory SubscriptionEvent.run({
-    required SubscriptionOptions options,
-  }) = SubscriptionEventRun<T>;
+    required SubscriptionOptions<TData> options,
+  }) = SubscriptionEventRun<TData>;
 
   const factory SubscriptionEvent.loading({
     required QueryResult result,
-  }) = SubscriptionEventLoading<T>;
+  }) = SubscriptionEventLoading<TData>;
 
   const factory SubscriptionEvent.loaded({
-    required T? data,
+    required TData? data,
     required QueryResult result,
-  }) = SubscriptionEventLoaded<T>;
+  }) = SubscriptionEventLoaded<TData>;
 
-  // const factory SubscriptionEvent.refetch() = SubscriptionEventRefetch<T>;
+  // const factory SubscriptionEvent.refetch() = SubscriptionEventRefetch<TData>;
   //
   // const factory SubscriptionEvent.fetchMore({
   //   @required FetchMoreOptions options,
-  // }) = SubscriptionEventFetchMore<T>;
+  // }) = SubscriptionEventFetchMore<TData>;
 }

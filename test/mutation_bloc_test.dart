@@ -20,11 +20,13 @@ const String mutation = r'''
 const response = r'''{ "data": { "viewer": { "id": 123 } } }''';
 
 class TestMutationBloc extends MutationBloc<Map<String, dynamic>> {
-  TestMutationBloc({required GraphQLClient client, WatchQueryOptions? options})
+  TestMutationBloc(
+      {required GraphQLClient client,
+      WatchQueryOptions<Map<String, dynamic>>? options})
       : super(
           client: client,
           options: options ??
-              WatchQueryOptions(
+              WatchQueryOptions<Map<String, dynamic>>(
                 fetchPolicy: FetchPolicy.noCache,
                 document: parseString(mutation),
               ),

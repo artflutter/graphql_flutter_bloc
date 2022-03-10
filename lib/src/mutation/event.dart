@@ -8,6 +8,7 @@ class MutationEvent<TData> with _$MutationEvent<TData> {
   const factory MutationEvent.error({
     required OperationException error,
     required QueryResult result,
+    TData? data,
   }) = MutationEventError;
 
   const factory MutationEvent.run(

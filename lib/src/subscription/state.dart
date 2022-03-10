@@ -4,30 +4,31 @@ import 'package:graphql/client.dart';
 part 'state.freezed.dart';
 
 @freezed
-class SubscriptionState<T> with _$SubscriptionState<T> {
+class SubscriptionState<TData> with _$SubscriptionState<TData> {
   const factory SubscriptionState.initial() = SubscriptionStateInitial;
 
   const factory SubscriptionState.loading({
     required QueryResult result,
-  }) = SubscriptionStateLoading<T>;
+  }) = SubscriptionStateLoading<TData>;
 
   const factory SubscriptionState.error({
     required OperationException error,
     required QueryResult result,
-  }) = SubscriptionStateError<T>;
+    TData? data,
+  }) = SubscriptionStateError<TData>;
 
   const factory SubscriptionState.loaded({
-    T? data,
+    TData? data,
     required QueryResult result,
-  }) = SubscriptionStateLoaded<T>;
+  }) = SubscriptionStateLoaded<TData>;
 
   // const factory SubscriptionState.refetch({
-  //   T data,
+  //   TData data,
   //   QueryResult result,
-  // }) = SubscriptionStateRefetch<T>;
+  // }) = SubscriptionStateRefetch<TData>;
   //
   // const factory SubscriptionState.fetchMore({
-  //   @required T data,
+  //   @required TData data,
   //   QueryResult result,
-  // }) = SubscriptionStateFetchMore<T>;
+  // }) = SubscriptionStateFetchMore<TData>;
 }

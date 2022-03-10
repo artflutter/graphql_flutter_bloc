@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 import 'package:http/http.dart' as http;
@@ -20,10 +18,14 @@ const String query = r'''
 ''';
 
 class TestQueryBloc extends QueryBloc<Map<String, dynamic>> {
-  TestQueryBloc({required GraphQLClient client, WatchQueryOptions? options})
-      : super(
+  TestQueryBloc({
+    required GraphQLClient client,
+    WatchQueryOptions<Map<String, dynamic>>? options,
+  }) : super(
           client: client,
-          options: options ?? WatchQueryOptions(document: parseString(query)),
+          options: options ??
+              WatchQueryOptions<Map<String, dynamic>>(
+                  document: parseString(query)),
         );
 
   void fetchMore() {

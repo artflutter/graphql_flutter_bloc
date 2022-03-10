@@ -5,12 +5,13 @@ import 'package:graphql/client.dart';
 class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
   static int defaultLimit = 5;
 
-  CompaniesPaginatedBloc(
-      {required GraphQLClient client, WatchQueryOptions? options})
-      : super(
+  CompaniesPaginatedBloc({
+    required GraphQLClient client,
+    WatchQueryOptions<CompaniesPaginatedData$Query>? options,
+  }) : super(
           client: client,
           options: options ??
-              WatchQueryOptions(
+              WatchQueryOptions<CompaniesPaginatedData$Query>(
                 document: COMPANIES_PAGINATED_DATA_QUERY_DOCUMENT,
                 variables: CompaniesPaginatedDataArguments(
                   pagination: PaginationInput(limit: 25, offset: 0),

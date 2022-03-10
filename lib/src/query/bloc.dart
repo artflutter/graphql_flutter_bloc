@@ -6,21 +6,22 @@ import 'package:graphql_flutter_bloc/src/helper.dart';
 import 'event.dart';
 import 'state.dart';
 
-abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
+abstract class QueryBloc<TData>
+    extends Bloc<QueryEvent<TData>, QueryState<TData>> {
   GraphQLClient client;
   late ObservableQuery result;
-  WatchQueryOptions options;
+  WatchQueryOptions<TData> options;
 
   QueryBloc({required this.client, required this.options})
-      : super(QueryState<T>.initial()) {
-    on<QueryEventRun<T>>(_run);
-    on<QueryEventError<T>>(_error);
-    on<QueryEventLoading<T>>(_loading);
-    on<QueryEventLoaded<T>>(_loaded);
-    on<QueryEventRefetch<T>>(_refetch);
-    on<QueryEventFetchMore<T>>(_fetchMore);
+      : super(QueryState<TData>.initial()) {
+    on<QueryEventRun<TData>>(_run);
+    on<QueryEventError<TData>>(_error);
+    on<QueryEventLoading<TData>>(_loading);
+    on<QueryEventLoaded<TData>>(_loaded);
+    on<QueryEventRefetch<TData>>(_refetch);
+    on<QueryEventFetchMore<TData>>(_fetchMore);
 
-    result = client.watchQuery(options);
+    result = client.watchQuery<TData>(options);
 
     result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&
@@ -35,7 +36,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
       if (!result.isLoading && result.data != null) {
         add(
-          QueryEvent<T>.loaded(
+          QueryEvent<TData>.loaded(
             data: parseData(result.data),
             result: result,
           ),
@@ -44,7 +45,17 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
       final exception = result.exception;
       if (exception != null) {
-        add(QueryEvent<T>.error(error: exception, result: result));
+        TData? data;
+
+        if (result.data != null) {
+          data = parseData(result.data);
+        }
+
+        add(QueryEvent<TData>.error(
+          error: exception,
+          result: result,
+          data: data,
+        ));
       }
     });
   }
@@ -55,7 +66,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   void run({Map<String, dynamic>? variables, Object? optimisticResult}) {
     add(
-      QueryEvent<T>.run(
+      QueryEvent<TData>.run(
         variables: variables,
         optimisticResult: optimisticResult,
       ),
@@ -63,7 +74,7 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   }
 
   void refetch() {
-    add(QueryEvent<T>.refetch());
+    add(QueryEvent<TData>.refetch());
   }
 
   bool shouldFetchMore(int i, int threshold) => false;
@@ -76,21 +87,21 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
 
   bool get isRefetching => state is QueryStateRefetch;
 
-  T parseData(Map<String, dynamic>? data);
+  TData parseData(Map<String, dynamic>? data);
 
-  bool get hasData => (state is QueryStateLoaded<T> ||
-      state is QueryStateFetchMore<T> ||
-      state is QueryStateRefetch<T>);
+  bool get hasData => (state is QueryStateLoaded<TData> ||
+      state is QueryStateFetchMore<TData> ||
+      state is QueryStateRefetch<TData>);
 
-  bool get hasError => state is QueryStateError<T>;
+  bool get hasError => state is QueryStateError<TData>;
 
   String? get getError => hasError
-      ? parseOperationException((state as QueryStateError<T>).error)
+      ? parseOperationException((state as QueryStateError<TData>).error)
       : null;
 
   FutureOr<void> _run(
-    QueryEventRun<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventRun<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
     final variables = event.variables;
     final optimisticResult = event.optimisticResult;
@@ -107,32 +118,42 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   }
 
   FutureOr<void> _error(
-    QueryEventError<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventError<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
-    emit(QueryState<T>.error(error: event.error, result: event.result));
+    TData? data;
+
+    if (event.result.data != null) {
+      data = parseData(event.result.data);
+    }
+
+    emit(QueryState<TData>.error(
+      error: event.error,
+      result: event.result,
+      data: data,
+    ));
   }
 
   FutureOr<void> _loading(
-    QueryEventLoading<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventLoading<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
     emit(QueryState.loading(result: event.result));
   }
 
   FutureOr<void> _loaded(
-    QueryEventLoaded<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventLoaded<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
-    emit(QueryState<T>.loaded(data: event.data, result: event.result));
+    emit(QueryState<TData>.loaded(data: event.data, result: event.result));
   }
 
   FutureOr<void> _refetch(
-    QueryEventRefetch<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventRefetch<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
     emit(
-      QueryState<T>.refetch(
+      QueryState<TData>.refetch(
           data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
           result: null),
     );
@@ -141,13 +162,13 @@ abstract class QueryBloc<T> extends Bloc<QueryEvent<T>, QueryState<T>> {
   }
 
   FutureOr<void> _fetchMore(
-    QueryEventFetchMore<T> event,
-    Emitter<QueryState<T>> emit,
+    QueryEventFetchMore<TData> event,
+    Emitter<QueryState<TData>> emit,
   ) async {
     emit(
-      QueryState<T>.fetchMore(
-        data:
-            state.maybeWhen(loaded: (data, _) => data, orElse: () => null as T),
+      QueryState<TData>.fetchMore(
+        data: state.maybeWhen(
+            loaded: (data, _) => data, orElse: () => null as TData),
         result: null,
       ),
     );
