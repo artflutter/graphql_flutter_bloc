@@ -27,7 +27,11 @@ dependencies:
   gql: ^0.13.0
   http: ^0.13.4
   hive: ^2.0.6
-  graphql: ^5.0.1
+  graphql:
+    git:
+      url: https://github.com/artflutter/graphql-flutter-1.git
+      ref: bugfix/polling-type-mismatch
+      path: packages/graphql
   graphql_flutter_bloc:
     path: ../
 

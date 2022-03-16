@@ -14,7 +14,11 @@ dependencies:
   flutter_bloc: ^8.0.1
   http: ^0.13.4
   gql: ^0.13.0
-  graphql: ^5.0.1
+  graphql:
+    git:
+      url: https://github.com/artflutter/graphql-flutter-1.git
+      ref: bugfix/polling-type-mismatch
+      path: packages/graphql
 
 dev_dependencies:
   flutter_test:
@@ -26,8 +30,8 @@ dev_dependencies:
   freezed: ^1.1.1
   flutter_lints: ^1.0.4
 
-#dependency_overrides:
-#  test_api: 0.4.9
+dependency_overrides:
+  test_api: 0.4.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

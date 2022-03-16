@@ -111,7 +111,8 @@ abstract class QueryBloc<TData>
     }
 
     if (optimisticResult != null) {
-      result.options.optimisticResult = optimisticResult;
+      result.options =
+          result.options.copyWithOptimisticResult(optimisticResult);
     }
 
     result.fetchResults();
