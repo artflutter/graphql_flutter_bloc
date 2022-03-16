@@ -1,6 +1,5 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'event.dart';
@@ -20,7 +19,7 @@ class _$SubscriptionEventTearOff {
 
   SubscriptionEventError<TData> error<TData>(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) {
     return SubscriptionEventError<TData>(
       error: error,
@@ -30,21 +29,21 @@ class _$SubscriptionEventTearOff {
   }
 
   SubscriptionEventRun<TData> run<TData>(
-      {required SubscriptionOptions<TData> options}) {
+      {required SubscriptionOptions options}) {
     return SubscriptionEventRun<TData>(
       options: options,
     );
   }
 
   SubscriptionEventLoading<TData> loading<TData>(
-      {required QueryResult<dynamic> result}) {
+      {required QueryResult result}) {
     return SubscriptionEventLoading<TData>(
       result: result,
     );
   }
 
   SubscriptionEventLoaded<TData> loaded<TData>(
-      {required TData? data, required QueryResult<dynamic> result}) {
+      {required TData? data, required QueryResult result}) {
     return SubscriptionEventLoaded<TData>(
       data: data,
       result: result,
@@ -60,31 +59,29 @@ mixin _$SubscriptionEvent<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(SubscriptionOptions<TData> options) run,
-    required TResult Function(QueryResult<dynamic> result) loading,
-    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(TData? data, QueryResult result) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,8 +134,7 @@ abstract class $SubscriptionEventErrorCopyWith<TData, $Res> {
   factory $SubscriptionEventErrorCopyWith(SubscriptionEventError<TData> value,
           $Res Function(SubscriptionEventError<TData>) then) =
       _$SubscriptionEventErrorCopyWithImpl<TData, $Res>;
-  $Res call(
-      {OperationException error, QueryResult<dynamic> result, TData? data});
+  $Res call({OperationException error, QueryResult result, TData? data});
 }
 
 /// @nodoc
@@ -167,7 +163,7 @@ class _$SubscriptionEventErrorCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -185,7 +181,7 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @override
   final OperationException error;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
   @override
   final TData? data;
 
@@ -221,11 +217,11 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(SubscriptionOptions<TData> options) run,
-    required TResult Function(QueryResult<dynamic> result) loading,
-    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(TData? data, QueryResult result) loaded,
   }) {
     return error(this.error, result, data);
   }
@@ -233,12 +229,11 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -246,12 +241,11 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -302,11 +296,11 @@ abstract class SubscriptionEventError<TData>
     implements SubscriptionEvent<TData> {
   const factory SubscriptionEventError(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) = _$SubscriptionEventError<TData>;
 
   OperationException get error;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   TData? get data;
   @JsonKey(ignore: true)
   $SubscriptionEventErrorCopyWith<TData, SubscriptionEventError<TData>>
@@ -318,7 +312,7 @@ abstract class $SubscriptionEventRunCopyWith<TData, $Res> {
   factory $SubscriptionEventRunCopyWith(SubscriptionEventRun<TData> value,
           $Res Function(SubscriptionEventRun<TData>) then) =
       _$SubscriptionEventRunCopyWithImpl<TData, $Res>;
-  $Res call({SubscriptionOptions<TData> options});
+  $Res call({SubscriptionOptions options});
 }
 
 /// @nodoc
@@ -341,7 +335,7 @@ class _$SubscriptionEventRunCopyWithImpl<TData, $Res>
       options: options == freezed
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as SubscriptionOptions<TData>,
+              as SubscriptionOptions,
     ));
   }
 }
@@ -352,7 +346,7 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   const _$SubscriptionEventRun({required this.options});
 
   @override
-  final SubscriptionOptions<TData> options;
+  final SubscriptionOptions options;
 
   @override
   String toString() {
@@ -381,11 +375,11 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(SubscriptionOptions<TData> options) run,
-    required TResult Function(QueryResult<dynamic> result) loading,
-    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(TData? data, QueryResult result) loaded,
   }) {
     return run(options);
   }
@@ -393,12 +387,11 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
   }) {
     return run?.call(options);
   }
@@ -406,12 +399,11 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
     required TResult orElse(),
   }) {
     if (run != null) {
@@ -459,11 +451,10 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
 }
 
 abstract class SubscriptionEventRun<TData> implements SubscriptionEvent<TData> {
-  const factory SubscriptionEventRun(
-          {required SubscriptionOptions<TData> options}) =
+  const factory SubscriptionEventRun({required SubscriptionOptions options}) =
       _$SubscriptionEventRun<TData>;
 
-  SubscriptionOptions<TData> get options;
+  SubscriptionOptions get options;
   @JsonKey(ignore: true)
   $SubscriptionEventRunCopyWith<TData, SubscriptionEventRun<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -475,7 +466,7 @@ abstract class $SubscriptionEventLoadingCopyWith<TData, $Res> {
           SubscriptionEventLoading<TData> value,
           $Res Function(SubscriptionEventLoading<TData>) then) =
       _$SubscriptionEventLoadingCopyWithImpl<TData, $Res>;
-  $Res call({QueryResult<dynamic> result});
+  $Res call({QueryResult result});
 }
 
 /// @nodoc
@@ -498,7 +489,7 @@ class _$SubscriptionEventLoadingCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
     ));
   }
 }
@@ -510,7 +501,7 @@ class _$SubscriptionEventLoading<TData>
   const _$SubscriptionEventLoading({required this.result});
 
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
 
   @override
   String toString() {
@@ -539,11 +530,11 @@ class _$SubscriptionEventLoading<TData>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(SubscriptionOptions<TData> options) run,
-    required TResult Function(QueryResult<dynamic> result) loading,
-    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(TData? data, QueryResult result) loaded,
   }) {
     return loading(result);
   }
@@ -551,12 +542,11 @@ class _$SubscriptionEventLoading<TData>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
   }) {
     return loading?.call(result);
   }
@@ -564,12 +554,11 @@ class _$SubscriptionEventLoading<TData>
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -618,11 +607,10 @@ class _$SubscriptionEventLoading<TData>
 
 abstract class SubscriptionEventLoading<TData>
     implements SubscriptionEvent<TData> {
-  const factory SubscriptionEventLoading(
-          {required QueryResult<dynamic> result}) =
+  const factory SubscriptionEventLoading({required QueryResult result}) =
       _$SubscriptionEventLoading<TData>;
 
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionEventLoadingCopyWith<TData, SubscriptionEventLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -633,7 +621,7 @@ abstract class $SubscriptionEventLoadedCopyWith<TData, $Res> {
   factory $SubscriptionEventLoadedCopyWith(SubscriptionEventLoaded<TData> value,
           $Res Function(SubscriptionEventLoaded<TData>) then) =
       _$SubscriptionEventLoadedCopyWithImpl<TData, $Res>;
-  $Res call({TData? data, QueryResult<dynamic> result});
+  $Res call({TData? data, QueryResult result});
 }
 
 /// @nodoc
@@ -661,7 +649,7 @@ class _$SubscriptionEventLoadedCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
     ));
   }
 }
@@ -675,7 +663,7 @@ class _$SubscriptionEventLoaded<TData>
   @override
   final TData? data;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
 
   @override
   String toString() {
@@ -707,11 +695,11 @@ class _$SubscriptionEventLoaded<TData>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(SubscriptionOptions<TData> options) run,
-    required TResult Function(QueryResult<dynamic> result) loading,
-    required TResult Function(TData? data, QueryResult<dynamic> result) loaded,
+    required TResult Function(SubscriptionOptions options) run,
+    required TResult Function(QueryResult result) loading,
+    required TResult Function(TData? data, QueryResult result) loaded,
   }) {
     return loaded(data, result);
   }
@@ -719,12 +707,11 @@ class _$SubscriptionEventLoaded<TData>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
   }) {
     return loaded?.call(data, result);
   }
@@ -732,12 +719,11 @@ class _$SubscriptionEventLoaded<TData>
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<TData> options)? run,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(TData? data, QueryResult<dynamic> result)? loaded,
+    TResult Function(SubscriptionOptions options)? run,
+    TResult Function(QueryResult result)? loading,
+    TResult Function(TData? data, QueryResult result)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -788,10 +774,10 @@ abstract class SubscriptionEventLoaded<TData>
     implements SubscriptionEvent<TData> {
   const factory SubscriptionEventLoaded(
       {required TData? data,
-      required QueryResult<dynamic> result}) = _$SubscriptionEventLoaded<TData>;
+      required QueryResult result}) = _$SubscriptionEventLoaded<TData>;
 
   TData? get data;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $SubscriptionEventLoadedCopyWith<TData, SubscriptionEventLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;

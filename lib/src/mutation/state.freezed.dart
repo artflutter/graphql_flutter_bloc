@@ -1,6 +1,5 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
@@ -28,7 +27,7 @@ class _$MutationStateTearOff {
 
   MutationStateError<TData> error<TData>(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) {
     return MutationStateError<TData>(
       error: error,
@@ -38,7 +37,7 @@ class _$MutationStateTearOff {
   }
 
   MutationStateCompleted<TData> completed<TData>(
-      {TData? data, required QueryResult<dynamic> result}) {
+      {TData? data, required QueryResult result}) {
     return MutationStateCompleted<TData>(
       data: data,
       result: result,
@@ -56,30 +55,27 @@ mixin _$MutationState<TData> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult<dynamic> result)
-        completed,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,10 +169,9 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult<dynamic> result)
-        completed,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return initial();
   }
@@ -186,10 +181,9 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
   }) {
     return initial?.call();
   }
@@ -199,10 +193,9 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -299,10 +292,9 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult<dynamic> result)
-        completed,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return loading();
   }
@@ -312,10 +304,9 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
   }) {
     return loading?.call();
   }
@@ -325,10 +316,9 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -384,8 +374,7 @@ abstract class $MutationStateErrorCopyWith<TData, $Res> {
   factory $MutationStateErrorCopyWith(MutationStateError<TData> value,
           $Res Function(MutationStateError<TData>) then) =
       _$MutationStateErrorCopyWithImpl<TData, $Res>;
-  $Res call(
-      {OperationException error, QueryResult<dynamic> result, TData? data});
+  $Res call({OperationException error, QueryResult result, TData? data});
 }
 
 /// @nodoc
@@ -414,7 +403,7 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -432,7 +421,7 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
   @override
   final OperationException error;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
   @override
   final TData? data;
 
@@ -470,10 +459,9 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult<dynamic> result)
-        completed,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return error(this.error, result, data);
   }
@@ -483,10 +471,9 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -496,10 +483,9 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -549,11 +535,11 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 abstract class MutationStateError<TData> implements MutationState<TData> {
   const factory MutationStateError(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) = _$MutationStateError<TData>;
 
   OperationException get error;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   TData? get data;
   @JsonKey(ignore: true)
   $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
@@ -565,7 +551,7 @@ abstract class $MutationStateCompletedCopyWith<TData, $Res> {
   factory $MutationStateCompletedCopyWith(MutationStateCompleted<TData> value,
           $Res Function(MutationStateCompleted<TData>) then) =
       _$MutationStateCompletedCopyWithImpl<TData, $Res>;
-  $Res call({TData? data, QueryResult<dynamic> result});
+  $Res call({TData? data, QueryResult result});
 }
 
 /// @nodoc
@@ -593,7 +579,7 @@ class _$MutationStateCompletedCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
     ));
   }
 }
@@ -606,7 +592,7 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   @override
   final TData? data;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
 
   @override
   String toString() {
@@ -640,10 +626,9 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult<dynamic> result)
-        completed,
+    required TResult Function(TData? data, QueryResult result) completed,
   }) {
     return completed(data, result);
   }
@@ -653,10 +638,9 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
   }) {
     return completed?.call(data, result);
   }
@@ -666,10 +650,9 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult<dynamic> result)? completed,
+    TResult Function(TData? data, QueryResult result)? completed,
     required TResult orElse(),
   }) {
     if (completed != null) {
@@ -719,10 +702,10 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 abstract class MutationStateCompleted<TData> implements MutationState<TData> {
   const factory MutationStateCompleted(
       {TData? data,
-      required QueryResult<dynamic> result}) = _$MutationStateCompleted<TData>;
+      required QueryResult result}) = _$MutationStateCompleted<TData>;
 
   TData? get data;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
       get copyWith => throw _privateConstructorUsedError;

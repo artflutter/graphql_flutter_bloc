@@ -3,6 +3,9 @@
 ## 0.9.0
 - package updates
 
+## 0.8.2
+- package updates
+
 ## 0.8.1
 - package updates
 

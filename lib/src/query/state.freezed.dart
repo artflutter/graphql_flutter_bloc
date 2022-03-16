@@ -1,6 +1,5 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
@@ -22,8 +21,7 @@ class _$QueryStateTearOff {
     return QueryStateInitial<TData>();
   }
 
-  QueryStateLoading<TData> loading<TData>(
-      {required QueryResult<dynamic> result}) {
+  QueryStateLoading<TData> loading<TData>({required QueryResult result}) {
     return QueryStateLoading<TData>(
       result: result,
     );
@@ -31,7 +29,7 @@ class _$QueryStateTearOff {
 
   QueryStateError<TData> error<TData>(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) {
     return QueryStateError<TData>(
       error: error,
@@ -41,15 +39,14 @@ class _$QueryStateTearOff {
   }
 
   QueryStateLoaded<TData> loaded<TData>(
-      {required TData data, required QueryResult<dynamic> result}) {
+      {required TData data, required QueryResult result}) {
     return QueryStateLoaded<TData>(
       data: data,
       result: result,
     );
   }
 
-  QueryStateRefetch<TData> refetch<TData>(
-      {TData? data, QueryResult<dynamic>? result}) {
+  QueryStateRefetch<TData> refetch<TData>({TData? data, QueryResult? result}) {
     return QueryStateRefetch<TData>(
       data: data,
       result: result,
@@ -57,7 +54,7 @@ class _$QueryStateTearOff {
   }
 
   QueryStateFetchMore<TData> fetchMore<TData>(
-      {required TData data, QueryResult<dynamic>? result}) {
+      {required TData data, QueryResult? result}) {
     return QueryStateFetchMore<TData>(
       data: data,
       result: result,
@@ -73,39 +70,35 @@ mixin _$QueryState<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -202,15 +195,13 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return initial();
   }
@@ -219,13 +210,12 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return initial?.call();
   }
@@ -234,13 +224,12 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -302,7 +291,7 @@ abstract class $QueryStateLoadingCopyWith<TData, $Res> {
   factory $QueryStateLoadingCopyWith(QueryStateLoading<TData> value,
           $Res Function(QueryStateLoading<TData>) then) =
       _$QueryStateLoadingCopyWithImpl<TData, $Res>;
-  $Res call({QueryResult<dynamic> result});
+  $Res call({QueryResult result});
 }
 
 /// @nodoc
@@ -325,7 +314,7 @@ class _$QueryStateLoadingCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
     ));
   }
 }
@@ -336,7 +325,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   const _$QueryStateLoading({required this.result});
 
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
 
   @override
   String toString() {
@@ -365,15 +354,13 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return loading(result);
   }
@@ -382,13 +369,12 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return loading?.call(result);
   }
@@ -397,13 +383,12 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -457,10 +442,10 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
 }
 
 abstract class QueryStateLoading<TData> implements QueryState<TData> {
-  const factory QueryStateLoading({required QueryResult<dynamic> result}) =
+  const factory QueryStateLoading({required QueryResult result}) =
       _$QueryStateLoading<TData>;
 
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryStateLoadingCopyWith<TData, QueryStateLoading<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -471,8 +456,7 @@ abstract class $QueryStateErrorCopyWith<TData, $Res> {
   factory $QueryStateErrorCopyWith(QueryStateError<TData> value,
           $Res Function(QueryStateError<TData>) then) =
       _$QueryStateErrorCopyWithImpl<TData, $Res>;
-  $Res call(
-      {OperationException error, QueryResult<dynamic> result, TData? data});
+  $Res call({OperationException error, QueryResult result, TData? data});
 }
 
 /// @nodoc
@@ -500,7 +484,7 @@ class _$QueryStateErrorCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -518,7 +502,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @override
   final OperationException error;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
   @override
   final TData? data;
 
@@ -554,15 +538,13 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return error(this.error, result, data);
   }
@@ -571,13 +553,12 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -586,13 +567,12 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -648,11 +628,11 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
 abstract class QueryStateError<TData> implements QueryState<TData> {
   const factory QueryStateError(
       {required OperationException error,
-      required QueryResult<dynamic> result,
+      required QueryResult result,
       TData? data}) = _$QueryStateError<TData>;
 
   OperationException get error;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   TData? get data;
   @JsonKey(ignore: true)
   $QueryStateErrorCopyWith<TData, QueryStateError<TData>> get copyWith =>
@@ -664,7 +644,7 @@ abstract class $QueryStateLoadedCopyWith<TData, $Res> {
   factory $QueryStateLoadedCopyWith(QueryStateLoaded<TData> value,
           $Res Function(QueryStateLoaded<TData>) then) =
       _$QueryStateLoadedCopyWithImpl<TData, $Res>;
-  $Res call({TData data, QueryResult<dynamic> result});
+  $Res call({TData data, QueryResult result});
 }
 
 /// @nodoc
@@ -691,7 +671,7 @@ class _$QueryStateLoadedCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>,
+              as QueryResult,
     ));
   }
 }
@@ -704,7 +684,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @override
   final TData data;
   @override
-  final QueryResult<dynamic> result;
+  final QueryResult result;
 
   @override
   String toString() {
@@ -736,15 +716,13 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return loaded(data, result);
   }
@@ -753,13 +731,12 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return loaded?.call(data, result);
   }
@@ -768,13 +745,12 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -830,10 +806,10 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
 abstract class QueryStateLoaded<TData> implements QueryState<TData> {
   const factory QueryStateLoaded(
       {required TData data,
-      required QueryResult<dynamic> result}) = _$QueryStateLoaded<TData>;
+      required QueryResult result}) = _$QueryStateLoaded<TData>;
 
   TData get data;
-  QueryResult<dynamic> get result;
+  QueryResult get result;
   @JsonKey(ignore: true)
   $QueryStateLoadedCopyWith<TData, QueryStateLoaded<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -844,7 +820,7 @@ abstract class $QueryStateRefetchCopyWith<TData, $Res> {
   factory $QueryStateRefetchCopyWith(QueryStateRefetch<TData> value,
           $Res Function(QueryStateRefetch<TData>) then) =
       _$QueryStateRefetchCopyWithImpl<TData, $Res>;
-  $Res call({TData? data, QueryResult<dynamic>? result});
+  $Res call({TData? data, QueryResult? result});
 }
 
 /// @nodoc
@@ -872,7 +848,7 @@ class _$QueryStateRefetchCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>?,
+              as QueryResult?,
     ));
   }
 }
@@ -885,7 +861,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @override
   final TData? data;
   @override
-  final QueryResult<dynamic>? result;
+  final QueryResult? result;
 
   @override
   String toString() {
@@ -917,15 +893,13 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return refetch(data, result);
   }
@@ -934,13 +908,12 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return refetch?.call(data, result);
   }
@@ -949,13 +922,12 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (refetch != null) {
@@ -1009,11 +981,11 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
 }
 
 abstract class QueryStateRefetch<TData> implements QueryState<TData> {
-  const factory QueryStateRefetch({TData? data, QueryResult<dynamic>? result}) =
+  const factory QueryStateRefetch({TData? data, QueryResult? result}) =
       _$QueryStateRefetch<TData>;
 
   TData? get data;
-  QueryResult<dynamic>? get result;
+  QueryResult? get result;
   @JsonKey(ignore: true)
   $QueryStateRefetchCopyWith<TData, QueryStateRefetch<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1024,7 +996,7 @@ abstract class $QueryStateFetchMoreCopyWith<TData, $Res> {
   factory $QueryStateFetchMoreCopyWith(QueryStateFetchMore<TData> value,
           $Res Function(QueryStateFetchMore<TData>) then) =
       _$QueryStateFetchMoreCopyWithImpl<TData, $Res>;
-  $Res call({TData data, QueryResult<dynamic>? result});
+  $Res call({TData data, QueryResult? result});
 }
 
 /// @nodoc
@@ -1052,7 +1024,7 @@ class _$QueryStateFetchMoreCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<dynamic>?,
+              as QueryResult?,
     ));
   }
 }
@@ -1065,7 +1037,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @override
   final TData data;
   @override
-  final QueryResult<dynamic>? result;
+  final QueryResult? result;
 
   @override
   String toString() {
@@ -1098,15 +1070,13 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<dynamic> result) loading,
+    required TResult Function(QueryResult result) loading,
     required TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)
+            OperationException error, QueryResult result, TData? data)
         error,
-    required TResult Function(TData data, QueryResult<dynamic> result) loaded,
-    required TResult Function(TData? data, QueryResult<dynamic>? result)
-        refetch,
-    required TResult Function(TData data, QueryResult<dynamic>? result)
-        fetchMore,
+    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult? result) refetch,
+    required TResult Function(TData data, QueryResult? result) fetchMore,
   }) {
     return fetchMore(data, result);
   }
@@ -1115,13 +1085,12 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
   }) {
     return fetchMore?.call(data, result);
   }
@@ -1130,13 +1099,12 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<dynamic> result)? loading,
-    TResult Function(
-            OperationException error, QueryResult<dynamic> result, TData? data)?
+    TResult Function(QueryResult result)? loading,
+    TResult Function(OperationException error, QueryResult result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<dynamic> result)? loaded,
-    TResult Function(TData? data, QueryResult<dynamic>? result)? refetch,
-    TResult Function(TData data, QueryResult<dynamic>? result)? fetchMore,
+    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult? result)? refetch,
+    TResult Function(TData data, QueryResult? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (fetchMore != null) {
@@ -1192,10 +1160,10 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
 abstract class QueryStateFetchMore<TData> implements QueryState<TData> {
   const factory QueryStateFetchMore(
       {required TData data,
-      QueryResult<dynamic>? result}) = _$QueryStateFetchMore<TData>;
+      QueryResult? result}) = _$QueryStateFetchMore<TData>;
 
   TData get data;
-  QueryResult<dynamic>? get result;
+  QueryResult? get result;
   @JsonKey(ignore: true)
   $QueryStateFetchMoreCopyWith<TData, QueryStateFetchMore<TData>>
       get copyWith => throw _privateConstructorUsedError;
