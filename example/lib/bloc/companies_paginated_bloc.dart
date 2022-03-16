@@ -7,11 +7,11 @@ class CompaniesPaginatedBloc extends QueryBloc<CompaniesPaginatedData$Query> {
 
   CompaniesPaginatedBloc({
     required GraphQLClient client,
-    WatchQueryOptions<CompaniesPaginatedData$Query>? options,
+    WatchQueryOptions? options,
   }) : super(
           client: client,
           options: options ??
-              WatchQueryOptions<CompaniesPaginatedData$Query>(
+              WatchQueryOptions(
                 document: COMPANIES_PAGINATED_DATA_QUERY_DOCUMENT,
                 variables: CompaniesPaginatedDataArguments(
                   pagination: PaginationInput(limit: 25, offset: 0),

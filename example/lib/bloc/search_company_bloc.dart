@@ -5,11 +5,11 @@ import 'package:graphql/client.dart';
 class SearchCompanyBloc extends QueryBloc<SearchCompany$Query> {
   SearchCompanyBloc({
     required GraphQLClient client,
-    WatchQueryOptions<SearchCompany$Query>? options,
+    WatchQueryOptions? options,
   }) : super(
           client: client,
           options: options ??
-              WatchQueryOptions<SearchCompany$Query>(
+              WatchQueryOptions(
                 document: SEARCH_COMPANY_QUERY_DOCUMENT,
               ),
         );

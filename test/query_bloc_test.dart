@@ -20,12 +20,10 @@ const String query = r'''
 class TestQueryBloc extends QueryBloc<Map<String, dynamic>> {
   TestQueryBloc({
     required GraphQLClient client,
-    WatchQueryOptions<Map<String, dynamic>>? options,
+    WatchQueryOptions? options,
   }) : super(
           client: client,
-          options: options ??
-              WatchQueryOptions<Map<String, dynamic>>(
-                  document: parseString(query)),
+          options: options ?? WatchQueryOptions(document: parseString(query)),
         );
 
   void fetchMore() {

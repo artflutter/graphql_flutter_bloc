@@ -10,7 +10,7 @@ abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
   GraphQLClient client;
   late ObservableQuery result;
-  WatchQueryOptions<TData> options;
+  WatchQueryOptions options;
 
   QueryBloc({required this.client, required this.options})
       : super(QueryState<TData>.initial()) {
@@ -21,7 +21,7 @@ abstract class QueryBloc<TData>
     on<QueryEventRefetch<TData>>(_refetch);
     on<QueryEventFetchMore<TData>>(_fetchMore);
 
-    result = client.watchQuery<TData>(options);
+    result = client.watchQuery(options);
 
     result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&

@@ -27,7 +27,7 @@ dependencies:
   gql: ^0.13.0
   http: ^0.13.4
   hive: ^2.0.6
-  graphql: ^5.0.1
+  graphql: ^5.0.0
   graphql_flutter_bloc:
     path: ../
 

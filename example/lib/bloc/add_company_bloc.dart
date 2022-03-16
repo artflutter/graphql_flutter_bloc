@@ -5,11 +5,11 @@ import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 class AddCompanyBloc extends MutationBloc<AddCompany$Mutation> {
   AddCompanyBloc({
     required GraphQLClient client,
-    WatchQueryOptions<AddCompany$Mutation>? options,
+    WatchQueryOptions? options,
   }) : super(
           client: client,
           options: options ??
-              WatchQueryOptions<AddCompany$Mutation>(
+              WatchQueryOptions(
                 fetchPolicy: FetchPolicy.noCache,
                 document: ADD_COMPANY_MUTATION_DOCUMENT,
               ),

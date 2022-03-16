@@ -54,7 +54,7 @@ abstract class SubscriptionBloc<TData>
     _streamSubscription?.cancel();
   }
 
-  void run(SubscriptionOptions<TData> options) {
+  void run(SubscriptionOptions options) {
     add(SubscriptionEvent<TData>.run(options: options));
   }
 
@@ -96,7 +96,7 @@ abstract class SubscriptionBloc<TData>
     Emitter<SubscriptionState<TData>> emit,
   ) async {
     _streamSubscription?.cancel();
-    subscription = client.subscribe<TData>(event.options);
+    subscription = client.subscribe(event.options);
 
     _streamSubscription = subscription.listen(_listener);
   }

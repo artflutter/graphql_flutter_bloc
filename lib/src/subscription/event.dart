@@ -12,7 +12,7 @@ class SubscriptionEvent<TData> with _$SubscriptionEvent<TData> {
   }) = SubscriptionEventError<TData>;
 
   const factory SubscriptionEvent.run({
-    required SubscriptionOptions<TData> options,
+    required SubscriptionOptions options,
   }) = SubscriptionEventRun<TData>;
 
   const factory SubscriptionEvent.loading({

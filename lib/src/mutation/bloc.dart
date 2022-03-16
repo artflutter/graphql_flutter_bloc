@@ -10,7 +10,7 @@ abstract class MutationBloc<TData>
     extends Bloc<MutationEvent<TData>, MutationState<TData>> {
   GraphQLClient client;
   late ObservableQuery result;
-  WatchQueryOptions<TData> options;
+  WatchQueryOptions options;
 
   MutationBloc({required this.client, required this.options})
       : super(MutationState<TData>.initial()) {
@@ -18,7 +18,7 @@ abstract class MutationBloc<TData>
     on<MutationEventCompleted<TData>>(_completed);
     on<MutationEventError<TData>>(_error);
 
-    result = client.watchQuery<TData>(options);
+    result = client.watchQuery(options);
 
     result.stream.listen((result) {
       // if (result.loading && result.data == null) {
