@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'event.dart';
@@ -11,96 +12,46 @@ part of 'event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$QueryEventTearOff {
-  const _$QueryEventTearOff();
-
-  QueryEventError<TData> error<TData>(
-      {required OperationException error,
-      required QueryResult result,
-      TData? data}) {
-    return QueryEventError<TData>(
-      error: error,
-      result: result,
-      data: data,
-    );
-  }
-
-  QueryEventRun<TData> run<TData>(
-      {Map<String, dynamic>? variables, Object? optimisticResult}) {
-    return QueryEventRun<TData>(
-      variables: variables,
-      optimisticResult: optimisticResult,
-    );
-  }
-
-  QueryEventLoading<TData> loading<TData>({required QueryResult result}) {
-    return QueryEventLoading<TData>(
-      result: result,
-    );
-  }
-
-  QueryEventLoaded<TData> loaded<TData>(
-      {required TData data, required QueryResult result}) {
-    return QueryEventLoaded<TData>(
-      data: data,
-      result: result,
-    );
-  }
-
-  QueryEventRefetch<TData> refetch<TData>() {
-    return QueryEventRefetch<TData>();
-  }
-
-  QueryEventFetchMore<TData> fetchMore<TData>(
-      {required FetchMoreOptions options}) {
-    return QueryEventFetchMore<TData>(
-      options: options,
-    );
-  }
-}
-
-/// @nodoc
-const $QueryEvent = _$QueryEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$QueryEvent<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -161,7 +112,8 @@ abstract class $QueryEventErrorCopyWith<TData, $Res> {
   factory $QueryEventErrorCopyWith(QueryEventError<TData> value,
           $Res Function(QueryEventError<TData>) then) =
       _$QueryEventErrorCopyWithImpl<TData, $Res>;
-  $Res call({OperationException error, QueryResult result, TData? data});
+  $Res call(
+      {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
@@ -189,7 +141,7 @@ class _$QueryEventErrorCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -207,7 +159,7 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @override
   final OperationException error;
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
   @override
   final TData? data;
 
@@ -243,13 +195,13 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -259,12 +211,13 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -274,12 +227,13 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -336,13 +290,13 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
 
 abstract class QueryEventError<TData> implements QueryEvent<TData> {
   const factory QueryEventError(
-      {required OperationException error,
-      required QueryResult result,
-      TData? data}) = _$QueryEventError<TData>;
+      {required final OperationException error,
+      required final QueryResult<Object?> result,
+      final TData? data}) = _$QueryEventError<TData>;
 
-  OperationException get error;
-  QueryResult get result;
-  TData? get data;
+  OperationException get error => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryEventErrorCopyWith<TData, QueryEventError<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -387,10 +341,19 @@ class _$QueryEventRunCopyWithImpl<TData, $Res>
 /// @nodoc
 
 class _$QueryEventRun<TData> implements QueryEventRun<TData> {
-  const _$QueryEventRun({this.variables, this.optimisticResult});
+  const _$QueryEventRun(
+      {final Map<String, dynamic>? variables, this.optimisticResult})
+      : _variables = variables;
 
+  final Map<String, dynamic>? _variables;
   @override
-  final Map<String, dynamic>? variables;
+  Map<String, dynamic>? get variables {
+    final value = _variables;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final Object? optimisticResult;
 
@@ -425,13 +388,13 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -441,12 +404,13 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -456,12 +420,13 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -518,11 +483,11 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
 
 abstract class QueryEventRun<TData> implements QueryEvent<TData> {
   const factory QueryEventRun(
-      {Map<String, dynamic>? variables,
-      Object? optimisticResult}) = _$QueryEventRun<TData>;
+      {final Map<String, dynamic>? variables,
+      final Object? optimisticResult}) = _$QueryEventRun<TData>;
 
-  Map<String, dynamic>? get variables;
-  Object? get optimisticResult;
+  Map<String, dynamic>? get variables => throw _privateConstructorUsedError;
+  Object? get optimisticResult => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryEventRunCopyWith<TData, QueryEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -533,7 +498,7 @@ abstract class $QueryEventLoadingCopyWith<TData, $Res> {
   factory $QueryEventLoadingCopyWith(QueryEventLoading<TData> value,
           $Res Function(QueryEventLoading<TData>) then) =
       _$QueryEventLoadingCopyWithImpl<TData, $Res>;
-  $Res call({QueryResult result});
+  $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
@@ -556,7 +521,7 @@ class _$QueryEventLoadingCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
     ));
   }
 }
@@ -567,7 +532,7 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   const _$QueryEventLoading({required this.result});
 
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
 
   @override
   String toString() {
@@ -596,13 +561,13 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -612,12 +577,13 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -627,12 +593,13 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -688,10 +655,11 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
 }
 
 abstract class QueryEventLoading<TData> implements QueryEvent<TData> {
-  const factory QueryEventLoading({required QueryResult result}) =
+  const factory QueryEventLoading(
+          {required final QueryResult<Object?> result}) =
       _$QueryEventLoading<TData>;
 
-  QueryResult get result;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryEventLoadingCopyWith<TData, QueryEventLoading<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -702,7 +670,7 @@ abstract class $QueryEventLoadedCopyWith<TData, $Res> {
   factory $QueryEventLoadedCopyWith(QueryEventLoaded<TData> value,
           $Res Function(QueryEventLoaded<TData>) then) =
       _$QueryEventLoadedCopyWithImpl<TData, $Res>;
-  $Res call({TData data, QueryResult result});
+  $Res call({TData data, QueryResult<Object?> result});
 }
 
 /// @nodoc
@@ -729,7 +697,7 @@ class _$QueryEventLoadedCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
     ));
   }
 }
@@ -742,7 +710,7 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @override
   final TData data;
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
 
   @override
   String toString() {
@@ -774,13 +742,13 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -790,12 +758,13 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -805,12 +774,13 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -867,11 +837,11 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
 
 abstract class QueryEventLoaded<TData> implements QueryEvent<TData> {
   const factory QueryEventLoaded(
-      {required TData data,
-      required QueryResult result}) = _$QueryEventLoaded<TData>;
+      {required final TData data,
+      required final QueryResult<Object?> result}) = _$QueryEventLoaded<TData>;
 
-  TData get data;
-  QueryResult get result;
+  TData get data => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryEventLoadedCopyWith<TData, QueryEventLoaded<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -920,13 +890,13 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -936,12 +906,13 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -951,12 +922,13 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -1084,13 +1056,13 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
             Map<String, dynamic>? variables, Object? optimisticResult)
         run,
-    required TResult Function(QueryResult result) loading,
-    required TResult Function(TData data, QueryResult result) loaded,
+    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function() refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -1100,12 +1072,13 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -1115,12 +1088,13 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(Map<String, dynamic>? variables, Object? optimisticResult)?
         run,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(TData data, QueryResult result)? loaded,
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function()? refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -1176,10 +1150,10 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
 }
 
 abstract class QueryEventFetchMore<TData> implements QueryEvent<TData> {
-  const factory QueryEventFetchMore({required FetchMoreOptions options}) =
+  const factory QueryEventFetchMore({required final FetchMoreOptions options}) =
       _$QueryEventFetchMore<TData>;
 
-  FetchMoreOptions get options;
+  FetchMoreOptions get options => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryEventFetchMoreCopyWith<TData, QueryEventFetchMore<TData>>
       get copyWith => throw _privateConstructorUsedError;

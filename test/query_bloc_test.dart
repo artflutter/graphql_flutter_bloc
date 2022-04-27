@@ -29,7 +29,7 @@ class TestQueryBloc extends QueryBloc<Map<String, dynamic>> {
   void fetchMore() {
     add(QueryEvent.fetchMore(
         options: FetchMoreOptions(
-      variables: <String, dynamic>{},
+      variables: const <String, dynamic>{},
       updateQuery: (dynamic previousResultData, dynamic fetchMoreResultData) {
         return fetchMoreResultData as Map<String, dynamic>;
       },

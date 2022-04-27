@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.10.0
+- package updates
+- 
 ## 0.9.0
 - package updates
 

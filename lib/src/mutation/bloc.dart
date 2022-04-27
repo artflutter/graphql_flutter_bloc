@@ -18,7 +18,7 @@ abstract class MutationBloc<TData>
     on<MutationEventCompleted<TData>>(_completed);
     on<MutationEventError<TData>>(_error);
 
-    result = client.watchQuery(options);
+    result = client.watchQuery<void>(options);
 
     result.stream.listen((result) {
       // if (result.loading && result.data == null) {
@@ -93,7 +93,8 @@ abstract class MutationBloc<TData>
   ) async {
     (result
           ..variables = event.variables
-          ..options.optimisticResult = event.optimisticResult)
+          ..options =
+              result.options.copyWithOptimisticResult(event.optimisticResult))
         .fetchResults();
 
     emit(const MutationState.loading());

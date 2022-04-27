@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'state.dart';
@@ -11,74 +12,38 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SubscriptionStateTearOff {
-  const _$SubscriptionStateTearOff();
-
-  SubscriptionStateInitial<TData> initial<TData>() {
-    return SubscriptionStateInitial<TData>();
-  }
-
-  SubscriptionStateLoading<TData> loading<TData>(
-      {required QueryResult result}) {
-    return SubscriptionStateLoading<TData>(
-      result: result,
-    );
-  }
-
-  SubscriptionStateError<TData> error<TData>(
-      {required OperationException error,
-      required QueryResult result,
-      TData? data}) {
-    return SubscriptionStateError<TData>(
-      error: error,
-      result: result,
-      data: data,
-    );
-  }
-
-  SubscriptionStateLoaded<TData> loaded<TData>(
-      {TData? data, required QueryResult result}) {
-    return SubscriptionStateLoaded<TData>(
-      data: data,
-      result: result,
-    );
-  }
-}
-
-/// @nodoc
-const $SubscriptionState = _$SubscriptionStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SubscriptionState<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
+    required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?> result) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -172,11 +137,11 @@ class _$SubscriptionStateInitial<TData>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
+    required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?> result) loaded,
   }) {
     return initial();
   }
@@ -185,10 +150,11 @@ class _$SubscriptionStateInitial<TData>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return initial?.call();
   }
@@ -197,10 +163,11 @@ class _$SubscriptionStateInitial<TData>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -258,7 +225,7 @@ abstract class $SubscriptionStateLoadingCopyWith<TData, $Res> {
           SubscriptionStateLoading<TData> value,
           $Res Function(SubscriptionStateLoading<TData>) then) =
       _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>;
-  $Res call({QueryResult result});
+  $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
@@ -281,7 +248,7 @@ class _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
     ));
   }
 }
@@ -293,7 +260,7 @@ class _$SubscriptionStateLoading<TData>
   const _$SubscriptionStateLoading({required this.result});
 
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
 
   @override
   String toString() {
@@ -322,11 +289,11 @@ class _$SubscriptionStateLoading<TData>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
+    required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?> result) loaded,
   }) {
     return loading(result);
   }
@@ -335,10 +302,11 @@ class _$SubscriptionStateLoading<TData>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return loading?.call(result);
   }
@@ -347,10 +315,11 @@ class _$SubscriptionStateLoading<TData>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -399,10 +368,11 @@ class _$SubscriptionStateLoading<TData>
 
 abstract class SubscriptionStateLoading<TData>
     implements SubscriptionState<TData> {
-  const factory SubscriptionStateLoading({required QueryResult result}) =
+  const factory SubscriptionStateLoading(
+          {required final QueryResult<Object?> result}) =
       _$SubscriptionStateLoading<TData>;
 
-  QueryResult get result;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SubscriptionStateLoadingCopyWith<TData, SubscriptionStateLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -413,7 +383,8 @@ abstract class $SubscriptionStateErrorCopyWith<TData, $Res> {
   factory $SubscriptionStateErrorCopyWith(SubscriptionStateError<TData> value,
           $Res Function(SubscriptionStateError<TData>) then) =
       _$SubscriptionStateErrorCopyWithImpl<TData, $Res>;
-  $Res call({OperationException error, QueryResult result, TData? data});
+  $Res call(
+      {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
@@ -442,7 +413,7 @@ class _$SubscriptionStateErrorCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -460,7 +431,7 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
   @override
   final OperationException error;
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
   @override
   final TData? data;
 
@@ -496,11 +467,11 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
+    required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?> result) loaded,
   }) {
     return error(this.error, result, data);
   }
@@ -509,10 +480,11 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -521,10 +493,11 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -574,13 +547,13 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
 abstract class SubscriptionStateError<TData>
     implements SubscriptionState<TData> {
   const factory SubscriptionStateError(
-      {required OperationException error,
-      required QueryResult result,
-      TData? data}) = _$SubscriptionStateError<TData>;
+      {required final OperationException error,
+      required final QueryResult<Object?> result,
+      final TData? data}) = _$SubscriptionStateError<TData>;
 
-  OperationException get error;
-  QueryResult get result;
-  TData? get data;
+  OperationException get error => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SubscriptionStateErrorCopyWith<TData, SubscriptionStateError<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -591,7 +564,7 @@ abstract class $SubscriptionStateLoadedCopyWith<TData, $Res> {
   factory $SubscriptionStateLoadedCopyWith(SubscriptionStateLoaded<TData> value,
           $Res Function(SubscriptionStateLoaded<TData>) then) =
       _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>;
-  $Res call({TData? data, QueryResult result});
+  $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
@@ -619,7 +592,7 @@ class _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult,
+              as QueryResult<Object?>,
     ));
   }
 }
@@ -633,7 +606,7 @@ class _$SubscriptionStateLoaded<TData>
   @override
   final TData? data;
   @override
-  final QueryResult result;
+  final QueryResult<Object?> result;
 
   @override
   String toString() {
@@ -665,11 +638,11 @@ class _$SubscriptionStateLoaded<TData>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult result) loading,
+    required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(
-            OperationException error, QueryResult result, TData? data)
+            OperationException error, QueryResult<Object?> result, TData? data)
         error,
-    required TResult Function(TData? data, QueryResult result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?> result) loaded,
   }) {
     return loaded(data, result);
   }
@@ -678,10 +651,11 @@ class _$SubscriptionStateLoaded<TData>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return loaded?.call(data, result);
   }
@@ -690,10 +664,11 @@ class _$SubscriptionStateLoaded<TData>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult result)? loading,
-    TResult Function(OperationException error, QueryResult result, TData? data)?
+    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData? data, QueryResult result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -743,11 +718,11 @@ class _$SubscriptionStateLoaded<TData>
 abstract class SubscriptionStateLoaded<TData>
     implements SubscriptionState<TData> {
   const factory SubscriptionStateLoaded(
-      {TData? data,
-      required QueryResult result}) = _$SubscriptionStateLoaded<TData>;
+          {final TData? data, required final QueryResult<Object?> result}) =
+      _$SubscriptionStateLoaded<TData>;
 
-  TData? get data;
-  QueryResult get result;
+  TData? get data => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SubscriptionStateLoadedCopyWith<TData, SubscriptionStateLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;

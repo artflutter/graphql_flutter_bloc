@@ -21,7 +21,7 @@ abstract class QueryBloc<TData>
     on<QueryEventRefetch<TData>>(_refetch);
     on<QueryEventFetchMore<TData>>(_fetchMore);
 
-    result = client.watchQuery(options);
+    result = client.watchQuery<void>(options);
 
     result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&
@@ -111,7 +111,8 @@ abstract class QueryBloc<TData>
     }
 
     if (optimisticResult != null) {
-      result.options.optimisticResult = optimisticResult;
+      result.options =
+          result.options.copyWithOptimisticResult(event.optimisticResult);
     }
 
     result.fetchResults();
