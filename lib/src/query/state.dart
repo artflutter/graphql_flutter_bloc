@@ -28,7 +28,7 @@ class QueryState<TData> with _$QueryState<TData> {
   }) = QueryStateRefetch<TData>;
 
   const factory QueryState.fetchMore({
-    required TData data,
+    TData? data,
     QueryResult? result,
   }) = QueryStateFetchMore<TData>;
 }

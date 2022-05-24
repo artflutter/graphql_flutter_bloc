@@ -26,7 +26,7 @@ mixin _$QueryState<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$QueryState<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,7 +51,7 @@ mixin _$QueryState<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,7 +155,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return initial();
@@ -171,7 +171,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return initial?.call();
   }
@@ -186,7 +186,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -318,7 +318,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return loading(result);
@@ -334,7 +334,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return loading?.call(result);
   }
@@ -349,7 +349,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -508,7 +508,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return error(this.error, result, data);
@@ -524,7 +524,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -539,7 +539,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -690,7 +690,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return loaded(data, result);
@@ -706,7 +706,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return loaded?.call(data, result);
   }
@@ -721,7 +721,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -871,7 +871,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return refetch(data, result);
@@ -887,7 +887,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return refetch?.call(data, result);
   }
@@ -902,7 +902,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (refetch != null) {
@@ -972,7 +972,7 @@ abstract class $QueryStateFetchMoreCopyWith<TData, $Res> {
   factory $QueryStateFetchMoreCopyWith(QueryStateFetchMore<TData> value,
           $Res Function(QueryStateFetchMore<TData>) then) =
       _$QueryStateFetchMoreCopyWithImpl<TData, $Res>;
-  $Res call({TData data, QueryResult<Object?>? result});
+  $Res call({TData? data, QueryResult<Object?>? result});
 }
 
 /// @nodoc
@@ -996,7 +996,7 @@ class _$QueryStateFetchMoreCopyWithImpl<TData, $Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as TData,
+              as TData?,
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -1008,10 +1008,10 @@ class _$QueryStateFetchMoreCopyWithImpl<TData, $Res>
 /// @nodoc
 
 class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
-  const _$QueryStateFetchMore({required this.data, this.result});
+  const _$QueryStateFetchMore({this.data, this.result});
 
   @override
-  final TData data;
+  final TData? data;
   @override
   final QueryResult<Object?>? result;
 
@@ -1053,7 +1053,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
-    required TResult Function(TData data, QueryResult<Object?>? result)
+    required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
     return fetchMore(data, result);
@@ -1069,7 +1069,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return fetchMore?.call(data, result);
   }
@@ -1084,7 +1084,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
         error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData data, QueryResult<Object?>? result)? fetchMore,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (fetchMore != null) {
@@ -1139,10 +1139,10 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
 
 abstract class QueryStateFetchMore<TData> implements QueryState<TData> {
   const factory QueryStateFetchMore(
-      {required final TData data,
+      {final TData? data,
       final QueryResult<Object?>? result}) = _$QueryStateFetchMore<TData>;
 
-  TData get data => throw _privateConstructorUsedError;
+  TData? get data => throw _privateConstructorUsedError;
   QueryResult<Object?>? get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QueryStateFetchMoreCopyWith<TData, QueryStateFetchMore<TData>>

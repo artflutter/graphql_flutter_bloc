@@ -30,20 +30,8 @@ abstract class QueryBloc<TData>
         return;
       }
 
-      if (result.isLoading && result.data == null) {
-        add(QueryEvent.loading(result: result));
-      }
-
-      if (!result.isLoading && result.data != null) {
-        add(
-          QueryEvent<TData>.loaded(
-            data: parseData(result.data),
-            result: result,
-          ),
-        );
-      }
-
       final exception = result.exception;
+
       if (exception != null) {
         TData? data;
 
@@ -56,6 +44,19 @@ abstract class QueryBloc<TData>
           result: result,
           data: data,
         ));
+      }
+
+      if (result.isLoading && result.data == null) {
+        add(QueryEvent.loading(result: result));
+      }
+
+      if (!result.isLoading && result.data != null) {
+        add(
+          QueryEvent<TData>.loaded(
+            data: parseData(result.data),
+            result: result,
+          ),
+        );
       }
     });
   }
@@ -155,8 +156,12 @@ abstract class QueryBloc<TData>
   ) async {
     emit(
       QueryState<TData>.refetch(
-          data: state.maybeWhen(loaded: (data, _) => data, orElse: () => null),
-          result: null),
+        data: state.maybeWhen(
+          loaded: (data, _) => data,
+          orElse: () => null,
+        ),
+        result: null,
+      ),
     );
 
     result.refetch();
@@ -169,7 +174,9 @@ abstract class QueryBloc<TData>
     emit(
       QueryState<TData>.fetchMore(
         data: state.maybeWhen(
-            loaded: (data, _) => data, orElse: () => null as TData),
+          loaded: (data, _) => data,
+          orElse: () => null,
+        ),
         result: null,
       ),
     );
