@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.12.0
+
+- allow to supply variable to refetch method
+
 ## 0.11.0
 
 - typing fixes for fetchMore

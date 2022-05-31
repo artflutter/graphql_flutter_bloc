@@ -92,25 +92,26 @@ class _$SubscriptionEventCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
-abstract class $SubscriptionEventErrorCopyWith<TData, $Res> {
-  factory $SubscriptionEventErrorCopyWith(SubscriptionEventError<TData> value,
-          $Res Function(SubscriptionEventError<TData>) then) =
-      _$SubscriptionEventErrorCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionEventErrorCopyWith<TData, $Res> {
+  factory _$$SubscriptionEventErrorCopyWith(
+          _$SubscriptionEventError<TData> value,
+          $Res Function(_$SubscriptionEventError<TData>) then) =
+      __$$SubscriptionEventErrorCopyWithImpl<TData, $Res>;
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
-class _$SubscriptionEventErrorCopyWithImpl<TData, $Res>
+class __$$SubscriptionEventErrorCopyWithImpl<TData, $Res>
     extends _$SubscriptionEventCopyWithImpl<TData, $Res>
-    implements $SubscriptionEventErrorCopyWith<TData, $Res> {
-  _$SubscriptionEventErrorCopyWithImpl(SubscriptionEventError<TData> _value,
-      $Res Function(SubscriptionEventError<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionEventError<TData>));
+    implements _$$SubscriptionEventErrorCopyWith<TData, $Res> {
+  __$$SubscriptionEventErrorCopyWithImpl(_$SubscriptionEventError<TData> _value,
+      $Res Function(_$SubscriptionEventError<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionEventError<TData>));
 
   @override
-  SubscriptionEventError<TData> get _value =>
-      super._value as SubscriptionEventError<TData>;
+  _$SubscriptionEventError<TData> get _value =>
+      super._value as _$SubscriptionEventError<TData>;
 
   @override
   $Res call({
@@ -118,7 +119,7 @@ class _$SubscriptionEventErrorCopyWithImpl<TData, $Res>
     Object? result = freezed,
     Object? data = freezed,
   }) {
-    return _then(SubscriptionEventError<TData>(
+    return _then(_$SubscriptionEventError<TData>(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -157,7 +158,7 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionEventError<TData> &&
+            other is _$SubscriptionEventError<TData> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.result, result) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -172,9 +173,9 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionEventErrorCopyWith<TData, SubscriptionEventError<TData>>
-      get copyWith => _$SubscriptionEventErrorCopyWithImpl<TData,
-          SubscriptionEventError<TData>>(this, _$identity);
+  _$$SubscriptionEventErrorCopyWith<TData, _$SubscriptionEventError<TData>>
+      get copyWith => __$$SubscriptionEventErrorCopyWithImpl<TData,
+          _$SubscriptionEventError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -268,35 +269,35 @@ abstract class SubscriptionEventError<TData>
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventErrorCopyWith<TData, SubscriptionEventError<TData>>
+  _$$SubscriptionEventErrorCopyWith<TData, _$SubscriptionEventError<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionEventRunCopyWith<TData, $Res> {
-  factory $SubscriptionEventRunCopyWith(SubscriptionEventRun<TData> value,
-          $Res Function(SubscriptionEventRun<TData>) then) =
-      _$SubscriptionEventRunCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionEventRunCopyWith<TData, $Res> {
+  factory _$$SubscriptionEventRunCopyWith(_$SubscriptionEventRun<TData> value,
+          $Res Function(_$SubscriptionEventRun<TData>) then) =
+      __$$SubscriptionEventRunCopyWithImpl<TData, $Res>;
   $Res call({SubscriptionOptions<Object?> options});
 }
 
 /// @nodoc
-class _$SubscriptionEventRunCopyWithImpl<TData, $Res>
+class __$$SubscriptionEventRunCopyWithImpl<TData, $Res>
     extends _$SubscriptionEventCopyWithImpl<TData, $Res>
-    implements $SubscriptionEventRunCopyWith<TData, $Res> {
-  _$SubscriptionEventRunCopyWithImpl(SubscriptionEventRun<TData> _value,
-      $Res Function(SubscriptionEventRun<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionEventRun<TData>));
+    implements _$$SubscriptionEventRunCopyWith<TData, $Res> {
+  __$$SubscriptionEventRunCopyWithImpl(_$SubscriptionEventRun<TData> _value,
+      $Res Function(_$SubscriptionEventRun<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionEventRun<TData>));
 
   @override
-  SubscriptionEventRun<TData> get _value =>
-      super._value as SubscriptionEventRun<TData>;
+  _$SubscriptionEventRun<TData> get _value =>
+      super._value as _$SubscriptionEventRun<TData>;
 
   @override
   $Res call({
     Object? options = freezed,
   }) {
-    return _then(SubscriptionEventRun<TData>(
+    return _then(_$SubscriptionEventRun<TData>(
       options: options == freezed
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
@@ -322,7 +323,7 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionEventRun<TData> &&
+            other is _$SubscriptionEventRun<TData> &&
             const DeepCollectionEquality().equals(other.options, options));
   }
 
@@ -332,9 +333,9 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionEventRunCopyWith<TData, SubscriptionEventRun<TData>>
-      get copyWith => _$SubscriptionEventRunCopyWithImpl<TData,
-          SubscriptionEventRun<TData>>(this, _$identity);
+  _$$SubscriptionEventRunCopyWith<TData, _$SubscriptionEventRun<TData>>
+      get copyWith => __$$SubscriptionEventRunCopyWithImpl<TData,
+          _$SubscriptionEventRun<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -425,36 +426,37 @@ abstract class SubscriptionEventRun<TData> implements SubscriptionEvent<TData> {
   SubscriptionOptions<Object?> get options =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventRunCopyWith<TData, SubscriptionEventRun<TData>>
+  _$$SubscriptionEventRunCopyWith<TData, _$SubscriptionEventRun<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionEventLoadingCopyWith<TData, $Res> {
-  factory $SubscriptionEventLoadingCopyWith(
-          SubscriptionEventLoading<TData> value,
-          $Res Function(SubscriptionEventLoading<TData>) then) =
-      _$SubscriptionEventLoadingCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionEventLoadingCopyWith<TData, $Res> {
+  factory _$$SubscriptionEventLoadingCopyWith(
+          _$SubscriptionEventLoading<TData> value,
+          $Res Function(_$SubscriptionEventLoading<TData>) then) =
+      __$$SubscriptionEventLoadingCopyWithImpl<TData, $Res>;
   $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$SubscriptionEventLoadingCopyWithImpl<TData, $Res>
+class __$$SubscriptionEventLoadingCopyWithImpl<TData, $Res>
     extends _$SubscriptionEventCopyWithImpl<TData, $Res>
-    implements $SubscriptionEventLoadingCopyWith<TData, $Res> {
-  _$SubscriptionEventLoadingCopyWithImpl(SubscriptionEventLoading<TData> _value,
-      $Res Function(SubscriptionEventLoading<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionEventLoading<TData>));
+    implements _$$SubscriptionEventLoadingCopyWith<TData, $Res> {
+  __$$SubscriptionEventLoadingCopyWithImpl(
+      _$SubscriptionEventLoading<TData> _value,
+      $Res Function(_$SubscriptionEventLoading<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionEventLoading<TData>));
 
   @override
-  SubscriptionEventLoading<TData> get _value =>
-      super._value as SubscriptionEventLoading<TData>;
+  _$SubscriptionEventLoading<TData> get _value =>
+      super._value as _$SubscriptionEventLoading<TData>;
 
   @override
   $Res call({
     Object? result = freezed,
   }) {
-    return _then(SubscriptionEventLoading<TData>(
+    return _then(_$SubscriptionEventLoading<TData>(
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -481,7 +483,7 @@ class _$SubscriptionEventLoading<TData>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionEventLoading<TData> &&
+            other is _$SubscriptionEventLoading<TData> &&
             const DeepCollectionEquality().equals(other.result, result));
   }
 
@@ -491,9 +493,9 @@ class _$SubscriptionEventLoading<TData>
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionEventLoadingCopyWith<TData, SubscriptionEventLoading<TData>>
-      get copyWith => _$SubscriptionEventLoadingCopyWithImpl<TData,
-          SubscriptionEventLoading<TData>>(this, _$identity);
+  _$$SubscriptionEventLoadingCopyWith<TData, _$SubscriptionEventLoading<TData>>
+      get copyWith => __$$SubscriptionEventLoadingCopyWithImpl<TData,
+          _$SubscriptionEventLoading<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -584,36 +586,38 @@ abstract class SubscriptionEventLoading<TData>
 
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventLoadingCopyWith<TData, SubscriptionEventLoading<TData>>
+  _$$SubscriptionEventLoadingCopyWith<TData, _$SubscriptionEventLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionEventLoadedCopyWith<TData, $Res> {
-  factory $SubscriptionEventLoadedCopyWith(SubscriptionEventLoaded<TData> value,
-          $Res Function(SubscriptionEventLoaded<TData>) then) =
-      _$SubscriptionEventLoadedCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionEventLoadedCopyWith<TData, $Res> {
+  factory _$$SubscriptionEventLoadedCopyWith(
+          _$SubscriptionEventLoaded<TData> value,
+          $Res Function(_$SubscriptionEventLoaded<TData>) then) =
+      __$$SubscriptionEventLoadedCopyWithImpl<TData, $Res>;
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$SubscriptionEventLoadedCopyWithImpl<TData, $Res>
+class __$$SubscriptionEventLoadedCopyWithImpl<TData, $Res>
     extends _$SubscriptionEventCopyWithImpl<TData, $Res>
-    implements $SubscriptionEventLoadedCopyWith<TData, $Res> {
-  _$SubscriptionEventLoadedCopyWithImpl(SubscriptionEventLoaded<TData> _value,
-      $Res Function(SubscriptionEventLoaded<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionEventLoaded<TData>));
+    implements _$$SubscriptionEventLoadedCopyWith<TData, $Res> {
+  __$$SubscriptionEventLoadedCopyWithImpl(
+      _$SubscriptionEventLoaded<TData> _value,
+      $Res Function(_$SubscriptionEventLoaded<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionEventLoaded<TData>));
 
   @override
-  SubscriptionEventLoaded<TData> get _value =>
-      super._value as SubscriptionEventLoaded<TData>;
+  _$SubscriptionEventLoaded<TData> get _value =>
+      super._value as _$SubscriptionEventLoaded<TData>;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
-    return _then(SubscriptionEventLoaded<TData>(
+    return _then(_$SubscriptionEventLoaded<TData>(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -646,7 +650,7 @@ class _$SubscriptionEventLoaded<TData>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionEventLoaded<TData> &&
+            other is _$SubscriptionEventLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.result, result));
   }
@@ -659,9 +663,9 @@ class _$SubscriptionEventLoaded<TData>
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionEventLoadedCopyWith<TData, SubscriptionEventLoaded<TData>>
-      get copyWith => _$SubscriptionEventLoadedCopyWithImpl<TData,
-          SubscriptionEventLoaded<TData>>(this, _$identity);
+  _$$SubscriptionEventLoadedCopyWith<TData, _$SubscriptionEventLoaded<TData>>
+      get copyWith => __$$SubscriptionEventLoadedCopyWithImpl<TData,
+          _$SubscriptionEventLoaded<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -754,6 +758,6 @@ abstract class SubscriptionEventLoaded<TData>
   TData? get data => throw _privateConstructorUsedError;
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionEventLoadedCopyWith<TData, SubscriptionEventLoaded<TData>>
+  _$$SubscriptionEventLoadedCopyWith<TData, _$SubscriptionEventLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -92,24 +92,25 @@ class _$SubscriptionStateCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
-abstract class $SubscriptionStateInitialCopyWith<TData, $Res> {
-  factory $SubscriptionStateInitialCopyWith(
-          SubscriptionStateInitial<TData> value,
-          $Res Function(SubscriptionStateInitial<TData>) then) =
-      _$SubscriptionStateInitialCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionStateInitialCopyWith<TData, $Res> {
+  factory _$$SubscriptionStateInitialCopyWith(
+          _$SubscriptionStateInitial<TData> value,
+          $Res Function(_$SubscriptionStateInitial<TData>) then) =
+      __$$SubscriptionStateInitialCopyWithImpl<TData, $Res>;
 }
 
 /// @nodoc
-class _$SubscriptionStateInitialCopyWithImpl<TData, $Res>
+class __$$SubscriptionStateInitialCopyWithImpl<TData, $Res>
     extends _$SubscriptionStateCopyWithImpl<TData, $Res>
-    implements $SubscriptionStateInitialCopyWith<TData, $Res> {
-  _$SubscriptionStateInitialCopyWithImpl(SubscriptionStateInitial<TData> _value,
-      $Res Function(SubscriptionStateInitial<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateInitial<TData>));
+    implements _$$SubscriptionStateInitialCopyWith<TData, $Res> {
+  __$$SubscriptionStateInitialCopyWithImpl(
+      _$SubscriptionStateInitial<TData> _value,
+      $Res Function(_$SubscriptionStateInitial<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionStateInitial<TData>));
 
   @override
-  SubscriptionStateInitial<TData> get _value =>
-      super._value as SubscriptionStateInitial<TData>;
+  _$SubscriptionStateInitial<TData> get _value =>
+      super._value as _$SubscriptionStateInitial<TData>;
 }
 
 /// @nodoc
@@ -127,7 +128,7 @@ class _$SubscriptionStateInitial<TData>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateInitial<TData>);
+            other is _$SubscriptionStateInitial<TData>);
   }
 
   @override
@@ -220,31 +221,32 @@ abstract class SubscriptionStateInitial<TData>
 }
 
 /// @nodoc
-abstract class $SubscriptionStateLoadingCopyWith<TData, $Res> {
-  factory $SubscriptionStateLoadingCopyWith(
-          SubscriptionStateLoading<TData> value,
-          $Res Function(SubscriptionStateLoading<TData>) then) =
-      _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionStateLoadingCopyWith<TData, $Res> {
+  factory _$$SubscriptionStateLoadingCopyWith(
+          _$SubscriptionStateLoading<TData> value,
+          $Res Function(_$SubscriptionStateLoading<TData>) then) =
+      __$$SubscriptionStateLoadingCopyWithImpl<TData, $Res>;
   $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$SubscriptionStateLoadingCopyWithImpl<TData, $Res>
+class __$$SubscriptionStateLoadingCopyWithImpl<TData, $Res>
     extends _$SubscriptionStateCopyWithImpl<TData, $Res>
-    implements $SubscriptionStateLoadingCopyWith<TData, $Res> {
-  _$SubscriptionStateLoadingCopyWithImpl(SubscriptionStateLoading<TData> _value,
-      $Res Function(SubscriptionStateLoading<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateLoading<TData>));
+    implements _$$SubscriptionStateLoadingCopyWith<TData, $Res> {
+  __$$SubscriptionStateLoadingCopyWithImpl(
+      _$SubscriptionStateLoading<TData> _value,
+      $Res Function(_$SubscriptionStateLoading<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionStateLoading<TData>));
 
   @override
-  SubscriptionStateLoading<TData> get _value =>
-      super._value as SubscriptionStateLoading<TData>;
+  _$SubscriptionStateLoading<TData> get _value =>
+      super._value as _$SubscriptionStateLoading<TData>;
 
   @override
   $Res call({
     Object? result = freezed,
   }) {
-    return _then(SubscriptionStateLoading<TData>(
+    return _then(_$SubscriptionStateLoading<TData>(
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -271,7 +273,7 @@ class _$SubscriptionStateLoading<TData>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateLoading<TData> &&
+            other is _$SubscriptionStateLoading<TData> &&
             const DeepCollectionEquality().equals(other.result, result));
   }
 
@@ -281,9 +283,9 @@ class _$SubscriptionStateLoading<TData>
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateLoadingCopyWith<TData, SubscriptionStateLoading<TData>>
-      get copyWith => _$SubscriptionStateLoadingCopyWithImpl<TData,
-          SubscriptionStateLoading<TData>>(this, _$identity);
+  _$$SubscriptionStateLoadingCopyWith<TData, _$SubscriptionStateLoading<TData>>
+      get copyWith => __$$SubscriptionStateLoadingCopyWithImpl<TData,
+          _$SubscriptionStateLoading<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -374,30 +376,31 @@ abstract class SubscriptionStateLoading<TData>
 
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionStateLoadingCopyWith<TData, SubscriptionStateLoading<TData>>
+  _$$SubscriptionStateLoadingCopyWith<TData, _$SubscriptionStateLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateErrorCopyWith<TData, $Res> {
-  factory $SubscriptionStateErrorCopyWith(SubscriptionStateError<TData> value,
-          $Res Function(SubscriptionStateError<TData>) then) =
-      _$SubscriptionStateErrorCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionStateErrorCopyWith<TData, $Res> {
+  factory _$$SubscriptionStateErrorCopyWith(
+          _$SubscriptionStateError<TData> value,
+          $Res Function(_$SubscriptionStateError<TData>) then) =
+      __$$SubscriptionStateErrorCopyWithImpl<TData, $Res>;
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
-class _$SubscriptionStateErrorCopyWithImpl<TData, $Res>
+class __$$SubscriptionStateErrorCopyWithImpl<TData, $Res>
     extends _$SubscriptionStateCopyWithImpl<TData, $Res>
-    implements $SubscriptionStateErrorCopyWith<TData, $Res> {
-  _$SubscriptionStateErrorCopyWithImpl(SubscriptionStateError<TData> _value,
-      $Res Function(SubscriptionStateError<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateError<TData>));
+    implements _$$SubscriptionStateErrorCopyWith<TData, $Res> {
+  __$$SubscriptionStateErrorCopyWithImpl(_$SubscriptionStateError<TData> _value,
+      $Res Function(_$SubscriptionStateError<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionStateError<TData>));
 
   @override
-  SubscriptionStateError<TData> get _value =>
-      super._value as SubscriptionStateError<TData>;
+  _$SubscriptionStateError<TData> get _value =>
+      super._value as _$SubscriptionStateError<TData>;
 
   @override
   $Res call({
@@ -405,7 +408,7 @@ class _$SubscriptionStateErrorCopyWithImpl<TData, $Res>
     Object? result = freezed,
     Object? data = freezed,
   }) {
-    return _then(SubscriptionStateError<TData>(
+    return _then(_$SubscriptionStateError<TData>(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -444,7 +447,7 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateError<TData> &&
+            other is _$SubscriptionStateError<TData> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.result, result) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -459,9 +462,9 @@ class _$SubscriptionStateError<TData> implements SubscriptionStateError<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateErrorCopyWith<TData, SubscriptionStateError<TData>>
-      get copyWith => _$SubscriptionStateErrorCopyWithImpl<TData,
-          SubscriptionStateError<TData>>(this, _$identity);
+  _$$SubscriptionStateErrorCopyWith<TData, _$SubscriptionStateError<TData>>
+      get copyWith => __$$SubscriptionStateErrorCopyWithImpl<TData,
+          _$SubscriptionStateError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -555,36 +558,38 @@ abstract class SubscriptionStateError<TData>
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionStateErrorCopyWith<TData, SubscriptionStateError<TData>>
+  _$$SubscriptionStateErrorCopyWith<TData, _$SubscriptionStateError<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionStateLoadedCopyWith<TData, $Res> {
-  factory $SubscriptionStateLoadedCopyWith(SubscriptionStateLoaded<TData> value,
-          $Res Function(SubscriptionStateLoaded<TData>) then) =
-      _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>;
+abstract class _$$SubscriptionStateLoadedCopyWith<TData, $Res> {
+  factory _$$SubscriptionStateLoadedCopyWith(
+          _$SubscriptionStateLoaded<TData> value,
+          $Res Function(_$SubscriptionStateLoaded<TData>) then) =
+      __$$SubscriptionStateLoadedCopyWithImpl<TData, $Res>;
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$SubscriptionStateLoadedCopyWithImpl<TData, $Res>
+class __$$SubscriptionStateLoadedCopyWithImpl<TData, $Res>
     extends _$SubscriptionStateCopyWithImpl<TData, $Res>
-    implements $SubscriptionStateLoadedCopyWith<TData, $Res> {
-  _$SubscriptionStateLoadedCopyWithImpl(SubscriptionStateLoaded<TData> _value,
-      $Res Function(SubscriptionStateLoaded<TData>) _then)
-      : super(_value, (v) => _then(v as SubscriptionStateLoaded<TData>));
+    implements _$$SubscriptionStateLoadedCopyWith<TData, $Res> {
+  __$$SubscriptionStateLoadedCopyWithImpl(
+      _$SubscriptionStateLoaded<TData> _value,
+      $Res Function(_$SubscriptionStateLoaded<TData>) _then)
+      : super(_value, (v) => _then(v as _$SubscriptionStateLoaded<TData>));
 
   @override
-  SubscriptionStateLoaded<TData> get _value =>
-      super._value as SubscriptionStateLoaded<TData>;
+  _$SubscriptionStateLoaded<TData> get _value =>
+      super._value as _$SubscriptionStateLoaded<TData>;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
-    return _then(SubscriptionStateLoaded<TData>(
+    return _then(_$SubscriptionStateLoaded<TData>(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -617,7 +622,7 @@ class _$SubscriptionStateLoaded<TData>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubscriptionStateLoaded<TData> &&
+            other is _$SubscriptionStateLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.result, result));
   }
@@ -630,9 +635,9 @@ class _$SubscriptionStateLoaded<TData>
 
   @JsonKey(ignore: true)
   @override
-  $SubscriptionStateLoadedCopyWith<TData, SubscriptionStateLoaded<TData>>
-      get copyWith => _$SubscriptionStateLoadedCopyWithImpl<TData,
-          SubscriptionStateLoaded<TData>>(this, _$identity);
+  _$$SubscriptionStateLoadedCopyWith<TData, _$SubscriptionStateLoaded<TData>>
+      get copyWith => __$$SubscriptionStateLoadedCopyWithImpl<TData,
+          _$SubscriptionStateLoaded<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -724,6 +729,6 @@ abstract class SubscriptionStateLoaded<TData>
   TData? get data => throw _privateConstructorUsedError;
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionStateLoadedCopyWith<TData, SubscriptionStateLoaded<TData>>
+  _$$SubscriptionStateLoadedCopyWith<TData, _$SubscriptionStateLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }

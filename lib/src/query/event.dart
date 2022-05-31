@@ -25,7 +25,10 @@ class QueryEvent<TData> with _$QueryEvent<TData> {
     required QueryResult result,
   }) = QueryEventLoaded<TData>;
 
-  const factory QueryEvent.refetch() = QueryEventRefetch<TData>;
+  const factory QueryEvent.refetch({
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
+  }) = QueryEventRefetch<TData>;
 
   const factory QueryEvent.fetchMore({
     required FetchMoreOptions options,

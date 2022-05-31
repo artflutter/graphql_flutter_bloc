@@ -74,8 +74,13 @@ abstract class QueryBloc<TData>
     );
   }
 
-  void refetch() {
-    add(QueryEvent<TData>.refetch());
+  void refetch({Map<String, dynamic>? variables, Object? optimisticResult}) {
+    add(
+      QueryEvent<TData>.refetch(
+        variables: variables,
+        optimisticResult: optimisticResult,
+      ),
+    );
   }
 
   bool shouldFetchMore(int i, int threshold) => false;
@@ -104,19 +109,34 @@ abstract class QueryBloc<TData>
     QueryEventRun<TData> event,
     Emitter<QueryState<TData>> emit,
   ) async {
-    final variables = event.variables;
-    final optimisticResult = event.optimisticResult;
-
-    if (variables != null) {
-      result.variables = variables;
-    }
-
-    if (optimisticResult != null) {
-      result.options =
-          result.options.copyWithOptimisticResult(event.optimisticResult);
-    }
+    result.options = _options(
+      variables: event.variables,
+      optimisticResult: event.optimisticResult,
+    );
 
     result.fetchResults();
+  }
+
+  WatchQueryOptions _options({
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
+  }) {
+    WatchQueryOptions updatedOptions = options;
+
+    final _variables = variables;
+    final _optimisticResult = optimisticResult;
+
+    if (_variables != null) {
+      updatedOptions = updatedOptions.copyWithVariables(_variables);
+    }
+
+    if (_optimisticResult != null) {
+      updatedOptions = updatedOptions.copyWithOptimisticResult(
+        _optimisticResult,
+      );
+    }
+
+    return updatedOptions;
   }
 
   FutureOr<void> _error(
@@ -162,6 +182,11 @@ abstract class QueryBloc<TData>
         ),
         result: null,
       ),
+    );
+
+    result.options = _options(
+      variables: event.variables,
+      optimisticResult: event.optimisticResult,
     );
 
     result.refetch();

@@ -93,23 +93,23 @@ class _$MutationStateCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
-abstract class $MutationStateInitialCopyWith<TData, $Res> {
-  factory $MutationStateInitialCopyWith(MutationStateInitial<TData> value,
-          $Res Function(MutationStateInitial<TData>) then) =
-      _$MutationStateInitialCopyWithImpl<TData, $Res>;
+abstract class _$$MutationStateInitialCopyWith<TData, $Res> {
+  factory _$$MutationStateInitialCopyWith(_$MutationStateInitial<TData> value,
+          $Res Function(_$MutationStateInitial<TData>) then) =
+      __$$MutationStateInitialCopyWithImpl<TData, $Res>;
 }
 
 /// @nodoc
-class _$MutationStateInitialCopyWithImpl<TData, $Res>
+class __$$MutationStateInitialCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
-    implements $MutationStateInitialCopyWith<TData, $Res> {
-  _$MutationStateInitialCopyWithImpl(MutationStateInitial<TData> _value,
-      $Res Function(MutationStateInitial<TData>) _then)
-      : super(_value, (v) => _then(v as MutationStateInitial<TData>));
+    implements _$$MutationStateInitialCopyWith<TData, $Res> {
+  __$$MutationStateInitialCopyWithImpl(_$MutationStateInitial<TData> _value,
+      $Res Function(_$MutationStateInitial<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationStateInitial<TData>));
 
   @override
-  MutationStateInitial<TData> get _value =>
-      super._value as MutationStateInitial<TData>;
+  _$MutationStateInitial<TData> get _value =>
+      super._value as _$MutationStateInitial<TData>;
 }
 
 /// @nodoc
@@ -126,7 +126,7 @@ class _$MutationStateInitial<TData> implements MutationStateInitial<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationStateInitial<TData>);
+            other is _$MutationStateInitial<TData>);
   }
 
   @override
@@ -219,23 +219,23 @@ abstract class MutationStateInitial<TData> implements MutationState<TData> {
 }
 
 /// @nodoc
-abstract class $MutationStateLoadingCopyWith<TData, $Res> {
-  factory $MutationStateLoadingCopyWith(MutationStateLoading<TData> value,
-          $Res Function(MutationStateLoading<TData>) then) =
-      _$MutationStateLoadingCopyWithImpl<TData, $Res>;
+abstract class _$$MutationStateLoadingCopyWith<TData, $Res> {
+  factory _$$MutationStateLoadingCopyWith(_$MutationStateLoading<TData> value,
+          $Res Function(_$MutationStateLoading<TData>) then) =
+      __$$MutationStateLoadingCopyWithImpl<TData, $Res>;
 }
 
 /// @nodoc
-class _$MutationStateLoadingCopyWithImpl<TData, $Res>
+class __$$MutationStateLoadingCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
-    implements $MutationStateLoadingCopyWith<TData, $Res> {
-  _$MutationStateLoadingCopyWithImpl(MutationStateLoading<TData> _value,
-      $Res Function(MutationStateLoading<TData>) _then)
-      : super(_value, (v) => _then(v as MutationStateLoading<TData>));
+    implements _$$MutationStateLoadingCopyWith<TData, $Res> {
+  __$$MutationStateLoadingCopyWithImpl(_$MutationStateLoading<TData> _value,
+      $Res Function(_$MutationStateLoading<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationStateLoading<TData>));
 
   @override
-  MutationStateLoading<TData> get _value =>
-      super._value as MutationStateLoading<TData>;
+  _$MutationStateLoading<TData> get _value =>
+      super._value as _$MutationStateLoading<TData>;
 }
 
 /// @nodoc
@@ -252,7 +252,7 @@ class _$MutationStateLoading<TData> implements MutationStateLoading<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationStateLoading<TData>);
+            other is _$MutationStateLoading<TData>);
   }
 
   @override
@@ -345,25 +345,25 @@ abstract class MutationStateLoading<TData> implements MutationState<TData> {
 }
 
 /// @nodoc
-abstract class $MutationStateErrorCopyWith<TData, $Res> {
-  factory $MutationStateErrorCopyWith(MutationStateError<TData> value,
-          $Res Function(MutationStateError<TData>) then) =
-      _$MutationStateErrorCopyWithImpl<TData, $Res>;
+abstract class _$$MutationStateErrorCopyWith<TData, $Res> {
+  factory _$$MutationStateErrorCopyWith(_$MutationStateError<TData> value,
+          $Res Function(_$MutationStateError<TData>) then) =
+      __$$MutationStateErrorCopyWithImpl<TData, $Res>;
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
-class _$MutationStateErrorCopyWithImpl<TData, $Res>
+class __$$MutationStateErrorCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
-    implements $MutationStateErrorCopyWith<TData, $Res> {
-  _$MutationStateErrorCopyWithImpl(MutationStateError<TData> _value,
-      $Res Function(MutationStateError<TData>) _then)
-      : super(_value, (v) => _then(v as MutationStateError<TData>));
+    implements _$$MutationStateErrorCopyWith<TData, $Res> {
+  __$$MutationStateErrorCopyWithImpl(_$MutationStateError<TData> _value,
+      $Res Function(_$MutationStateError<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationStateError<TData>));
 
   @override
-  MutationStateError<TData> get _value =>
-      super._value as MutationStateError<TData>;
+  _$MutationStateError<TData> get _value =>
+      super._value as _$MutationStateError<TData>;
 
   @override
   $Res call({
@@ -371,7 +371,7 @@ class _$MutationStateErrorCopyWithImpl<TData, $Res>
     Object? result = freezed,
     Object? data = freezed,
   }) {
-    return _then(MutationStateError<TData>(
+    return _then(_$MutationStateError<TData>(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -410,7 +410,7 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationStateError<TData> &&
+            other is _$MutationStateError<TData> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.result, result) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -425,9 +425,9 @@ class _$MutationStateError<TData> implements MutationStateError<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
-      _$MutationStateErrorCopyWithImpl<TData, MutationStateError<TData>>(
-          this, _$identity);
+  _$$MutationStateErrorCopyWith<TData, _$MutationStateError<TData>>
+      get copyWith => __$$MutationStateErrorCopyWithImpl<TData,
+          _$MutationStateError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -521,36 +521,37 @@ abstract class MutationStateError<TData> implements MutationState<TData> {
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationStateErrorCopyWith<TData, MutationStateError<TData>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MutationStateErrorCopyWith<TData, _$MutationStateError<TData>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MutationStateCompletedCopyWith<TData, $Res> {
-  factory $MutationStateCompletedCopyWith(MutationStateCompleted<TData> value,
-          $Res Function(MutationStateCompleted<TData>) then) =
-      _$MutationStateCompletedCopyWithImpl<TData, $Res>;
+abstract class _$$MutationStateCompletedCopyWith<TData, $Res> {
+  factory _$$MutationStateCompletedCopyWith(
+          _$MutationStateCompleted<TData> value,
+          $Res Function(_$MutationStateCompleted<TData>) then) =
+      __$$MutationStateCompletedCopyWithImpl<TData, $Res>;
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$MutationStateCompletedCopyWithImpl<TData, $Res>
+class __$$MutationStateCompletedCopyWithImpl<TData, $Res>
     extends _$MutationStateCopyWithImpl<TData, $Res>
-    implements $MutationStateCompletedCopyWith<TData, $Res> {
-  _$MutationStateCompletedCopyWithImpl(MutationStateCompleted<TData> _value,
-      $Res Function(MutationStateCompleted<TData>) _then)
-      : super(_value, (v) => _then(v as MutationStateCompleted<TData>));
+    implements _$$MutationStateCompletedCopyWith<TData, $Res> {
+  __$$MutationStateCompletedCopyWithImpl(_$MutationStateCompleted<TData> _value,
+      $Res Function(_$MutationStateCompleted<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationStateCompleted<TData>));
 
   @override
-  MutationStateCompleted<TData> get _value =>
-      super._value as MutationStateCompleted<TData>;
+  _$MutationStateCompleted<TData> get _value =>
+      super._value as _$MutationStateCompleted<TData>;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
-    return _then(MutationStateCompleted<TData>(
+    return _then(_$MutationStateCompleted<TData>(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -582,7 +583,7 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationStateCompleted<TData> &&
+            other is _$MutationStateCompleted<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.result, result));
   }
@@ -595,9 +596,9 @@ class _$MutationStateCompleted<TData> implements MutationStateCompleted<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
-      get copyWith => _$MutationStateCompletedCopyWithImpl<TData,
-          MutationStateCompleted<TData>>(this, _$identity);
+  _$$MutationStateCompletedCopyWith<TData, _$MutationStateCompleted<TData>>
+      get copyWith => __$$MutationStateCompletedCopyWithImpl<TData,
+          _$MutationStateCompleted<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -689,6 +690,6 @@ abstract class MutationStateCompleted<TData> implements MutationState<TData> {
   TData? get data => throw _privateConstructorUsedError;
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationStateCompletedCopyWith<TData, MutationStateCompleted<TData>>
+  _$$MutationStateCompletedCopyWith<TData, _$MutationStateCompleted<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }

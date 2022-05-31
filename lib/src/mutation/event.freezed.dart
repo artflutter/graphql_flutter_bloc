@@ -91,25 +91,25 @@ class _$MutationEventCopyWithImpl<TData, $Res>
 }
 
 /// @nodoc
-abstract class $MutationEventErrorCopyWith<TData, $Res> {
-  factory $MutationEventErrorCopyWith(MutationEventError<TData> value,
-          $Res Function(MutationEventError<TData>) then) =
-      _$MutationEventErrorCopyWithImpl<TData, $Res>;
+abstract class _$$MutationEventErrorCopyWith<TData, $Res> {
+  factory _$$MutationEventErrorCopyWith(_$MutationEventError<TData> value,
+          $Res Function(_$MutationEventError<TData>) then) =
+      __$$MutationEventErrorCopyWithImpl<TData, $Res>;
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
-class _$MutationEventErrorCopyWithImpl<TData, $Res>
+class __$$MutationEventErrorCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
-    implements $MutationEventErrorCopyWith<TData, $Res> {
-  _$MutationEventErrorCopyWithImpl(MutationEventError<TData> _value,
-      $Res Function(MutationEventError<TData>) _then)
-      : super(_value, (v) => _then(v as MutationEventError<TData>));
+    implements _$$MutationEventErrorCopyWith<TData, $Res> {
+  __$$MutationEventErrorCopyWithImpl(_$MutationEventError<TData> _value,
+      $Res Function(_$MutationEventError<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationEventError<TData>));
 
   @override
-  MutationEventError<TData> get _value =>
-      super._value as MutationEventError<TData>;
+  _$MutationEventError<TData> get _value =>
+      super._value as _$MutationEventError<TData>;
 
   @override
   $Res call({
@@ -117,7 +117,7 @@ class _$MutationEventErrorCopyWithImpl<TData, $Res>
     Object? result = freezed,
     Object? data = freezed,
   }) {
-    return _then(MutationEventError<TData>(
+    return _then(_$MutationEventError<TData>(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -156,7 +156,7 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationEventError<TData> &&
+            other is _$MutationEventError<TData> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.result, result) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -171,9 +171,9 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith =>
-      _$MutationEventErrorCopyWithImpl<TData, MutationEventError<TData>>(
-          this, _$identity);
+  _$$MutationEventErrorCopyWith<TData, _$MutationEventError<TData>>
+      get copyWith => __$$MutationEventErrorCopyWithImpl<TData,
+          _$MutationEventError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,37 +265,38 @@ abstract class MutationEventError<TData> implements MutationEvent<TData> {
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   TData? get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationEventErrorCopyWith<TData, MutationEventError<TData>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MutationEventErrorCopyWith<TData, _$MutationEventError<TData>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MutationEventRunCopyWith<TData, $Res> {
-  factory $MutationEventRunCopyWith(MutationEventRun<TData> value,
-          $Res Function(MutationEventRun<TData>) then) =
-      _$MutationEventRunCopyWithImpl<TData, $Res>;
+abstract class _$$MutationEventRunCopyWith<TData, $Res> {
+  factory _$$MutationEventRunCopyWith(_$MutationEventRun<TData> value,
+          $Res Function(_$MutationEventRun<TData>) then) =
+      __$$MutationEventRunCopyWithImpl<TData, $Res>;
   $Res call({Map<String, dynamic> variables, Object? optimisticResult});
 }
 
 /// @nodoc
-class _$MutationEventRunCopyWithImpl<TData, $Res>
+class __$$MutationEventRunCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
-    implements $MutationEventRunCopyWith<TData, $Res> {
-  _$MutationEventRunCopyWithImpl(MutationEventRun<TData> _value,
-      $Res Function(MutationEventRun<TData>) _then)
-      : super(_value, (v) => _then(v as MutationEventRun<TData>));
+    implements _$$MutationEventRunCopyWith<TData, $Res> {
+  __$$MutationEventRunCopyWithImpl(_$MutationEventRun<TData> _value,
+      $Res Function(_$MutationEventRun<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationEventRun<TData>));
 
   @override
-  MutationEventRun<TData> get _value => super._value as MutationEventRun<TData>;
+  _$MutationEventRun<TData> get _value =>
+      super._value as _$MutationEventRun<TData>;
 
   @override
   $Res call({
     Object? variables = freezed,
     Object? optimisticResult = freezed,
   }) {
-    return _then(MutationEventRun<TData>(
+    return _then(_$MutationEventRun<TData>(
       variables == freezed
-          ? _value.variables
+          ? _value._variables
           : variables // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       optimisticResult: optimisticResult == freezed
@@ -331,8 +332,9 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationEventRun<TData> &&
-            const DeepCollectionEquality().equals(other.variables, variables) &&
+            other is _$MutationEventRun<TData> &&
+            const DeepCollectionEquality()
+                .equals(other._variables, _variables) &&
             const DeepCollectionEquality()
                 .equals(other.optimisticResult, optimisticResult));
   }
@@ -340,13 +342,13 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(variables),
+      const DeepCollectionEquality().hash(_variables),
       const DeepCollectionEquality().hash(optimisticResult));
 
   @JsonKey(ignore: true)
   @override
-  $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith =>
-      _$MutationEventRunCopyWithImpl<TData, MutationEventRun<TData>>(
+  _$$MutationEventRunCopyWith<TData, _$MutationEventRun<TData>> get copyWith =>
+      __$$MutationEventRunCopyWithImpl<TData, _$MutationEventRun<TData>>(
           this, _$identity);
 
   @override
@@ -436,36 +438,37 @@ abstract class MutationEventRun<TData> implements MutationEvent<TData> {
   Map<String, dynamic> get variables => throw _privateConstructorUsedError;
   Object? get optimisticResult => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationEventRunCopyWith<TData, MutationEventRun<TData>> get copyWith =>
+  _$$MutationEventRunCopyWith<TData, _$MutationEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MutationEventCompletedCopyWith<TData, $Res> {
-  factory $MutationEventCompletedCopyWith(MutationEventCompleted<TData> value,
-          $Res Function(MutationEventCompleted<TData>) then) =
-      _$MutationEventCompletedCopyWithImpl<TData, $Res>;
+abstract class _$$MutationEventCompletedCopyWith<TData, $Res> {
+  factory _$$MutationEventCompletedCopyWith(
+          _$MutationEventCompleted<TData> value,
+          $Res Function(_$MutationEventCompleted<TData>) then) =
+      __$$MutationEventCompletedCopyWithImpl<TData, $Res>;
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
-class _$MutationEventCompletedCopyWithImpl<TData, $Res>
+class __$$MutationEventCompletedCopyWithImpl<TData, $Res>
     extends _$MutationEventCopyWithImpl<TData, $Res>
-    implements $MutationEventCompletedCopyWith<TData, $Res> {
-  _$MutationEventCompletedCopyWithImpl(MutationEventCompleted<TData> _value,
-      $Res Function(MutationEventCompleted<TData>) _then)
-      : super(_value, (v) => _then(v as MutationEventCompleted<TData>));
+    implements _$$MutationEventCompletedCopyWith<TData, $Res> {
+  __$$MutationEventCompletedCopyWithImpl(_$MutationEventCompleted<TData> _value,
+      $Res Function(_$MutationEventCompleted<TData>) _then)
+      : super(_value, (v) => _then(v as _$MutationEventCompleted<TData>));
 
   @override
-  MutationEventCompleted<TData> get _value =>
-      super._value as MutationEventCompleted<TData>;
+  _$MutationEventCompleted<TData> get _value =>
+      super._value as _$MutationEventCompleted<TData>;
 
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
-    return _then(MutationEventCompleted<TData>(
+    return _then(_$MutationEventCompleted<TData>(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -497,7 +500,7 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MutationEventCompleted<TData> &&
+            other is _$MutationEventCompleted<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.result, result));
   }
@@ -510,9 +513,9 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
 
   @JsonKey(ignore: true)
   @override
-  $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
-      get copyWith => _$MutationEventCompletedCopyWithImpl<TData,
-          MutationEventCompleted<TData>>(this, _$identity);
+  _$$MutationEventCompletedCopyWith<TData, _$MutationEventCompleted<TData>>
+      get copyWith => __$$MutationEventCompletedCopyWithImpl<TData,
+          _$MutationEventCompleted<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -603,6 +606,6 @@ abstract class MutationEventCompleted<TData> implements MutationEvent<TData> {
   TData? get data => throw _privateConstructorUsedError;
   QueryResult<Object?> get result => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MutationEventCompletedCopyWith<TData, MutationEventCompleted<TData>>
+  _$$MutationEventCompletedCopyWith<TData, _$MutationEventCompleted<TData>>
       get copyWith => throw _privateConstructorUsedError;
 }
