@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.13.0
+
+- allow to supply more options on refetch and run
+
 ## 0.12.0
 
 - allow to supply variable to refetch method

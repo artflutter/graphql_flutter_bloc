@@ -11,9 +11,16 @@ class MutationEvent<TData> with _$MutationEvent<TData> {
     TData? data,
   }) = MutationEventError;
 
-  const factory MutationEvent.run(
-    Map<String, dynamic> variables, {
+  const factory MutationEvent.run({
+    required Map<String, dynamic> variables,
     Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    @Default(false) bool fetchResults,
+    @Default(true) bool carryForwardDataOnException,
+    bool? eagerlyFetchResults,
   }) = MutationEventRun;
 
   const factory MutationEvent.completed({

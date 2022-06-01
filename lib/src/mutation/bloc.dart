@@ -8,19 +8,22 @@ import 'state.dart';
 
 abstract class MutationBloc<TData>
     extends Bloc<MutationEvent<TData>, MutationState<TData>> {
-  GraphQLClient client;
-  late ObservableQuery result;
-  WatchQueryOptions options;
+  final GraphQLClient _client;
+  late ObservableQuery _result;
+  final WatchQueryOptions _options;
 
-  MutationBloc({required this.client, required this.options})
-      : super(MutationState<TData>.initial()) {
+  MutationBloc(
+      {required GraphQLClient client, required WatchQueryOptions options})
+      : _client = client,
+        _options = options,
+        super(MutationState<TData>.initial()) {
     on<MutationEventRun<TData>>(_run);
     on<MutationEventCompleted<TData>>(_completed);
     on<MutationEventError<TData>>(_error);
 
-    result = client.watchQuery<void>(options);
+    _result = _client.watchQuery<void>(_options);
 
-    result.stream.listen((result) {
+    _result.stream.listen((result) {
       // if (result.loading && result.data == null) {
       //   add(MutationEvent.loading(result: result));
       // }
@@ -50,12 +53,16 @@ abstract class MutationBloc<TData>
   }
 
   void dispose() {
-    result.close();
+    _result.close();
   }
 
   void run(Map<String, dynamic> variables, {Object? optimisticResult}) {
-    add(MutationEvent<TData>.run(variables,
-        optimisticResult: optimisticResult));
+    add(
+      MutationEvent<TData>.run(
+        variables: variables,
+        optimisticResult: optimisticResult,
+      ),
+    );
   }
 
   bool get isLoading => state is MutationStateLoading;
@@ -87,15 +94,50 @@ abstract class MutationBloc<TData>
     ));
   }
 
+  WatchQueryOptions _updateOptions({
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    bool fetchResults = false,
+    bool carryForwardDataOnException = true,
+    bool? eagerlyFetchResults,
+  }) {
+    return WatchQueryOptions(
+      document: _options.document,
+      operationName: _options.operationName,
+      variables: variables ?? _options.variables,
+      fetchPolicy: fetchPolicy ?? _options.fetchPolicy,
+      errorPolicy: errorPolicy ?? _options.errorPolicy,
+      cacheRereadPolicy: cacheRereadPolicy ?? _options.cacheRereadPolicy,
+      optimisticResult: optimisticResult ?? _options.optimisticResult,
+      pollInterval: pollInterval ?? _options.pollInterval,
+      fetchResults: fetchResults,
+      carryForwardDataOnException: carryForwardDataOnException,
+      eagerlyFetchResults: eagerlyFetchResults ?? _options.eagerlyFetchResults,
+      context: _options.context,
+      parserFn: _options.parserFn,
+    );
+  }
+
   FutureOr<void> _run(
     MutationEventRun<TData> event,
     Emitter<MutationState<TData>> emit,
   ) async {
-    (result
-          ..variables = event.variables
-          ..options =
-              result.options.copyWithOptimisticResult(event.optimisticResult))
-        .fetchResults();
+    _result.options = _updateOptions(
+      variables: event.variables,
+      optimisticResult: event.optimisticResult,
+      fetchPolicy: event.fetchPolicy,
+      errorPolicy: event.errorPolicy,
+      cacheRereadPolicy: event.cacheRereadPolicy,
+      pollInterval: event.pollInterval,
+      fetchResults: event.fetchResults,
+      carryForwardDataOnException: event.carryForwardDataOnException,
+      eagerlyFetchResults: event.eagerlyFetchResults,
+    );
+    _result.fetchResults();
 
     emit(const MutationState.loading());
   }
@@ -105,6 +147,10 @@ abstract class MutationBloc<TData>
     Emitter<MutationState<TData>> emit,
   ) async {
     emit(
-        MutationState<TData>.completed(data: event.data, result: event.result));
+      MutationState<TData>.completed(
+        data: event.data,
+        result: event.result,
+      ),
+    );
   }
 }

@@ -22,7 +22,15 @@ mixin _$MutationEvent<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic> variables, Object? optimisticResult)
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)
         run,
     required TResult Function(TData? data, QueryResult<Object?> result)
         completed,
@@ -33,7 +41,16 @@ mixin _$MutationEvent<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
   }) =>
@@ -43,7 +60,16 @@ mixin _$MutationEvent<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
     required TResult orElse(),
@@ -182,7 +208,15 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic> variables, Object? optimisticResult)
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)
         run,
     required TResult Function(TData? data, QueryResult<Object?> result)
         completed,
@@ -196,7 +230,16 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
@@ -209,7 +252,16 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
     required TResult orElse(),
@@ -274,7 +326,16 @@ abstract class _$$MutationEventRunCopyWith<TData, $Res> {
   factory _$$MutationEventRunCopyWith(_$MutationEventRun<TData> value,
           $Res Function(_$MutationEventRun<TData>) then) =
       __$$MutationEventRunCopyWithImpl<TData, $Res>;
-  $Res call({Map<String, dynamic> variables, Object? optimisticResult});
+  $Res call(
+      {Map<String, dynamic> variables,
+      Object? optimisticResult,
+      FetchPolicy? fetchPolicy,
+      ErrorPolicy? errorPolicy,
+      CacheRereadPolicy? cacheRereadPolicy,
+      Duration? pollInterval,
+      bool fetchResults,
+      bool carryForwardDataOnException,
+      bool? eagerlyFetchResults});
 }
 
 /// @nodoc
@@ -293,15 +354,50 @@ class __$$MutationEventRunCopyWithImpl<TData, $Res>
   $Res call({
     Object? variables = freezed,
     Object? optimisticResult = freezed,
+    Object? fetchPolicy = freezed,
+    Object? errorPolicy = freezed,
+    Object? cacheRereadPolicy = freezed,
+    Object? pollInterval = freezed,
+    Object? fetchResults = freezed,
+    Object? carryForwardDataOnException = freezed,
+    Object? eagerlyFetchResults = freezed,
   }) {
     return _then(_$MutationEventRun<TData>(
-      variables == freezed
+      variables: variables == freezed
           ? _value._variables
           : variables // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       optimisticResult: optimisticResult == freezed
           ? _value.optimisticResult
           : optimisticResult,
+      fetchPolicy: fetchPolicy == freezed
+          ? _value.fetchPolicy
+          : fetchPolicy // ignore: cast_nullable_to_non_nullable
+              as FetchPolicy?,
+      errorPolicy: errorPolicy == freezed
+          ? _value.errorPolicy
+          : errorPolicy // ignore: cast_nullable_to_non_nullable
+              as ErrorPolicy?,
+      cacheRereadPolicy: cacheRereadPolicy == freezed
+          ? _value.cacheRereadPolicy
+          : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
+              as CacheRereadPolicy?,
+      pollInterval: pollInterval == freezed
+          ? _value.pollInterval
+          : pollInterval // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      fetchResults: fetchResults == freezed
+          ? _value.fetchResults
+          : fetchResults // ignore: cast_nullable_to_non_nullable
+              as bool,
+      carryForwardDataOnException: carryForwardDataOnException == freezed
+          ? _value.carryForwardDataOnException
+          : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
+              as bool,
+      eagerlyFetchResults: eagerlyFetchResults == freezed
+          ? _value.eagerlyFetchResults
+          : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -309,8 +405,16 @@ class __$$MutationEventRunCopyWithImpl<TData, $Res>
 /// @nodoc
 
 class _$MutationEventRun<TData> implements MutationEventRun<TData> {
-  const _$MutationEventRun(final Map<String, dynamic> variables,
-      {this.optimisticResult})
+  const _$MutationEventRun(
+      {required final Map<String, dynamic> variables,
+      this.optimisticResult,
+      this.fetchPolicy,
+      this.errorPolicy,
+      this.cacheRereadPolicy,
+      this.pollInterval,
+      this.fetchResults = false,
+      this.carryForwardDataOnException = true,
+      this.eagerlyFetchResults})
       : _variables = variables;
 
   final Map<String, dynamic> _variables;
@@ -322,10 +426,26 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 
   @override
   final Object? optimisticResult;
+  @override
+  final FetchPolicy? fetchPolicy;
+  @override
+  final ErrorPolicy? errorPolicy;
+  @override
+  final CacheRereadPolicy? cacheRereadPolicy;
+  @override
+  final Duration? pollInterval;
+  @override
+  @JsonKey()
+  final bool fetchResults;
+  @override
+  @JsonKey()
+  final bool carryForwardDataOnException;
+  @override
+  final bool? eagerlyFetchResults;
 
   @override
   String toString() {
-    return 'MutationEvent<$TData>.run(variables: $variables, optimisticResult: $optimisticResult)';
+    return 'MutationEvent<$TData>.run(variables: $variables, optimisticResult: $optimisticResult, fetchPolicy: $fetchPolicy, errorPolicy: $errorPolicy, cacheRereadPolicy: $cacheRereadPolicy, pollInterval: $pollInterval, fetchResults: $fetchResults, carryForwardDataOnException: $carryForwardDataOnException, eagerlyFetchResults: $eagerlyFetchResults)';
   }
 
   @override
@@ -336,14 +456,36 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
             const DeepCollectionEquality()
                 .equals(other._variables, _variables) &&
             const DeepCollectionEquality()
-                .equals(other.optimisticResult, optimisticResult));
+                .equals(other.optimisticResult, optimisticResult) &&
+            const DeepCollectionEquality()
+                .equals(other.fetchPolicy, fetchPolicy) &&
+            const DeepCollectionEquality()
+                .equals(other.errorPolicy, errorPolicy) &&
+            const DeepCollectionEquality()
+                .equals(other.cacheRereadPolicy, cacheRereadPolicy) &&
+            const DeepCollectionEquality()
+                .equals(other.pollInterval, pollInterval) &&
+            const DeepCollectionEquality()
+                .equals(other.fetchResults, fetchResults) &&
+            const DeepCollectionEquality().equals(
+                other.carryForwardDataOnException,
+                carryForwardDataOnException) &&
+            const DeepCollectionEquality()
+                .equals(other.eagerlyFetchResults, eagerlyFetchResults));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_variables),
-      const DeepCollectionEquality().hash(optimisticResult));
+      const DeepCollectionEquality().hash(optimisticResult),
+      const DeepCollectionEquality().hash(fetchPolicy),
+      const DeepCollectionEquality().hash(errorPolicy),
+      const DeepCollectionEquality().hash(cacheRereadPolicy),
+      const DeepCollectionEquality().hash(pollInterval),
+      const DeepCollectionEquality().hash(fetchResults),
+      const DeepCollectionEquality().hash(carryForwardDataOnException),
+      const DeepCollectionEquality().hash(eagerlyFetchResults));
 
   @JsonKey(ignore: true)
   @override
@@ -358,12 +500,29 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic> variables, Object? optimisticResult)
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)
         run,
     required TResult Function(TData? data, QueryResult<Object?> result)
         completed,
   }) {
-    return run(variables, optimisticResult);
+    return run(
+        variables,
+        optimisticResult,
+        fetchPolicy,
+        errorPolicy,
+        cacheRereadPolicy,
+        pollInterval,
+        fetchResults,
+        carryForwardDataOnException,
+        eagerlyFetchResults);
   }
 
   @override
@@ -372,11 +531,29 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
-    return run?.call(variables, optimisticResult);
+    return run?.call(
+        variables,
+        optimisticResult,
+        fetchPolicy,
+        errorPolicy,
+        cacheRereadPolicy,
+        pollInterval,
+        fetchResults,
+        carryForwardDataOnException,
+        eagerlyFetchResults);
   }
 
   @override
@@ -385,13 +562,31 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
     required TResult orElse(),
   }) {
     if (run != null) {
-      return run(variables, optimisticResult);
+      return run(
+          variables,
+          optimisticResult,
+          fetchPolicy,
+          errorPolicy,
+          cacheRereadPolicy,
+          pollInterval,
+          fetchResults,
+          carryForwardDataOnException,
+          eagerlyFetchResults);
     }
     return orElse();
   }
@@ -432,11 +627,27 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
 }
 
 abstract class MutationEventRun<TData> implements MutationEvent<TData> {
-  const factory MutationEventRun(final Map<String, dynamic> variables,
-      {final Object? optimisticResult}) = _$MutationEventRun<TData>;
+  const factory MutationEventRun(
+      {required final Map<String, dynamic> variables,
+      final Object? optimisticResult,
+      final FetchPolicy? fetchPolicy,
+      final ErrorPolicy? errorPolicy,
+      final CacheRereadPolicy? cacheRereadPolicy,
+      final Duration? pollInterval,
+      final bool fetchResults,
+      final bool carryForwardDataOnException,
+      final bool? eagerlyFetchResults}) = _$MutationEventRun<TData>;
 
   Map<String, dynamic> get variables => throw _privateConstructorUsedError;
   Object? get optimisticResult => throw _privateConstructorUsedError;
+  FetchPolicy? get fetchPolicy => throw _privateConstructorUsedError;
+  ErrorPolicy? get errorPolicy => throw _privateConstructorUsedError;
+  CacheRereadPolicy? get cacheRereadPolicy =>
+      throw _privateConstructorUsedError;
+  Duration? get pollInterval => throw _privateConstructorUsedError;
+  bool get fetchResults => throw _privateConstructorUsedError;
+  bool get carryForwardDataOnException => throw _privateConstructorUsedError;
+  bool? get eagerlyFetchResults => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$MutationEventRunCopyWith<TData, _$MutationEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -524,7 +735,15 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic> variables, Object? optimisticResult)
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)
         run,
     required TResult Function(TData? data, QueryResult<Object?> result)
         completed,
@@ -538,7 +757,16 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
@@ -551,7 +779,16 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(Map<String, dynamic> variables, Object? optimisticResult)?
+    TResult Function(
+            Map<String, dynamic> variables,
+            Object? optimisticResult,
+            FetchPolicy? fetchPolicy,
+            ErrorPolicy? errorPolicy,
+            CacheRereadPolicy? cacheRereadPolicy,
+            Duration? pollInterval,
+            bool fetchResults,
+            bool carryForwardDataOnException,
+            bool? eagerlyFetchResults)?
         run,
     TResult Function(TData? data, QueryResult<Object?> result)? completed,
     required TResult orElse(),

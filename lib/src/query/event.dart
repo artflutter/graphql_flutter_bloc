@@ -14,6 +14,13 @@ class QueryEvent<TData> with _$QueryEvent<TData> {
   const factory QueryEvent.run({
     Map<String, dynamic>? variables,
     Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    @Default(false) bool fetchResults,
+    @Default(true) bool carryForwardDataOnException,
+    bool? eagerlyFetchResults,
   }) = QueryEventRun<TData>;
 
   const factory QueryEvent.loading({
@@ -28,6 +35,13 @@ class QueryEvent<TData> with _$QueryEvent<TData> {
   const factory QueryEvent.refetch({
     Map<String, dynamic>? variables,
     Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    @Default(false) bool fetchResults,
+    @Default(true) bool carryForwardDataOnException,
+    bool? eagerlyFetchResults,
   }) = QueryEventRefetch<TData>;
 
   const factory QueryEvent.fetchMore({
