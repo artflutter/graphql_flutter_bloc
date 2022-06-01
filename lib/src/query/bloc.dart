@@ -10,12 +10,11 @@ abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
   final GraphQLClient _client;
   late ObservableQuery _result;
-  final WatchQueryOptions _options;
+  final WatchQueryOptions options;
   StreamSubscription? _subscription;
 
-  QueryBloc({required GraphQLClient client, required WatchQueryOptions options})
+  QueryBloc({required GraphQLClient client, required this.options})
       : _client = client,
-        _options = options,
         super(QueryState<TData>.initial()) {
     on<QueryEventRun<TData>>(_run);
     on<QueryEventError<TData>>(_error);
@@ -140,19 +139,19 @@ abstract class QueryBloc<TData>
     bool? eagerlyFetchResults,
   }) {
     return WatchQueryOptions(
-      document: _options.document,
-      operationName: _options.operationName,
-      variables: variables ?? _options.variables,
-      fetchPolicy: fetchPolicy ?? _options.fetchPolicy,
-      errorPolicy: errorPolicy ?? _options.errorPolicy,
-      cacheRereadPolicy: cacheRereadPolicy ?? _options.cacheRereadPolicy,
-      optimisticResult: optimisticResult ?? _options.optimisticResult,
-      pollInterval: pollInterval ?? _options.pollInterval,
+      document: options.document,
+      operationName: options.operationName,
+      variables: variables ?? options.variables,
+      fetchPolicy: fetchPolicy ?? options.fetchPolicy,
+      errorPolicy: errorPolicy ?? options.errorPolicy,
+      cacheRereadPolicy: cacheRereadPolicy ?? options.cacheRereadPolicy,
+      optimisticResult: optimisticResult ?? options.optimisticResult,
+      pollInterval: pollInterval ?? options.pollInterval,
       fetchResults: fetchResults,
       carryForwardDataOnException: carryForwardDataOnException,
-      eagerlyFetchResults: eagerlyFetchResults ?? _options.eagerlyFetchResults,
-      context: _options.context,
-      parserFn: _options.parserFn,
+      eagerlyFetchResults: eagerlyFetchResults ?? options.eagerlyFetchResults,
+      context: options.context,
+      parserFn: options.parserFn,
     );
   }
 

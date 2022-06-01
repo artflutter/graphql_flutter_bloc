@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.13.1
+
+- return back access to options
+
 ## 0.13.0
 
 - allow to supply more options on refetch and run
