@@ -8,20 +8,20 @@ import 'state.dart';
 
 abstract class MutationBloc<TData>
     extends Bloc<MutationEvent<TData>, MutationState<TData>> {
-  final GraphQLClient _client;
-  late ObservableQuery _result;
-  final WatchQueryOptions options;
+  GraphQLClient client;
+  late ObservableQuery result;
+  WatchQueryOptions options;
+  StreamSubscription? _subscription;
 
-  MutationBloc({required GraphQLClient client, required this.options})
-      : _client = client,
-        super(MutationState<TData>.initial()) {
+  MutationBloc({required this.client, required this.options})
+      : super(MutationState<TData>.initial()) {
     on<MutationEventRun<TData>>(_run);
     on<MutationEventCompleted<TData>>(_completed);
     on<MutationEventError<TData>>(_error);
 
-    _result = _client.watchQuery<void>(options);
+    result = client.watchQuery<void>(options);
 
-    _result.stream.listen((result) {
+    _subscription = result.stream.listen((result) {
       // if (result.loading && result.data == null) {
       //   add(MutationEvent.loading(result: result));
       // }
@@ -51,14 +51,32 @@ abstract class MutationBloc<TData>
   }
 
   void dispose() {
-    _result.close();
+    _subscription?.cancel();
+    result.close();
   }
 
-  void run(Map<String, dynamic> variables, {Object? optimisticResult}) {
+  void run({
+    required Map<String, dynamic> variables,
+    Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    bool fetchResults = false,
+    bool carryForwardDataOnException = true,
+    bool? eagerlyFetchResults,
+  }) {
     add(
       MutationEvent<TData>.run(
         variables: variables,
         optimisticResult: optimisticResult,
+        fetchPolicy: fetchPolicy,
+        errorPolicy: errorPolicy,
+        cacheRereadPolicy: cacheRereadPolicy,
+        pollInterval: pollInterval,
+        fetchResults: fetchResults,
+        carryForwardDataOnException: carryForwardDataOnException,
+        eagerlyFetchResults: eagerlyFetchResults,
       ),
     );
   }
@@ -124,7 +142,7 @@ abstract class MutationBloc<TData>
     MutationEventRun<TData> event,
     Emitter<MutationState<TData>> emit,
   ) async {
-    _result.options = _updateOptions(
+    result.options = _updateOptions(
       variables: event.variables,
       optimisticResult: event.optimisticResult,
       fetchPolicy: event.fetchPolicy,
@@ -135,7 +153,7 @@ abstract class MutationBloc<TData>
       carryForwardDataOnException: event.carryForwardDataOnException,
       eagerlyFetchResults: event.eagerlyFetchResults,
     );
-    _result.fetchResults();
+    result.fetchResults();
 
     emit(const MutationState.loading());
   }

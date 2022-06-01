@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.15.0
+
+- pass params through run and refetch
+
+## 0.14.0
+
+- return back access to options
+
 ## 0.13.1
 
 - return back access to options

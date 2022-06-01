@@ -78,7 +78,7 @@ void main() {
       final StreamSubscription<MutationState<Map<String, dynamic>>>
           subscription = testMutationBloc.stream.listen(states.add);
 
-      testMutationBloc.run(<String, dynamic>{});
+      testMutationBloc.run(variables: <String, dynamic>{});
 
       await Future<void>.delayed(Duration.zero);
 
@@ -98,7 +98,7 @@ void main() {
       final StreamSubscription<MutationState<Map<String, dynamic>>>
           subscription = testMutationBloc.stream.listen(states.add);
 
-      testMutationBloc.run(<String, dynamic>{});
+      testMutationBloc.run(variables: <String, dynamic>{});
 
       await Future<void>.delayed(Duration.zero);
 

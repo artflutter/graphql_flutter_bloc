@@ -8,14 +8,13 @@ import 'state.dart';
 
 abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
-  final GraphQLClient _client;
-  late ObservableQuery _result;
-  final WatchQueryOptions options;
+  GraphQLClient client;
+  late ObservableQuery result;
+  WatchQueryOptions options;
   StreamSubscription? _subscription;
 
-  QueryBloc({required GraphQLClient client, required this.options})
-      : _client = client,
-        super(QueryState<TData>.initial()) {
+  QueryBloc({required this.client, required this.options})
+      : super(QueryState<TData>.initial()) {
     on<QueryEventRun<TData>>(_run);
     on<QueryEventError<TData>>(_error);
     on<QueryEventLoading<TData>>(_loading);
@@ -23,9 +22,9 @@ abstract class QueryBloc<TData>
     on<QueryEventRefetch<TData>>(_refetch);
     on<QueryEventFetchMore<TData>>(_fetchMore);
 
-    _result = _client.watchQuery<void>(options);
+    result = client.watchQuery<void>(options);
 
-    _subscription = _result.stream.listen((QueryResult result) {
+    _subscription = result.stream.listen((QueryResult result) {
       if (state is QueryStateRefetch &&
           result.source == QueryResultSource.cache &&
           options.fetchPolicy == FetchPolicy.cacheAndNetwork) {
@@ -65,23 +64,57 @@ abstract class QueryBloc<TData>
 
   void dispose() {
     _subscription?.cancel();
-    _result.close();
+    result.close();
   }
 
-  void run({Map<String, dynamic>? variables, Object? optimisticResult}) {
+  void run({
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    bool fetchResults = false,
+    bool carryForwardDataOnException = true,
+    bool? eagerlyFetchResults,
+  }) {
     add(
       QueryEvent<TData>.run(
         variables: variables,
         optimisticResult: optimisticResult,
+        fetchPolicy: fetchPolicy,
+        errorPolicy: errorPolicy,
+        cacheRereadPolicy: cacheRereadPolicy,
+        pollInterval: pollInterval,
+        fetchResults: fetchResults,
+        carryForwardDataOnException: carryForwardDataOnException,
+        eagerlyFetchResults: eagerlyFetchResults,
       ),
     );
   }
 
-  void refetch({Map<String, dynamic>? variables, Object? optimisticResult}) {
+  void refetch({
+    Map<String, dynamic>? variables,
+    Object? optimisticResult,
+    FetchPolicy? fetchPolicy,
+    ErrorPolicy? errorPolicy,
+    CacheRereadPolicy? cacheRereadPolicy,
+    Duration? pollInterval,
+    bool fetchResults = false,
+    bool carryForwardDataOnException = true,
+    bool? eagerlyFetchResults,
+  }) {
     add(
       QueryEvent<TData>.refetch(
         variables: variables,
         optimisticResult: optimisticResult,
+        fetchPolicy: fetchPolicy,
+        errorPolicy: errorPolicy,
+        cacheRereadPolicy: cacheRereadPolicy,
+        pollInterval: pollInterval,
+        fetchResults: fetchResults,
+        carryForwardDataOnException: carryForwardDataOnException,
+        eagerlyFetchResults: eagerlyFetchResults,
       ),
     );
   }
@@ -112,7 +145,7 @@ abstract class QueryBloc<TData>
     QueryEventRun<TData> event,
     Emitter<QueryState<TData>> emit,
   ) async {
-    _result.options = _updateOptions(
+    result.options = _updateOptions(
       variables: event.variables,
       optimisticResult: event.optimisticResult,
       fetchPolicy: event.fetchPolicy,
@@ -124,7 +157,7 @@ abstract class QueryBloc<TData>
       eagerlyFetchResults: event.eagerlyFetchResults,
     );
 
-    _result.fetchResults();
+    result.fetchResults();
   }
 
   WatchQueryOptions _updateOptions({
@@ -200,7 +233,7 @@ abstract class QueryBloc<TData>
       ),
     );
 
-    _result.options = _updateOptions(
+    result.options = _updateOptions(
       variables: event.variables,
       optimisticResult: event.optimisticResult,
       fetchPolicy: event.fetchPolicy,
@@ -212,7 +245,7 @@ abstract class QueryBloc<TData>
       eagerlyFetchResults: event.eagerlyFetchResults,
     );
 
-    _result.refetch();
+    result.refetch();
   }
 
   FutureOr<void> _fetchMore(
@@ -229,6 +262,6 @@ abstract class QueryBloc<TData>
       ),
     );
 
-    _result.fetchMore(event.options);
+    result.fetchMore(event.options);
   }
 }
