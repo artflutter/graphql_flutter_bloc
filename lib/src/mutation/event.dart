@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphql/client.dart';
+import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 part 'event.freezed.dart';
 
@@ -12,15 +13,15 @@ class MutationEvent<TData> with _$MutationEvent<TData> {
   }) = MutationEventError;
 
   const factory MutationEvent.run({
-    required Map<String, dynamic> variables,
-    Object? optimisticResult,
-    FetchPolicy? fetchPolicy,
-    ErrorPolicy? errorPolicy,
-    CacheRereadPolicy? cacheRereadPolicy,
-    Duration? pollInterval,
-    @Default(false) bool fetchResults,
-    @Default(true) bool carryForwardDataOnException,
-    bool? eagerlyFetchResults,
+    OptionValue<Map<String, dynamic>>? variables,
+    OptionValue<Object?>? optimisticResult,
+    OptionValue<FetchPolicy?>? fetchPolicy,
+    OptionValue<ErrorPolicy?>? errorPolicy,
+    OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+    OptionValue<Duration?>? pollInterval,
+    OptionValue<bool>? fetchResults,
+    OptionValue<bool>? carryForwardDataOnException,
+    OptionValue<bool?>? eagerlyFetchResults,
   }) = MutationEventRun;
 
   const factory MutationEvent.completed({

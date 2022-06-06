@@ -36,14 +36,19 @@ class _BlocMutationOptimisticState extends State<BlocMutationOptimistic> {
             if (_formKey.currentState?.validate() ?? true) {
               _formKey.currentState?.save();
               bloc.run(
-                  variables: AddCompanyArguments(
+                variables: OptionValue(
+                  AddCompanyArguments(
                     input: company..industry = 'Some industry',
                   ).toJson(),
-                  optimisticResult: {
+                ),
+                optimisticResult: OptionValue.of(
+                  {
                     "id": 'someId',
                     "name": company.name,
-                    "industry": null
-                  });
+                    "industry": null,
+                  },
+                ),
+              );
             }
           },
         ),

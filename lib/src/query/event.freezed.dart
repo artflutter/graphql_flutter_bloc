@@ -22,28 +22,28 @@ mixin _$QueryEvent<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) =>
@@ -54,28 +54,28 @@ mixin _$QueryEvent<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) =>
@@ -86,28 +86,28 @@ mixin _$QueryEvent<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -255,28 +255,28 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -290,28 +290,28 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -325,28 +325,28 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -421,15 +421,15 @@ abstract class _$$QueryEventRunCopyWith<TData, $Res> {
           $Res Function(_$QueryEventRun<TData>) then) =
       __$$QueryEventRunCopyWithImpl<TData, $Res>;
   $Res call(
-      {Map<String, dynamic>? variables,
-      Object? optimisticResult,
-      FetchPolicy? fetchPolicy,
-      ErrorPolicy? errorPolicy,
-      CacheRereadPolicy? cacheRereadPolicy,
-      Duration? pollInterval,
-      bool fetchResults,
-      bool carryForwardDataOnException,
-      bool? eagerlyFetchResults});
+      {OptionValue<Map<String, dynamic>>? variables,
+      OptionValue<Object?>? optimisticResult,
+      OptionValue<FetchPolicy?>? fetchPolicy,
+      OptionValue<ErrorPolicy?>? errorPolicy,
+      OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+      OptionValue<Duration?>? pollInterval,
+      OptionValue<bool>? fetchResults,
+      OptionValue<bool>? carryForwardDataOnException,
+      OptionValue<bool?>? eagerlyFetchResults});
 }
 
 /// @nodoc
@@ -457,40 +457,41 @@ class __$$QueryEventRunCopyWithImpl<TData, $Res>
   }) {
     return _then(_$QueryEventRun<TData>(
       variables: variables == freezed
-          ? _value._variables
+          ? _value.variables
           : variables // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as OptionValue<Map<String, dynamic>>?,
       optimisticResult: optimisticResult == freezed
           ? _value.optimisticResult
-          : optimisticResult,
+          : optimisticResult // ignore: cast_nullable_to_non_nullable
+              as OptionValue<Object?>?,
       fetchPolicy: fetchPolicy == freezed
           ? _value.fetchPolicy
           : fetchPolicy // ignore: cast_nullable_to_non_nullable
-              as FetchPolicy?,
+              as OptionValue<FetchPolicy?>?,
       errorPolicy: errorPolicy == freezed
           ? _value.errorPolicy
           : errorPolicy // ignore: cast_nullable_to_non_nullable
-              as ErrorPolicy?,
+              as OptionValue<ErrorPolicy?>?,
       cacheRereadPolicy: cacheRereadPolicy == freezed
           ? _value.cacheRereadPolicy
           : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
-              as CacheRereadPolicy?,
+              as OptionValue<CacheRereadPolicy?>?,
       pollInterval: pollInterval == freezed
           ? _value.pollInterval
           : pollInterval // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as OptionValue<Duration?>?,
       fetchResults: fetchResults == freezed
           ? _value.fetchResults
           : fetchResults // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as OptionValue<bool>?,
       carryForwardDataOnException: carryForwardDataOnException == freezed
           ? _value.carryForwardDataOnException
           : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as OptionValue<bool>?,
       eagerlyFetchResults: eagerlyFetchResults == freezed
           ? _value.eagerlyFetchResults
           : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as OptionValue<bool?>?,
     ));
   }
 }
@@ -499,44 +500,34 @@ class __$$QueryEventRunCopyWithImpl<TData, $Res>
 
 class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   const _$QueryEventRun(
-      {final Map<String, dynamic>? variables,
+      {this.variables,
       this.optimisticResult,
       this.fetchPolicy,
       this.errorPolicy,
       this.cacheRereadPolicy,
       this.pollInterval,
-      this.fetchResults = false,
-      this.carryForwardDataOnException = true,
-      this.eagerlyFetchResults})
-      : _variables = variables;
-
-  final Map<String, dynamic>? _variables;
-  @override
-  Map<String, dynamic>? get variables {
-    final value = _variables;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+      this.fetchResults,
+      this.carryForwardDataOnException,
+      this.eagerlyFetchResults});
 
   @override
-  final Object? optimisticResult;
+  final OptionValue<Map<String, dynamic>>? variables;
   @override
-  final FetchPolicy? fetchPolicy;
+  final OptionValue<Object?>? optimisticResult;
   @override
-  final ErrorPolicy? errorPolicy;
+  final OptionValue<FetchPolicy?>? fetchPolicy;
   @override
-  final CacheRereadPolicy? cacheRereadPolicy;
+  final OptionValue<ErrorPolicy?>? errorPolicy;
   @override
-  final Duration? pollInterval;
+  final OptionValue<CacheRereadPolicy?>? cacheRereadPolicy;
   @override
-  @JsonKey()
-  final bool fetchResults;
+  final OptionValue<Duration?>? pollInterval;
   @override
-  @JsonKey()
-  final bool carryForwardDataOnException;
+  final OptionValue<bool>? fetchResults;
   @override
-  final bool? eagerlyFetchResults;
+  final OptionValue<bool>? carryForwardDataOnException;
+  @override
+  final OptionValue<bool?>? eagerlyFetchResults;
 
   @override
   String toString() {
@@ -548,8 +539,7 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventRun<TData> &&
-            const DeepCollectionEquality()
-                .equals(other._variables, _variables) &&
+            const DeepCollectionEquality().equals(other.variables, variables) &&
             const DeepCollectionEquality()
                 .equals(other.optimisticResult, optimisticResult) &&
             const DeepCollectionEquality()
@@ -572,7 +562,7 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_variables),
+      const DeepCollectionEquality().hash(variables),
       const DeepCollectionEquality().hash(optimisticResult),
       const DeepCollectionEquality().hash(fetchPolicy),
       const DeepCollectionEquality().hash(errorPolicy),
@@ -595,28 +585,28 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -639,28 +629,28 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -683,28 +673,28 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -770,26 +760,33 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
 
 abstract class QueryEventRun<TData> implements QueryEvent<TData> {
   const factory QueryEventRun(
-      {final Map<String, dynamic>? variables,
-      final Object? optimisticResult,
-      final FetchPolicy? fetchPolicy,
-      final ErrorPolicy? errorPolicy,
-      final CacheRereadPolicy? cacheRereadPolicy,
-      final Duration? pollInterval,
-      final bool fetchResults,
-      final bool carryForwardDataOnException,
-      final bool? eagerlyFetchResults}) = _$QueryEventRun<TData>;
+      {final OptionValue<Map<String, dynamic>>? variables,
+      final OptionValue<Object?>? optimisticResult,
+      final OptionValue<FetchPolicy?>? fetchPolicy,
+      final OptionValue<ErrorPolicy?>? errorPolicy,
+      final OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+      final OptionValue<Duration?>? pollInterval,
+      final OptionValue<bool>? fetchResults,
+      final OptionValue<bool>? carryForwardDataOnException,
+      final OptionValue<bool?>? eagerlyFetchResults}) = _$QueryEventRun<TData>;
 
-  Map<String, dynamic>? get variables => throw _privateConstructorUsedError;
-  Object? get optimisticResult => throw _privateConstructorUsedError;
-  FetchPolicy? get fetchPolicy => throw _privateConstructorUsedError;
-  ErrorPolicy? get errorPolicy => throw _privateConstructorUsedError;
-  CacheRereadPolicy? get cacheRereadPolicy =>
+  OptionValue<Map<String, dynamic>>? get variables =>
       throw _privateConstructorUsedError;
-  Duration? get pollInterval => throw _privateConstructorUsedError;
-  bool get fetchResults => throw _privateConstructorUsedError;
-  bool get carryForwardDataOnException => throw _privateConstructorUsedError;
-  bool? get eagerlyFetchResults => throw _privateConstructorUsedError;
+  OptionValue<Object?>? get optimisticResult =>
+      throw _privateConstructorUsedError;
+  OptionValue<FetchPolicy?>? get fetchPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<ErrorPolicy?>? get errorPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<Duration?>? get pollInterval =>
+      throw _privateConstructorUsedError;
+  OptionValue<bool>? get fetchResults => throw _privateConstructorUsedError;
+  OptionValue<bool>? get carryForwardDataOnException =>
+      throw _privateConstructorUsedError;
+  OptionValue<bool?>? get eagerlyFetchResults =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$QueryEventRunCopyWith<TData, _$QueryEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -867,28 +864,28 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -902,28 +899,28 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -937,28 +934,28 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -1105,28 +1102,28 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -1140,28 +1137,28 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -1175,28 +1172,28 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -1269,15 +1266,15 @@ abstract class _$$QueryEventRefetchCopyWith<TData, $Res> {
           $Res Function(_$QueryEventRefetch<TData>) then) =
       __$$QueryEventRefetchCopyWithImpl<TData, $Res>;
   $Res call(
-      {Map<String, dynamic>? variables,
-      Object? optimisticResult,
-      FetchPolicy? fetchPolicy,
-      ErrorPolicy? errorPolicy,
-      CacheRereadPolicy? cacheRereadPolicy,
-      Duration? pollInterval,
-      bool fetchResults,
-      bool carryForwardDataOnException,
-      bool? eagerlyFetchResults});
+      {OptionValue<Map<String, dynamic>>? variables,
+      OptionValue<Object?>? optimisticResult,
+      OptionValue<FetchPolicy?>? fetchPolicy,
+      OptionValue<ErrorPolicy?>? errorPolicy,
+      OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+      OptionValue<Duration?>? pollInterval,
+      OptionValue<bool>? fetchResults,
+      OptionValue<bool>? carryForwardDataOnException,
+      OptionValue<bool?>? eagerlyFetchResults});
 }
 
 /// @nodoc
@@ -1306,40 +1303,41 @@ class __$$QueryEventRefetchCopyWithImpl<TData, $Res>
   }) {
     return _then(_$QueryEventRefetch<TData>(
       variables: variables == freezed
-          ? _value._variables
+          ? _value.variables
           : variables // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as OptionValue<Map<String, dynamic>>?,
       optimisticResult: optimisticResult == freezed
           ? _value.optimisticResult
-          : optimisticResult,
+          : optimisticResult // ignore: cast_nullable_to_non_nullable
+              as OptionValue<Object?>?,
       fetchPolicy: fetchPolicy == freezed
           ? _value.fetchPolicy
           : fetchPolicy // ignore: cast_nullable_to_non_nullable
-              as FetchPolicy?,
+              as OptionValue<FetchPolicy?>?,
       errorPolicy: errorPolicy == freezed
           ? _value.errorPolicy
           : errorPolicy // ignore: cast_nullable_to_non_nullable
-              as ErrorPolicy?,
+              as OptionValue<ErrorPolicy?>?,
       cacheRereadPolicy: cacheRereadPolicy == freezed
           ? _value.cacheRereadPolicy
           : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
-              as CacheRereadPolicy?,
+              as OptionValue<CacheRereadPolicy?>?,
       pollInterval: pollInterval == freezed
           ? _value.pollInterval
           : pollInterval // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as OptionValue<Duration?>?,
       fetchResults: fetchResults == freezed
           ? _value.fetchResults
           : fetchResults // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as OptionValue<bool>?,
       carryForwardDataOnException: carryForwardDataOnException == freezed
           ? _value.carryForwardDataOnException
           : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as OptionValue<bool>?,
       eagerlyFetchResults: eagerlyFetchResults == freezed
           ? _value.eagerlyFetchResults
           : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as OptionValue<bool?>?,
     ));
   }
 }
@@ -1348,44 +1346,34 @@ class __$$QueryEventRefetchCopyWithImpl<TData, $Res>
 
 class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   const _$QueryEventRefetch(
-      {final Map<String, dynamic>? variables,
+      {this.variables,
       this.optimisticResult,
       this.fetchPolicy,
       this.errorPolicy,
       this.cacheRereadPolicy,
       this.pollInterval,
-      this.fetchResults = false,
-      this.carryForwardDataOnException = true,
-      this.eagerlyFetchResults})
-      : _variables = variables;
-
-  final Map<String, dynamic>? _variables;
-  @override
-  Map<String, dynamic>? get variables {
-    final value = _variables;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+      this.fetchResults,
+      this.carryForwardDataOnException,
+      this.eagerlyFetchResults});
 
   @override
-  final Object? optimisticResult;
+  final OptionValue<Map<String, dynamic>>? variables;
   @override
-  final FetchPolicy? fetchPolicy;
+  final OptionValue<Object?>? optimisticResult;
   @override
-  final ErrorPolicy? errorPolicy;
+  final OptionValue<FetchPolicy?>? fetchPolicy;
   @override
-  final CacheRereadPolicy? cacheRereadPolicy;
+  final OptionValue<ErrorPolicy?>? errorPolicy;
   @override
-  final Duration? pollInterval;
+  final OptionValue<CacheRereadPolicy?>? cacheRereadPolicy;
   @override
-  @JsonKey()
-  final bool fetchResults;
+  final OptionValue<Duration?>? pollInterval;
   @override
-  @JsonKey()
-  final bool carryForwardDataOnException;
+  final OptionValue<bool>? fetchResults;
   @override
-  final bool? eagerlyFetchResults;
+  final OptionValue<bool>? carryForwardDataOnException;
+  @override
+  final OptionValue<bool?>? eagerlyFetchResults;
 
   @override
   String toString() {
@@ -1397,8 +1385,7 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventRefetch<TData> &&
-            const DeepCollectionEquality()
-                .equals(other._variables, _variables) &&
+            const DeepCollectionEquality().equals(other.variables, variables) &&
             const DeepCollectionEquality()
                 .equals(other.optimisticResult, optimisticResult) &&
             const DeepCollectionEquality()
@@ -1421,7 +1408,7 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_variables),
+      const DeepCollectionEquality().hash(variables),
       const DeepCollectionEquality().hash(optimisticResult),
       const DeepCollectionEquality().hash(fetchPolicy),
       const DeepCollectionEquality().hash(errorPolicy),
@@ -1445,28 +1432,28 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -1489,28 +1476,28 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -1533,28 +1520,28 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),
@@ -1620,26 +1607,34 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
 
 abstract class QueryEventRefetch<TData> implements QueryEvent<TData> {
   const factory QueryEventRefetch(
-      {final Map<String, dynamic>? variables,
-      final Object? optimisticResult,
-      final FetchPolicy? fetchPolicy,
-      final ErrorPolicy? errorPolicy,
-      final CacheRereadPolicy? cacheRereadPolicy,
-      final Duration? pollInterval,
-      final bool fetchResults,
-      final bool carryForwardDataOnException,
-      final bool? eagerlyFetchResults}) = _$QueryEventRefetch<TData>;
+          {final OptionValue<Map<String, dynamic>>? variables,
+          final OptionValue<Object?>? optimisticResult,
+          final OptionValue<FetchPolicy?>? fetchPolicy,
+          final OptionValue<ErrorPolicy?>? errorPolicy,
+          final OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+          final OptionValue<Duration?>? pollInterval,
+          final OptionValue<bool>? fetchResults,
+          final OptionValue<bool>? carryForwardDataOnException,
+          final OptionValue<bool?>? eagerlyFetchResults}) =
+      _$QueryEventRefetch<TData>;
 
-  Map<String, dynamic>? get variables => throw _privateConstructorUsedError;
-  Object? get optimisticResult => throw _privateConstructorUsedError;
-  FetchPolicy? get fetchPolicy => throw _privateConstructorUsedError;
-  ErrorPolicy? get errorPolicy => throw _privateConstructorUsedError;
-  CacheRereadPolicy? get cacheRereadPolicy =>
+  OptionValue<Map<String, dynamic>>? get variables =>
       throw _privateConstructorUsedError;
-  Duration? get pollInterval => throw _privateConstructorUsedError;
-  bool get fetchResults => throw _privateConstructorUsedError;
-  bool get carryForwardDataOnException => throw _privateConstructorUsedError;
-  bool? get eagerlyFetchResults => throw _privateConstructorUsedError;
+  OptionValue<Object?>? get optimisticResult =>
+      throw _privateConstructorUsedError;
+  OptionValue<FetchPolicy?>? get fetchPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<ErrorPolicy?>? get errorPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy =>
+      throw _privateConstructorUsedError;
+  OptionValue<Duration?>? get pollInterval =>
+      throw _privateConstructorUsedError;
+  OptionValue<bool>? get fetchResults => throw _privateConstructorUsedError;
+  OptionValue<bool>? get carryForwardDataOnException =>
+      throw _privateConstructorUsedError;
+  OptionValue<bool?>? get eagerlyFetchResults =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$QueryEventRefetchCopyWith<TData, _$QueryEventRefetch<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -1716,28 +1711,28 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)
         error,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         run,
     required TResult Function(QueryResult<Object?> result) loading,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)
         refetch,
     required TResult Function(FetchMoreOptions options) fetchMore,
   }) {
@@ -1751,28 +1746,28 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
   }) {
@@ -1786,28 +1781,28 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         run,
     TResult Function(QueryResult<Object?> result)? loading,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(
-            Map<String, dynamic>? variables,
-            Object? optimisticResult,
-            FetchPolicy? fetchPolicy,
-            ErrorPolicy? errorPolicy,
-            CacheRereadPolicy? cacheRereadPolicy,
-            Duration? pollInterval,
-            bool fetchResults,
-            bool carryForwardDataOnException,
-            bool? eagerlyFetchResults)?
+            OptionValue<Map<String, dynamic>>? variables,
+            OptionValue<Object?>? optimisticResult,
+            OptionValue<FetchPolicy?>? fetchPolicy,
+            OptionValue<ErrorPolicy?>? errorPolicy,
+            OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+            OptionValue<Duration?>? pollInterval,
+            OptionValue<bool>? fetchResults,
+            OptionValue<bool>? carryForwardDataOnException,
+            OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
     TResult Function(FetchMoreOptions options)? fetchMore,
     required TResult orElse(),

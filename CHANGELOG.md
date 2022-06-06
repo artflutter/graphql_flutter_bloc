@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.16.0
+
+- options override bugfix
+
 ## 0.15.0
 
 - pass params through run and refetch

@@ -36,9 +36,11 @@ class _BlocMutationState extends State<BlocMutation> {
             if (_formKey.currentState?.validate() ?? true) {
               _formKey.currentState?.save();
               bloc.run(
-                variables: AddCompanyArguments(
-                  input: company,
-                ).toJson(),
+                variables: OptionValue.of(
+                  AddCompanyArguments(
+                    input: company,
+                  ).toJson(),
+                ),
               );
             }
           },

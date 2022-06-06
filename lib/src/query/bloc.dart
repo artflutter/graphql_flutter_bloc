@@ -1,19 +1,15 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
-import 'package:graphql_flutter_bloc/src/helper.dart';
-
-import 'event.dart';
-import 'state.dart';
+import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 
 abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
   GraphQLClient client;
   late ObservableQuery result;
-  WatchQueryOptions options;
   StreamSubscription? _subscription;
 
-  QueryBloc({required this.client, required this.options})
+  QueryBloc({required this.client, required WatchQueryOptions options})
       : super(QueryState<TData>.initial()) {
     on<QueryEventRun<TData>>(_run);
     on<QueryEventError<TData>>(_error);
@@ -62,21 +58,23 @@ abstract class QueryBloc<TData>
     });
   }
 
+  WatchQueryOptions get options => result.options;
+
   void dispose() {
     _subscription?.cancel();
     result.close();
   }
 
   void run({
-    Map<String, dynamic>? variables,
-    Object? optimisticResult,
-    FetchPolicy? fetchPolicy,
-    ErrorPolicy? errorPolicy,
-    CacheRereadPolicy? cacheRereadPolicy,
-    Duration? pollInterval,
-    bool fetchResults = false,
-    bool carryForwardDataOnException = true,
-    bool? eagerlyFetchResults,
+    OptionValue<Map<String, dynamic>>? variables,
+    OptionValue<Object?>? optimisticResult,
+    OptionValue<FetchPolicy?>? fetchPolicy,
+    OptionValue<ErrorPolicy?>? errorPolicy,
+    OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+    OptionValue<Duration?>? pollInterval,
+    OptionValue<bool>? fetchResults,
+    OptionValue<bool>? carryForwardDataOnException,
+    OptionValue<bool?>? eagerlyFetchResults,
   }) {
     add(
       QueryEvent<TData>.run(
@@ -94,15 +92,15 @@ abstract class QueryBloc<TData>
   }
 
   void refetch({
-    Map<String, dynamic>? variables,
-    Object? optimisticResult,
-    FetchPolicy? fetchPolicy,
-    ErrorPolicy? errorPolicy,
-    CacheRereadPolicy? cacheRereadPolicy,
-    Duration? pollInterval,
-    bool fetchResults = false,
-    bool carryForwardDataOnException = true,
-    bool? eagerlyFetchResults,
+    OptionValue<Map<String, dynamic>>? variables,
+    OptionValue<Object?>? optimisticResult,
+    OptionValue<FetchPolicy?>? fetchPolicy,
+    OptionValue<ErrorPolicy?>? errorPolicy,
+    OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+    OptionValue<Duration?>? pollInterval,
+    OptionValue<bool>? fetchResults,
+    OptionValue<bool>? carryForwardDataOnException,
+    OptionValue<bool?>? eagerlyFetchResults,
   }) {
     add(
       QueryEvent<TData>.refetch(
@@ -161,28 +159,40 @@ abstract class QueryBloc<TData>
   }
 
   WatchQueryOptions _updateOptions({
-    Map<String, dynamic>? variables,
-    Object? optimisticResult,
-    FetchPolicy? fetchPolicy,
-    ErrorPolicy? errorPolicy,
-    CacheRereadPolicy? cacheRereadPolicy,
-    Duration? pollInterval,
-    bool fetchResults = false,
-    bool carryForwardDataOnException = true,
-    bool? eagerlyFetchResults,
+    OptionValue<Map<String, dynamic>>? variables,
+    OptionValue<Object?>? optimisticResult,
+    OptionValue<FetchPolicy?>? fetchPolicy,
+    OptionValue<ErrorPolicy?>? errorPolicy,
+    OptionValue<CacheRereadPolicy?>? cacheRereadPolicy,
+    OptionValue<Duration?>? pollInterval,
+    OptionValue<bool>? fetchResults,
+    OptionValue<bool>? carryForwardDataOnException,
+    OptionValue<bool?>? eagerlyFetchResults,
   }) {
     return WatchQueryOptions(
       document: options.document,
       operationName: options.operationName,
-      variables: variables ?? options.variables,
-      fetchPolicy: fetchPolicy ?? options.fetchPolicy,
-      errorPolicy: errorPolicy ?? options.errorPolicy,
-      cacheRereadPolicy: cacheRereadPolicy ?? options.cacheRereadPolicy,
-      optimisticResult: optimisticResult ?? options.optimisticResult,
-      pollInterval: pollInterval ?? options.pollInterval,
-      fetchResults: fetchResults,
-      carryForwardDataOnException: carryForwardDataOnException,
-      eagerlyFetchResults: eagerlyFetchResults ?? options.eagerlyFetchResults,
+      variables: variables != null ? variables.value : options.variables,
+      fetchPolicy:
+          fetchPolicy != null ? fetchPolicy.value : options.fetchPolicy,
+      errorPolicy:
+          errorPolicy != null ? errorPolicy.value : options.errorPolicy,
+      cacheRereadPolicy: cacheRereadPolicy != null
+          ? cacheRereadPolicy.value
+          : options.cacheRereadPolicy,
+      optimisticResult: optimisticResult != null
+          ? optimisticResult.value
+          : options.optimisticResult,
+      pollInterval:
+          pollInterval != null ? pollInterval.value : options.pollInterval,
+      fetchResults:
+          fetchResults != null ? fetchResults.value : options.fetchResults,
+      carryForwardDataOnException: carryForwardDataOnException != null
+          ? carryForwardDataOnException.value
+          : options.carryForwardDataOnException,
+      eagerlyFetchResults: eagerlyFetchResults != null
+          ? eagerlyFetchResults.value
+          : options.eagerlyFetchResults,
       context: options.context,
       parserFn: options.parserFn,
     );

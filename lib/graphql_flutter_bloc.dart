@@ -13,3 +13,4 @@ export 'package:graphql_flutter_bloc/src/subscription/event.dart';
 export 'package:graphql_flutter_bloc/src/subscription/state.dart';
 
 export 'package:graphql_flutter_bloc/src/helper.dart';
+export 'package:graphql_flutter_bloc/src/option_value.dart';

@@ -81,7 +81,9 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
               decoration: const InputDecoration(
                   labelText: 'Search company by name', helperText: ''),
               onChanged: (value) => bloc.run(
-                variables: SearchCompanyArguments(name: value).toJson(),
+                variables: OptionValue.of(
+                  SearchCompanyArguments(name: value).toJson(),
+                ),
               ),
               validator: (value) {
                 if (value != null && value.isEmpty) {
