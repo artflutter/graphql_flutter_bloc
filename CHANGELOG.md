@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.17.0
+
+- package updates
+
 ## 0.16.0
 
 - options override bugfix

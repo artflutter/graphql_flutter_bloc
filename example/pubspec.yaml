@@ -24,8 +24,8 @@ dependencies:
   path_provider: ^2.0.9
   flutter_bloc: ^8.0.1
   json_serializable: ^6.1.6
-  gql: ^0.13.1
-  http: ^0.13.4
+  gql: ^0.14.0
+  http: ^0.13.5
   hive: ^2.1.0
   graphql: ^5.1.1
   graphql_flutter_bloc:
@@ -43,12 +43,8 @@ dev_dependencies:
   flutter_lints: ^1.0.4
 
 dependency_overrides:
-#  gql_http_link: ^0.4.0-nullsafety.1
-  gql_link: ^0.4.3-alpha
-  gql_http_link: ^0.4.2-alpha
-  gql_exec: ^0.3.2-alpha
   path: ^1.8.1
-  collection: 1.16.0
+  collection: 1.17.0
 
 #  rxdart: ^0.24.1
 #  meta: 1.2.2
