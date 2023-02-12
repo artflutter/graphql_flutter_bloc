@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'event.dart';
 
@@ -50,10 +50,10 @@ mixin _$QueryEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -64,9 +64,9 @@ mixin _$QueryEvent<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -77,7 +77,7 @@ mixin _$QueryEvent<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,12 +125,12 @@ mixin _$QueryEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -150,17 +150,18 @@ mixin _$QueryEvent<TData> {
 abstract class $QueryEventCopyWith<TData, $Res> {
   factory $QueryEventCopyWith(
           QueryEvent<TData> value, $Res Function(QueryEvent<TData>) then) =
-      _$QueryEventCopyWithImpl<TData, $Res>;
+      _$QueryEventCopyWithImpl<TData, $Res, QueryEvent<TData>>;
 }
 
 /// @nodoc
-class _$QueryEventCopyWithImpl<TData, $Res>
+class _$QueryEventCopyWithImpl<TData, $Res, $Val extends QueryEvent<TData>>
     implements $QueryEventCopyWith<TData, $Res> {
   _$QueryEventCopyWithImpl(this._value, this._then);
 
-  final QueryEvent<TData> _value;
   // ignore: unused_field
-  final $Res Function(QueryEvent<TData>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -168,38 +169,36 @@ abstract class _$$QueryEventErrorCopyWith<TData, $Res> {
   factory _$$QueryEventErrorCopyWith(_$QueryEventError<TData> value,
           $Res Function(_$QueryEventError<TData>) then) =
       __$$QueryEventErrorCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
 class __$$QueryEventErrorCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventError<TData>>
     implements _$$QueryEventErrorCopyWith<TData, $Res> {
   __$$QueryEventErrorCopyWithImpl(_$QueryEventError<TData> _value,
       $Res Function(_$QueryEventError<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventError<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventError<TData> get _value =>
-      super._value as _$QueryEventError<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? result = freezed,
+    Object? error = null,
+    Object? result = null,
     Object? data = freezed,
   }) {
     return _then(_$QueryEventError<TData>(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as OperationException,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
@@ -230,20 +229,18 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventError<TData> &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.result, result) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.result, result) || other.result == result) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(result),
-      const DeepCollectionEquality().hash(data));
+      runtimeType, error, result, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventErrorCopyWith<TData, _$QueryEventError<TData>> get copyWith =>
       __$$QueryEventErrorCopyWithImpl<TData, _$QueryEventError<TData>>(
           this, _$identity);
@@ -286,10 +283,10 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -300,9 +297,9 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -313,7 +310,7 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -373,12 +370,12 @@ class _$QueryEventError<TData> implements QueryEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return error?.call(this);
   }
@@ -407,9 +404,9 @@ abstract class QueryEventError<TData> implements QueryEvent<TData> {
       required final QueryResult<Object?> result,
       final TData? data}) = _$QueryEventError<TData>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
-  TData? get data => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult<Object?> get result;
+  TData? get data;
   @JsonKey(ignore: true)
   _$$QueryEventErrorCopyWith<TData, _$QueryEventError<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -420,6 +417,7 @@ abstract class _$$QueryEventRunCopyWith<TData, $Res> {
   factory _$$QueryEventRunCopyWith(_$QueryEventRun<TData> value,
           $Res Function(_$QueryEventRun<TData>) then) =
       __$$QueryEventRunCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OptionValue<Map<String, dynamic>>? variables,
       OptionValue<Object?>? optimisticResult,
@@ -434,15 +432,13 @@ abstract class _$$QueryEventRunCopyWith<TData, $Res> {
 
 /// @nodoc
 class __$$QueryEventRunCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventRun<TData>>
     implements _$$QueryEventRunCopyWith<TData, $Res> {
   __$$QueryEventRunCopyWithImpl(_$QueryEventRun<TData> _value,
       $Res Function(_$QueryEventRun<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventRun<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventRun<TData> get _value => super._value as _$QueryEventRun<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? variables = freezed,
@@ -456,39 +452,39 @@ class __$$QueryEventRunCopyWithImpl<TData, $Res>
     Object? eagerlyFetchResults = freezed,
   }) {
     return _then(_$QueryEventRun<TData>(
-      variables: variables == freezed
+      variables: freezed == variables
           ? _value.variables
           : variables // ignore: cast_nullable_to_non_nullable
               as OptionValue<Map<String, dynamic>>?,
-      optimisticResult: optimisticResult == freezed
+      optimisticResult: freezed == optimisticResult
           ? _value.optimisticResult
           : optimisticResult // ignore: cast_nullable_to_non_nullable
               as OptionValue<Object?>?,
-      fetchPolicy: fetchPolicy == freezed
+      fetchPolicy: freezed == fetchPolicy
           ? _value.fetchPolicy
           : fetchPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<FetchPolicy?>?,
-      errorPolicy: errorPolicy == freezed
+      errorPolicy: freezed == errorPolicy
           ? _value.errorPolicy
           : errorPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<ErrorPolicy?>?,
-      cacheRereadPolicy: cacheRereadPolicy == freezed
+      cacheRereadPolicy: freezed == cacheRereadPolicy
           ? _value.cacheRereadPolicy
           : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<CacheRereadPolicy?>?,
-      pollInterval: pollInterval == freezed
+      pollInterval: freezed == pollInterval
           ? _value.pollInterval
           : pollInterval // ignore: cast_nullable_to_non_nullable
               as OptionValue<Duration?>?,
-      fetchResults: fetchResults == freezed
+      fetchResults: freezed == fetchResults
           ? _value.fetchResults
           : fetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      carryForwardDataOnException: carryForwardDataOnException == freezed
+      carryForwardDataOnException: freezed == carryForwardDataOnException
           ? _value.carryForwardDataOnException
           : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      eagerlyFetchResults: eagerlyFetchResults == freezed
+      eagerlyFetchResults: freezed == eagerlyFetchResults
           ? _value.eagerlyFetchResults
           : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool?>?,
@@ -539,41 +535,44 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventRun<TData> &&
-            const DeepCollectionEquality().equals(other.variables, variables) &&
-            const DeepCollectionEquality()
-                .equals(other.optimisticResult, optimisticResult) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchPolicy, fetchPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.errorPolicy, errorPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.cacheRereadPolicy, cacheRereadPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.pollInterval, pollInterval) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchResults, fetchResults) &&
-            const DeepCollectionEquality().equals(
-                other.carryForwardDataOnException,
-                carryForwardDataOnException) &&
-            const DeepCollectionEquality()
-                .equals(other.eagerlyFetchResults, eagerlyFetchResults));
+            (identical(other.variables, variables) ||
+                other.variables == variables) &&
+            (identical(other.optimisticResult, optimisticResult) ||
+                other.optimisticResult == optimisticResult) &&
+            (identical(other.fetchPolicy, fetchPolicy) ||
+                other.fetchPolicy == fetchPolicy) &&
+            (identical(other.errorPolicy, errorPolicy) ||
+                other.errorPolicy == errorPolicy) &&
+            (identical(other.cacheRereadPolicy, cacheRereadPolicy) ||
+                other.cacheRereadPolicy == cacheRereadPolicy) &&
+            (identical(other.pollInterval, pollInterval) ||
+                other.pollInterval == pollInterval) &&
+            (identical(other.fetchResults, fetchResults) ||
+                other.fetchResults == fetchResults) &&
+            (identical(other.carryForwardDataOnException,
+                    carryForwardDataOnException) ||
+                other.carryForwardDataOnException ==
+                    carryForwardDataOnException) &&
+            (identical(other.eagerlyFetchResults, eagerlyFetchResults) ||
+                other.eagerlyFetchResults == eagerlyFetchResults));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(variables),
-      const DeepCollectionEquality().hash(optimisticResult),
-      const DeepCollectionEquality().hash(fetchPolicy),
-      const DeepCollectionEquality().hash(errorPolicy),
-      const DeepCollectionEquality().hash(cacheRereadPolicy),
-      const DeepCollectionEquality().hash(pollInterval),
-      const DeepCollectionEquality().hash(fetchResults),
-      const DeepCollectionEquality().hash(carryForwardDataOnException),
-      const DeepCollectionEquality().hash(eagerlyFetchResults));
+      variables,
+      optimisticResult,
+      fetchPolicy,
+      errorPolicy,
+      cacheRereadPolicy,
+      pollInterval,
+      fetchResults,
+      carryForwardDataOnException,
+      eagerlyFetchResults);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventRunCopyWith<TData, _$QueryEventRun<TData>> get copyWith =>
       __$$QueryEventRunCopyWithImpl<TData, _$QueryEventRun<TData>>(
           this, _$identity);
@@ -625,10 +624,10 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -639,9 +638,9 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -652,7 +651,7 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return run?.call(
         variables,
@@ -730,12 +729,12 @@ class _$QueryEventRun<TData> implements QueryEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return run?.call(this);
   }
@@ -770,23 +769,15 @@ abstract class QueryEventRun<TData> implements QueryEvent<TData> {
       final OptionValue<bool>? carryForwardDataOnException,
       final OptionValue<bool?>? eagerlyFetchResults}) = _$QueryEventRun<TData>;
 
-  OptionValue<Map<String, dynamic>>? get variables =>
-      throw _privateConstructorUsedError;
-  OptionValue<Object?>? get optimisticResult =>
-      throw _privateConstructorUsedError;
-  OptionValue<FetchPolicy?>? get fetchPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<ErrorPolicy?>? get errorPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<Duration?>? get pollInterval =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool>? get fetchResults => throw _privateConstructorUsedError;
-  OptionValue<bool>? get carryForwardDataOnException =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool?>? get eagerlyFetchResults =>
-      throw _privateConstructorUsedError;
+  OptionValue<Map<String, dynamic>>? get variables;
+  OptionValue<Object?>? get optimisticResult;
+  OptionValue<FetchPolicy?>? get fetchPolicy;
+  OptionValue<ErrorPolicy?>? get errorPolicy;
+  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy;
+  OptionValue<Duration?>? get pollInterval;
+  OptionValue<bool>? get fetchResults;
+  OptionValue<bool>? get carryForwardDataOnException;
+  OptionValue<bool?>? get eagerlyFetchResults;
   @JsonKey(ignore: true)
   _$$QueryEventRunCopyWith<TData, _$QueryEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -797,27 +788,25 @@ abstract class _$$QueryEventLoadingCopyWith<TData, $Res> {
   factory _$$QueryEventLoadingCopyWith(_$QueryEventLoading<TData> value,
           $Res Function(_$QueryEventLoading<TData>) then) =
       __$$QueryEventLoadingCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$QueryEventLoadingCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventLoading<TData>>
     implements _$$QueryEventLoadingCopyWith<TData, $Res> {
   __$$QueryEventLoadingCopyWithImpl(_$QueryEventLoading<TData> _value,
       $Res Function(_$QueryEventLoading<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventLoading<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventLoading<TData> get _value =>
-      super._value as _$QueryEventLoading<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$QueryEventLoading<TData>(
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -843,15 +832,15 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventLoading<TData> &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventLoadingCopyWith<TData, _$QueryEventLoading<TData>>
       get copyWith =>
           __$$QueryEventLoadingCopyWithImpl<TData, _$QueryEventLoading<TData>>(
@@ -895,10 +884,10 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -909,9 +898,9 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -922,7 +911,7 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return loading?.call(result);
   }
@@ -982,12 +971,12 @@ class _$QueryEventLoading<TData> implements QueryEventLoading<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return loading?.call(this);
   }
@@ -1015,7 +1004,7 @@ abstract class QueryEventLoading<TData> implements QueryEvent<TData> {
           {required final QueryResult<Object?> result}) =
       _$QueryEventLoading<TData>;
 
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$QueryEventLoadingCopyWith<TData, _$QueryEventLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -1026,32 +1015,30 @@ abstract class _$$QueryEventLoadedCopyWith<TData, $Res> {
   factory _$$QueryEventLoadedCopyWith(_$QueryEventLoaded<TData> value,
           $Res Function(_$QueryEventLoaded<TData>) then) =
       __$$QueryEventLoadedCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData data, QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$QueryEventLoadedCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventLoaded<TData>>
     implements _$$QueryEventLoadedCopyWith<TData, $Res> {
   __$$QueryEventLoadedCopyWithImpl(_$QueryEventLoaded<TData> _value,
       $Res Function(_$QueryEventLoaded<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventLoaded<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventLoaded<TData> get _value =>
-      super._value as _$QueryEventLoaded<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$QueryEventLoaded<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -1080,17 +1067,16 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
         (other.runtimeType == runtimeType &&
             other is _$QueryEventLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventLoadedCopyWith<TData, _$QueryEventLoaded<TData>> get copyWith =>
       __$$QueryEventLoadedCopyWithImpl<TData, _$QueryEventLoaded<TData>>(
           this, _$identity);
@@ -1133,10 +1119,10 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1147,9 +1133,9 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1160,7 +1146,7 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return loaded?.call(data, result);
   }
@@ -1220,12 +1206,12 @@ class _$QueryEventLoaded<TData> implements QueryEventLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return loaded?.call(this);
   }
@@ -1253,8 +1239,8 @@ abstract class QueryEventLoaded<TData> implements QueryEvent<TData> {
       {required final TData data,
       required final QueryResult<Object?> result}) = _$QueryEventLoaded<TData>;
 
-  TData get data => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData get data;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$QueryEventLoadedCopyWith<TData, _$QueryEventLoaded<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1265,6 +1251,7 @@ abstract class _$$QueryEventRefetchCopyWith<TData, $Res> {
   factory _$$QueryEventRefetchCopyWith(_$QueryEventRefetch<TData> value,
           $Res Function(_$QueryEventRefetch<TData>) then) =
       __$$QueryEventRefetchCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OptionValue<Map<String, dynamic>>? variables,
       OptionValue<Object?>? optimisticResult,
@@ -1279,16 +1266,13 @@ abstract class _$$QueryEventRefetchCopyWith<TData, $Res> {
 
 /// @nodoc
 class __$$QueryEventRefetchCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventRefetch<TData>>
     implements _$$QueryEventRefetchCopyWith<TData, $Res> {
   __$$QueryEventRefetchCopyWithImpl(_$QueryEventRefetch<TData> _value,
       $Res Function(_$QueryEventRefetch<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventRefetch<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventRefetch<TData> get _value =>
-      super._value as _$QueryEventRefetch<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? variables = freezed,
@@ -1302,39 +1286,39 @@ class __$$QueryEventRefetchCopyWithImpl<TData, $Res>
     Object? eagerlyFetchResults = freezed,
   }) {
     return _then(_$QueryEventRefetch<TData>(
-      variables: variables == freezed
+      variables: freezed == variables
           ? _value.variables
           : variables // ignore: cast_nullable_to_non_nullable
               as OptionValue<Map<String, dynamic>>?,
-      optimisticResult: optimisticResult == freezed
+      optimisticResult: freezed == optimisticResult
           ? _value.optimisticResult
           : optimisticResult // ignore: cast_nullable_to_non_nullable
               as OptionValue<Object?>?,
-      fetchPolicy: fetchPolicy == freezed
+      fetchPolicy: freezed == fetchPolicy
           ? _value.fetchPolicy
           : fetchPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<FetchPolicy?>?,
-      errorPolicy: errorPolicy == freezed
+      errorPolicy: freezed == errorPolicy
           ? _value.errorPolicy
           : errorPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<ErrorPolicy?>?,
-      cacheRereadPolicy: cacheRereadPolicy == freezed
+      cacheRereadPolicy: freezed == cacheRereadPolicy
           ? _value.cacheRereadPolicy
           : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<CacheRereadPolicy?>?,
-      pollInterval: pollInterval == freezed
+      pollInterval: freezed == pollInterval
           ? _value.pollInterval
           : pollInterval // ignore: cast_nullable_to_non_nullable
               as OptionValue<Duration?>?,
-      fetchResults: fetchResults == freezed
+      fetchResults: freezed == fetchResults
           ? _value.fetchResults
           : fetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      carryForwardDataOnException: carryForwardDataOnException == freezed
+      carryForwardDataOnException: freezed == carryForwardDataOnException
           ? _value.carryForwardDataOnException
           : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      eagerlyFetchResults: eagerlyFetchResults == freezed
+      eagerlyFetchResults: freezed == eagerlyFetchResults
           ? _value.eagerlyFetchResults
           : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool?>?,
@@ -1385,41 +1369,44 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventRefetch<TData> &&
-            const DeepCollectionEquality().equals(other.variables, variables) &&
-            const DeepCollectionEquality()
-                .equals(other.optimisticResult, optimisticResult) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchPolicy, fetchPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.errorPolicy, errorPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.cacheRereadPolicy, cacheRereadPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.pollInterval, pollInterval) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchResults, fetchResults) &&
-            const DeepCollectionEquality().equals(
-                other.carryForwardDataOnException,
-                carryForwardDataOnException) &&
-            const DeepCollectionEquality()
-                .equals(other.eagerlyFetchResults, eagerlyFetchResults));
+            (identical(other.variables, variables) ||
+                other.variables == variables) &&
+            (identical(other.optimisticResult, optimisticResult) ||
+                other.optimisticResult == optimisticResult) &&
+            (identical(other.fetchPolicy, fetchPolicy) ||
+                other.fetchPolicy == fetchPolicy) &&
+            (identical(other.errorPolicy, errorPolicy) ||
+                other.errorPolicy == errorPolicy) &&
+            (identical(other.cacheRereadPolicy, cacheRereadPolicy) ||
+                other.cacheRereadPolicy == cacheRereadPolicy) &&
+            (identical(other.pollInterval, pollInterval) ||
+                other.pollInterval == pollInterval) &&
+            (identical(other.fetchResults, fetchResults) ||
+                other.fetchResults == fetchResults) &&
+            (identical(other.carryForwardDataOnException,
+                    carryForwardDataOnException) ||
+                other.carryForwardDataOnException ==
+                    carryForwardDataOnException) &&
+            (identical(other.eagerlyFetchResults, eagerlyFetchResults) ||
+                other.eagerlyFetchResults == eagerlyFetchResults));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(variables),
-      const DeepCollectionEquality().hash(optimisticResult),
-      const DeepCollectionEquality().hash(fetchPolicy),
-      const DeepCollectionEquality().hash(errorPolicy),
-      const DeepCollectionEquality().hash(cacheRereadPolicy),
-      const DeepCollectionEquality().hash(pollInterval),
-      const DeepCollectionEquality().hash(fetchResults),
-      const DeepCollectionEquality().hash(carryForwardDataOnException),
-      const DeepCollectionEquality().hash(eagerlyFetchResults));
+      variables,
+      optimisticResult,
+      fetchPolicy,
+      errorPolicy,
+      cacheRereadPolicy,
+      pollInterval,
+      fetchResults,
+      carryForwardDataOnException,
+      eagerlyFetchResults);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventRefetchCopyWith<TData, _$QueryEventRefetch<TData>>
       get copyWith =>
           __$$QueryEventRefetchCopyWithImpl<TData, _$QueryEventRefetch<TData>>(
@@ -1472,10 +1459,10 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1486,9 +1473,9 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1499,7 +1486,7 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return refetch?.call(
         variables,
@@ -1577,12 +1564,12 @@ class _$QueryEventRefetch<TData> implements QueryEventRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return refetch?.call(this);
   }
@@ -1618,23 +1605,15 @@ abstract class QueryEventRefetch<TData> implements QueryEvent<TData> {
           final OptionValue<bool?>? eagerlyFetchResults}) =
       _$QueryEventRefetch<TData>;
 
-  OptionValue<Map<String, dynamic>>? get variables =>
-      throw _privateConstructorUsedError;
-  OptionValue<Object?>? get optimisticResult =>
-      throw _privateConstructorUsedError;
-  OptionValue<FetchPolicy?>? get fetchPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<ErrorPolicy?>? get errorPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<Duration?>? get pollInterval =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool>? get fetchResults => throw _privateConstructorUsedError;
-  OptionValue<bool>? get carryForwardDataOnException =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool?>? get eagerlyFetchResults =>
-      throw _privateConstructorUsedError;
+  OptionValue<Map<String, dynamic>>? get variables;
+  OptionValue<Object?>? get optimisticResult;
+  OptionValue<FetchPolicy?>? get fetchPolicy;
+  OptionValue<ErrorPolicy?>? get errorPolicy;
+  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy;
+  OptionValue<Duration?>? get pollInterval;
+  OptionValue<bool>? get fetchResults;
+  OptionValue<bool>? get carryForwardDataOnException;
+  OptionValue<bool?>? get eagerlyFetchResults;
   @JsonKey(ignore: true)
   _$$QueryEventRefetchCopyWith<TData, _$QueryEventRefetch<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -1645,27 +1624,25 @@ abstract class _$$QueryEventFetchMoreCopyWith<TData, $Res> {
   factory _$$QueryEventFetchMoreCopyWith(_$QueryEventFetchMore<TData> value,
           $Res Function(_$QueryEventFetchMore<TData>) then) =
       __$$QueryEventFetchMoreCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({FetchMoreOptions options});
 }
 
 /// @nodoc
 class __$$QueryEventFetchMoreCopyWithImpl<TData, $Res>
-    extends _$QueryEventCopyWithImpl<TData, $Res>
+    extends _$QueryEventCopyWithImpl<TData, $Res, _$QueryEventFetchMore<TData>>
     implements _$$QueryEventFetchMoreCopyWith<TData, $Res> {
   __$$QueryEventFetchMoreCopyWithImpl(_$QueryEventFetchMore<TData> _value,
       $Res Function(_$QueryEventFetchMore<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryEventFetchMore<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryEventFetchMore<TData> get _value =>
-      super._value as _$QueryEventFetchMore<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? options = freezed,
+    Object? options = null,
   }) {
     return _then(_$QueryEventFetchMore<TData>(
-      options: options == freezed
+      options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
               as FetchMoreOptions,
@@ -1691,15 +1668,15 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryEventFetchMore<TData> &&
-            const DeepCollectionEquality().equals(other.options, options));
+            (identical(other.options, options) || other.options == options));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(options));
+  int get hashCode => Object.hash(runtimeType, options);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryEventFetchMoreCopyWith<TData, _$QueryEventFetchMore<TData>>
       get copyWith => __$$QueryEventFetchMoreCopyWithImpl<TData,
           _$QueryEventFetchMore<TData>>(this, _$identity);
@@ -1742,10 +1719,10 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1756,9 +1733,9 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -1769,7 +1746,7 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         refetch,
-    TResult Function(FetchMoreOptions options)? fetchMore,
+    TResult? Function(FetchMoreOptions options)? fetchMore,
   }) {
     return fetchMore?.call(options);
   }
@@ -1829,12 +1806,12 @@ class _$QueryEventFetchMore<TData> implements QueryEventFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryEventError<TData> value)? error,
-    TResult Function(QueryEventRun<TData> value)? run,
-    TResult Function(QueryEventLoading<TData> value)? loading,
-    TResult Function(QueryEventLoaded<TData> value)? loaded,
-    TResult Function(QueryEventRefetch<TData> value)? refetch,
-    TResult Function(QueryEventFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryEventError<TData> value)? error,
+    TResult? Function(QueryEventRun<TData> value)? run,
+    TResult? Function(QueryEventLoading<TData> value)? loading,
+    TResult? Function(QueryEventLoaded<TData> value)? loaded,
+    TResult? Function(QueryEventRefetch<TData> value)? refetch,
+    TResult? Function(QueryEventFetchMore<TData> value)? fetchMore,
   }) {
     return fetchMore?.call(this);
   }
@@ -1861,7 +1838,7 @@ abstract class QueryEventFetchMore<TData> implements QueryEvent<TData> {
   const factory QueryEventFetchMore({required final FetchMoreOptions options}) =
       _$QueryEventFetchMore<TData>;
 
-  FetchMoreOptions get options => throw _privateConstructorUsedError;
+  FetchMoreOptions get options;
   @JsonKey(ignore: true)
   _$$QueryEventFetchMoreCopyWith<TData, _$QueryEventFetchMore<TData>>
       get copyWith => throw _privateConstructorUsedError;

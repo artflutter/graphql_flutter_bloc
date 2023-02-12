@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'event.dart';
 
@@ -38,10 +38,10 @@ mixin _$MutationEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -52,7 +52,7 @@ mixin _$MutationEvent<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(TData? data, QueryResult<Object?> result)? completed,
+    TResult? Function(TData? data, QueryResult<Object?> result)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,9 +84,9 @@ mixin _$MutationEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MutationEventError<TData> value)? error,
-    TResult Function(MutationEventRun<TData> value)? run,
-    TResult Function(MutationEventCompleted<TData> value)? completed,
+    TResult? Function(MutationEventError<TData> value)? error,
+    TResult? Function(MutationEventRun<TData> value)? run,
+    TResult? Function(MutationEventCompleted<TData> value)? completed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,17 +103,19 @@ mixin _$MutationEvent<TData> {
 abstract class $MutationEventCopyWith<TData, $Res> {
   factory $MutationEventCopyWith(MutationEvent<TData> value,
           $Res Function(MutationEvent<TData>) then) =
-      _$MutationEventCopyWithImpl<TData, $Res>;
+      _$MutationEventCopyWithImpl<TData, $Res, MutationEvent<TData>>;
 }
 
 /// @nodoc
-class _$MutationEventCopyWithImpl<TData, $Res>
+class _$MutationEventCopyWithImpl<TData, $Res,
+        $Val extends MutationEvent<TData>>
     implements $MutationEventCopyWith<TData, $Res> {
   _$MutationEventCopyWithImpl(this._value, this._then);
 
-  final MutationEvent<TData> _value;
   // ignore: unused_field
-  final $Res Function(MutationEvent<TData>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -121,38 +123,37 @@ abstract class _$$MutationEventErrorCopyWith<TData, $Res> {
   factory _$$MutationEventErrorCopyWith(_$MutationEventError<TData> value,
           $Res Function(_$MutationEventError<TData>) then) =
       __$$MutationEventErrorCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
 class __$$MutationEventErrorCopyWithImpl<TData, $Res>
-    extends _$MutationEventCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res,
+        _$MutationEventError<TData>>
     implements _$$MutationEventErrorCopyWith<TData, $Res> {
   __$$MutationEventErrorCopyWithImpl(_$MutationEventError<TData> _value,
       $Res Function(_$MutationEventError<TData>) _then)
-      : super(_value, (v) => _then(v as _$MutationEventError<TData>));
+      : super(_value, _then);
 
-  @override
-  _$MutationEventError<TData> get _value =>
-      super._value as _$MutationEventError<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? result = freezed,
+    Object? error = null,
+    Object? result = null,
     Object? data = freezed,
   }) {
     return _then(_$MutationEventError<TData>(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as OperationException,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
@@ -183,20 +184,18 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MutationEventError<TData> &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.result, result) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.result, result) || other.result == result) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(result),
-      const DeepCollectionEquality().hash(data));
+      runtimeType, error, result, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MutationEventErrorCopyWith<TData, _$MutationEventError<TData>>
       get copyWith => __$$MutationEventErrorCopyWithImpl<TData,
           _$MutationEventError<TData>>(this, _$identity);
@@ -227,10 +226,10 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -241,7 +240,7 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(TData? data, QueryResult<Object?> result)? completed,
+    TResult? Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -285,9 +284,9 @@ class _$MutationEventError<TData> implements MutationEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MutationEventError<TData> value)? error,
-    TResult Function(MutationEventRun<TData> value)? run,
-    TResult Function(MutationEventCompleted<TData> value)? completed,
+    TResult? Function(MutationEventError<TData> value)? error,
+    TResult? Function(MutationEventRun<TData> value)? run,
+    TResult? Function(MutationEventCompleted<TData> value)? completed,
   }) {
     return error?.call(this);
   }
@@ -313,9 +312,9 @@ abstract class MutationEventError<TData> implements MutationEvent<TData> {
       required final QueryResult<Object?> result,
       final TData? data}) = _$MutationEventError<TData>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
-  TData? get data => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult<Object?> get result;
+  TData? get data;
   @JsonKey(ignore: true)
   _$$MutationEventErrorCopyWith<TData, _$MutationEventError<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -326,6 +325,7 @@ abstract class _$$MutationEventRunCopyWith<TData, $Res> {
   factory _$$MutationEventRunCopyWith(_$MutationEventRun<TData> value,
           $Res Function(_$MutationEventRun<TData>) then) =
       __$$MutationEventRunCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OptionValue<Map<String, dynamic>>? variables,
       OptionValue<Object?>? optimisticResult,
@@ -340,16 +340,13 @@ abstract class _$$MutationEventRunCopyWith<TData, $Res> {
 
 /// @nodoc
 class __$$MutationEventRunCopyWithImpl<TData, $Res>
-    extends _$MutationEventCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res, _$MutationEventRun<TData>>
     implements _$$MutationEventRunCopyWith<TData, $Res> {
   __$$MutationEventRunCopyWithImpl(_$MutationEventRun<TData> _value,
       $Res Function(_$MutationEventRun<TData>) _then)
-      : super(_value, (v) => _then(v as _$MutationEventRun<TData>));
+      : super(_value, _then);
 
-  @override
-  _$MutationEventRun<TData> get _value =>
-      super._value as _$MutationEventRun<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? variables = freezed,
@@ -363,39 +360,39 @@ class __$$MutationEventRunCopyWithImpl<TData, $Res>
     Object? eagerlyFetchResults = freezed,
   }) {
     return _then(_$MutationEventRun<TData>(
-      variables: variables == freezed
+      variables: freezed == variables
           ? _value.variables
           : variables // ignore: cast_nullable_to_non_nullable
               as OptionValue<Map<String, dynamic>>?,
-      optimisticResult: optimisticResult == freezed
+      optimisticResult: freezed == optimisticResult
           ? _value.optimisticResult
           : optimisticResult // ignore: cast_nullable_to_non_nullable
               as OptionValue<Object?>?,
-      fetchPolicy: fetchPolicy == freezed
+      fetchPolicy: freezed == fetchPolicy
           ? _value.fetchPolicy
           : fetchPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<FetchPolicy?>?,
-      errorPolicy: errorPolicy == freezed
+      errorPolicy: freezed == errorPolicy
           ? _value.errorPolicy
           : errorPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<ErrorPolicy?>?,
-      cacheRereadPolicy: cacheRereadPolicy == freezed
+      cacheRereadPolicy: freezed == cacheRereadPolicy
           ? _value.cacheRereadPolicy
           : cacheRereadPolicy // ignore: cast_nullable_to_non_nullable
               as OptionValue<CacheRereadPolicy?>?,
-      pollInterval: pollInterval == freezed
+      pollInterval: freezed == pollInterval
           ? _value.pollInterval
           : pollInterval // ignore: cast_nullable_to_non_nullable
               as OptionValue<Duration?>?,
-      fetchResults: fetchResults == freezed
+      fetchResults: freezed == fetchResults
           ? _value.fetchResults
           : fetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      carryForwardDataOnException: carryForwardDataOnException == freezed
+      carryForwardDataOnException: freezed == carryForwardDataOnException
           ? _value.carryForwardDataOnException
           : carryForwardDataOnException // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool>?,
-      eagerlyFetchResults: eagerlyFetchResults == freezed
+      eagerlyFetchResults: freezed == eagerlyFetchResults
           ? _value.eagerlyFetchResults
           : eagerlyFetchResults // ignore: cast_nullable_to_non_nullable
               as OptionValue<bool?>?,
@@ -446,41 +443,44 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MutationEventRun<TData> &&
-            const DeepCollectionEquality().equals(other.variables, variables) &&
-            const DeepCollectionEquality()
-                .equals(other.optimisticResult, optimisticResult) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchPolicy, fetchPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.errorPolicy, errorPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.cacheRereadPolicy, cacheRereadPolicy) &&
-            const DeepCollectionEquality()
-                .equals(other.pollInterval, pollInterval) &&
-            const DeepCollectionEquality()
-                .equals(other.fetchResults, fetchResults) &&
-            const DeepCollectionEquality().equals(
-                other.carryForwardDataOnException,
-                carryForwardDataOnException) &&
-            const DeepCollectionEquality()
-                .equals(other.eagerlyFetchResults, eagerlyFetchResults));
+            (identical(other.variables, variables) ||
+                other.variables == variables) &&
+            (identical(other.optimisticResult, optimisticResult) ||
+                other.optimisticResult == optimisticResult) &&
+            (identical(other.fetchPolicy, fetchPolicy) ||
+                other.fetchPolicy == fetchPolicy) &&
+            (identical(other.errorPolicy, errorPolicy) ||
+                other.errorPolicy == errorPolicy) &&
+            (identical(other.cacheRereadPolicy, cacheRereadPolicy) ||
+                other.cacheRereadPolicy == cacheRereadPolicy) &&
+            (identical(other.pollInterval, pollInterval) ||
+                other.pollInterval == pollInterval) &&
+            (identical(other.fetchResults, fetchResults) ||
+                other.fetchResults == fetchResults) &&
+            (identical(other.carryForwardDataOnException,
+                    carryForwardDataOnException) ||
+                other.carryForwardDataOnException ==
+                    carryForwardDataOnException) &&
+            (identical(other.eagerlyFetchResults, eagerlyFetchResults) ||
+                other.eagerlyFetchResults == eagerlyFetchResults));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(variables),
-      const DeepCollectionEquality().hash(optimisticResult),
-      const DeepCollectionEquality().hash(fetchPolicy),
-      const DeepCollectionEquality().hash(errorPolicy),
-      const DeepCollectionEquality().hash(cacheRereadPolicy),
-      const DeepCollectionEquality().hash(pollInterval),
-      const DeepCollectionEquality().hash(fetchResults),
-      const DeepCollectionEquality().hash(carryForwardDataOnException),
-      const DeepCollectionEquality().hash(eagerlyFetchResults));
+      variables,
+      optimisticResult,
+      fetchPolicy,
+      errorPolicy,
+      cacheRereadPolicy,
+      pollInterval,
+      fetchResults,
+      carryForwardDataOnException,
+      eagerlyFetchResults);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MutationEventRunCopyWith<TData, _$MutationEventRun<TData>> get copyWith =>
       __$$MutationEventRunCopyWithImpl<TData, _$MutationEventRun<TData>>(
           this, _$identity);
@@ -520,10 +520,10 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -534,7 +534,7 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(TData? data, QueryResult<Object?> result)? completed,
+    TResult? Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
     return run?.call(
         variables,
@@ -596,9 +596,9 @@ class _$MutationEventRun<TData> implements MutationEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MutationEventError<TData> value)? error,
-    TResult Function(MutationEventRun<TData> value)? run,
-    TResult Function(MutationEventCompleted<TData> value)? completed,
+    TResult? Function(MutationEventError<TData> value)? error,
+    TResult? Function(MutationEventRun<TData> value)? run,
+    TResult? Function(MutationEventCompleted<TData> value)? completed,
   }) {
     return run?.call(this);
   }
@@ -631,23 +631,15 @@ abstract class MutationEventRun<TData> implements MutationEvent<TData> {
           final OptionValue<bool?>? eagerlyFetchResults}) =
       _$MutationEventRun<TData>;
 
-  OptionValue<Map<String, dynamic>>? get variables =>
-      throw _privateConstructorUsedError;
-  OptionValue<Object?>? get optimisticResult =>
-      throw _privateConstructorUsedError;
-  OptionValue<FetchPolicy?>? get fetchPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<ErrorPolicy?>? get errorPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy =>
-      throw _privateConstructorUsedError;
-  OptionValue<Duration?>? get pollInterval =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool>? get fetchResults => throw _privateConstructorUsedError;
-  OptionValue<bool>? get carryForwardDataOnException =>
-      throw _privateConstructorUsedError;
-  OptionValue<bool?>? get eagerlyFetchResults =>
-      throw _privateConstructorUsedError;
+  OptionValue<Map<String, dynamic>>? get variables;
+  OptionValue<Object?>? get optimisticResult;
+  OptionValue<FetchPolicy?>? get fetchPolicy;
+  OptionValue<ErrorPolicy?>? get errorPolicy;
+  OptionValue<CacheRereadPolicy?>? get cacheRereadPolicy;
+  OptionValue<Duration?>? get pollInterval;
+  OptionValue<bool>? get fetchResults;
+  OptionValue<bool>? get carryForwardDataOnException;
+  OptionValue<bool?>? get eagerlyFetchResults;
   @JsonKey(ignore: true)
   _$$MutationEventRunCopyWith<TData, _$MutationEventRun<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -659,32 +651,31 @@ abstract class _$$MutationEventCompletedCopyWith<TData, $Res> {
           _$MutationEventCompleted<TData> value,
           $Res Function(_$MutationEventCompleted<TData>) then) =
       __$$MutationEventCompletedCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$MutationEventCompletedCopyWithImpl<TData, $Res>
-    extends _$MutationEventCopyWithImpl<TData, $Res>
+    extends _$MutationEventCopyWithImpl<TData, $Res,
+        _$MutationEventCompleted<TData>>
     implements _$$MutationEventCompletedCopyWith<TData, $Res> {
   __$$MutationEventCompletedCopyWithImpl(_$MutationEventCompleted<TData> _value,
       $Res Function(_$MutationEventCompleted<TData>) _then)
-      : super(_value, (v) => _then(v as _$MutationEventCompleted<TData>));
+      : super(_value, _then);
 
-  @override
-  _$MutationEventCompleted<TData> get _value =>
-      super._value as _$MutationEventCompleted<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$MutationEventCompleted<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -713,17 +704,16 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
         (other.runtimeType == runtimeType &&
             other is _$MutationEventCompleted<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$MutationEventCompletedCopyWith<TData, _$MutationEventCompleted<TData>>
       get copyWith => __$$MutationEventCompletedCopyWithImpl<TData,
           _$MutationEventCompleted<TData>>(this, _$identity);
@@ -754,10 +744,10 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(
+    TResult? Function(
             OptionValue<Map<String, dynamic>>? variables,
             OptionValue<Object?>? optimisticResult,
             OptionValue<FetchPolicy?>? fetchPolicy,
@@ -768,7 +758,7 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
             OptionValue<bool>? carryForwardDataOnException,
             OptionValue<bool?>? eagerlyFetchResults)?
         run,
-    TResult Function(TData? data, QueryResult<Object?> result)? completed,
+    TResult? Function(TData? data, QueryResult<Object?> result)? completed,
   }) {
     return completed?.call(data, result);
   }
@@ -812,9 +802,9 @@ class _$MutationEventCompleted<TData> implements MutationEventCompleted<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(MutationEventError<TData> value)? error,
-    TResult Function(MutationEventRun<TData> value)? run,
-    TResult Function(MutationEventCompleted<TData> value)? completed,
+    TResult? Function(MutationEventError<TData> value)? error,
+    TResult? Function(MutationEventRun<TData> value)? run,
+    TResult? Function(MutationEventCompleted<TData> value)? completed,
   }) {
     return completed?.call(this);
   }
@@ -840,8 +830,8 @@ abstract class MutationEventCompleted<TData> implements MutationEvent<TData> {
           required final QueryResult<Object?> result}) =
       _$MutationEventCompleted<TData>;
 
-  TData? get data => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData? get data;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$MutationEventCompletedCopyWith<TData, _$MutationEventCompleted<TData>>
       get copyWith => throw _privateConstructorUsedError;

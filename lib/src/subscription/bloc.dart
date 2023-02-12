@@ -84,11 +84,13 @@ abstract class SubscriptionBloc<TData>
       data = parseData(event.result.data);
     }
 
-    emit(SubscriptionState<TData>.error(
-      error: event.error,
-      result: event.result,
-      data: data,
-    ));
+    if (!isClosed) {
+      emit(SubscriptionState<TData>.error(
+        error: event.error,
+        result: event.result,
+        data: data,
+      ));
+    }
   }
 
   FutureOr<void> _run(
@@ -105,14 +107,22 @@ abstract class SubscriptionBloc<TData>
     SubscriptionEventLoading<TData> event,
     Emitter<SubscriptionState<TData>> emit,
   ) async {
-    emit(SubscriptionState.loading(result: event.result));
+    if (!isClosed) {
+      emit(SubscriptionState.loading(result: event.result));
+    }
   }
 
   FutureOr<void> _loaded(
     SubscriptionEventLoaded<TData> event,
     Emitter<SubscriptionState<TData>> emit,
   ) async {
-    emit(SubscriptionState<TData>.loaded(
-        data: event.data, result: event.result));
+    if (!isClosed) {
+      emit(
+        SubscriptionState<TData>.loaded(
+          data: event.data,
+          result: event.result,
+        ),
+      );
+    }
   }
 }

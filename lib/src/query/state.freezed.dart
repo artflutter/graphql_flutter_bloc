@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'state.dart';
 
@@ -32,14 +32,14 @@ mixin _$QueryState<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,12 +67,12 @@ mixin _$QueryState<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,17 +92,18 @@ mixin _$QueryState<TData> {
 abstract class $QueryStateCopyWith<TData, $Res> {
   factory $QueryStateCopyWith(
           QueryState<TData> value, $Res Function(QueryState<TData>) then) =
-      _$QueryStateCopyWithImpl<TData, $Res>;
+      _$QueryStateCopyWithImpl<TData, $Res, QueryState<TData>>;
 }
 
 /// @nodoc
-class _$QueryStateCopyWithImpl<TData, $Res>
+class _$QueryStateCopyWithImpl<TData, $Res, $Val extends QueryState<TData>>
     implements $QueryStateCopyWith<TData, $Res> {
   _$QueryStateCopyWithImpl(this._value, this._then);
 
-  final QueryState<TData> _value;
   // ignore: unused_field
-  final $Res Function(QueryState<TData>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -114,15 +115,11 @@ abstract class _$$QueryStateInitialCopyWith<TData, $Res> {
 
 /// @nodoc
 class __$$QueryStateInitialCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateInitial<TData>>
     implements _$$QueryStateInitialCopyWith<TData, $Res> {
   __$$QueryStateInitialCopyWithImpl(_$QueryStateInitial<TData> _value,
       $Res Function(_$QueryStateInitial<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateInitial<TData>));
-
-  @override
-  _$QueryStateInitial<TData> get _value =>
-      super._value as _$QueryStateInitial<TData>;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -165,14 +162,14 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return initial?.call();
   }
@@ -212,12 +209,12 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return initial?.call(this);
   }
@@ -249,27 +246,25 @@ abstract class _$$QueryStateLoadingCopyWith<TData, $Res> {
   factory _$$QueryStateLoadingCopyWith(_$QueryStateLoading<TData> value,
           $Res Function(_$QueryStateLoading<TData>) then) =
       __$$QueryStateLoadingCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$QueryStateLoadingCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateLoading<TData>>
     implements _$$QueryStateLoadingCopyWith<TData, $Res> {
   __$$QueryStateLoadingCopyWithImpl(_$QueryStateLoading<TData> _value,
       $Res Function(_$QueryStateLoading<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateLoading<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryStateLoading<TData> get _value =>
-      super._value as _$QueryStateLoading<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$QueryStateLoading<TData>(
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -295,15 +290,15 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryStateLoading<TData> &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryStateLoadingCopyWith<TData, _$QueryStateLoading<TData>>
       get copyWith =>
           __$$QueryStateLoadingCopyWithImpl<TData, _$QueryStateLoading<TData>>(
@@ -329,14 +324,14 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return loading?.call(result);
   }
@@ -376,12 +371,12 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return loading?.call(this);
   }
@@ -409,7 +404,7 @@ abstract class QueryStateLoading<TData> implements QueryState<TData> {
           {required final QueryResult<Object?> result}) =
       _$QueryStateLoading<TData>;
 
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$QueryStateLoadingCopyWith<TData, _$QueryStateLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -420,38 +415,36 @@ abstract class _$$QueryStateErrorCopyWith<TData, $Res> {
   factory _$$QueryStateErrorCopyWith(_$QueryStateError<TData> value,
           $Res Function(_$QueryStateError<TData>) then) =
       __$$QueryStateErrorCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
 class __$$QueryStateErrorCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateError<TData>>
     implements _$$QueryStateErrorCopyWith<TData, $Res> {
   __$$QueryStateErrorCopyWithImpl(_$QueryStateError<TData> _value,
       $Res Function(_$QueryStateError<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateError<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryStateError<TData> get _value =>
-      super._value as _$QueryStateError<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? result = freezed,
+    Object? error = null,
+    Object? result = null,
     Object? data = freezed,
   }) {
     return _then(_$QueryStateError<TData>(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as OperationException,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
@@ -482,20 +475,18 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueryStateError<TData> &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.result, result) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.result, result) || other.result == result) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(result),
-      const DeepCollectionEquality().hash(data));
+      runtimeType, error, result, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryStateErrorCopyWith<TData, _$QueryStateError<TData>> get copyWith =>
       __$$QueryStateErrorCopyWithImpl<TData, _$QueryStateError<TData>>(
           this, _$identity);
@@ -520,14 +511,14 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -567,12 +558,12 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return error?.call(this);
   }
@@ -601,9 +592,9 @@ abstract class QueryStateError<TData> implements QueryState<TData> {
       required final QueryResult<Object?> result,
       final TData? data}) = _$QueryStateError<TData>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
-  TData? get data => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult<Object?> get result;
+  TData? get data;
   @JsonKey(ignore: true)
   _$$QueryStateErrorCopyWith<TData, _$QueryStateError<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -614,32 +605,30 @@ abstract class _$$QueryStateLoadedCopyWith<TData, $Res> {
   factory _$$QueryStateLoadedCopyWith(_$QueryStateLoaded<TData> value,
           $Res Function(_$QueryStateLoaded<TData>) then) =
       __$$QueryStateLoadedCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData data, QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$QueryStateLoadedCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateLoaded<TData>>
     implements _$$QueryStateLoadedCopyWith<TData, $Res> {
   __$$QueryStateLoadedCopyWithImpl(_$QueryStateLoaded<TData> _value,
       $Res Function(_$QueryStateLoaded<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateLoaded<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryStateLoaded<TData> get _value =>
-      super._value as _$QueryStateLoaded<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$QueryStateLoaded<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -668,17 +657,16 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
         (other.runtimeType == runtimeType &&
             other is _$QueryStateLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryStateLoadedCopyWith<TData, _$QueryStateLoaded<TData>> get copyWith =>
       __$$QueryStateLoadedCopyWithImpl<TData, _$QueryStateLoaded<TData>>(
           this, _$identity);
@@ -703,14 +691,14 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return loaded?.call(data, result);
   }
@@ -750,12 +738,12 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return loaded?.call(this);
   }
@@ -783,8 +771,8 @@ abstract class QueryStateLoaded<TData> implements QueryState<TData> {
       {required final TData data,
       required final QueryResult<Object?> result}) = _$QueryStateLoaded<TData>;
 
-  TData get data => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData get data;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$QueryStateLoadedCopyWith<TData, _$QueryStateLoaded<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -795,32 +783,30 @@ abstract class _$$QueryStateRefetchCopyWith<TData, $Res> {
   factory _$$QueryStateRefetchCopyWith(_$QueryStateRefetch<TData> value,
           $Res Function(_$QueryStateRefetch<TData>) then) =
       __$$QueryStateRefetchCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData? data, QueryResult<Object?>? result});
 }
 
 /// @nodoc
 class __$$QueryStateRefetchCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateRefetch<TData>>
     implements _$$QueryStateRefetchCopyWith<TData, $Res> {
   __$$QueryStateRefetchCopyWithImpl(_$QueryStateRefetch<TData> _value,
       $Res Function(_$QueryStateRefetch<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateRefetch<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryStateRefetch<TData> get _value =>
-      super._value as _$QueryStateRefetch<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
     return _then(_$QueryStateRefetch<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
-      result: result == freezed
+      result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>?,
@@ -849,17 +835,16 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
         (other.runtimeType == runtimeType &&
             other is _$QueryStateRefetch<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryStateRefetchCopyWith<TData, _$QueryStateRefetch<TData>>
       get copyWith =>
           __$$QueryStateRefetchCopyWithImpl<TData, _$QueryStateRefetch<TData>>(
@@ -885,14 +870,14 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return refetch?.call(data, result);
   }
@@ -932,12 +917,12 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return refetch?.call(this);
   }
@@ -965,8 +950,8 @@ abstract class QueryStateRefetch<TData> implements QueryState<TData> {
       {final TData? data,
       final QueryResult<Object?>? result}) = _$QueryStateRefetch<TData>;
 
-  TData? get data => throw _privateConstructorUsedError;
-  QueryResult<Object?>? get result => throw _privateConstructorUsedError;
+  TData? get data;
+  QueryResult<Object?>? get result;
   @JsonKey(ignore: true)
   _$$QueryStateRefetchCopyWith<TData, _$QueryStateRefetch<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -977,32 +962,30 @@ abstract class _$$QueryStateFetchMoreCopyWith<TData, $Res> {
   factory _$$QueryStateFetchMoreCopyWith(_$QueryStateFetchMore<TData> value,
           $Res Function(_$QueryStateFetchMore<TData>) then) =
       __$$QueryStateFetchMoreCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData? data, QueryResult<Object?>? result});
 }
 
 /// @nodoc
 class __$$QueryStateFetchMoreCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateFetchMore<TData>>
     implements _$$QueryStateFetchMoreCopyWith<TData, $Res> {
   __$$QueryStateFetchMoreCopyWithImpl(_$QueryStateFetchMore<TData> _value,
       $Res Function(_$QueryStateFetchMore<TData>) _then)
-      : super(_value, (v) => _then(v as _$QueryStateFetchMore<TData>));
+      : super(_value, _then);
 
-  @override
-  _$QueryStateFetchMore<TData> get _value =>
-      super._value as _$QueryStateFetchMore<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
     Object? result = freezed,
   }) {
     return _then(_$QueryStateFetchMore<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
-      result: result == freezed
+      result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>?,
@@ -1031,17 +1014,16 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
         (other.runtimeType == runtimeType &&
             other is _$QueryStateFetchMore<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$QueryStateFetchMoreCopyWith<TData, _$QueryStateFetchMore<TData>>
       get copyWith => __$$QueryStateFetchMoreCopyWithImpl<TData,
           _$QueryStateFetchMore<TData>>(this, _$identity);
@@ -1066,14 +1048,14 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(TData data, QueryResult<Object?> result)? loaded,
-    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
-    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
     return fetchMore?.call(data, result);
   }
@@ -1113,12 +1095,12 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(QueryStateInitial<TData> value)? initial,
-    TResult Function(QueryStateLoading<TData> value)? loading,
-    TResult Function(QueryStateError<TData> value)? error,
-    TResult Function(QueryStateLoaded<TData> value)? loaded,
-    TResult Function(QueryStateRefetch<TData> value)? refetch,
-    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
   }) {
     return fetchMore?.call(this);
   }
@@ -1146,8 +1128,8 @@ abstract class QueryStateFetchMore<TData> implements QueryState<TData> {
       {final TData? data,
       final QueryResult<Object?>? result}) = _$QueryStateFetchMore<TData>;
 
-  TData? get data => throw _privateConstructorUsedError;
-  QueryResult<Object?>? get result => throw _privateConstructorUsedError;
+  TData? get data;
+  QueryResult<Object?>? get result;
   @JsonKey(ignore: true)
   _$$QueryStateFetchMoreCopyWith<TData, _$QueryStateFetchMore<TData>>
       get copyWith => throw _privateConstructorUsedError;

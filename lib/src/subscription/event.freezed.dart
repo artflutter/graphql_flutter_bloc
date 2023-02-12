@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'event.dart';
 
@@ -28,12 +28,12 @@ mixin _$SubscriptionEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<Object?> options)? run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
+    TResult? Function(SubscriptionOptions<Object?> options)? run,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData? data, QueryResult<Object?> result)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,10 +57,10 @@ mixin _$SubscriptionEvent<TData> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionEventError<TData> value)? error,
-    TResult Function(SubscriptionEventRun<TData> value)? run,
-    TResult Function(SubscriptionEventLoading<TData> value)? loading,
-    TResult Function(SubscriptionEventLoaded<TData> value)? loaded,
+    TResult? Function(SubscriptionEventError<TData> value)? error,
+    TResult? Function(SubscriptionEventRun<TData> value)? run,
+    TResult? Function(SubscriptionEventLoading<TData> value)? loading,
+    TResult? Function(SubscriptionEventLoaded<TData> value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,17 +78,19 @@ mixin _$SubscriptionEvent<TData> {
 abstract class $SubscriptionEventCopyWith<TData, $Res> {
   factory $SubscriptionEventCopyWith(SubscriptionEvent<TData> value,
           $Res Function(SubscriptionEvent<TData>) then) =
-      _$SubscriptionEventCopyWithImpl<TData, $Res>;
+      _$SubscriptionEventCopyWithImpl<TData, $Res, SubscriptionEvent<TData>>;
 }
 
 /// @nodoc
-class _$SubscriptionEventCopyWithImpl<TData, $Res>
+class _$SubscriptionEventCopyWithImpl<TData, $Res,
+        $Val extends SubscriptionEvent<TData>>
     implements $SubscriptionEventCopyWith<TData, $Res> {
   _$SubscriptionEventCopyWithImpl(this._value, this._then);
 
-  final SubscriptionEvent<TData> _value;
   // ignore: unused_field
-  final $Res Function(SubscriptionEvent<TData>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -97,38 +99,37 @@ abstract class _$$SubscriptionEventErrorCopyWith<TData, $Res> {
           _$SubscriptionEventError<TData> value,
           $Res Function(_$SubscriptionEventError<TData>) then) =
       __$$SubscriptionEventErrorCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
 class __$$SubscriptionEventErrorCopyWithImpl<TData, $Res>
-    extends _$SubscriptionEventCopyWithImpl<TData, $Res>
+    extends _$SubscriptionEventCopyWithImpl<TData, $Res,
+        _$SubscriptionEventError<TData>>
     implements _$$SubscriptionEventErrorCopyWith<TData, $Res> {
   __$$SubscriptionEventErrorCopyWithImpl(_$SubscriptionEventError<TData> _value,
       $Res Function(_$SubscriptionEventError<TData>) _then)
-      : super(_value, (v) => _then(v as _$SubscriptionEventError<TData>));
+      : super(_value, _then);
 
-  @override
-  _$SubscriptionEventError<TData> get _value =>
-      super._value as _$SubscriptionEventError<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? result = freezed,
+    Object? error = null,
+    Object? result = null,
     Object? data = freezed,
   }) {
     return _then(_$SubscriptionEventError<TData>(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as OperationException,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
@@ -159,20 +160,18 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubscriptionEventError<TData> &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.result, result) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.result, result) || other.result == result) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(result),
-      const DeepCollectionEquality().hash(data));
+      runtimeType, error, result, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SubscriptionEventErrorCopyWith<TData, _$SubscriptionEventError<TData>>
       get copyWith => __$$SubscriptionEventErrorCopyWithImpl<TData,
           _$SubscriptionEventError<TData>>(this, _$identity);
@@ -193,12 +192,12 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<Object?> options)? run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
+    TResult? Function(SubscriptionOptions<Object?> options)? run,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return error?.call(this.error, result, data);
   }
@@ -234,10 +233,10 @@ class _$SubscriptionEventError<TData> implements SubscriptionEventError<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionEventError<TData> value)? error,
-    TResult Function(SubscriptionEventRun<TData> value)? run,
-    TResult Function(SubscriptionEventLoading<TData> value)? loading,
-    TResult Function(SubscriptionEventLoaded<TData> value)? loaded,
+    TResult? Function(SubscriptionEventError<TData> value)? error,
+    TResult? Function(SubscriptionEventRun<TData> value)? run,
+    TResult? Function(SubscriptionEventLoading<TData> value)? loading,
+    TResult? Function(SubscriptionEventLoaded<TData> value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -265,9 +264,9 @@ abstract class SubscriptionEventError<TData>
       required final QueryResult<Object?> result,
       final TData? data}) = _$SubscriptionEventError<TData>;
 
-  OperationException get error => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
-  TData? get data => throw _privateConstructorUsedError;
+  OperationException get error;
+  QueryResult<Object?> get result;
+  TData? get data;
   @JsonKey(ignore: true)
   _$$SubscriptionEventErrorCopyWith<TData, _$SubscriptionEventError<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -278,27 +277,26 @@ abstract class _$$SubscriptionEventRunCopyWith<TData, $Res> {
   factory _$$SubscriptionEventRunCopyWith(_$SubscriptionEventRun<TData> value,
           $Res Function(_$SubscriptionEventRun<TData>) then) =
       __$$SubscriptionEventRunCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({SubscriptionOptions<Object?> options});
 }
 
 /// @nodoc
 class __$$SubscriptionEventRunCopyWithImpl<TData, $Res>
-    extends _$SubscriptionEventCopyWithImpl<TData, $Res>
+    extends _$SubscriptionEventCopyWithImpl<TData, $Res,
+        _$SubscriptionEventRun<TData>>
     implements _$$SubscriptionEventRunCopyWith<TData, $Res> {
   __$$SubscriptionEventRunCopyWithImpl(_$SubscriptionEventRun<TData> _value,
       $Res Function(_$SubscriptionEventRun<TData>) _then)
-      : super(_value, (v) => _then(v as _$SubscriptionEventRun<TData>));
+      : super(_value, _then);
 
-  @override
-  _$SubscriptionEventRun<TData> get _value =>
-      super._value as _$SubscriptionEventRun<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? options = freezed,
+    Object? options = null,
   }) {
     return _then(_$SubscriptionEventRun<TData>(
-      options: options == freezed
+      options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
               as SubscriptionOptions<Object?>,
@@ -324,15 +322,15 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubscriptionEventRun<TData> &&
-            const DeepCollectionEquality().equals(other.options, options));
+            (identical(other.options, options) || other.options == options));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(options));
+  int get hashCode => Object.hash(runtimeType, options);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SubscriptionEventRunCopyWith<TData, _$SubscriptionEventRun<TData>>
       get copyWith => __$$SubscriptionEventRunCopyWithImpl<TData,
           _$SubscriptionEventRun<TData>>(this, _$identity);
@@ -353,12 +351,12 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<Object?> options)? run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
+    TResult? Function(SubscriptionOptions<Object?> options)? run,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return run?.call(options);
   }
@@ -394,10 +392,10 @@ class _$SubscriptionEventRun<TData> implements SubscriptionEventRun<TData> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionEventError<TData> value)? error,
-    TResult Function(SubscriptionEventRun<TData> value)? run,
-    TResult Function(SubscriptionEventLoading<TData> value)? loading,
-    TResult Function(SubscriptionEventLoaded<TData> value)? loaded,
+    TResult? Function(SubscriptionEventError<TData> value)? error,
+    TResult? Function(SubscriptionEventRun<TData> value)? run,
+    TResult? Function(SubscriptionEventLoading<TData> value)? loading,
+    TResult? Function(SubscriptionEventLoaded<TData> value)? loaded,
   }) {
     return run?.call(this);
   }
@@ -423,8 +421,7 @@ abstract class SubscriptionEventRun<TData> implements SubscriptionEvent<TData> {
           {required final SubscriptionOptions<Object?> options}) =
       _$SubscriptionEventRun<TData>;
 
-  SubscriptionOptions<Object?> get options =>
-      throw _privateConstructorUsedError;
+  SubscriptionOptions<Object?> get options;
   @JsonKey(ignore: true)
   _$$SubscriptionEventRunCopyWith<TData, _$SubscriptionEventRun<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -436,28 +433,27 @@ abstract class _$$SubscriptionEventLoadingCopyWith<TData, $Res> {
           _$SubscriptionEventLoading<TData> value,
           $Res Function(_$SubscriptionEventLoading<TData>) then) =
       __$$SubscriptionEventLoadingCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$SubscriptionEventLoadingCopyWithImpl<TData, $Res>
-    extends _$SubscriptionEventCopyWithImpl<TData, $Res>
+    extends _$SubscriptionEventCopyWithImpl<TData, $Res,
+        _$SubscriptionEventLoading<TData>>
     implements _$$SubscriptionEventLoadingCopyWith<TData, $Res> {
   __$$SubscriptionEventLoadingCopyWithImpl(
       _$SubscriptionEventLoading<TData> _value,
       $Res Function(_$SubscriptionEventLoading<TData>) _then)
-      : super(_value, (v) => _then(v as _$SubscriptionEventLoading<TData>));
+      : super(_value, _then);
 
-  @override
-  _$SubscriptionEventLoading<TData> get _value =>
-      super._value as _$SubscriptionEventLoading<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$SubscriptionEventLoading<TData>(
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -484,15 +480,15 @@ class _$SubscriptionEventLoading<TData>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubscriptionEventLoading<TData> &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SubscriptionEventLoadingCopyWith<TData, _$SubscriptionEventLoading<TData>>
       get copyWith => __$$SubscriptionEventLoadingCopyWithImpl<TData,
           _$SubscriptionEventLoading<TData>>(this, _$identity);
@@ -513,12 +509,12 @@ class _$SubscriptionEventLoading<TData>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<Object?> options)? run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
+    TResult? Function(SubscriptionOptions<Object?> options)? run,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return loading?.call(result);
   }
@@ -554,10 +550,10 @@ class _$SubscriptionEventLoading<TData>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionEventError<TData> value)? error,
-    TResult Function(SubscriptionEventRun<TData> value)? run,
-    TResult Function(SubscriptionEventLoading<TData> value)? loading,
-    TResult Function(SubscriptionEventLoaded<TData> value)? loaded,
+    TResult? Function(SubscriptionEventError<TData> value)? error,
+    TResult? Function(SubscriptionEventRun<TData> value)? run,
+    TResult? Function(SubscriptionEventLoading<TData> value)? loading,
+    TResult? Function(SubscriptionEventLoaded<TData> value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -584,7 +580,7 @@ abstract class SubscriptionEventLoading<TData>
           {required final QueryResult<Object?> result}) =
       _$SubscriptionEventLoading<TData>;
 
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$SubscriptionEventLoadingCopyWith<TData, _$SubscriptionEventLoading<TData>>
       get copyWith => throw _privateConstructorUsedError;
@@ -596,33 +592,32 @@ abstract class _$$SubscriptionEventLoadedCopyWith<TData, $Res> {
           _$SubscriptionEventLoaded<TData> value,
           $Res Function(_$SubscriptionEventLoaded<TData>) then) =
       __$$SubscriptionEventLoadedCopyWithImpl<TData, $Res>;
+  @useResult
   $Res call({TData? data, QueryResult<Object?> result});
 }
 
 /// @nodoc
 class __$$SubscriptionEventLoadedCopyWithImpl<TData, $Res>
-    extends _$SubscriptionEventCopyWithImpl<TData, $Res>
+    extends _$SubscriptionEventCopyWithImpl<TData, $Res,
+        _$SubscriptionEventLoaded<TData>>
     implements _$$SubscriptionEventLoadedCopyWith<TData, $Res> {
   __$$SubscriptionEventLoadedCopyWithImpl(
       _$SubscriptionEventLoaded<TData> _value,
       $Res Function(_$SubscriptionEventLoaded<TData>) _then)
-      : super(_value, (v) => _then(v as _$SubscriptionEventLoaded<TData>));
+      : super(_value, _then);
 
-  @override
-  _$SubscriptionEventLoaded<TData> get _value =>
-      super._value as _$SubscriptionEventLoaded<TData>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$SubscriptionEventLoaded<TData>(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TData?,
-      result: result == freezed
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as QueryResult<Object?>,
@@ -652,17 +647,16 @@ class _$SubscriptionEventLoaded<TData>
         (other.runtimeType == runtimeType &&
             other is _$SubscriptionEventLoaded<TData> &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(result));
+      runtimeType, const DeepCollectionEquality().hash(data), result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SubscriptionEventLoadedCopyWith<TData, _$SubscriptionEventLoaded<TData>>
       get copyWith => __$$SubscriptionEventLoadedCopyWithImpl<TData,
           _$SubscriptionEventLoaded<TData>>(this, _$identity);
@@ -683,12 +677,12 @@ class _$SubscriptionEventLoaded<TData>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
+    TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
         error,
-    TResult Function(SubscriptionOptions<Object?> options)? run,
-    TResult Function(QueryResult<Object?> result)? loading,
-    TResult Function(TData? data, QueryResult<Object?> result)? loaded,
+    TResult? Function(SubscriptionOptions<Object?> options)? run,
+    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function(TData? data, QueryResult<Object?> result)? loaded,
   }) {
     return loaded?.call(data, result);
   }
@@ -724,10 +718,10 @@ class _$SubscriptionEventLoaded<TData>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SubscriptionEventError<TData> value)? error,
-    TResult Function(SubscriptionEventRun<TData> value)? run,
-    TResult Function(SubscriptionEventLoading<TData> value)? loading,
-    TResult Function(SubscriptionEventLoaded<TData> value)? loaded,
+    TResult? Function(SubscriptionEventError<TData> value)? error,
+    TResult? Function(SubscriptionEventRun<TData> value)? run,
+    TResult? Function(SubscriptionEventLoading<TData> value)? loading,
+    TResult? Function(SubscriptionEventLoaded<TData> value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -755,8 +749,8 @@ abstract class SubscriptionEventLoaded<TData>
           required final QueryResult<Object?> result}) =
       _$SubscriptionEventLoaded<TData>;
 
-  TData? get data => throw _privateConstructorUsedError;
-  QueryResult<Object?> get result => throw _privateConstructorUsedError;
+  TData? get data;
+  QueryResult<Object?> get result;
   @JsonKey(ignore: true)
   _$$SubscriptionEventLoadedCopyWith<TData, _$SubscriptionEventLoaded<TData>>
       get copyWith => throw _privateConstructorUsedError;

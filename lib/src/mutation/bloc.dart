@@ -101,11 +101,13 @@ abstract class MutationBloc<TData>
       data = parseData(event.result.data);
     }
 
-    emit(MutationState<TData>.error(
-      error: event.error,
-      result: event.result,
-      data: data,
-    ));
+    if (!isClosed) {
+      emit(MutationState<TData>.error(
+        error: event.error,
+        result: event.result,
+        data: data,
+      ));
+    }
   }
 
   WatchQueryOptions _updateOptions({
@@ -165,18 +167,22 @@ abstract class MutationBloc<TData>
     );
     result.fetchResults();
 
-    emit(const MutationState.loading());
+    if (!isClosed) {
+      emit(const MutationState.loading());
+    }
   }
 
   FutureOr<void> _completed(
     MutationEventCompleted<TData> event,
     Emitter<MutationState<TData>> emit,
   ) async {
-    emit(
-      MutationState<TData>.completed(
-        data: event.data,
-        result: event.result,
-      ),
-    );
+    if (!isClosed) {
+      emit(
+        MutationState<TData>.completed(
+          data: event.data,
+          result: event.result,
+        ),
+      );
+    }
   }
 }

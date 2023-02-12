@@ -208,40 +208,48 @@ abstract class QueryBloc<TData>
       data = parseData(event.result.data);
     }
 
-    emit(QueryState<TData>.error(
-      error: event.error,
-      result: event.result,
-      data: data,
-    ));
+    if (!isClosed) {
+      emit(QueryState<TData>.error(
+        error: event.error,
+        result: event.result,
+        data: data,
+      ));
+    }
   }
 
   FutureOr<void> _loading(
     QueryEventLoading<TData> event,
     Emitter<QueryState<TData>> emit,
   ) async {
-    emit(QueryState.loading(result: event.result));
+    if (!isClosed) {
+      emit(QueryState.loading(result: event.result));
+    }
   }
 
   FutureOr<void> _loaded(
     QueryEventLoaded<TData> event,
     Emitter<QueryState<TData>> emit,
   ) async {
-    emit(QueryState<TData>.loaded(data: event.data, result: event.result));
+    if (!isClosed) {
+      emit(QueryState<TData>.loaded(data: event.data, result: event.result));
+    }
   }
 
   FutureOr<void> _refetch(
     QueryEventRefetch<TData> event,
     Emitter<QueryState<TData>> emit,
   ) async {
-    emit(
-      QueryState<TData>.refetch(
-        data: state.maybeWhen(
-          loaded: (data, _) => data,
-          orElse: () => null,
+    if (!isClosed) {
+      emit(
+        QueryState<TData>.refetch(
+          data: state.maybeWhen(
+            loaded: (data, _) => data,
+            orElse: () => null,
+          ),
+          result: null,
         ),
-        result: null,
-      ),
-    );
+      );
+    }
 
     result.options = _updateOptions(
       variables: event.variables,
