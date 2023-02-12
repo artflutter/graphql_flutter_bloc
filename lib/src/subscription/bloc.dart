@@ -23,16 +23,20 @@ abstract class SubscriptionBloc<TData>
 
   void _listener(QueryResult result) {
     if (result.isLoading && result.data == null) {
-      add(SubscriptionEvent.loading(result: result));
+      if (!isClosed) {
+        add(SubscriptionEvent.loading(result: result));
+      }
     }
 
     if (!result.isLoading && result.data != null) {
-      add(
-        SubscriptionEvent<TData>.loaded(
-          data: parseData(result.data),
-          result: result,
-        ),
-      );
+      if (!isClosed) {
+        add(
+          SubscriptionEvent<TData>.loaded(
+            data: parseData(result.data),
+            result: result,
+          ),
+        );
+      }
     }
 
     if (result.hasException) {
@@ -41,12 +45,13 @@ abstract class SubscriptionBloc<TData>
       if (result.data != null) {
         data = parseData(result.data);
       }
-
-      add(SubscriptionEvent<TData>.error(
-        error: result.exception!,
-        result: result,
-        data: data,
-      ));
+      if (!isClosed) {
+        add(SubscriptionEvent<TData>.error(
+          error: result.exception!,
+          result: result,
+          data: data,
+        ));
+      }
     }
   }
 
@@ -55,7 +60,9 @@ abstract class SubscriptionBloc<TData>
   }
 
   void run(SubscriptionOptions options) {
-    add(SubscriptionEvent<TData>.run(options: options));
+    if (!isClosed) {
+      add(SubscriptionEvent<TData>.run(options: options));
+    }
   }
 
   bool shouldFetchMore(int i, int threshold) => false;

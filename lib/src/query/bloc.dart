@@ -36,24 +36,30 @@ abstract class QueryBloc<TData>
           data = parseData(result.data);
         }
 
-        add(QueryEvent<TData>.error(
-          error: exception,
-          result: result,
-          data: data,
-        ));
+        if (!isClosed) {
+          add(QueryEvent<TData>.error(
+            error: exception,
+            result: result,
+            data: data,
+          ));
+        }
       }
 
       if (result.isLoading && result.data == null) {
-        add(QueryEvent.loading(result: result));
+        if (!isClosed) {
+          add(QueryEvent.loading(result: result));
+        }
       }
 
       if (!result.isLoading && result.data != null) {
-        add(
-          QueryEvent<TData>.loaded(
-            data: parseData(result.data),
-            result: result,
-          ),
-        );
+        if (!isClosed) {
+          add(
+            QueryEvent<TData>.loaded(
+              data: parseData(result.data),
+              result: result,
+            ),
+          );
+        }
       }
     });
   }
@@ -76,19 +82,21 @@ abstract class QueryBloc<TData>
     OptionValue<bool>? carryForwardDataOnException,
     OptionValue<bool?>? eagerlyFetchResults,
   }) {
-    add(
-      QueryEvent<TData>.run(
-        variables: variables,
-        optimisticResult: optimisticResult,
-        fetchPolicy: fetchPolicy,
-        errorPolicy: errorPolicy,
-        cacheRereadPolicy: cacheRereadPolicy,
-        pollInterval: pollInterval,
-        fetchResults: fetchResults,
-        carryForwardDataOnException: carryForwardDataOnException,
-        eagerlyFetchResults: eagerlyFetchResults,
-      ),
-    );
+    if (!isClosed) {
+      add(
+        QueryEvent<TData>.run(
+          variables: variables,
+          optimisticResult: optimisticResult,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          pollInterval: pollInterval,
+          fetchResults: fetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          eagerlyFetchResults: eagerlyFetchResults,
+        ),
+      );
+    }
   }
 
   void refetch({
@@ -102,19 +110,21 @@ abstract class QueryBloc<TData>
     OptionValue<bool>? carryForwardDataOnException,
     OptionValue<bool?>? eagerlyFetchResults,
   }) {
-    add(
-      QueryEvent<TData>.refetch(
-        variables: variables,
-        optimisticResult: optimisticResult,
-        fetchPolicy: fetchPolicy,
-        errorPolicy: errorPolicy,
-        cacheRereadPolicy: cacheRereadPolicy,
-        pollInterval: pollInterval,
-        fetchResults: fetchResults,
-        carryForwardDataOnException: carryForwardDataOnException,
-        eagerlyFetchResults: eagerlyFetchResults,
-      ),
-    );
+    if (!isClosed) {
+      add(
+        QueryEvent<TData>.refetch(
+          variables: variables,
+          optimisticResult: optimisticResult,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          pollInterval: pollInterval,
+          fetchResults: fetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          eagerlyFetchResults: eagerlyFetchResults,
+        ),
+      );
+    }
   }
 
   bool shouldFetchMore(int i, int threshold) => false;

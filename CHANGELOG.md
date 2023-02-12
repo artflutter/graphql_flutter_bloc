@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.17.2
+
+- more isClosed check
+
 ## 0.17.1
 
 - package updates

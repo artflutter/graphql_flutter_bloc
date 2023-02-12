@@ -23,10 +23,12 @@ abstract class MutationBloc<TData>
       // }
 
       if (!result.isLoading && !result.hasException) {
-        add(MutationEvent<TData>.completed(
-          data: parseData(result.data),
-          result: result,
-        ));
+        if (!isClosed) {
+          add(MutationEvent<TData>.completed(
+            data: parseData(result.data),
+            result: result,
+          ));
+        }
       }
 
       final exception = result.exception;
@@ -37,11 +39,13 @@ abstract class MutationBloc<TData>
           data = parseData(result.data);
         }
 
-        add(MutationEvent<TData>.error(
-          error: exception,
-          result: result,
-          data: data,
-        ));
+        if (!isClosed) {
+          add(MutationEvent<TData>.error(
+            error: exception,
+            result: result,
+            data: data,
+          ));
+        }
       }
     });
   }
@@ -64,19 +68,21 @@ abstract class MutationBloc<TData>
     OptionValue<bool>? carryForwardDataOnException,
     OptionValue<bool?>? eagerlyFetchResults,
   }) {
-    add(
-      MutationEvent<TData>.run(
-        variables: variables,
-        optimisticResult: optimisticResult,
-        fetchPolicy: fetchPolicy,
-        errorPolicy: errorPolicy,
-        cacheRereadPolicy: cacheRereadPolicy,
-        pollInterval: pollInterval,
-        fetchResults: fetchResults,
-        carryForwardDataOnException: carryForwardDataOnException,
-        eagerlyFetchResults: eagerlyFetchResults,
-      ),
-    );
+    if (!isClosed) {
+      add(
+        MutationEvent<TData>.run(
+          variables: variables,
+          optimisticResult: optimisticResult,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          pollInterval: pollInterval,
+          fetchResults: fetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          eagerlyFetchResults: eagerlyFetchResults,
+        ),
+      );
+    }
   }
 
   bool get isLoading => state is MutationStateLoading;
