@@ -10,15 +10,34 @@ abstract class SubscriptionBloc<TData>
     extends Bloc<SubscriptionEvent<TData>, SubscriptionState<TData>> {
   GraphQLClient client;
   late Stream<QueryResult> subscription;
-  StreamSubscription? _streamSubscription;
+  StreamSubscription<void>? _streamSubscription;
   SubscriptionOptions? options;
+
+  EventTransformer<SubscriptionEventRun<TData>> Function()? runTransformer;
+  EventTransformer<SubscriptionEventError<TData>> Function()? errorTransformer;
+  EventTransformer<SubscriptionEventLoading<TData>> Function()?
+      loadingTransformer;
+  EventTransformer<SubscriptionEventLoaded<TData>> Function()?
+      loadedTransformer;
 
   SubscriptionBloc({required this.client})
       : super(SubscriptionState<TData>.initial()) {
-    on<SubscriptionEventError<TData>>(_error);
-    on<SubscriptionEventRun<TData>>(_run);
-    on<SubscriptionEventLoading<TData>>(_loading);
-    on<SubscriptionEventLoaded<TData>>(_loaded);
+    on<SubscriptionEventRun<TData>>(
+      _run,
+      transformer: runTransformer?.call(),
+    );
+    on<SubscriptionEventError<TData>>(
+      _error,
+      transformer: errorTransformer?.call(),
+    );
+    on<SubscriptionEventLoading<TData>>(
+      _loading,
+      transformer: loadingTransformer?.call(),
+    );
+    on<SubscriptionEventLoaded<TData>>(
+      _loaded,
+      transformer: loadedTransformer?.call(),
+    );
   }
 
   void _listener(QueryResult result) {

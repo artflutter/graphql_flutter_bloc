@@ -6,17 +6,42 @@ import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
   GraphQLClient client;
-  late ObservableQuery result;
-  StreamSubscription? _subscription;
+  late ObservableQuery<void> result;
+  StreamSubscription<void>? _subscription;
+
+  EventTransformer<QueryEventRun<TData>> Function()? runTransformer;
+  EventTransformer<QueryEventError<TData>> Function()? errorTransformer;
+  EventTransformer<QueryEventLoading<TData>> Function()? loadingTransformer;
+  EventTransformer<QueryEventLoaded<TData>> Function()? loadedTransformer;
+  EventTransformer<QueryEventRefetch<TData>> Function()? refetchTransformer;
+  EventTransformer<QueryEventFetchMore<TData>> Function()? fetchMoreTransformer;
 
   QueryBloc({required this.client, required WatchQueryOptions options})
       : super(QueryState<TData>.initial()) {
-    on<QueryEventRun<TData>>(_run);
-    on<QueryEventError<TData>>(_error);
-    on<QueryEventLoading<TData>>(_loading);
-    on<QueryEventLoaded<TData>>(_loaded);
-    on<QueryEventRefetch<TData>>(_refetch);
-    on<QueryEventFetchMore<TData>>(_fetchMore);
+    on<QueryEventRun<TData>>(
+      _run,
+      transformer: runTransformer?.call(),
+    );
+    on<QueryEventError<TData>>(
+      _error,
+      transformer: errorTransformer?.call(),
+    );
+    on<QueryEventLoading<TData>>(
+      _loading,
+      transformer: loadingTransformer?.call(),
+    );
+    on<QueryEventLoaded<TData>>(
+      _loaded,
+      transformer: loadedTransformer?.call(),
+    );
+    on<QueryEventRefetch<TData>>(
+      _refetch,
+      transformer: refetchTransformer?.call(),
+    );
+    on<QueryEventFetchMore<TData>>(
+      _fetchMore,
+      transformer: fetchMoreTransformer?.call(),
+    );
 
     result = client.watchQuery<void>(options);
 

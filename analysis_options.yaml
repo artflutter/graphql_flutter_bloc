@@ -1,9 +1,6 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-  strong-mode:
-    implicit-casts: false
-    implicit-dynamic: false
   exclude:
     - "**/*.g.dart"
     - "**/*.graphql.dart"
@@ -11,3 +8,6 @@ analyzer:
     - "**/*.mocks.dart"
     - "**/*.gen.dart"
     - "**/*.gr.dart"
+  language:
+    strict-casts: true
+    strict-raw-types: true

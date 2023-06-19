@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.0
+
+- migrate to flutter 3.10.0
+- event transformers support
+
 ## 0.17.2
 
 - more isClosed check

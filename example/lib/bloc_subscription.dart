@@ -46,7 +46,8 @@ class _BlocSubscriptionState extends State<BlocSubscription> {
               loading: (_) => const Center(child: CircularProgressIndicator()),
               error: (error, _, __) => Text(
                     parseOperationException(error),
-                    style: TextStyle(color: Theme.of(context).errorColor),
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.error),
                   ),
               loaded: (data, result) {
                 if (data != null) {

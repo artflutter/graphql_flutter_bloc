@@ -25,7 +25,7 @@ class _BlocQueryState extends State<BlocQuery> {
     bloc = CompaniesPaginatedBloc(client: client)..run();
   }
 
-  Future _handleRefreshStart(CompaniesPaginatedBloc bloc) {
+  Future<void> _handleRefreshStart(CompaniesPaginatedBloc bloc) {
     bloc.refetch();
     return _refreshCompleter.future;
   }
@@ -52,10 +52,10 @@ class _BlocQueryState extends State<BlocQuery> {
     final itemCount = data.allCompaniesPaginated.length;
 
     if (itemCount == 0) {
-      return ListView(children: [
+      return ListView(children: const [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Icon(Icons.inbox),
             SizedBox(width: 8),
             Text('No data'),
@@ -122,7 +122,7 @@ class _BlocQueryState extends State<BlocQuery> {
               error: (error, __, ___) => ListView(children: [
                 Text(
                   parseOperationException(error),
-                  style: TextStyle(color: Theme.of(context).errorColor),
+                  style: TextStyle(color: Theme.of(context).colorScheme.error),
                 )
               ]),
               loaded: _displayResult,

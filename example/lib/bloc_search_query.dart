@@ -40,10 +40,10 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
     final itemCount = data.searchCompany.length;
 
     if (itemCount == 0) {
-      return ListView(children: [
+      return ListView(children: const [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Icon(Icons.inbox),
             SizedBox(width: 8),
             Text('No data'),
@@ -103,7 +103,8 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
                 error: (error, __, ___) => ListView(children: [
                   Text(
                     parseOperationException(error),
-                    style: TextStyle(color: Theme.of(context).errorColor),
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.error),
                   )
                 ]),
                 loaded: _displayResult,

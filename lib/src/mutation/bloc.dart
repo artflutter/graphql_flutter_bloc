@@ -6,14 +6,21 @@ import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
 abstract class MutationBloc<TData>
     extends Bloc<MutationEvent<TData>, MutationState<TData>> {
   GraphQLClient client;
-  late ObservableQuery result;
-  StreamSubscription? _subscription;
+  late ObservableQuery<void> result;
+  StreamSubscription<void>? _subscription;
+
+  EventTransformer<MutationEventRun<TData>> Function()? runTransformer;
+  EventTransformer<MutationEventCompleted<TData>> Function()?
+      completedTransformer;
+  EventTransformer<MutationEventError<TData>> Function()? errorTransformer;
 
   MutationBloc({required this.client, required WatchQueryOptions options})
       : super(MutationState<TData>.initial()) {
-    on<MutationEventRun<TData>>(_run);
-    on<MutationEventCompleted<TData>>(_completed);
-    on<MutationEventError<TData>>(_error);
+    on<MutationEventRun<TData>>(_run, transformer: runTransformer?.call());
+    on<MutationEventCompleted<TData>>(_completed,
+        transformer: completedTransformer?.call());
+    on<MutationEventError<TData>>(_error,
+        transformer: errorTransformer?.call());
 
     result = client.watchQuery<void>(options);
 
