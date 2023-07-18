@@ -19,10 +19,11 @@ mixin _$QueryState<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
@@ -33,10 +34,11 @@ mixin _$QueryState<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -45,10 +47,11 @@ mixin _$QueryState<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -59,6 +62,7 @@ mixin _$QueryState<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -69,6 +73,7 @@ mixin _$QueryState<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -79,6 +84,7 @@ mixin _$QueryState<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -146,10 +152,11 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
@@ -163,10 +170,11 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -178,10 +186,11 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -198,6 +207,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -211,6 +221,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -224,6 +235,7 @@ class _$QueryStateInitial<TData> implements QueryStateInitial<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -246,8 +258,6 @@ abstract class _$$QueryStateLoadingCopyWith<TData, $Res> {
   factory _$$QueryStateLoadingCopyWith(_$QueryStateLoading<TData> value,
           $Res Function(_$QueryStateLoading<TData>) then) =
       __$$QueryStateLoadingCopyWithImpl<TData, $Res>;
-  @useResult
-  $Res call({QueryResult<Object?> result});
 }
 
 /// @nodoc
@@ -257,100 +267,78 @@ class __$$QueryStateLoadingCopyWithImpl<TData, $Res>
   __$$QueryStateLoadingCopyWithImpl(_$QueryStateLoading<TData> _value,
       $Res Function(_$QueryStateLoading<TData>) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? result = null,
-  }) {
-    return _then(_$QueryStateLoading<TData>(
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as QueryResult<Object?>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
-  const _$QueryStateLoading({required this.result});
-
-  @override
-  final QueryResult<Object?> result;
+  const _$QueryStateLoading();
 
   @override
   String toString() {
-    return 'QueryState<$TData>.loading(result: $result)';
+    return 'QueryState<$TData>.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QueryStateLoading<TData> &&
-            (identical(other.result, result) || other.result == result));
+            other is _$QueryStateLoading<TData>);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, result);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QueryStateLoadingCopyWith<TData, _$QueryStateLoading<TData>>
-      get copyWith =>
-          __$$QueryStateLoadingCopyWithImpl<TData, _$QueryStateLoading<TData>>(
-              this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
-    return loading(result);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
-    return loading?.call(result);
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(result);
+      return loading();
     }
     return orElse();
   }
@@ -360,6 +348,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -373,6 +362,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -386,6 +376,7 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -400,32 +391,27 @@ class _$QueryStateLoading<TData> implements QueryStateLoading<TData> {
 }
 
 abstract class QueryStateLoading<TData> implements QueryState<TData> {
-  const factory QueryStateLoading(
-          {required final QueryResult<Object?> result}) =
-      _$QueryStateLoading<TData>;
-
-  QueryResult<Object?> get result;
-  @JsonKey(ignore: true)
-  _$$QueryStateLoadingCopyWith<TData, _$QueryStateLoading<TData>>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory QueryStateLoading() = _$QueryStateLoading<TData>;
 }
 
 /// @nodoc
-abstract class _$$QueryStateErrorCopyWith<TData, $Res> {
-  factory _$$QueryStateErrorCopyWith(_$QueryStateError<TData> value,
-          $Res Function(_$QueryStateError<TData>) then) =
-      __$$QueryStateErrorCopyWithImpl<TData, $Res>;
+abstract class _$$QueryStateGraphqlErrorCopyWith<TData, $Res> {
+  factory _$$QueryStateGraphqlErrorCopyWith(
+          _$QueryStateGraphqlError<TData> value,
+          $Res Function(_$QueryStateGraphqlError<TData>) then) =
+      __$$QueryStateGraphqlErrorCopyWithImpl<TData, $Res>;
   @useResult
   $Res call(
       {OperationException error, QueryResult<Object?> result, TData? data});
 }
 
 /// @nodoc
-class __$$QueryStateErrorCopyWithImpl<TData, $Res>
-    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateError<TData>>
-    implements _$$QueryStateErrorCopyWith<TData, $Res> {
-  __$$QueryStateErrorCopyWithImpl(_$QueryStateError<TData> _value,
-      $Res Function(_$QueryStateError<TData>) _then)
+class __$$QueryStateGraphqlErrorCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res,
+        _$QueryStateGraphqlError<TData>>
+    implements _$$QueryStateGraphqlErrorCopyWith<TData, $Res> {
+  __$$QueryStateGraphqlErrorCopyWithImpl(_$QueryStateGraphqlError<TData> _value,
+      $Res Function(_$QueryStateGraphqlError<TData>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -435,7 +421,7 @@ class __$$QueryStateErrorCopyWithImpl<TData, $Res>
     Object? result = null,
     Object? data = freezed,
   }) {
-    return _then(_$QueryStateError<TData>(
+    return _then(_$QueryStateGraphqlError<TData>(
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -454,8 +440,8 @@ class __$$QueryStateErrorCopyWithImpl<TData, $Res>
 
 /// @nodoc
 
-class _$QueryStateError<TData> implements QueryStateError<TData> {
-  const _$QueryStateError(
+class _$QueryStateGraphqlError<TData> implements QueryStateGraphqlError<TData> {
+  const _$QueryStateGraphqlError(
       {required this.error, required this.result, this.data});
 
   @override
@@ -467,14 +453,14 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
 
   @override
   String toString() {
-    return 'QueryState<$TData>.error(error: $error, result: $result, data: $data)';
+    return 'QueryState<$TData>.grqphqlError(error: $error, result: $result, data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QueryStateError<TData> &&
+            other is _$QueryStateGraphqlError<TData> &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.result, result) || other.result == result) &&
             const DeepCollectionEquality().equals(other.data, data));
@@ -487,57 +473,60 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QueryStateErrorCopyWith<TData, _$QueryStateError<TData>> get copyWith =>
-      __$$QueryStateErrorCopyWithImpl<TData, _$QueryStateError<TData>>(
-          this, _$identity);
+  _$$QueryStateGraphqlErrorCopyWith<TData, _$QueryStateGraphqlError<TData>>
+      get copyWith => __$$QueryStateGraphqlErrorCopyWithImpl<TData,
+          _$QueryStateGraphqlError<TData>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         fetchMore,
   }) {
-    return error(this.error, result, data);
+    return grqphqlError(this.error, result, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
   }) {
-    return error?.call(this.error, result, data);
+    return grqphqlError?.call(this.error, result, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this.error, result, data);
+    if (grqphqlError != null) {
+      return grqphqlError(this.error, result, data);
     }
     return orElse();
   }
@@ -547,6 +536,182 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
+    required TResult Function(QueryStateError<TData> value) error,
+    required TResult Function(QueryStateLoaded<TData> value) loaded,
+    required TResult Function(QueryStateRefetch<TData> value) refetch,
+    required TResult Function(QueryStateFetchMore<TData> value) fetchMore,
+  }) {
+    return grqphqlError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueryStateInitial<TData> value)? initial,
+    TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
+    TResult? Function(QueryStateError<TData> value)? error,
+    TResult? Function(QueryStateLoaded<TData> value)? loaded,
+    TResult? Function(QueryStateRefetch<TData> value)? refetch,
+    TResult? Function(QueryStateFetchMore<TData> value)? fetchMore,
+  }) {
+    return grqphqlError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueryStateInitial<TData> value)? initial,
+    TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
+    TResult Function(QueryStateError<TData> value)? error,
+    TResult Function(QueryStateLoaded<TData> value)? loaded,
+    TResult Function(QueryStateRefetch<TData> value)? refetch,
+    TResult Function(QueryStateFetchMore<TData> value)? fetchMore,
+    required TResult orElse(),
+  }) {
+    if (grqphqlError != null) {
+      return grqphqlError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class QueryStateGraphqlError<TData> implements QueryState<TData> {
+  const factory QueryStateGraphqlError(
+      {required final OperationException error,
+      required final QueryResult<Object?> result,
+      final TData? data}) = _$QueryStateGraphqlError<TData>;
+
+  OperationException get error;
+  QueryResult<Object?> get result;
+  TData? get data;
+  @JsonKey(ignore: true)
+  _$$QueryStateGraphqlErrorCopyWith<TData, _$QueryStateGraphqlError<TData>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$QueryStateErrorCopyWith<TData, $Res> {
+  factory _$$QueryStateErrorCopyWith(_$QueryStateError<TData> value,
+          $Res Function(_$QueryStateError<TData>) then) =
+      __$$QueryStateErrorCopyWithImpl<TData, $Res>;
+  @useResult
+  $Res call({Object error});
+}
+
+/// @nodoc
+class __$$QueryStateErrorCopyWithImpl<TData, $Res>
+    extends _$QueryStateCopyWithImpl<TData, $Res, _$QueryStateError<TData>>
+    implements _$$QueryStateErrorCopyWith<TData, $Res> {
+  __$$QueryStateErrorCopyWithImpl(_$QueryStateError<TData> _value,
+      $Res Function(_$QueryStateError<TData>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$QueryStateError<TData>(
+      null == error ? _value.error : error,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$QueryStateError<TData> implements QueryStateError<TData> {
+  const _$QueryStateError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'QueryState<$TData>.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueryStateError<TData> &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueryStateErrorCopyWith<TData, _$QueryStateError<TData>> get copyWith =>
+      __$$QueryStateErrorCopyWithImpl<TData, _$QueryStateError<TData>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)
+        grqphqlError,
+    required TResult Function(Object error) error,
+    required TResult Function(TData data, QueryResult<Object?> result) loaded,
+    required TResult Function(TData? data, QueryResult<Object?>? result)
+        refetch,
+    required TResult Function(TData? data, QueryResult<Object?>? result)
+        fetchMore,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
+        grqphqlError,
+    TResult? Function(Object error)? error,
+    TResult? Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(
+            OperationException error, QueryResult<Object?> result, TData? data)?
+        grqphqlError,
+    TResult Function(Object error)? error,
+    TResult Function(TData data, QueryResult<Object?> result)? loaded,
+    TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
+    TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueryStateInitial<TData> value) initial,
+    required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -560,6 +725,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -573,6 +739,7 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -587,14 +754,9 @@ class _$QueryStateError<TData> implements QueryStateError<TData> {
 }
 
 abstract class QueryStateError<TData> implements QueryState<TData> {
-  const factory QueryStateError(
-      {required final OperationException error,
-      required final QueryResult<Object?> result,
-      final TData? data}) = _$QueryStateError<TData>;
+  const factory QueryStateError(final Object error) = _$QueryStateError<TData>;
 
-  OperationException get error;
-  QueryResult<Object?> get result;
-  TData? get data;
+  Object get error;
   @JsonKey(ignore: true)
   _$$QueryStateErrorCopyWith<TData, _$QueryStateError<TData>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -675,10 +837,11 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
@@ -692,10 +855,11 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -707,10 +871,11 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -727,6 +892,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -740,6 +906,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -753,6 +920,7 @@ class _$QueryStateLoaded<TData> implements QueryStateLoaded<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -854,10 +1022,11 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
@@ -871,10 +1040,11 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -886,10 +1056,11 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -906,6 +1077,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -919,6 +1091,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -932,6 +1105,7 @@ class _$QueryStateRefetch<TData> implements QueryStateRefetch<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,
@@ -1032,10 +1206,11 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(QueryResult<Object?> result) loading,
+    required TResult Function() loading,
     required TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)
-        error,
+        grqphqlError,
+    required TResult Function(Object error) error,
     required TResult Function(TData data, QueryResult<Object?> result) loaded,
     required TResult Function(TData? data, QueryResult<Object?>? result)
         refetch,
@@ -1049,10 +1224,11 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(QueryResult<Object?> result)? loading,
+    TResult? Function()? loading,
     TResult? Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult? Function(Object error)? error,
     TResult? Function(TData data, QueryResult<Object?> result)? loaded,
     TResult? Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult? Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -1064,10 +1240,11 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(QueryResult<Object?> result)? loading,
+    TResult Function()? loading,
     TResult Function(
             OperationException error, QueryResult<Object?> result, TData? data)?
-        error,
+        grqphqlError,
+    TResult Function(Object error)? error,
     TResult Function(TData data, QueryResult<Object?> result)? loaded,
     TResult Function(TData? data, QueryResult<Object?>? result)? refetch,
     TResult Function(TData? data, QueryResult<Object?>? result)? fetchMore,
@@ -1084,6 +1261,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   TResult map<TResult extends Object?>({
     required TResult Function(QueryStateInitial<TData> value) initial,
     required TResult Function(QueryStateLoading<TData> value) loading,
+    required TResult Function(QueryStateGraphqlError<TData> value) grqphqlError,
     required TResult Function(QueryStateError<TData> value) error,
     required TResult Function(QueryStateLoaded<TData> value) loaded,
     required TResult Function(QueryStateRefetch<TData> value) refetch,
@@ -1097,6 +1275,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QueryStateInitial<TData> value)? initial,
     TResult? Function(QueryStateLoading<TData> value)? loading,
+    TResult? Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult? Function(QueryStateError<TData> value)? error,
     TResult? Function(QueryStateLoaded<TData> value)? loaded,
     TResult? Function(QueryStateRefetch<TData> value)? refetch,
@@ -1110,6 +1289,7 @@ class _$QueryStateFetchMore<TData> implements QueryStateFetchMore<TData> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QueryStateInitial<TData> value)? initial,
     TResult Function(QueryStateLoading<TData> value)? loading,
+    TResult Function(QueryStateGraphqlError<TData> value)? grqphqlError,
     TResult Function(QueryStateError<TData> value)? error,
     TResult Function(QueryStateLoaded<TData> value)? loaded,
     TResult Function(QueryStateRefetch<TData> value)? refetch,

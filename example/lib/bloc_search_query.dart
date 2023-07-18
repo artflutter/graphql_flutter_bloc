@@ -98,15 +98,15 @@ class _BlocSearchQueryState extends State<BlocSearchQuery> {
             builder: (_, state) {
               return state.when(
                 initial: () => Container(),
-                loading: (_) =>
-                    const Center(child: CircularProgressIndicator()),
-                error: (error, __, ___) => ListView(children: [
+                loading: () => const Center(child: CircularProgressIndicator()),
+                grqphqlError: (error, __, ___) => ListView(children: [
                   Text(
                     parseOperationException(error),
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.error),
                   )
                 ]),
+                error: (_) => const Text('Unexpected error'),
                 loaded: _displayResult,
                 refetch: _displayResult,
                 fetchMore: _displayResult,

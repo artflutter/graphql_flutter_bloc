@@ -1,7 +1,13 @@
 import 'dart:async';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql_flutter_bloc/graphql_flutter_bloc.dart';
+import 'package:rxdart/rxdart.dart';
+
+EventTransformer<Event> restartable1<Event>() {
+  return (events, mapper) => events.switchMap(mapper);
+}
 
 abstract class QueryBloc<TData>
     extends Bloc<QueryEvent<TData>, QueryState<TData>> {
@@ -9,84 +15,133 @@ abstract class QueryBloc<TData>
   late ObservableQuery<void> result;
   StreamSubscription<void>? _subscription;
 
-  EventTransformer<QueryEventRun<TData>> Function()? runTransformer;
-  EventTransformer<QueryEventError<TData>> Function()? errorTransformer;
-  EventTransformer<QueryEventLoading<TData>> Function()? loadingTransformer;
-  EventTransformer<QueryEventLoaded<TData>> Function()? loadedTransformer;
-  EventTransformer<QueryEventRefetch<TData>> Function()? refetchTransformer;
-  EventTransformer<QueryEventFetchMore<TData>> Function()? fetchMoreTransformer;
+  EventTransformer<QueryEvent<TData>> Function()? transformer;
 
   QueryBloc({required this.client, required WatchQueryOptions options})
       : super(QueryState<TData>.initial()) {
-    on<QueryEventRun<TData>>(
-      _run,
-      transformer: runTransformer?.call(),
-    );
-    on<QueryEventError<TData>>(
-      _error,
-      transformer: errorTransformer?.call(),
-    );
-    on<QueryEventLoading<TData>>(
-      _loading,
-      transformer: loadingTransformer?.call(),
-    );
-    on<QueryEventLoaded<TData>>(
-      _loaded,
-      transformer: loadedTransformer?.call(),
-    );
-    on<QueryEventRefetch<TData>>(
-      _refetch,
-      transformer: refetchTransformer?.call(),
-    );
-    on<QueryEventFetchMore<TData>>(
-      _fetchMore,
-      transformer: fetchMoreTransformer?.call(),
-    );
-
     result = client.watchQuery<void>(options);
 
-    _subscription = result.stream.listen((QueryResult result) {
-      if (state is QueryStateRefetch &&
-          result.source == QueryResultSource.cache &&
-          options.fetchPolicy == FetchPolicy.cacheAndNetwork) {
-        return;
-      }
+    on<QueryEvent<TData>>(
+      (event, emit) async {
+        event.map(
+          run: (e) {
+            emit(const QueryState.loading());
+            _run(e);
+          },
+          refetch: (e) {},
+          fetchMore: (e) {},
+        );
 
-      final exception = result.exception;
+        await emit.forEach(
+          result.stream,
+          onData: (QueryResult result) {
+            if (!isClosed && !result.isLoading && result.data != null) {
+              return QueryState<TData>.loaded(
+                data: parseData(result.data),
+                result: result,
+              );
+            }
 
-      if (exception != null) {
-        TData? data;
+            return state;
+          },
+        );
+      },
+      transformer: restartable(),
+    );
 
-        if (result.data != null) {
-          data = parseData(result.data);
-        }
-
-        if (!isClosed) {
-          add(QueryEvent<TData>.error(
-            error: exception,
-            result: result,
-            data: data,
-          ));
-        }
-      }
-
-      if (result.isLoading && result.data == null) {
-        if (!isClosed) {
-          add(QueryEvent.loading(result: result));
-        }
-      }
-
-      if (!result.isLoading && result.data != null) {
-        if (!isClosed) {
-          add(
-            QueryEvent<TData>.loaded(
-              data: parseData(result.data),
-              result: result,
-            ),
-          );
-        }
-      }
-    });
+    // on<QueryEvent<TData>>(
+    //   (event, emit) async {
+    //     event.map(
+    //       run: (e) {
+    //         print(e.variables?.value);
+    //         emit(const QueryState.loading());
+    //         _run(e);
+    //       },
+    //       refetch: (e) {
+    //         if (!result.isRefetchSafe && e.skipUnsafe) {
+    //           return;
+    //         }
+    //
+    //         if (!result.isRefetchSafe) {
+    //           emit(QueryState<TData>.error('Query is not refetch safe'));
+    //           return;
+    //         }
+    //
+    //         emit(
+    //           QueryState<TData>.refetch(
+    //             data: state.maybeWhen(
+    //               loaded: (data, _) => data,
+    //               orElse: () => null,
+    //             ),
+    //             result: null,
+    //           ),
+    //         );
+    //         _refetch(e);
+    //       },
+    //       fetchMore: (e) {
+    //         emit(
+    //           QueryState<TData>.fetchMore(
+    //             data: state.maybeWhen(
+    //               loaded: (data, _) => data,
+    //               orElse: () => null,
+    //             ),
+    //             result: null,
+    //           ),
+    //         );
+    //
+    //         _fetchMore(e);
+    //       },
+    //     );
+    //
+    //     await emit.forEach(
+    //       result.stream,
+    //       onData: (QueryResult result) {
+    //         if (emit.isDone) return state;
+    //         print(result.source);
+    //         print(emit.isDone);
+    //         if (state is QueryStateRefetch &&
+    //             result.source == QueryResultSource.cache &&
+    //             options.fetchPolicy == FetchPolicy.cacheAndNetwork) {
+    //           return state;
+    //         }
+    //
+    //         final exception = result.exception;
+    //
+    //         if (exception != null) {
+    //           TData? data;
+    //
+    //           if (result.data != null) {
+    //             data = parseData(result.data);
+    //           }
+    //
+    //           if (!isClosed) {
+    //             return QueryState<TData>.grqphqlError(
+    //               error: exception,
+    //               result: result,
+    //               data: data,
+    //             );
+    //           }
+    //         }
+    //
+    //         if (!isClosed && !result.isLoading && result.data != null) {
+    //           return QueryState<TData>.loaded(
+    //             data: parseData(result.data),
+    //             result: result,
+    //           );
+    //         }
+    //
+    //         return state;
+    //       },
+    //       onError: (Object error, StackTrace stackTrace) {
+    //         return QueryState<TData>.error(error);
+    //       },
+    //     );
+    //   },
+    //   // Allow only one of these events to ever be active at once, canceling
+    //   // any active `emit.forEach` above.
+    //   // transformer: transformer?.call() ?? droppable(),
+    //   transformer: transformer?.call() ?? restartable(),
+    // );
   }
 
   WatchQueryOptions get options => result.options;
@@ -125,6 +180,7 @@ abstract class QueryBloc<TData>
   }
 
   void refetch({
+    bool skipUnsafe = true,
     OptionValue<Map<String, dynamic>>? variables,
     OptionValue<Object?>? optimisticResult,
     OptionValue<FetchPolicy?>? fetchPolicy,
@@ -138,6 +194,7 @@ abstract class QueryBloc<TData>
     if (!isClosed) {
       add(
         QueryEvent<TData>.refetch(
+          skipUnsafe: skipUnsafe,
           variables: variables,
           optimisticResult: optimisticResult,
           fetchPolicy: fetchPolicy,
@@ -168,16 +225,13 @@ abstract class QueryBloc<TData>
       state is QueryStateFetchMore<TData> ||
       state is QueryStateRefetch<TData>);
 
-  bool get hasError => state is QueryStateError<TData>;
+  bool get hasError => state is QueryStateGraphqlError<TData>;
 
   String? get getError => hasError
-      ? parseOperationException((state as QueryStateError<TData>).error)
+      ? parseOperationException((state as QueryStateGraphqlError<TData>).error)
       : null;
 
-  FutureOr<void> _run(
-    QueryEventRun<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
+  FutureOr<void> _run(QueryEventRun<TData> event) async {
     result.options = _updateOptions(
       variables: event.variables,
       optimisticResult: event.optimisticResult,
@@ -233,59 +287,7 @@ abstract class QueryBloc<TData>
     );
   }
 
-  FutureOr<void> _error(
-    QueryEventError<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
-    TData? data;
-
-    if (event.result.data != null) {
-      data = parseData(event.result.data);
-    }
-
-    if (!isClosed) {
-      emit(QueryState<TData>.error(
-        error: event.error,
-        result: event.result,
-        data: data,
-      ));
-    }
-  }
-
-  FutureOr<void> _loading(
-    QueryEventLoading<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
-    if (!isClosed) {
-      emit(QueryState.loading(result: event.result));
-    }
-  }
-
-  FutureOr<void> _loaded(
-    QueryEventLoaded<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
-    if (!isClosed) {
-      emit(QueryState<TData>.loaded(data: event.data, result: event.result));
-    }
-  }
-
-  FutureOr<void> _refetch(
-    QueryEventRefetch<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
-    if (!isClosed) {
-      emit(
-        QueryState<TData>.refetch(
-          data: state.maybeWhen(
-            loaded: (data, _) => data,
-            orElse: () => null,
-          ),
-          result: null,
-        ),
-      );
-    }
-
+  FutureOr<void> _refetch(QueryEventRefetch<TData> event) async {
     result.options = _updateOptions(
       variables: event.variables,
       optimisticResult: event.optimisticResult,
@@ -301,20 +303,7 @@ abstract class QueryBloc<TData>
     result.refetch();
   }
 
-  FutureOr<void> _fetchMore(
-    QueryEventFetchMore<TData> event,
-    Emitter<QueryState<TData>> emit,
-  ) async {
-    emit(
-      QueryState<TData>.fetchMore(
-        data: state.maybeWhen(
-          loaded: (data, _) => data,
-          orElse: () => null,
-        ),
-        result: null,
-      ),
-    );
-
+  FutureOr<void> _fetchMore(QueryEventFetchMore<TData> event) async {
     result.fetchMore(event.options);
   }
 }

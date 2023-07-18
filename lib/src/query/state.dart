@@ -7,15 +7,15 @@ part 'state.freezed.dart';
 class QueryState<TData> with _$QueryState<TData> {
   const factory QueryState.initial() = QueryStateInitial;
 
-  const factory QueryState.loading({
-    required QueryResult result,
-  }) = QueryStateLoading<TData>;
+  const factory QueryState.loading() = QueryStateLoading<TData>;
 
-  const factory QueryState.error({
+  const factory QueryState.grqphqlError({
     required OperationException error,
     required QueryResult result,
     TData? data,
-  }) = QueryStateError<TData>;
+  }) = QueryStateGraphqlError<TData>;
+
+  const factory QueryState.error(Object error) = QueryStateError<TData>;
 
   const factory QueryState.loaded({
     required TData data,

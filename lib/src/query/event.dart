@@ -6,12 +6,6 @@ part 'event.freezed.dart';
 
 @freezed
 class QueryEvent<TData> with _$QueryEvent<TData> {
-  const factory QueryEvent.error({
-    required OperationException error,
-    required QueryResult result,
-    TData? data,
-  }) = QueryEventError<TData>;
-
   const factory QueryEvent.run({
     OptionValue<Map<String, dynamic>>? variables,
     OptionValue<Object?>? optimisticResult,
@@ -24,16 +18,8 @@ class QueryEvent<TData> with _$QueryEvent<TData> {
     OptionValue<bool?>? eagerlyFetchResults,
   }) = QueryEventRun<TData>;
 
-  const factory QueryEvent.loading({
-    required QueryResult result,
-  }) = QueryEventLoading<TData>;
-
-  const factory QueryEvent.loaded({
-    required TData data,
-    required QueryResult result,
-  }) = QueryEventLoaded<TData>;
-
   const factory QueryEvent.refetch({
+    @Default(true) bool skipUnsafe,
     OptionValue<Map<String, dynamic>>? variables,
     OptionValue<Object?>? optimisticResult,
     OptionValue<FetchPolicy?>? fetchPolicy,
